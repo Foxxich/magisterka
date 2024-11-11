@@ -1,54 +1,43 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
+from common import load_and_preprocess_data, vectorize_data, split_data
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import accuracy_score, classification_report
+import pandas as pd
 
-# Load the ISOT dataset
-fake_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\Fake.csv")
-true_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\True.csv")
+def train_run2():
+    # Wczytaj i przetwórz dane
+    X, y = load_and_preprocess_data()
+    X_vec, _ = vectorize_data(X, max_features=5000)
 
-# Add a label column
-fake_news['label'] = 0
-true_news['label'] = 1
+    # Konwersja X na DataFrame (rozwiązanie problemu z indeksowaniem)
+    X = pd.DataFrame(X_vec.toarray())
 
-# Combine the datasets
-data = pd.concat([fake_news, true_news])
+    # Podziel cechy na podzbiory demograficzne i dotyczące zachowań społecznych
+    demographic_features = X.iloc[:, :5]  # Pierwsze 5 kolumn jako demograficzne
+    social_behavior_features = X.iloc[:, 5:]  # Pozostałe kolumny jako zachowania społeczne
 
-# Split into features and labels
-X = data['text']  # Assuming the text column is named 'text'
-y = data['label']
+    # Podziel dane na zbiory treningowe i testowe
+    demo_train, demo_test, y_train, y_test = split_data(demographic_features, y, test_size=0.35)
+    soc_train, soc_test, _, _ = split_data(social_behavior_features, y, test_size=0.35)
 
-# Convert text to numerical features using TfidfVectorizer
-tfidf = TfidfVectorizer(max_features=1000, stop_words='english')  # Customize max_features as needed
-X_tfidf = tfidf.fit_transform(X)
+    # Trenowanie Boosted Decision Tree
+    boosted_tree = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)
+    boosted_tree.fit(soc_train, y_train)
+    boosted_tree_preds = boosted_tree.predict_proba(soc_test)[:, 1]
 
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X_tfidf, y, test_size=0.35, random_state=42)
+    # Trenowanie sieci neuronowej
+    neural_net = MLPClassifier(hidden_layer_sizes=(100,), max_iter=500, random_state=42)
+    neural_net.fit(demo_train, y_train)
+    neural_net_preds = neural_net.predict_proba(demo_test)[:, 1]
 
-# 1. Train the Boosted Decision Tree on the transformed text features
-boosted_tree = GradientBoostingClassifier()
-boosted_tree.fit(X_train, y_train)
-boosted_tree_preds = boosted_tree.predict_proba(X_test)[:, 1]  # Get the probability estimates
+    # Połącz predykcje w DataFrame
+    combined_preds = pd.DataFrame({
+        'boosted_tree': boosted_tree_preds,
+        'neural_net': neural_net_preds
+    })
 
-# 2. Train the Neural Network on the same features
-neural_net = MLPClassifier(hidden_layer_sizes=(100,), max_iter=1000, random_state=42)
-neural_net.fit(X_train, y_train)
-neural_net_preds = neural_net.predict_proba(X_test)[:, 1]
+    # Trenowanie regresji logistycznej
+    logistic_reg = LogisticRegression()
+    logistic_reg.fit(combined_preds, y_test)
 
-# 3. Combine predictions from both models
-combined_preds = pd.DataFrame({
-    'boosted_tree': boosted_tree_preds,
-    'neural_net': neural_net_preds
-})
-
-# 4. Train Logistic Regression as the gating model
-logistic_reg = LogisticRegression()
-logistic_reg.fit(combined_preds, y_test)
-final_preds = logistic_reg.predict(combined_preds)
-
-# Evaluation
-print("Accuracy:", accuracy_score(y_test, final_preds))
-print(classification_report(y_test, final_preds))
+    return logistic_reg, combined_preds, y_test

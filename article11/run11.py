@@ -1,62 +1,42 @@
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-from sklearn.pipeline import make_pipeline
-from sklearn.ensemble import VotingClassifier
 from sklearn.feature_selection import SelectKBest, chi2
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+from common import load_and_preprocess_data, vectorize_data, split_data
 
-# Load the datasets
-fake_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\Fake.csv")
-true_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\True.csv")
+def train_run11():
+    """
+    Trenuj model zespołowy używając VotingClassifier z Random Forest, Logistic Regression i AdaBoost,
+    stosując selekcję cech, walidację krzyżową i strategię głosowania miękkiego.
+    """
+    # Wczytaj i przetwórz dane
+    X, y = load_and_preprocess_data()
 
-# Label the datasets
-fake_news['label'] = 0
-true_news['label'] = 1
+    # Wektoryzuj dane tekstowe
+    X_tfidf, _ = vectorize_data(X, max_features=10000)
 
-# Combine the datasets
-news = pd.concat([fake_news, true_news]).reset_index(drop=True)
+    # Zastosuj selekcję cech za pomocą testu Chi-kwadrat
+    selector = SelectKBest(chi2, k=5000)
+    X_tfidf = selector.fit_transform(X_tfidf, y)
 
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(news['text'], news['label'], test_size=0.2, random_state=42)
+    # Podziel dane na zbiory treningowe i testowe
+    X_train, X_test, y_train, y_test = split_data(X_tfidf, y)
 
-# TF-IDF Vectorization
-tfidf = TfidfVectorizer(max_features=10000, stop_words='english')
-X_train_tfidf = tfidf.fit_transform(X_train)
-X_test_tfidf = tfidf.transform(X_test)
+    # Zdefiniuj klasyfikatory z określonymi hiperparametrami
+    rf = RandomForestClassifier(n_estimators=200, max_depth=15, min_samples_split=5, random_state=42)
+    lr = LogisticRegression(C=0.5, penalty='l2', solver='liblinear', max_iter=1000, random_state=42)
+    adb = AdaBoostClassifier(n_estimators=150, learning_rate=0.5, random_state=42)
 
-# Feature selection (Chi-square)
-selector = SelectKBest(chi2, k=5000)
-X_train_tfidf = selector.fit_transform(X_train_tfidf, y_train)
-X_test_tfidf = selector.transform(X_test_tfidf)
-
-# Classifiers
-rf = RandomForestClassifier(n_estimators=100, random_state=42)
-lr = LogisticRegression(max_iter=1000, random_state=42)
-adb = AdaBoostClassifier(n_estimators=100, random_state=42)
-
-# Ensemble Voting Classifier
-voting_clf = VotingClassifier(estimators=[
-    ('rf', rf), 
-    ('lr', lr), 
-    ('adb', adb)
-], voting='hard')
-
-# Train the ensemble model
-voting_clf.fit(X_train_tfidf, y_train)
-
-# Predictions
-y_pred = voting_clf.predict(X_test_tfidf)
-
-# Evaluation
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred)
-recall = recall_score(y_test, y_pred)
-f1 = f1_score(y_test, y_pred)
-
-print(f"Accuracy: {accuracy}")
-print(f"Precision: {precision}")
-print(f"Recall: {recall}")
-print(f"F1 Score: {f1}")
+    # VotingClassifier zespołowy z głosowaniem miękkim
+    voting_clf = VotingClassifier(estimators=[
+        ('rf', rf),
+        ('lr', lr),
+        ('adb', adb)
+    ], voting='soft')
+    
+    # Wytrenuj model zespołowy na pełnym zbiorze treningowym
+    voting_clf.fit(X_train, y_train)
+    
+    # Zwróć model, dane testowe i etykiety
+    return voting_clf, X_test, y_test

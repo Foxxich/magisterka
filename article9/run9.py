@@ -1,103 +1,64 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier, BaggingClassifier, AdaBoostClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import (
+    classification_report,
+    accuracy_score,
+    roc_auc_score,
+    precision_recall_curve,
+    confusion_matrix
+)
+from sklearn.model_selection import cross_val_score
+from common import load_and_preprocess_data, vectorize_data, split_data
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Load the dataset
-fake_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\Fake.csv")
-true_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\True.csv")
+def train_run9():
+    # Krok 1: Wczytaj i przetwórz zbiór danych
+    X, y = load_and_preprocess_data()
 
-# Add labels
-fake_news['label'] = 0
-true_news['label'] = 1
+    # Krok 2: Wektoryzacja danych tekstowych za pomocą TF-IDF
+    X_tfidf, _ = vectorize_data(X, max_features=5000)
 
-# Combine datasets
-news = pd.concat([fake_news, true_news])
+    # Krok 3: Podział danych na zbiory treningowe i testowe
+    X_train, X_test, y_train, y_test = split_data(X_tfidf, y, test_size=0.3)
 
-# Preprocessing
-X = news['text']
-y = news['label']
+    # Krok 4: Definicja klasyfikatorów bazowych z dostosowanymi hiperparametrami
+    log_reg = LogisticRegression(max_iter=1000, random_state=42)
+    rf = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=42)
+    svc = SVC(kernel='linear', probability=True, random_state=42)
 
-# TF-IDF Vectorization
-tfidf_vectorizer = TfidfVectorizer(stop_words='english', max_df=0.7)
-X_tfidf = tfidf_vectorizer.fit_transform(X)
+    # Krok 5: Definicja metod zespołowych
+    bagging = BaggingClassifier(estimator=rf, n_estimators=50, random_state=42)
+    boosting = AdaBoostClassifier(n_estimators=100, learning_rate=0.5, random_state=42)
+    voting = VotingClassifier(estimators=[('lr', log_reg), ('rf', rf), ('svc', svc)], voting='soft')
 
-# Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X_tfidf, y, test_size=0.3, random_state=42)
+    # Krok 6: Trenowanie modeli i ocena
+    models = {
+        "Random Forest": rf,
+        "Bagging": bagging,
+        "Boosting (AdaBoost)": boosting,
+        "Voting Classifier": voting
+    }
 
-# Define base classifiers
-log_reg = LogisticRegression(max_iter=1000)
-rf = RandomForestClassifier(n_estimators=100, random_state=42)
-svc = SVC(kernel='linear', probability=True)
+    results = {}
+    for model_name, model in models.items():
+        print(f"Trenowanie {model_name}...")
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+        roc_auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1]) if hasattr(model, "predict_proba") else None
+        report = classification_report(y_test, y_pred, output_dict=True)
+        results[model_name] = {
+            "Accuracy": accuracy,
+            "ROC-AUC": roc_auc,
+            "Classification Report": report
+        }
+        print(f"Dokładność dla {model_name}: {accuracy}")
+        if roc_auc:
+            print(f"ROC-AUC dla {model_name}: {roc_auc}")
+        print(classification_report(y_test, y_pred))
 
-# Define ensemble methods
-bagging = BaggingClassifier(estimator=RandomForestClassifier(), n_estimators=50, random_state=42)
-boosting = AdaBoostClassifier(n_estimators=100, random_state=42)
-voting = VotingClassifier(estimators=[('lr', log_reg), ('rf', rf), ('svc', svc)], voting='soft')
-
-# Train and evaluate models
-def evaluate_model(model, X_train, X_test, y_train, y_test):
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    print(f'Accuracy: {accuracy_score(y_test, y_pred)}')
-    print(classification_report(y_test, y_pred))
-
-print("Random Forest:")
-evaluate_model(rf, X_train, X_test, y_train, y_test)
-
-print("Bagging:")#too long
-evaluate_model(bagging, X_train, X_test, y_train, y_test)
-
-print("Boosting (AdaBoost):")
-evaluate_model(boosting, X_train, X_test, y_train, y_test)
-
-print("Voting Classifier:")
-evaluate_model(voting, X_train, X_test, y_train, y_test)
-
-# PS C:\Users\Vadym\Documents\magisterka\article9> python run9.py
-# Random Forest:
-# Accuracy: 0.9881959910913141
-#               precision    recall  f1-score   support
-
-#            0       0.99      0.99      0.99      7091
-#            1       0.99      0.99      0.99      6379
-
-#     accuracy                           0.99     13470
-#    macro avg       0.99      0.99      0.99     13470
-# weighted avg       0.99      0.99      0.99     13470
-
-# Bagging:
-# Accuracy: 0.9888641425389755
-#               precision    recall  f1-score   support
-
-#            0       0.99      0.99      0.99      7091
-#            1       0.99      0.99      0.99      6379
-
-#     accuracy                           0.99     13470
-# weighted avg       0.99      0.99      0.99     13470
-
-# Boosting (AdaBoost):
-# C:\Users\Vadym\AppData\Local\Programs\Python\Python312\Lib\site-packages\sklearn\ensemble\_weight_boosting.py:527: FutureWarning: The SAMME.R algorithm (the default) is deprecated and will be removed in 1.6. Use the SAMME algorithm to circumvent this warning.
-#   warnings.warn(
-# Accuracy: 0.9955456570155902
-#            1       0.99      1.00      1.00      6379
-
-#     accuracy                           1.00     13470
-#    macro avg       1.00      1.00      1.00     13470
-# weighted avg       1.00      1.00      1.00     13470
-
-# Voting Classifier:
-# Accuracy: 0.9926503340757238
-#               precision    recall  f1-score   support
-
-#            0       0.99      0.99      0.99      7091
-#            1       0.99      0.99      0.99      6379
-
-#     accuracy                           0.99     13470
-#    macro avg       0.99      0.99      0.99     13470
-# weighted avg       0.99      0.99      0.99     13470
-
-# PS C:\Users\Vadym\Documents\magisterka\article9> \
+    # Zwracanie najlepszego modelu
+    return voting, X_test, y_test
