@@ -7,15 +7,9 @@ from sklearn.metrics import accuracy_score
 import numpy as np
 import pandas as pd
 
-def train_run5():
-    # Wczytaj i przetwórz dane
-    X, y = load_and_preprocess_data()
-
-    # Wektoryzacja danych
-    X_vec, _ = vectorize_data(X, max_features=5000)
-
+def train_run5(X_embeddings, X, y):
     # Podziel dane na zbiory treningowe i testowe
-    X_train, X_test, y_train, y_test = split_data(X_vec, y, test_size=0.2)
+    X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
 
     # Trenuj modele bazowe: RandomForest i XGBoost
     rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)

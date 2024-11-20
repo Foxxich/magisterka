@@ -1,16 +1,12 @@
-from common import load_and_preprocess_data, vectorize_data, split_data
+from common import split_data
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, BatchNormalization, LeakyReLU
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import ReduceLROnPlateau
 from tensorflow.keras.regularizers import l2
-from sklearn.metrics import classification_report, accuracy_score
 
-def train_run1():
-    # Przygotowanie danych
-    X, y = load_and_preprocess_data()
-    X_tfidf, _ = vectorize_data(X, max_features=5000)
-    X_train, X_test, y_train, y_test = split_data(X_tfidf, y, test_size=0.2)
+def train_run1(X_embeddings, X, y):
+    X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
 
     # Definicja modelu
     model = Sequential([

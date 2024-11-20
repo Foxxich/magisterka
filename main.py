@@ -1,6 +1,6 @@
 import os
 import sys
-from common import evaluate_model
+from common import evaluate_model, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, vectorize_data, get_transformer_embeddings
 
 # Ścieżki do katalogów z metodami
 for i in range(1, 17):
@@ -24,79 +24,117 @@ from run14 import train_run14
 from run15 import train_run15
 from run16 import train_run16
 
-# Ścieżka do zapisu wyników
-OUTPUT_PATH = r"C:\Users\Vadym\Documents\magisterka\results"
-os.makedirs(OUTPUT_PATH, exist_ok=True)
+# Ładowanie zmiennych środowiskowych
+from dotenv import load_dotenv
+load_dotenv()
 
-def run_method(method_number):
+def get_embeddings(option, X, y):
+    """
+    Generuje reprezentację kontekstową na podstawie wybranej opcji.
+    """
+    if option == "1":
+        return get_bert_embeddings(X.tolist())
+    elif option == "2":
+        return get_roberta_embeddings(X.tolist())
+    elif option == "3":
+        return get_transformer_embeddings(X.tolist())
+    elif option == "4":
+        return vectorize_data(X, max_features=5000)
+    else:
+        print(f"Nieprawidłowa opcja reprezentacji kontekstowej: {option}.")
+        return None
+
+def run_method(method_number, X_embeddings, X, y, output_path):
     """Uruchamia wybraną metodę na podstawie numeru."""
-    if method_number == 1:
-        model, X_test, y_test = train_run1()
-        evaluate_model(model, X_test, y_test, "run1", OUTPUT_PATH)
-    elif method_number == 2:
-        model, X_test, y_test = train_run2()
-        evaluate_model(model, X_test, y_test, "run2", OUTPUT_PATH)
-    elif method_number == 3:
-        model, X_test, y_test = train_run3()
-        evaluate_model(model, X_test, y_test, "run3", OUTPUT_PATH)
-    elif method_number == 4:
-        model, X_test, y_test = train_run4()
-        evaluate_model(model, X_test, y_test, "run4", OUTPUT_PATH)
-    elif method_number == 5:
-        model, meta_test, y_test = train_run5()
-        evaluate_model(model, meta_test, y_test, "run5", OUTPUT_PATH)
-    elif method_number == 6:
-        model, meta_test, y_test = train_run6()
-        evaluate_model(model, meta_test, y_test, "run6", OUTPUT_PATH)
-    elif method_number == 7:
-        model, X_test, y_test, final_preds = train_run7()
-        evaluate_model(model, X_test, y_test, "run7", OUTPUT_PATH)
-    elif method_number == 8:
-        model, X_test, y_test = train_run8()
-        evaluate_model(model, X_test, y_test, "run8", OUTPUT_PATH, False)
-    elif method_number == 9:
-        model, X_test, y_test = train_run9()
-        evaluate_model(model, X_test, y_test, "run9", OUTPUT_PATH)
-    elif method_number == 10:
-        model, X_test, y_test = train_run10()
-        evaluate_model(model, X_test, y_test, "run10", OUTPUT_PATH)
-    elif method_number == 11:
-        model, X_test, y_test = train_run11()
-        evaluate_model(model, X_test, y_test, "run11", OUTPUT_PATH)
-    elif method_number == 12:
-        models = train_run12()
-        evaluate_model(models["RandomForest"][0], models["RandomForest"][1], models["RandomForest"][2], "run12_rf", OUTPUT_PATH)
-        evaluate_model(models["CatBoost"][0], models["CatBoost"][1], models["CatBoost"][2], "run12_catboost", OUTPUT_PATH)
-    elif method_number == 13:
-        model, X_test, y_test = train_run13()
-        evaluate_model(model, X_test, y_test, "run13", OUTPUT_PATH)
-    elif method_number == 14:
-        model, X_test, y_test = train_run14()
-        evaluate_model(model, X_test, y_test, "run14", OUTPUT_PATH)
-    elif method_number == 15:
-        model, X_test, y_test = train_run15()
-        evaluate_model(model, X_test, y_test, "run15", OUTPUT_PATH)
-    elif method_number == 16:
-        model, X_test, y_test = train_run16()
-        evaluate_model(model, X_test, y_test, "run16", OUTPUT_PATH)
+    if X_embeddings is None:
+        print(f"Metoda {method_number} została pominięta z powodu niekompatybilnej reprezentacji.")
+        return
 
+    # Sprawdzenie ograniczenia: TF-IDF tylko dla metody 2
+    if ((method_number != 2 and method_number != 3) and isinstance(X_embeddings, tuple)):
+        print(f"Metoda {method_number} została pominięta: TF-IDF jest obsługiwane tylko dla metody 2 lub 3.")
+        return
+
+    if method_number == 1:
+        model, X_test, y_test = train_run1(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run1", output_path)
+    elif method_number == 2:
+        model, X_test, y_test = train_run2(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run2", output_path)
+    elif method_number == 3:
+        model, X_test, y_test = train_run3(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run3", output_path)
+    elif method_number == 4:
+        model, X_test, y_test = train_run4(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run4", output_path)
+    elif method_number == 5:
+        model, meta_test, y_test = train_run5(X_embeddings, X, y)
+        evaluate_model(model, meta_test, y_test, "run5", output_path)
+    elif method_number == 6:
+        model, meta_test, y_test = train_run6(X_embeddings, X, y)
+        evaluate_model(model, meta_test, y_test, "run6", output_path)
+    elif method_number == 7:
+        model, X_test, y_test, final_preds = train_run7(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run7", output_path)
+    elif method_number == 8:
+        model, X_test, y_test = train_run8(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run8", output_path, False)
+    elif method_number == 9:
+        model, X_test, y_test = train_run9(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run9", output_path)
+    elif method_number == 10:
+        model, X_test, y_test = train_run10(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run10", output_path)
+    elif method_number == 11:
+        model, X_test, y_test = train_run11(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run11", output_path)
+    elif method_number == 12:
+        models = train_run12(X_embeddings, X, y)
+        evaluate_model(models["RandomForest"][0], models["RandomForest"][1], models["RandomForest"][2], "run12_rf", output_path)
+        evaluate_model(models["CatBoost"][0], models["CatBoost"][1], models["CatBoost"][2], "run12_catboost", output_path)
+    elif method_number == 13:
+        model, X_test, y_test = train_run13(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run13", output_path)
+    elif method_number == 14:
+        model, X_test, y_test = train_run14(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run14", output_path)
+    elif method_number == 15:
+        model, X_test, y_test = train_run15(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run15", output_path)
+    elif method_number == 16:
+        model, X_test, y_test = train_run16(X_embeddings, X, y)
+        evaluate_model(model, X_test, y_test, "run16", output_path)
     else:
         print(f"Metoda {method_number} nie istnieje!")
 
-def run_all_methods():
-    """Uruchamia wszystkie metody po kolei."""
-    for i in range(1, 17):
-        print(f"Uruchamianie metody {i}...")
-        run_method(i)
-
 if __name__ == "__main__":
-    print("Podaj numer metody do uruchomienia (1-16) lub wpisz 'all', aby uruchomić wszystkie:")
-    user_input = input().strip().lower()
-    if user_input == "all":
-        run_all_methods()
+    print("Wybierz reprezentację kontekstową (1-4) lub wpisz 'all', aby uruchomić wszystkie:\n1 - BERT\n2 - RoBERTa\n3 - Sentence Transformers\n4 - TF-IDF")
+    representation_input = input().strip().lower()
+
+    X, y = load_and_preprocess_data()
+
+    if representation_input == "all":
+        print("Uruchamiam wszystkie reprezentacje...")
+        for rep in ["3"]:
+            print(f"Generowanie reprezentacji kontekstowej {rep}...")
+            X_embeddings = get_embeddings(rep, X, y)
+            if X_embeddings is not None:
+                print(f"Rozpoczynanie metod dla reprezentacji {rep}...")
+                for method_number in range(3, 4):
+                    print(f"Uruchamianie metody {method_number} dla reprezentacji {rep}...")
+                    run_method(method_number, X_embeddings, X, y, f"results{rep}")
     else:
-        try:
-            method_number = int(user_input)
-            run_method(method_number)
-        except ValueError:
-            print("Nieprawidłowy wybór. Podaj liczbę od 1 do 16 lub wpisz 'all'.")
+        print(f"Generowanie reprezentacji kontekstowej {representation_input}...")
+        X_embeddings = get_embeddings(representation_input, X, y)
+        if X_embeddings is not None:
+            print("Wybierz numer metody (1-16) lub wpisz 'all', aby uruchomić wszystkie:")
+            method_input = input().strip().lower()
+
+            if method_input == "all":
+                print(f"Uruchamianie wszystkich metod dla reprezentacji {representation_input}...")
+                for method_number in range(1, 17):
+                    run_method(method_number, X_embeddings, X, y, f"results{representation_input}")
+            else:
+                method_number = int(method_input)
+                print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input}...")
+                run_method(method_number, X_embeddings, X, y, f"results{representation_input}")

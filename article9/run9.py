@@ -9,32 +9,43 @@ from sklearn.metrics import (
     confusion_matrix
 )
 from sklearn.model_selection import cross_val_score
-from common import load_and_preprocess_data, vectorize_data, split_data
+from common import vectorize_data, split_data
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-def train_run9():
-    # Krok 1: Wczytaj i przetwórz zbiór danych
-    X, y = load_and_preprocess_data()
+def train_run9(X_embeddings=None, X=None, y=None, batch_size=32):
+    """
+    Trains various ensemble models and evaluates them.
+    
+    Args:
+        X_embeddings (np.ndarray or None): Precomputed embeddings or None for TF-IDF.
+        X (list): Text data if embeddings need to be generated.
+        y (list): Target labels.
+        batch_size (int): Batch size for embeddings (if applicable).
+        
+    Returns:
+        voting: Best model (VotingClassifier).
+        X_test: Test set features (embeddings or TF-IDF).
+        y_test: Test set labels.
+    """
+    if X_embeddings is None:
+        # Vectorize text data using TF-IDF if embeddings are not provided
+        tfidf_vectorizer = vectorize_data(X, max_features=5000)[1]
+        X_train, X_test, y_train, y_test = split_data(tfidf_vectorizer.transform(X), y, test_size=0.3)
+    else:
+        # Use precomputed embeddings
+        X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.3)
 
-    # Krok 2: Wektoryzacja danych tekstowych za pomocą TF-IDF
-    X_tfidf, _ = vectorize_data(X, max_features=5000)
-
-    # Krok 3: Podział danych na zbiory treningowe i testowe
-    X_train, X_test, y_train, y_test = split_data(X_tfidf, y, test_size=0.3)
-
-    # Krok 4: Definicja klasyfikatorów bazowych z dostosowanymi hiperparametrami
+    # Define base classifiers with hyperparameter tuning
     log_reg = LogisticRegression(max_iter=1000, random_state=42)
     rf = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=42)
     svc = SVC(kernel='linear', probability=True, random_state=42)
 
-    # Krok 5: Definicja metod zespołowych
+    # Define ensemble methods
     bagging = BaggingClassifier(estimator=rf, n_estimators=50, random_state=42)
     boosting = AdaBoostClassifier(n_estimators=100, learning_rate=0.5, random_state=42)
     voting = VotingClassifier(estimators=[('lr', log_reg), ('rf', rf), ('svc', svc)], voting='soft')
 
-    # Krok 6: Trenowanie modeli i ocena
+    # Train models and evaluate
     models = {
         "Random Forest": rf,
         "Bagging": bagging,
@@ -60,5 +71,5 @@ def train_run9():
             print(f"ROC-AUC dla {model_name}: {roc_auc}")
         print(classification_report(y_test, y_pred))
 
-    # Zwracanie najlepszego modelu
+    # Return the best model (voting classifier) and test data
     return voting, X_test, y_test

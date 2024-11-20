@@ -2,11 +2,27 @@ import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import (
-    f1_score, roc_auc_score, precision_recall_curve, matthews_corrcoef,
-    log_loss, cohen_kappa_score
-)
 import time
+import numpy as np
+import os
+import pandas as pd
+import time
+from transformers import BertTokenizer, TFBertModel
+from transformers import RobertaTokenizer, TFRobertaModel
+from transformers import AutoTokenizer, AutoModel
+import torch
+from sklearn.metrics import (
+    f1_score,
+    roc_auc_score,
+    matthews_corrcoef,
+    log_loss,
+    cohen_kappa_score,
+    precision_recall_curve,
+    accuracy_score,
+    precision_score,
+    recall_score,
+)
+from sklearn.model_selection import cross_val_score, StratifiedKFold
 
 def load_and_preprocess_data():
     # Load datasets
@@ -45,6 +61,82 @@ def load_shuffle_preprocess_data():
 
     return X, y
 
+from transformers import BertTokenizer, TFBertForSequenceClassification
+
+from transformers import BertTokenizer, TFBertForSequenceClassification
+import tensorflow as tf
+import numpy as np
+
+def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    bert_model = TFBertForSequenceClassification.from_pretrained(
+        'bert-base-uncased',
+        num_labels=num_labels,
+    )
+
+    # Tokenize all texts in a single call to save time
+    inputs = tokenizer(
+        texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
+    )
+
+    # Process in batches
+    embeddings = []
+    for i in range(0, len(texts), batch_size):
+        batch_inputs = {
+            k: v[i:i + batch_size] for k, v in inputs.items()
+        }
+        outputs = bert_model(**batch_inputs)
+        embeddings.append(outputs.logits.numpy())
+
+    return np.vstack(embeddings)
+
+from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
+
+from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
+
+def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
+    tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
+    roberta_model = TFRobertaForSequenceClassification.from_pretrained(
+        'roberta-base',
+        num_labels=num_labels,
+    )
+
+    # Tokenize all texts in a single call to save time
+    inputs = tokenizer(
+        texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
+    )
+
+    # Process in batches
+    embeddings = []
+    for i in range(0, len(texts), batch_size):
+        batch_inputs = {
+            k: v[i:i + batch_size] for k, v in inputs.items()
+        }
+        outputs = roberta_model(**batch_inputs)
+        embeddings.append(outputs.logits.numpy())
+
+    return np.vstack(embeddings)
+
+from sentence_transformers import SentenceTransformer
+import numpy as np
+
+def get_transformer_embeddings(texts, model_name="all-MiniLM-L6-v2"):
+    """
+    Generate embeddings using Sentence Transformers.
+    Args:
+        texts (list of str): Input texts to embed.
+        model_name (str): Pretrained Sentence Transformer model name.
+    Returns:
+        np.ndarray: Embeddings for the given texts.
+    """
+    # Load the Sentence Transformer model
+    model = SentenceTransformer(model_name)
+
+    # Generate embeddings
+    embeddings = model.encode(texts, show_progress_bar=True)
+
+    return np.array(embeddings)
+
 def vectorize_data(X, max_features=5000):
     tfidf = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1, 2))
     return tfidf.fit_transform(X), tfidf
@@ -53,23 +145,6 @@ def split_data(X, y, test_size=0.2):
     return train_test_split(X, y, test_size=test_size, random_state=42)
 
 def evaluate_model(model, X_test, y_test, run_type, output_path, flatten=True):
-    import numpy as np
-    import os
-    import pandas as pd
-    import time
-    from sklearn.metrics import (
-        f1_score,
-        roc_auc_score,
-        matthews_corrcoef,
-        log_loss,
-        cohen_kappa_score,
-        precision_recall_curve,
-        accuracy_score,
-        precision_score,
-        recall_score,
-    )
-    from sklearn.model_selection import cross_val_score, StratifiedKFold
-
     start_time = time.time()
 
     # Cross-validation metrics
@@ -170,4 +245,3 @@ def evaluate_model(model, X_test, y_test, run_type, output_path, flatten=True):
     print("Evaluation Metrics:")
     for metric, value in metrics.items():
         print(f"{metric}: {value:.4f}" if value is not None else f"{metric}: N/A")
-
