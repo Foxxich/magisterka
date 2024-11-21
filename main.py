@@ -38,8 +38,6 @@ def get_embeddings(option, X, y):
         return get_roberta_embeddings(X.tolist())
     elif option == "3":
         return get_transformer_embeddings(X.tolist())
-    elif option == "4":
-        return vectorize_data(X, max_features=5000)
     else:
         print(f"Nieprawidłowa opcja reprezentacji kontekstowej: {option}.")
         return None
@@ -48,11 +46,6 @@ def run_method(method_number, X_embeddings, X, y, output_path):
     """Uruchamia wybraną metodę na podstawie numeru."""
     if X_embeddings is None:
         print(f"Metoda {method_number} została pominięta z powodu niekompatybilnej reprezentacji.")
-        return
-
-    # Sprawdzenie ograniczenia: TF-IDF tylko dla metody 2
-    if ((method_number != 2 and method_number != 3) and isinstance(X_embeddings, tuple)):
-        print(f"Metoda {method_number} została pominięta: TF-IDF jest obsługiwane tylko dla metody 2 lub 3.")
         return
 
     if method_number == 1:
@@ -108,19 +101,19 @@ def run_method(method_number, X_embeddings, X, y, output_path):
         print(f"Metoda {method_number} nie istnieje!")
 
 if __name__ == "__main__":
-    print("Wybierz reprezentację kontekstową (1-4) lub wpisz 'all', aby uruchomić wszystkie:\n1 - BERT\n2 - RoBERTa\n3 - Sentence Transformers\n4 - TF-IDF")
+    print("Wybierz reprezentację kontekstową (1-3) lub wpisz 'all', aby uruchomić wszystkie:\n1 - BERT\n2 - RoBERTa\n3 - Sentence Transformers")
     representation_input = input().strip().lower()
 
     X, y = load_and_preprocess_data()
 
     if representation_input == "all":
         print("Uruchamiam wszystkie reprezentacje...")
-        for rep in ["3"]:
+        for rep in ["1", "2", "3"]:
             print(f"Generowanie reprezentacji kontekstowej {rep}...")
             X_embeddings = get_embeddings(rep, X, y)
             if X_embeddings is not None:
                 print(f"Rozpoczynanie metod dla reprezentacji {rep}...")
-                for method_number in range(3, 4):
+                for method_number in range(1, 6):
                     print(f"Uruchamianie metody {method_number} dla reprezentacji {rep}...")
                     run_method(method_number, X_embeddings, X, y, f"results{rep}")
     else:
