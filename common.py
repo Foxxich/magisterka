@@ -143,6 +143,52 @@ def vectorize_data(X, max_features=5000):
 
 def split_data(X, y, test_size=0.2):
     return train_test_split(X, y, test_size=test_size, random_state=42)
+import pandas as pd
+import numpy as np
+
+def split_data_one_shot(X, y):
+    """Podział danych na podstawie jednego przykładu na klasę."""
+    # Konwersja do Pandas DataFrame/Series w razie potrzeby
+    if isinstance(X, np.ndarray):
+        X = pd.DataFrame(X)
+    if isinstance(y, np.ndarray):
+        y = pd.Series(y)
+    
+    # Wybór jednego przykładu na klasę
+    X_test = X.groupby(y).apply(lambda group: group.iloc[0]).reset_index(drop=True)
+    y_test = y.groupby(y).first().reset_index(drop=True)
+
+    # Reszta danych jako treningowe
+    test_indices = y.groupby(y).apply(lambda group: group.index[0]).values
+    train_mask = ~X.index.isin(test_indices)
+
+    X_train = X.loc[train_mask].reset_index(drop=True)
+    y_train = y.loc[train_mask].reset_index(drop=True)
+
+    return X_train, X_test, y_train, y_test
+
+
+def split_data_few_shot(X, y, few_shot_examples=5):
+    """Podział danych na podstawie kilku przykładów na klasę."""
+    # Konwersja do Pandas DataFrame/Series w razie potrzeby
+    if isinstance(X, np.ndarray):
+        X = pd.DataFrame(X)
+    if isinstance(y, np.ndarray):
+        y = pd.Series(y)
+    
+    # Wybór kilku przykładów na klasę
+    sampled_data = y.groupby(y).apply(lambda group: group.sample(n=min(few_shot_examples, len(group))))
+    test_indices = sampled_data.index.get_level_values(1)
+
+    X_test = X.loc[test_indices].reset_index(drop=True)
+    y_test = y.loc[test_indices].reset_index(drop=True)
+
+    # Reszta danych jako treningowe
+    train_mask = ~X.index.isin(test_indices)
+    X_train = X.loc[train_mask].reset_index(drop=True)
+    y_train = y.loc[train_mask].reset_index(drop=True)
+
+    return X_train, X_test, y_train, y_test
 
 def evaluate_model(model, X_test, y_test, run_type, output_path, flatten=True):
     start_time = time.time()
@@ -151,7 +197,7 @@ def evaluate_model(model, X_test, y_test, run_type, output_path, flatten=True):
     cv_accuracy_mean = None
     cv_accuracy_std = None
     try:
-        skf = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
+        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
         cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring="accuracy")
         cv_accuracy_mean = cv_scores.mean()
         cv_accuracy_std = cv_scores.std()

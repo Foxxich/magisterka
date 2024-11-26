@@ -1,26 +1,27 @@
-from common import split_data
 from transformers import BertTokenizer, TFBertModel
 from sklearn.ensemble import AdaBoostClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
-def train_run6(X_embeddings, X, y, batch_size=32):
+def train_run6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):
     """
     Trains a Voting Classifier using AdaBoost and Logistic Regression with BERT embeddings.
     
     Args:
-        X_embeddings (np.ndarray or sparse matrix): Precomputed embeddings or features.
-        X (list): Original text data (if needed for padding/tokenization).
-        y (list): Target labels.
+        X_train (np.ndarray or list): Training set features or original text data.
+        y_train (list): Training set labels.
+        X_test (np.ndarray or list): Test set features or original text data.
+        y_test (list): Test set labels.
         batch_size (int): Batch size for embedding generation (default: 32).
+        use_bert_embeddings (bool): Whether to generate BERT embeddings from raw text data.
         
     Returns:
         model: Trained voting classifier.
-        X_test_bert: Test set embeddings.
+        X_test: Test set embeddings (if generated).
         y_test: Test set labels.
     """
-    # Check if embeddings are already provided; if not, generate BERT embeddings
-    if X_embeddings is None:
+    # Generate BERT embeddings if needed
+    if use_bert_embeddings:
         # Initialize BERT tokenizer and model
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
         bert_model = TFBertModel.from_pretrained('bert-base-uncased')
@@ -35,11 +36,9 @@ def train_run6(X_embeddings, X, y, batch_size=32):
                 embeddings.append(outputs.pooler_output.numpy())
             return np.vstack(embeddings)
 
-        # Generate BERT embeddings
-        X_embeddings = embed_text_in_batches(X)
-
-    # Split embeddings into train and test sets
-    X_train_bert, X_test_bert, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
+        # Generate embeddings for training and test sets
+        X_train = embed_text_in_batches(X_train)
+        X_test = embed_text_in_batches(X_test)
 
     # Define base classifiers
     ada_boost = AdaBoostClassifier(n_estimators=50, random_state=42)
@@ -52,6 +51,6 @@ def train_run6(X_embeddings, X, y, batch_size=32):
     )
 
     # Train the ensemble model
-    voting_classifier.fit(X_train_bert, y_train)
+    voting_classifier.fit(X_train, y_train)
 
-    return voting_classifier, X_test_bert, y_test
+    return voting_classifier, X_test, y_test

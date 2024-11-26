@@ -53,6 +53,19 @@ def heuristic_post_processing(predictions, attribute_probs, attributes, threshol
     return final_predictions
 
 def train_run7(X_embeddings=None, X=None, y=None):
+    """
+    Trains a RandomForest model and applies heuristic post-processing.
+
+    Args:
+        X_embeddings (np.ndarray or None): Precomputed embeddings.
+        X (list or pd.Series): Raw text data (if embeddings are not provided).
+        y (list or pd.Series): Target labels.
+
+    Returns:
+        rf_classifier: Trained RandomForest model.
+        X_test: Original or preprocessed test features.
+        y_test: Test set labels.
+    """
     # If embeddings are provided, use them; otherwise, preprocess text data
     if X_embeddings is None:
         # Load and preprocess data
@@ -62,37 +75,45 @@ def train_run7(X_embeddings=None, X=None, y=None):
         X_train, X_test, y_train, y_test = split_data(X, y, test_size=0.2)
 
         # Vectorize text data using TF-IDF
+        print("Debug: Applying TF-IDF vectorization...")
         tfidf_vectorizer = TfidfVectorizer(max_features=5000, max_df=0.7, stop_words="english")
-        X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
-        X_test_tfidf = tfidf_vectorizer.transform(X_test)
+        X_train = tfidf_vectorizer.fit_transform(X_train)
+        X_test = tfidf_vectorizer.transform(X_test)
     else:
         # Use precomputed embeddings
         X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
-        X_train_tfidf, X_test_tfidf = X_train, X_test
 
     # Train RandomForest model
+    print("Debug: Training RandomForest model...")
     rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-    rf_classifier.fit(X_train_tfidf, y_train)
+    rf_classifier.fit(X_train, y_train)
 
     # Monte Carlo Dropout
-    mean_preds, uncertainty = monte_carlo_dropout_inference(rf_classifier, X_test_tfidf, num_samples=50)
+    print("Debug: Applying Monte Carlo Dropout inference...")
+    mean_preds, uncertainty = monte_carlo_dropout_inference(rf_classifier, X_test, num_samples=50)
 
     # Predict labels
     pred_labels = np.argmax(mean_preds, axis=1)
 
     # Handle meta-attributes for heuristic post-processing
+    print("Debug: Creating DataFrame for meta-attribute analysis...")
     df = pd.DataFrame({"text": X if X_embeddings is None else [""] * len(X_test), "label": y_test})
     df["source"] = ["unknown" for _ in range(len(df))]  # Replace with actual meta-attribute column
 
     # Compute attribute probabilities
+    print("Debug: Computing meta-attribute probabilities...")
     attribute_probs = compute_meta_attribute_probabilities(df, "source", "label")
 
     # Apply heuristic post-processing
+    print("Debug: Applying heuristic post-processing...")
     final_predictions = heuristic_post_processing(
-        pred_labels, 
-        attribute_probs, 
+        pred_labels,
+        attribute_probs,
         df["source"].reset_index(drop=True),  # Ensure indices match
         threshold=0.9
     )
 
-    return rf_classifier, X_test_tfidf, y_test, final_predictions
+    # Debug final predictions
+    print(f"Debug: Final predictions shape: {len(final_predictions)}")
+
+    return rf_classifier, X_test, y_test

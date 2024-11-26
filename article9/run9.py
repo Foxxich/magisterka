@@ -5,37 +5,25 @@ from sklearn.metrics import (
     classification_report,
     accuracy_score,
     roc_auc_score,
-    precision_recall_curve,
-    confusion_matrix
 )
-from sklearn.model_selection import cross_val_score
-from common import vectorize_data, split_data
 import numpy as np
 
-def train_run9(X_embeddings=None, X=None, y=None, batch_size=32):
+def train_run9(X_train, y_train, X_test, y_test):
     """
     Trains various ensemble models and evaluates them.
     
-    Args:
-        X_embeddings (np.ndarray or None): Precomputed embeddings or None for TF-IDF.
-        X (list): Text data if embeddings need to be generated.
-        y (list): Target labels.
-        batch_size (int): Batch size for embeddings (if applicable).
-        
+    Parameters:
+        X_train (np.ndarray): Training set features.
+        y_train (list or np.ndarray): Training set labels.
+        X_test (np.ndarray): Test set features.
+        y_test (list or np.ndarray): Test set labels.
+    
     Returns:
         voting: Best model (VotingClassifier).
-        X_test: Test set features (embeddings or TF-IDF).
+        X_test: Test set features.
         y_test: Test set labels.
     """
-    if X_embeddings is None:
-        # Vectorize text data using TF-IDF if embeddings are not provided
-        tfidf_vectorizer = vectorize_data(X, max_features=5000)[1]
-        X_train, X_test, y_train, y_test = split_data(tfidf_vectorizer.transform(X), y, test_size=0.3)
-    else:
-        # Use precomputed embeddings
-        X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.3)
-
-    # Define base classifiers with hyperparameter tuning
+    # Define base classifiers
     log_reg = LogisticRegression(max_iter=1000, random_state=42)
     rf = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=42)
     svc = SVC(kernel='linear', probability=True, random_state=42)
@@ -60,14 +48,13 @@ def train_run9(X_embeddings=None, X=None, y=None, batch_size=32):
         y_pred = model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
         roc_auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1]) if hasattr(model, "predict_proba") else None
-        report = classification_report(y_test, y_pred, output_dict=True)
         results[model_name] = {
             "Accuracy": accuracy,
             "ROC-AUC": roc_auc,
-            "Classification Report": report
+            "Classification Report": classification_report(y_test, y_pred, output_dict=True)
         }
         print(f"Dokładność dla {model_name}: {accuracy}")
-        if roc_auc:
+        if roc_auc is not None:
             print(f"ROC-AUC dla {model_name}: {roc_auc}")
         print(classification_report(y_test, y_pred))
 

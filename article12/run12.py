@@ -1,31 +1,23 @@
-from common import load_and_preprocess_data, vectorize_data, split_data, evaluate_model
 from sklearn.ensemble import RandomForestClassifier
 from catboost import CatBoostClassifier
 import numpy as np
 
-
-def train_run12(X_embeddings, X, y):
+def train_run12(X_train, y_train, X_test, y_test):
     """
     Trains and evaluates Random Forest and CatBoost classifiers.
 
-    Args:
-        X_embeddings (array-like): Precomputed embeddings or vectorized features.
-        X (array-like): Original input data (used for compatibility).
-        y (array-like): Target labels.
+    Parameters:
+        X_train (array-like): Training set features.
+        y_train (array-like): Training set labels.
+        X_test (array-like): Test set features.
+        y_test (array-like): Test set labels.
 
     Returns:
         dict: A dictionary containing trained models and their corresponding test datasets.
     """
     # Ensure the input embeddings are 2D
-    if X_embeddings is None or len(X_embeddings.shape) != 2:
-        raise ValueError("X_embeddings must be a 2-dimensional array.")
-
-    # Split data into training and testing sets
-    X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
-
-    # Ensure that the splits are properly converted to arrays if needed
-    X_train = np.asarray(X_train)
-    X_test = np.asarray(X_test)
+    if len(X_train.shape) != 2 or len(X_test.shape) != 2:
+        raise ValueError("Input features must be 2-dimensional arrays.")
 
     # Train Random Forest (Bagging)
     print("Training Random Forest...")

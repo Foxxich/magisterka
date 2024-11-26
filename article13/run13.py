@@ -1,36 +1,25 @@
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics import classification_report
 from imblearn.combine import SMOTETomek
 from xgboost import XGBClassifier
 import numpy as np
-from common import load_and_preprocess_data, split_data
 
-
-def train_run13(X_embeddings, X, y):
+def train_run13(X_train, y_train, X_test, y_test):
     """
     Trains an XGBoost classifier with SMOTETomek for handling class imbalance.
 
-    Args:
-        X_embeddings (array-like): Precomputed embeddings or vectorized features.
-        X (array-like): Original input data (used for compatibility).
-        y (array-like): Target labels.
+    Parameters:
+        X_train (np.ndarray): Training set features.
+        y_train (array-like): Training set labels.
+        X_test (np.ndarray): Test set features.
+        y_test (array-like): Test set labels.
 
     Returns:
         XGBClassifier: Trained XGBoost model.
         np.ndarray: Test features.
         np.ndarray: Test labels.
     """
-    # Ensure X_embeddings is 2D
-    if X_embeddings is None or len(X_embeddings.shape) != 2:
-        raise ValueError("X_embeddings must be a 2-dimensional array.")
-
-    # Split the dataset
-    X_train, X_test, y_train, y_test = train_test_split(X_embeddings, y, test_size=0.3, random_state=42)
-
     # Ensure data is in the correct format
-    X_train = np.asarray(X_train)
-    X_test = np.asarray(X_test)
+    if len(X_train.shape) != 2 or len(X_test.shape) != 2:
+        raise ValueError("Input features must be 2-dimensional arrays.")
 
     # Handle class imbalance using SMOTETomek
     smotetomek = SMOTETomek(random_state=42)

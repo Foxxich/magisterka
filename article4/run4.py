@@ -5,36 +5,31 @@ from keras.optimizers import Adadelta
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 
-def train_run4(X_embeddings, X, y, max_sequence_length=300, embedding_dim=100):
+def train_run4(X_train, y_train, X_test, y_test, embedding_dim=100):
     """
     Trains a Bi-LSTM and CNN hybrid model using the provided embeddings.
     
     Args:
-        X_embeddings (np.ndarray or sparse matrix): Precomputed embeddings or features.
-        X (list): Original text data (if needed for padding/tokenization).
-        y (list): Target labels.
-        max_sequence_length (int): Maximum sequence length for embeddings (default: 300).
+        X_train (np.ndarray): Training set features.
+        y_train (list or np.ndarray): Training set labels.
+        X_test (np.ndarray): Test set features.
+        y_test (list or np.ndarray): Test set labels.
         embedding_dim (int): Embedding dimension size (default: 100).
         
     Returns:
         model: Trained model.
-        X_test: Test set features.
+        X_test_reshaped: Reshaped test set features.
         y_test: Test set labels.
     """
-    # Convert sparse matrix to dense if necessary
-    if hasattr(X_embeddings, "toarray"):
-        X_embeddings = X_embeddings.toarray()
-
     # Ensure embeddings are 2D
-    if len(X_embeddings.shape) == 1:
-        X_embeddings = np.expand_dims(X_embeddings, axis=1)
+    if len(X_train.shape) == 1:
+        X_train = np.expand_dims(X_train, axis=1)
+        X_test = np.expand_dims(X_test, axis=1)
 
-    # Scale features if numeric
+    # Scale features
     scaler = StandardScaler()
-    X_embeddings = scaler.fit_transform(X_embeddings)
-
-    # Split data into training and test sets
-    X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
 
     # Determine input shape dynamically
     input_sequence_length = X_train.shape[1]

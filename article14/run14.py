@@ -21,37 +21,25 @@ def preprocess_text(text):
     return ' '.join([snowball_stemmer.stem(word) for word in text.split()])  # Apply stemming
 
 
-def train_run14(X_embeddings=None, X=None, y=None):
+def train_run14(X_train, y_train, X_test, y_test):
     """
     Trains a stacking ensemble model with Random Forest, AdaBoost, and Logistic Regression
-    as the final estimator. Handles both precomputed embeddings or raw text data.
+    as the final estimator.
 
-    Args:
-        X_embeddings (numpy.ndarray or sparse matrix): Precomputed feature embeddings.
-        X (pandas.Series): Raw text data for vectorization (if embeddings are not provided).
-        y (numpy.ndarray or pandas.Series): Target labels.
+    Parameters:
+        X_train (numpy.ndarray): Training set features.
+        y_train (numpy.ndarray): Training set labels.
+        X_test (numpy.ndarray): Test set features.
+        y_test (numpy.ndarray): Test set labels.
 
     Returns:
         StackingClassifier: Trained stacking model.
         numpy.ndarray: Test features.
         numpy.ndarray: Test labels.
     """
-    # Handle raw text data if embeddings are not provided
-    if X_embeddings is None:
-        if X is None or y is None:
-            raise ValueError("Both `X` and `y` must be provided if `X_embeddings` is not supplied.")
-        
-        # Apply additional preprocessing to text data
-        print("Preprocessing text data...")
-        X = X.apply(preprocess_text)
-
-        # Vectorize text data using TF-IDF
-        print("Vectorizing text data...")
-        X_embeddings, _ = vectorize_data(X, max_features=5000)
-
-    # Split data into training and test sets
-    print("Splitting data...")
-    X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
+    # Ensure input data is 2D
+    if len(X_train.shape) != 2 or len(X_test.shape) != 2:
+        raise ValueError("Input features must be 2-dimensional arrays.")
 
     # Define base models and meta-model for stacking
     print("Defining models...")
@@ -68,11 +56,7 @@ def train_run14(X_embeddings=None, X=None, y=None):
 
     # Train the stacking model
     print("Training stacking model...")
-    try:
-        stack_model.fit(X_train, y_train)
-    except ValueError as e:
-        print(f"Error during training: {e}")
-        raise
+    stack_model.fit(X_train, y_train)
 
     print("Training completed.")
 

@@ -1,13 +1,25 @@
-from common import split_data
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, BatchNormalization, LeakyReLU
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import ReduceLROnPlateau
 from tensorflow.keras.regularizers import l2
+import numpy as np
 
-def train_run1(X_embeddings, X, y):
-    X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
-
+def train_run1(X_train, y_train, X_test, y_test):
+    """
+    Trains a neural network using the provided training and testing sets.
+    
+    Parameters:
+        X_train (np.ndarray): Training set features.
+        y_train (np.ndarray): Training set labels.
+        X_test (np.ndarray): Test set features.
+        y_test (np.ndarray): Test set labels.
+    
+    Returns:
+        model: Trained Keras model.
+        X_test: Test set features.
+        y_test: Test set labels.
+    """
     # Definicja modelu
     model = Sequential([
         Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),
@@ -34,7 +46,8 @@ def train_run1(X_embeddings, X, y):
         epochs=20,
         batch_size=64,
         validation_data=(X_test, y_test),
-        callbacks=[lr_scheduler]
+        callbacks=[lr_scheduler],
+        verbose=1
     )
 
     return model, X_test, y_test
