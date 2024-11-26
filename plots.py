@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import os
 
 # Specify the folder containing the files
-folder_path = 'C:\\Users\\Vadym\\Documents\\magisterka\\results\\results_3_one_shot\\'  # Ensure trailing slash
+folder_path = 'C:\\Users\\Vadym\\Documents\\magisterka\\results\\results_1_classic\\'  # Ensure trailing slash
 
 # Specify the folder to save plots
-plots_output_path = 'C:\\Users\\Vadym\\Documents\\magisterka\\plots\\results_3_one_shot\\'  # Ensure trailing slash
+plots_output_path = 'C:\\Users\\Vadym\\Documents\\magisterka\\plots\\results_1_classic\\'  # Ensure trailing slash
 os.makedirs(plots_output_path, exist_ok=True)  # Create the directory if it doesn't exist
 
 # Create explicit file paths for results and PR curve files (1 to 16)
@@ -35,7 +35,7 @@ for file in pr_curve_files:
         pr_curves[run_name] = pd.read_csv(file)
 
 # Create comparison plots for each metric across all runs
-metrics = ["Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC", "MCC", "Log Loss"]
+metrics = ["Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC", "MCC", "Log Loss", "Cohen's Kappa", "Execution Time (s)"]
 if not all_results.empty:
     for metric in metrics:
         if metric in all_results.columns:
