@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 from common import evaluate_model, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, split_data, split_data_few_shot, split_data_one_shot, vectorize_data, get_transformer_embeddings
 
 # Ścieżki do katalogów z metodami
@@ -44,54 +45,55 @@ def get_embeddings(option, X, y):
 
 def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
     """Uruchamia wybraną metodę na podstawie numeru."""
+    start_time = time.time()
     if method_number == 1:
-        model, X_test, y_test = train_run1(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run1(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run1", output_path)
     elif method_number == 2:
-        model, X_test, y_test = train_run2(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run2(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run2", output_path)
     elif method_number == 3:
-        model, X_test, y_test = train_run3(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run3(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run3", output_path)
     elif method_number == 4:
-        model, X_test, y_test = train_run4(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run4(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run4", output_path)
     elif method_number == 5:
-        model, meta_test, y_test = train_run5(X_train, y_train, X_test, y_test)
+        model, meta_test, y_test = train_run5(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, meta_test, y_test, "run5", output_path)
     elif method_number == 6:
-        model, meta_test, y_test = train_run6(X_train, y_train, X_test, y_test)
+        model, meta_test, y_test = train_run6(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, meta_test, y_test, "run6", output_path)
     elif method_number == 7:
-        model, X_test, y_test = train_run7(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run7(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run7", output_path)
     elif method_number == 8:
-        model, X_test, y_test = train_run8(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run8(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run8", output_path, False)
     elif method_number == 9:
-        model, X_test, y_test = train_run9(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run9(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run9", output_path)
     elif method_number == 10:
-        model, X_test, y_test = train_run10(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run10(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run10", output_path)
     elif method_number == 11:
-        model, X_test, y_test = train_run11(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run11(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run11", output_path)
     elif method_number == 12:
-        models = train_run12(X_train, y_train, X_test, y_test)
+        models = train_run12(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(models["RandomForest"][0], models["RandomForest"][1], models["RandomForest"][2], "run12_rf", output_path)
         evaluate_model(models["CatBoost"][0], models["CatBoost"][1], models["CatBoost"][2], "run12_catboost", output_path)
     elif method_number == 13:
-        model, X_test, y_test = train_run13(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run13(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run13", output_path)
     elif method_number == 14:
-        model, X_test, y_test = train_run14(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run14(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run14", output_path)
     elif method_number == 15:
-        model, X_test, y_test = train_run15(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run15(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run15", output_path)
     elif method_number == 16:
-        model, X_test, y_test = train_run16(X_train, y_train, X_test, y_test)
+        model, X_test, y_test = train_run16(X_train, y_train, X_test, y_test, start_time)
         evaluate_model(model, X_test, y_test, "run16", output_path)
     else:
         print(f"Metoda {method_number} nie istnieje!")

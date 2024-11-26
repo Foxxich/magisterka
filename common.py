@@ -190,9 +190,7 @@ def split_data_few_shot(X, y, few_shot_examples=5):
 
     return X_train, X_test, y_train, y_test
 
-def evaluate_model(model, X_test, y_test, run_type, output_path, flatten=True):
-    start_time = time.time()
-
+def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, flatten=True):
     # Cross-validation metrics
     cv_accuracy_mean = None
     cv_accuracy_std = None
