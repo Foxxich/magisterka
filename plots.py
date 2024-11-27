@@ -2,6 +2,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+# Helper function to remove outliers
+def remove_outliers(data, column):
+    """Remove values that are far outside the interquartile range (IQR)."""
+    Q1 = data[column].quantile(0.25)  # First quartile (25th percentile)
+    Q3 = data[column].quantile(0.75)  # Third quartile (75th percentile)
+    IQR = Q3 - Q1  # Interquartile range
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]
+
 # Base directory for datasets
 base_folder = 'C:\\Users\\Vadym\\Documents\\magisterka\\results\\'
 plot_base_folder = 'C:\\Users\\Vadym\\Documents\\magisterka\\plots\\'
@@ -11,7 +21,7 @@ folder_types = ['classic', 'few_shot', 'one_shot']
 folders = [f"results_{i}_{ft}" for ft in folder_types for i in range(1, 4)]
 
 # Runs to process
-runs = list(range(1, 17))  # Runs from 1 to 4
+runs = list(range(1, 17))  # Runs from 1 to 16
 special_run = 12  # Special handling for run12_catboost and run12_rf
 
 for folder in folders:
@@ -62,8 +72,13 @@ for folder in folders:
     if not all_results.empty:
         for metric in metrics:
             if metric in all_results.columns:
+                data_to_plot = all_results
+                if metric == "Execution Time (s)":
+                    # Remove outliers for "Execution Time (s)"
+                    data_to_plot = remove_outliers(all_results, metric)
+
                 plt.figure(figsize=(10, 6))
-                plt.bar(all_results['Run'], all_results[metric], color='skyblue')
+                plt.bar(data_to_plot['Run'], data_to_plot[metric], color='skyblue')
                 plt.title(f"Comparison of {metric} Across Runs", fontsize=14)
                 plt.xlabel("Runs", fontsize=12)
                 plt.ylabel(metric, fontsize=12)
