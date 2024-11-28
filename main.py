@@ -4,7 +4,7 @@ import time
 from common import evaluate_model, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, split_data, split_data_few_shot, split_data_one_shot, vectorize_data, get_transformer_embeddings
 
 # Ścieżki do katalogów z metodami
-for i in range(1, 17):
+for i in range(1, 18):
     sys.path.append(os.path.join(os.getcwd(), f'article{i}'))
 
 # Import funkcji treningowych
@@ -24,6 +24,10 @@ from run13 import train_run13
 from run14 import train_run14
 from run15 import train_run15
 from run16 import train_run16
+from my_run import train_run17
+from my_run import train_run18
+from my_run import train_run19
+from my_run import train_run20
 
 # Ładowanie zmiennych środowiskowych
 from dotenv import load_dotenv
@@ -95,6 +99,18 @@ def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
     elif method_number == 16:
         model, X_test, y_test = train_run16(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run16", output_path, start_time)
+    elif method_number == 17:
+        model, X_test, y_test = train_run17(X_train, y_train, X_test, y_test)
+        evaluate_model(model, X_test, y_test, "run17", output_path, start_time)
+    elif method_number == 18:
+        model, X_test, y_test = train_run18(X_train, y_train, X_test, y_test)
+        evaluate_model(model, X_test, y_test, "run18", output_path, start_time)
+    elif method_number == 19:
+        model, X_test, y_test = train_run19(X_train, y_train, X_test, y_test)
+        evaluate_model(model, X_test, y_test, "run19", output_path, start_time)
+    elif method_number == 20:
+        model, X_test, y_test = train_run20(X_train, y_train, X_test, y_test)
+        evaluate_model(model, X_test, y_test, "run20", output_path, start_time)
     else:
         print(f"Metoda {method_number} nie istnieje!")
 
@@ -106,13 +122,13 @@ if __name__ == "__main__":
 
     if representation_input == "all":
         print("Uruchamiam wszystkie reprezentacje...")
-        for rep in ["1"]:
+        for rep in ["3"]:
             print(f"Generowanie reprezentacji kontekstowej {rep}...")
             X_embeddings = get_embeddings(rep, X, y)
             if X_embeddings is not None:
                 print(f"Rozpoczynanie metod dla reprezentacji {rep}...")
-                for split_type in ["classic", "one_shot", "few_shot"]:
-                    for method_number in range(1,17):
+                for split_type in ["few_shot"]:
+                    for method_number in range(19,21):
                         print(f"Uruchamianie metody {method_number} dla reprezentacji {rep} i trybu {split_type}...")
                         if split_type == "classic":
                             X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
