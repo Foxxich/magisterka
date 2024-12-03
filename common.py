@@ -1,16 +1,11 @@
 import os
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 import time
 import numpy as np
 import os
-import pandas as pd
-import time
-from transformers import BertTokenizer, TFBertModel
-from transformers import RobertaTokenizer, TFRobertaModel
-from transformers import AutoTokenizer, AutoModel
-import torch
+from transformers import BertTokenizer
+from transformers import RobertaTokenizer
 from sklearn.metrics import (
     f1_score,
     roc_auc_score,
@@ -141,10 +136,25 @@ def vectorize_data(X, max_features=5000):
     tfidf = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1, 2))
     return tfidf.fit_transform(X), tfidf
 
-def split_data(X, y, test_size=0.2):
-    return train_test_split(X, y, test_size=test_size, random_state=42)
-import pandas as pd
-import numpy as np
+def split_data(X, y, unseen_class_count=1):
+    if isinstance(X, np.ndarray):
+        X = pd.DataFrame(X)
+    if isinstance(y, np.ndarray):
+        y = pd.Series(y)
+
+    # Wyznacz widoczne i niewidoczne klasy
+    classes = y.unique()
+    unseen_classes = classes[-unseen_class_count:]  # Ostatnie klasy jako niewidoczne
+    seen_mask = ~y.isin(unseen_classes)
+    unseen_mask = ~seen_mask
+
+    # Podział na zbiór treningowy (widoczne klasy) i testowy (niewidoczne klasy)
+    X_train = X[seen_mask].reset_index(drop=True)
+    y_train = y[seen_mask].reset_index(drop=True)
+    X_test = X[unseen_mask].reset_index(drop=True)
+    y_test = y[unseen_mask].reset_index(drop=True)
+
+    return X_train, X_test, y_train, y_test
 
 def split_data_one_shot(X, y):
     """Podział danych na podstawie jednego przykładu na klasę."""

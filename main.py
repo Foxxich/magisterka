@@ -122,13 +122,18 @@ if __name__ == "__main__":
 
     if representation_input == "all":
         print("Uruchamiam wszystkie reprezentacje...")
-        for rep in ["3"]:
+        print("Wybierz numer metody (1-20) lub wpisz 'all', aby uruchomić wszystkie:")
+        method_input = input().strip().lower()
+        method_number = 0
+        if method_input == "all":
+            method_number = 20
+        for rep in ["1","2", "3"]:
             print(f"Generowanie reprezentacji kontekstowej {rep}...")
             X_embeddings = get_embeddings(rep, X, y)
             if X_embeddings is not None:
                 print(f"Rozpoczynanie metod dla reprezentacji {rep}...")
-                for split_type in ["few_shot"]:
-                    for method_number in range(19,21):
+                for split_type in ["classic", "one_shot", "few_shot"]:
+                    for method_number in range(1, method_number):
                         print(f"Uruchamianie metody {method_number} dla reprezentacji {rep} i trybu {split_type}...")
                         if split_type == "classic":
                             X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
