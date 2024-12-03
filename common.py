@@ -3,8 +3,13 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 import time
 import numpy as np
-import os
+from transformers import BertTokenizer, TFBertForSequenceClassification
+from transformers import BertTokenizer, TFBertForSequenceClassification
+from sentence_transformers import SentenceTransformer
+from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
+from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
 from transformers import BertTokenizer
+from sklearn.model_selection import train_test_split
 from transformers import RobertaTokenizer
 from sklearn.metrics import (
     f1_score,
@@ -20,61 +25,44 @@ from sklearn.metrics import (
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 
 def load_and_preprocess_data():
-    # Load datasets
-    fake_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\Fake.csv")
-    true_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\True.csv")
+    # Wczytanie zbiorów danych
+    project_root = os.getcwd()
 
-    # Add labels
+    # Build paths to the dataset files
+    fake_news_path = os.path.join(project_root, "datasets", "ISOT_dataset", "Fake.csv")
+    true_news_path = os.path.join(project_root, "datasets", "ISOT_dataset", "True.csv")
+
+    # Load the datasets
+    fake_news = pd.read_csv(fake_news_path)
+    true_news = pd.read_csv(true_news_path)
+
+    # Dodanie etykiet
     fake_news['label'] = 0
     true_news['label'] = 1
 
-    # Combine datasets
+    # Połączenie zbiorów danych
     data = pd.concat([fake_news, true_news]).reset_index(drop=True)
 
-    # Features and labels
+    # Funkcje i etykiety
     X = data['text']
     y = data['label']
 
     return X, y
-
-def load_shuffle_preprocess_data():
-    # Load datasets
-    fake_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\Fake.csv")
-    true_news = pd.read_csv("C:\\Users\\Vadym\\Documents\\magisterka\\datasets\\ISOT_dataset\\True.csv")
-
-    # Add labels
-    fake_news['label'] = 0
-    true_news['label'] = 1
-
-    # Combine datasets
-    data = pd.concat([fake_news, true_news]).reset_index(drop=True)
-    data = data.sample(frac=1).reset_index(drop=True)
-
-    # Features and labels
-    X = data['text']
-    y = data['label']
-
-    return X, y
-
-from transformers import BertTokenizer, TFBertForSequenceClassification
-
-from transformers import BertTokenizer, TFBertForSequenceClassification
-import tensorflow as tf
-import numpy as np
 
 def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
+    # Tokenizacja tekstów dla modelu BERT
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     bert_model = TFBertForSequenceClassification.from_pretrained(
         'bert-base-uncased',
         num_labels=num_labels,
     )
 
-    # Tokenize all texts in a single call to save time
+    # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu
     inputs = tokenizer(
         texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
     )
 
-    # Process in batches
+    # Przetwarzanie w partiach
     embeddings = []
     for i in range(0, len(texts), batch_size):
         batch_inputs = {
@@ -85,23 +73,20 @@ def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
 
     return np.vstack(embeddings)
 
-from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
-
-from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
-
 def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
+    # Tokenizacja tekstów dla modelu RoBERTa
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
     roberta_model = TFRobertaForSequenceClassification.from_pretrained(
         'roberta-base',
         num_labels=num_labels,
     )
 
-    # Tokenize all texts in a single call to save time
+    # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu
     inputs = tokenizer(
         texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
     )
 
-    # Process in batches
+    # Przetwarzanie w partiach
     embeddings = []
     for i in range(0, len(texts), batch_size):
         batch_inputs = {
@@ -112,49 +97,21 @@ def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
 
     return np.vstack(embeddings)
 
-from sentence_transformers import SentenceTransformer
-import numpy as np
-
 def get_transformer_embeddings(texts, model_name="all-MiniLM-L6-v2"):
-    """
-    Generate embeddings using Sentence Transformers.
-    Args:
-        texts (list of str): Input texts to embed.
-        model_name (str): Pretrained Sentence Transformer model name.
-    Returns:
-        np.ndarray: Embeddings for the given texts.
-    """
-    # Load the Sentence Transformer model
     model = SentenceTransformer(model_name)
-
-    # Generate embeddings
+    # Generowanie osadzeń
     embeddings = model.encode(texts, show_progress_bar=True)
 
     return np.array(embeddings)
 
 def vectorize_data(X, max_features=5000):
+    # Wejściowe dane tekstowe są przekształcane za pomocą TF-IDF
     tfidf = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1, 2))
     return tfidf.fit_transform(X), tfidf
 
-def split_data(X, y, unseen_class_count=1):
-    if isinstance(X, np.ndarray):
-        X = pd.DataFrame(X)
-    if isinstance(y, np.ndarray):
-        y = pd.Series(y)
-
-    # Wyznacz widoczne i niewidoczne klasy
-    classes = y.unique()
-    unseen_classes = classes[-unseen_class_count:]  # Ostatnie klasy jako niewidoczne
-    seen_mask = ~y.isin(unseen_classes)
-    unseen_mask = ~seen_mask
-
-    # Podział na zbiór treningowy (widoczne klasy) i testowy (niewidoczne klasy)
-    X_train = X[seen_mask].reset_index(drop=True)
-    y_train = y[seen_mask].reset_index(drop=True)
-    X_test = X[unseen_mask].reset_index(drop=True)
-    y_test = y[unseen_mask].reset_index(drop=True)
-
-    return X_train, X_test, y_train, y_test
+def split_data(X, y, test_size=0.2):
+    # Podział danych na zbiory treningowe i testowe
+    return train_test_split(X, y, test_size=test_size, random_state=42)
 
 def split_data_one_shot(X, y):
     """Podział danych na podstawie jednego przykładu na klasę."""
@@ -201,7 +158,7 @@ def split_data_few_shot(X, y, few_shot_examples=5):
     return X_train, X_test, y_train, y_test
 
 def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, flatten=True):
-    # Cross-validation metrics
+    # Metryki walidacji krzyżowej
     cv_accuracy_mean = None
     cv_accuracy_std = None
     try:
@@ -209,93 +166,123 @@ def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, fla
         cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring="accuracy")
         cv_accuracy_mean = cv_scores.mean()
         cv_accuracy_std = cv_scores.std()
-        print(f"Cross-Validation Accuracy Scores: {cv_scores}")
-        print(f"Mean CV Accuracy: {cv_accuracy_mean:.4f}, Std Dev: {cv_accuracy_std:.4f}")
+        print(f"Wyniki dokładności walidacji krzyżowej: {cv_scores}")
+        print(f"Średnia dokładność CV: {cv_accuracy_mean:.4f}, Odchylenie standardowe: {cv_accuracy_std:.4f}")
     except Exception as e:
-        print(f"Could not calculate cross-validation metrics: {e}")
+        print(f"Nie można obliczyć metryk walidacji krzyżowej: {e}")
 
-    # Predictions
-    if hasattr(model, "predict_proba"):  # For scikit-learn models
+    # Predykcje
+    if hasattr(model, "predict_proba"):  # Dla modeli scikit-learn
         y_pred_proba = model.predict_proba(X_test)
-        # Handle single-column predict_proba case
+        # Obsługa przypadku pojedynczej kolumny predict_proba
         if y_pred_proba.shape[1] == 1:
             y_pred_proba = np.hstack([1 - y_pred_proba, y_pred_proba])
-        y_pred_proba = y_pred_proba[:, 1]  # Use probabilities for the positive class
-    else:  # For Keras Sequential models
+        y_pred_proba = y_pred_proba[:, 1]  # Użyj prawdopodobieństw dla klasy pozytywnej
+    else:  # Dla modeli Sequential w Keras
         if flatten:
             y_pred_proba = model.predict(X_test).flatten()
         else:
             y_pred_proba = model.predict(X_test)
 
-    # Convert probabilities to binary predictions
+    # Konwersja prawdopodobieństw na predykcje binarne
     y_pred = (y_pred_proba > 0.5).astype(int)
 
-    # Initialize metrics dictionary
+    # Inicjalizacja słownika metryk
+    metric_functions = {
+        "Accuracy": (accuracy_score, {"y_true": y_test, "y_pred": y_pred}),
+        "Precision": (precision_score, {"y_true": y_test, "y_pred": y_pred, "zero_division": 0}),
+        "Recall": (recall_score, {"y_true": y_test, "y_pred": y_pred, "zero_division": 0}),
+        "F1-Score": (f1_score, {"y_true": y_test, "y_pred": y_pred}),
+        "ROC-AUC": (roc_auc_score, {"y_true": y_test, "y_score": y_pred_proba}),
+        "MCC": (matthews_corrcoef, {"y_true": y_test, "y_pred": y_pred}),
+        "Log Loss": (log_loss, {"y_true": y_test, "y_pred": y_pred_proba}),
+        "Cohen's Kappa": (cohen_kappa_score, {"y1": y_test, "y2": y_pred})
+    }
+
+    # Obliczanie metryk z obsługą wyjątków
     metrics = {}
+    for metric_name, (func, params) in metric_functions.items():
+        try:
+            metrics[metric_name] = func(**params)
+        except ValueError:
+            metrics[metric_name] = None
 
-    # Metrics calculation with checks
-    try:
-        metrics["Accuracy"] = accuracy_score(y_test, y_pred)
-    except ValueError:
-        metrics["Accuracy"] = None
-
-    try:
-        metrics["Precision"] = precision_score(y_test, y_pred, zero_division=0)
-    except ValueError:
-        metrics["Precision"] = None
-
-    try:
-        metrics["Recall"] = recall_score(y_test, y_pred, zero_division=0)
-    except ValueError:
-        metrics["Recall"] = None
-
-    try:
-        metrics["F1-Score"] = f1_score(y_test, y_pred)
-    except ValueError:
-        metrics["F1-Score"] = None
-
-    try:
-        metrics["ROC-AUC"] = roc_auc_score(y_test, y_pred_proba)
-    except ValueError:
-        metrics["ROC-AUC"] = None
-
-    try:
-        metrics["MCC"] = matthews_corrcoef(y_test, y_pred)
-    except ValueError:
-        metrics["MCC"] = None
-
-    try:
-        metrics["Log Loss"] = log_loss(y_test, y_pred_proba)
-    except ValueError:
-        metrics["Log Loss"] = None
-
-    try:
-        metrics["Cohen's Kappa"] = cohen_kappa_score(y_test, y_pred)
-    except ValueError:
-        metrics["Cohen's Kappa"] = None
-
-    # Execution time
+    # Czas wykonania
     metrics["Execution Time (s)"] = time.time() - start_time
 
-    # Add cross-validation metrics
+    # Dodanie metryk walidacji krzyżowej
     metrics["CV Accuracy (Mean)"] = cv_accuracy_mean
     metrics["CV Accuracy (Std Dev)"] = cv_accuracy_std
 
-    # Save metrics
+    # Zapis metryk
     results_file = os.path.join(output_path, f"{run_type}_results.csv")
     pd.DataFrame([metrics]).to_csv(results_file, index=False)
-    print(f"Saved results for {run_type}")
+    print(f"Zapisano wyniki dla {run_type}")
 
-    # Precision-Recall curve
+    # Krzywa Precision-Recall
     try:
         precision, recall, _ = precision_recall_curve(y_test, y_pred_proba)
         pr_curve_file = os.path.join(output_path, f"{run_type}_pr_curve.csv")
         pd.DataFrame({"Precision": precision, "Recall": recall}).to_csv(pr_curve_file, index=False)
-        print(f"Saved Precision-Recall curve for {run_type}")
+        print(f"Zapisano krzywą Precision-Recall dla {run_type}")
     except ValueError:
-        print(f"Could not calculate Precision-Recall curve for {run_type}")
+        print(f"Nie można obliczyć krzywej Precision-Recall dla {run_type}")
 
-    # Print metrics
-    print("Evaluation Metrics:")
+    # Wyświetlenie metryk
+    print("Metryki oceny:")
     for metric, value in metrics.items():
         print(f"{metric}: {value:.4f}" if value is not None else f"{metric}: N/A")
+        
+        
+def evaluate_model15(model, X_test, y_test, run_type, output_path, start_time):
+    """
+    Ewaluacja modelu z wykorzystaniem walidacji krzyżowej i obliczanie metryk.
+    """
+    from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score, matthews_corrcoef, log_loss, cohen_kappa_score, precision_recall_curve
+    import pandas as pd
+    import os
+    import time
+
+    # Metryki walidacji krzyżowej
+    cv_accuracy_mean = None
+    cv_accuracy_std = None
+    try:
+        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+        cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring="accuracy")
+        cv_accuracy_mean = cv_scores.mean()
+        cv_accuracy_std = cv_scores.std()
+        print(f"Wyniki dokładności walidacji krzyżowej: {cv_scores}")
+        print(f"Średnia dokładność CV: {cv_accuracy_mean:.4f}, Odchylenie standardowe: {cv_accuracy_std:.4f}")
+    except Exception as e:
+        print(f"Nie można obliczyć metryk walidacji krzyżowej: {e}")
+
+    # Predykcje
+    y_pred_proba = model.predict_proba(X_test)
+    y_pred = (y_pred_proba > 0.5).astype(int)
+
+    # Inicjalizacja słownika metryk
+    metric_functions = {
+        "Accuracy": (accuracy_score, {"y_true": y_test, "y_pred": y_pred}),
+        "Precision": (precision_score, {"y_true": y_test, "y_pred": y_pred, "zero_division": 0}),
+        "Recall": (recall_score, {"y_true": y_test, "y_pred": y_pred, "zero_division": 0}),
+        "F1-Score": (f1_score, {"y_true": y_test, "y_pred": y_pred}),
+        "ROC-AUC": (roc_auc_score, {"y_true": y_test, "y_score": y_pred_proba}),
+        "MCC": (matthews_corrcoef, {"y_true": y_test, "y_pred": y_pred}),
+    }
+
+    metrics = {}
+    for metric_name, (func, params) in metric_functions.items():
+        try:
+            metrics[metric_name] = func(**params)
+        except ValueError:
+            metrics[metric_name] = None
+
+    # Czas wykonania
+    metrics["Execution Time (s)"] = time.time() - start_time
+    metrics["CV Accuracy (Mean)"] = cv_accuracy_mean
+    metrics["CV Accuracy (Std Dev)"] = cv_accuracy_std
+
+    # Zapis metryk
+    results_file = os.path.join(output_path, f"{run_type}_results.csv")
+    pd.DataFrame([metrics]).to_csv(results_file, index=False)
+    print(f"Zapisano wyniki dla {run_type}")

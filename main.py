@@ -1,10 +1,10 @@
 import os
 import sys
 import time
-from common import evaluate_model, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, split_data, split_data_few_shot, split_data_one_shot, vectorize_data, get_transformer_embeddings
+from common import evaluate_model, evaluate_model15, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, split_data, split_data_few_shot, split_data_one_shot, get_transformer_embeddings
 
 # Ścieżki do katalogów z metodami
-for i in range(1, 18):
+for i in range(1, 17):
     sys.path.append(os.path.join(os.getcwd(), f'article{i}'))
 
 # Import funkcji treningowych
@@ -51,8 +51,10 @@ def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
     """Uruchamia wybraną metodę na podstawie numeru."""
     start_time = time.time()
     if method_number == 1:
-        model, X_test, y_test = train_run1(X_train, y_train, X_test, y_test)
-        evaluate_model(model, X_test, y_test, "run1", output_path, start_time)
+        models, X_test, y_test = train_run1(X_train, y_train, X_test, y_test)
+        for i, model in enumerate(models):
+            run_name = f"run1-{i + 1}"  # Unikalna nazwa dla każdego modelu
+            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)
     elif method_number == 2:
         model, X_test, y_test = train_run2(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run2", output_path, start_time)
@@ -85,8 +87,8 @@ def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
         evaluate_model(model, X_test, y_test, "run11", output_path, start_time)
     elif method_number == 12:
         models = train_run12(X_train, y_train, X_test, y_test)
-        evaluate_model(models["RandomForest"][0], models["RandomForest"][1], models["RandomForest"][2], "run12_rf", output_path, start_time)
-        evaluate_model(models["CatBoost"][0], models["CatBoost"][1], models["CatBoost"][2], "run12_catboost", output_path, start_time)
+        evaluate_model(models["RandomForest"][0], models["RandomForest"][1], models["RandomForest"][2], "run12-rf", output_path, start_time)
+        evaluate_model(models["CatBoost"][0], models["CatBoost"][1], models["CatBoost"][2], "run12-catboost", output_path, start_time)
     elif method_number == 13:
         model, X_test, y_test = train_run13(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run13", output_path, start_time)
@@ -94,8 +96,10 @@ def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
         model, X_test, y_test = train_run14(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run14", output_path, start_time)
     elif method_number == 15:
-        model, X_test, y_test = train_run15(X_train, y_train, X_test, y_test)
-        evaluate_model(model, X_test, y_test, "run15", output_path, start_time)
+        models, X_test, y_test = train_run15(X_train, y_train, X_test, y_test)
+        for i, model in enumerate(models):
+            run_name = f"run15-{i + 1}"  # Unikalna nazwa dla każdego modelu
+            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)
     elif method_number == 16:
         model, X_test, y_test = train_run16(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run16", output_path, start_time)
@@ -122,18 +126,23 @@ if __name__ == "__main__":
 
     if representation_input == "all":
         print("Uruchamiam wszystkie reprezentacje...")
-        print("Wybierz numer metody (1-20) lub wpisz 'all', aby uruchomić wszystkie:")
-        method_input = input().strip().lower()
-        method_number = 0
-        if method_input == "all":
-            method_number = 20
-        for rep in ["1","2", "3"]:
+        print("Wybierz numer metody początkującej (1-20) lub wpisz 'all', aby uruchomić wszystkie:")
+        method_input_first = input().strip().lower()
+        method_number_first = 1
+        method_number_last = 20
+        if method_input_first != "all":
+            method_number_first = int(method_input_first)
+            print("Wybierz numer metody ostatecznej (1-20)")
+            method_input_last = input().strip().lower()
+            method_number_last = int(method_input_last) + 1
+
+        for rep in ["1", "2", "3"]:
             print(f"Generowanie reprezentacji kontekstowej {rep}...")
             X_embeddings = get_embeddings(rep, X, y)
             if X_embeddings is not None:
                 print(f"Rozpoczynanie metod dla reprezentacji {rep}...")
                 for split_type in ["classic", "one_shot", "few_shot"]:
-                    for method_number in range(1, method_number):
+                    for method_number in range(method_number_first, method_number_last):
                         print(f"Uruchamianie metody {method_number} dla reprezentacji {rep} i trybu {split_type}...")
                         if split_type == "classic":
                             X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
@@ -147,19 +156,25 @@ if __name__ == "__main__":
                             print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")
 
     else:
+        print("Wybierz numer metody początkującej (1-20) lub wpisz 'all', aby uruchomić wszystkie:")
+        method_input_first = input().strip().lower()
+        method_number_first = 1
+        method_number_last = 20
+        if method_input_first != "all":
+            method_number_first = int(method_input_first)
+            print("Wybierz numer metody ostatecznej (1-20)")
+            method_input_last = input().strip().lower()
+            method_number_last = int(method_input_last) + 1
+
+        print("Wybierz tryb podziału danych (1-3) lub wpisz 'all', aby uruchomić wszystkie:\n1 - Klasyczny split\n2 - One Shot\n3 - Few Shot")
+        split_input = input().strip().lower()
         print(f"Generowanie reprezentacji kontekstowej {representation_input}...")
         X_embeddings = get_embeddings(representation_input, X, y)
         if X_embeddings is not None:
-            print("Wybierz numer metody (1-16) lub wpisz 'all', aby uruchomić wszystkie:")
-            method_input = input().strip().lower()
-
-            print("Wybierz tryb podziału danych (1-3) lub wpisz 'all', aby uruchomić wszystkie:\n1 - Klasyczny split\n2 - One Shot\n3 - Few Shot")
-            split_input = input().strip().lower()
-
             if split_input == "all":
                 for split_type in ["classic", "one_shot", "few_shot"]:
-                    if method_input == "all":
-                        for method_number in range(1, 17):
+                    if method_number_first == "all":
+                        for method_number in range(1, method_number_last + 1):
                             print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input} i trybu {split_type}...")
                             if split_type == "classic":
                                 X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
@@ -173,18 +188,18 @@ if __name__ == "__main__":
                                 print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")
 
                     else:
-                        method_number = int(method_input)
-                        print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input} i trybu {split_type}...")
-                        if split_type == "classic":
-                            X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
-                        elif split_type == "one_shot":
-                            X_train, X_test, y_train, y_test = split_data_one_shot(X_embeddings, y)
-                        elif split_type == "few_shot":
-                            X_train, X_test, y_train, y_test = split_data_few_shot(X_embeddings, y)
-                        try:
-                            run_method(method_number, X_train, y_train, X_test, y_test, f"results_{representation_input}_{split_type}")
-                        except Exception as e:
-                            print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")
+                        for method_number in range(method_number_first, method_number_last):
+                            print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input} i trybu {split_type}...")
+                            if split_type == "classic":
+                                X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
+                            elif split_type == "one_shot":
+                                X_train, X_test, y_train, y_test = split_data_one_shot(X_embeddings, y)
+                            elif split_type == "few_shot":
+                                X_train, X_test, y_train, y_test = split_data_few_shot(X_embeddings, y)
+                            try:
+                                run_method(method_number, X_train, y_train, X_test, y_test, f"results_{representation_input}_{split_type}")
+                            except Exception as e:
+                                print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")
 
             else:
                 if split_input == "1":
@@ -197,8 +212,8 @@ if __name__ == "__main__":
                     print("Nieprawidłowy wybór trybu. Domyślnie używam klasycznego splitu.")
                     split_type = "classic"
 
-                if method_input == "all":
-                    for method_number in range(1, 17):
+                if method_input_first == "all":
+                    for method_number in range(1, method_number_last + 1):
                         print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input} i trybu {split_type}...")
                         if split_type == "classic":
                             X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
@@ -212,15 +227,15 @@ if __name__ == "__main__":
                             print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")
 
                 else:
-                    method_number = int(method_input)
-                    print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input} i trybu {split_type}...")
-                    if split_type == "classic":
-                        X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
-                    elif split_type == "one_shot":
-                        X_train, X_test, y_train, y_test = split_data_one_shot(X_embeddings, y)
-                    elif split_type == "few_shot":
-                        X_train, X_test, y_train, y_test = split_data_few_shot(X_embeddings, y)
-                    try:
-                        run_method(method_number, X_train, y_train, X_test, y_test, f"results_{representation_input}_{split_type}")
-                    except Exception as e:
-                        print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")
+                    for method_number in range(method_number_first, method_number_last):
+                        print(f"Uruchamianie metody {method_number} dla reprezentacji {representation_input} i trybu {split_type}...")
+                        if split_type == "classic":
+                            X_train, X_test, y_train, y_test = split_data(X_embeddings, y)
+                        elif split_type == "one_shot":
+                            X_train, X_test, y_train, y_test = split_data_one_shot(X_embeddings, y)
+                        elif split_type == "few_shot":
+                            X_train, X_test, y_train, y_test = split_data_few_shot(X_embeddings, y)
+                        try:
+                            run_method(method_number, X_train, y_train, X_test, y_test, f"results_{representation_input}_{split_type}")
+                        except Exception as e:
+                            print(f"Wystąpił błąd podczas uruchamiania metody {method_number} dla trybu {split_type}: {e}")

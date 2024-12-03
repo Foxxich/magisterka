@@ -1,31 +1,31 @@
 from sklearn.ensemble import RandomForestClassifier
 from catboost import CatBoostClassifier
-import numpy as np
+
 
 def train_run12(X_train, y_train, X_test, y_test):
     """
-    Trains and evaluates Random Forest and CatBoost classifiers.
+    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.
 
-    Parameters:
-        X_train (array-like): Training set features.
-        y_train (array-like): Training set labels.
-        X_test (array-like): Test set features.
-        y_test (array-like): Test set labels.
+    Parametry:
+        X_train (array-like): Cechy zbioru treningowego.
+        y_train (array-like): Etykiety zbioru treningowego.
+        X_test (array-like): Cechy zbioru testowego.
+        y_test (array-like): Etykiety zbioru testowego.
 
-    Returns:
-        dict: A dictionary containing trained models and their corresponding test datasets.
+    Zwraca:
+        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.
     """
-    # Ensure the input embeddings are 2D
+    # Upewnij się, że dane wejściowe są 2-wymiarowe
     if len(X_train.shape) != 2 or len(X_test.shape) != 2:
-        raise ValueError("Input features must be 2-dimensional arrays.")
+        raise ValueError("Cechy wejściowe muszą być 2-wymiarowymi tablicami.")
 
-    # Train Random Forest (Bagging)
-    print("Training Random Forest...")
+    # Trening Random Forest (Bagging)
+    print("Trening Random Forest...")
     rf_classifier = RandomForestClassifier(n_estimators=100, max_features='sqrt', random_state=42)
     rf_classifier.fit(X_train, y_train)
 
-    # Train CatBoost (Boosting)
-    print("Training CatBoost...")
+    # Trening CatBoost (Boosting)
+    print("Trening CatBoost...")
     catboost_classifier = CatBoostClassifier(
         iterations=200,
         learning_rate=0.01,
@@ -36,7 +36,7 @@ def train_run12(X_train, y_train, X_test, y_test):
     )
     catboost_classifier.fit(X_train, y_train, eval_set=(X_test, y_test), plot=False)
 
-    # Return both models with their test data for evaluation
+    # Zwróć oba modele wraz z danymi testowymi do oceny
     return {
         "RandomForest": (rf_classifier, X_test, y_test),
         "CatBoost": (catboost_classifier, X_test, y_test)

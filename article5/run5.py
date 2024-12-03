@@ -1,9 +1,6 @@
-from common import load_and_preprocess_data, vectorize_data
 from sklearn.ensemble import RandomForestClassifier
 import xgboost as xgb
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-import numpy as np
 import pandas as pd
 
 def train_run5(X_train, y_train, X_test, y_test):

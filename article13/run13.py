@@ -1,41 +1,51 @@
 from imblearn.combine import SMOTETomek
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from xgboost import XGBClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+from sklearn.ensemble import StackingClassifier
 import numpy as np
 
 def train_run13(X_train, y_train, X_test, y_test):
     """
-    Trains an XGBoost classifier with SMOTETomek for handling class imbalance.
+    Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.
 
-    Parameters:
-        X_train (np.ndarray): Training set features.
-        y_train (array-like): Training set labels.
-        X_test (np.ndarray): Test set features.
-        y_test (array-like): Test set labels.
+    Parametry:
+        X_train (np.ndarray): Macierz cech dla danych treningowych.
+        y_train (np.ndarray): Wektor etykiet dla danych treningowych.
+        X_test (np.ndarray): Macierz cech dla danych testowych.
+        y_test (np.ndarray): Wektor etykiet dla danych testowych.
 
-    Returns:
-        XGBClassifier: Trained XGBoost model.
-        np.ndarray: Test features.
-        np.ndarray: Test labels.
+    Zwraca:
+        StackingClassifier: Wytrenowany model zespołowy typu stacking.
+        np.ndarray: Dane testowe (macierz cech).
+        np.ndarray: Dane testowe (etykiety).
     """
-    # Ensure data is in the correct format
-    if len(X_train.shape) != 2 or len(X_test.shape) != 2:
-        raise ValueError("Input features must be 2-dimensional arrays.")
-
-    # Handle class imbalance using SMOTETomek
+    # Obsługa niezrównoważonych klas za pomocą SMOTETomek
+    # (Kombinacja nadpróbkowania SMOTE i podpróbkowania Tomek Links)
     smotetomek = SMOTETomek(random_state=42)
     X_train_resampled, y_train_resampled = smotetomek.fit_resample(X_train, y_train)
-
-    # Define and train the XGBoost model
-    xgb_model = XGBClassifier(
-        use_label_encoder=False,
-        eval_metric='logloss',
-        scale_pos_weight=len(y_train_resampled) / np.sum(y_train_resampled == 1),
-        n_estimators=200,
-        learning_rate=0.1,
-        max_depth=10,
-        random_state=42
-    )
-    xgb_model.fit(X_train_resampled, y_train_resampled)
-
-    # Return the trained model and test data
-    return xgb_model, X_test, y_test
+    
+    # Definiowanie bazowych klasyfikatorów (uczestnicy zespołu)
+    base_learners = [
+        ('rf', RandomForestClassifier(n_estimators=100, random_state=42)),  # Random Forest
+        ('gb', GradientBoostingClassifier(n_estimators=100, random_state=42)),  # Gradient Boosting
+        ('xgb', XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42))  # XGBoost
+    ]
+    
+    # Definiowanie klasyfikatora meta (uczeń końcowy w stacking)
+    meta_learner = LogisticRegression(random_state=42)
+    
+    # Tworzenie modelu stacking (łączenie bazowych klasyfikatorów)
+    stacking_model = StackingClassifier(estimators=base_learners, final_estimator=meta_learner, cv=5)
+    
+    # Trenowanie modelu stacking na zbalansowanych danych
+    stacking_model.fit(X_train_resampled, y_train_resampled)
+    
+    # Ocena modelu na danych testowych
+    y_pred = stacking_model.predict(X_test)
+    print("Raport klasyfikacji:")
+    print(classification_report(y_test, y_pred))
+    
+    return stacking_model, X_test, y_test

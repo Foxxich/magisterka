@@ -5,29 +5,29 @@ import numpy as np
 
 def train_run6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):
     """
-    Trains a Voting Classifier using AdaBoost and Logistic Regression with BERT embeddings.
+    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.
     
-    Args:
-        X_train (np.ndarray or list): Training set features or original text data.
-        y_train (list): Training set labels.
-        X_test (np.ndarray or list): Test set features or original text data.
-        y_test (list): Test set labels.
-        batch_size (int): Batch size for embedding generation (default: 32).
-        use_bert_embeddings (bool): Whether to generate BERT embeddings from raw text data.
+    Parametry:
+        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.
+        y_train (lista): Etykiety zbioru treningowego.
+        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.
+        y_test (lista): Etykiety zbioru testowego.
+        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).
+        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.
         
-    Returns:
-        model: Trained voting classifier.
-        X_test: Test set embeddings (if generated).
-        y_test: Test set labels.
+    Zwraca:
+        model: Wytrenowany klasyfikator zespołowy.
+        X_test: Osadzenia zbioru testowego (jeśli wygenerowane).
+        y_test: Etykiety zbioru testowego.
     """
-    # Generate BERT embeddings if needed
+    # Generuj osadzenia BERT, jeśli wymagane
     if use_bert_embeddings:
-        # Initialize BERT tokenizer and model
+        # Inicjalizuj tokenizer i model BERT
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
         bert_model = TFBertModel.from_pretrained('bert-base-uncased')
 
         def embed_text_in_batches(texts):
-            # Generate embeddings in batches
+            # Generuj osadzenia w batchach
             embeddings = []
             for i in range(0, len(texts), batch_size):
                 batch_texts = texts[i:i + batch_size]
@@ -36,21 +36,21 @@ def train_run6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddi
                 embeddings.append(outputs.pooler_output.numpy())
             return np.vstack(embeddings)
 
-        # Generate embeddings for training and test sets
+        # Generuj osadzenia dla zbiorów treningowego i testowego
         X_train = embed_text_in_batches(X_train)
         X_test = embed_text_in_batches(X_test)
 
-    # Define base classifiers
+    # Definiuj klasyfikatory bazowe
     ada_boost = AdaBoostClassifier(n_estimators=50, random_state=42)
     logistic_regression = LogisticRegression(max_iter=1000, random_state=42)
 
-    # Define ensemble classifier with soft voting
+    # Definiuj klasyfikator zespołowy z miękkim głosowaniem
     voting_classifier = VotingClassifier(
         estimators=[('ada', ada_boost), ('lr', logistic_regression)],
         voting='soft'
     )
 
-    # Train the ensemble model
+    # Trenuj model zespołowy
     voting_classifier.fit(X_train, y_train)
 
     return voting_classifier, X_test, y_test

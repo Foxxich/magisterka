@@ -1,35 +1,35 @@
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 from xgboost import XGBClassifier
-import numpy as np
+
 
 def train_run8(X_train, y_train, X_test, y_test):
     """
-    Trains a Voting Classifier using RandomForest and XGBoost.
+    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.
 
-    Parameters:
-        X_train (np.ndarray): Training set features.
-        y_train (list or np.ndarray): Training set labels.
-        X_test (np.ndarray): Test set features.
-        y_test (list or np.ndarray): Test set labels.
+    Parametry:
+        X_train (np.ndarray): Cechy zbioru treningowego.
+        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.
+        X_test (np.ndarray): Cechy zbioru testowego.
+        y_test (lista lub np.ndarray): Etykiety zbioru testowego.
 
-    Returns:
-        ensemble_model: Trained Voting Classifier.
-        X_test: Test set features.
-        y_test: Test set labels.
+    Zwraca:
+        ensemble_model: Wytrenowany klasyfikator zespołowy.
+        X_test: Cechy zbioru testowego.
+        y_test: Etykiety zbioru testowego.
     """
-    # Convert sparse matrix to dense if necessary
+    # Konwertuj macierz rzadką na gęstą, jeśli to konieczne
     if hasattr(X_train, "toarray"):
         X_train = X_train.toarray()
         X_test = X_test.toarray()
 
-    # Define base classifiers
+    # Definicja klasyfikatorów bazowych
     rf = RandomForestClassifier(n_estimators=100, random_state=42)
     xgb = XGBClassifier(n_estimators=100, use_label_encoder=False, eval_metric='logloss', random_state=42)
 
-    # Define ensemble model
+    # Definicja modelu zespołowego
     ensemble_model = VotingClassifier(estimators=[('rf', rf), ('xgb', xgb)], voting='soft')
 
-    # Train ensemble model
+    # Trening modelu zespołowego
     ensemble_model.fit(X_train, y_train)
 
     return ensemble_model, X_test, y_test

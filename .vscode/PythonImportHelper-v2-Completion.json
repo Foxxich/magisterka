@@ -1,0 +1,1948 @@
+[
+    {
+        "label": "Sequential",
+        "importPath": "tensorflow.keras.models",
+        "description": "tensorflow.keras.models",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "Model",
+        "importPath": "tensorflow.keras.models",
+        "description": "tensorflow.keras.models",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "Sequential",
+        "importPath": "tensorflow.keras.models",
+        "description": "tensorflow.keras.models",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "Dense",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dropout",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "BatchNormalization",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "LeakyReLU",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Input",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Embedding",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "LSTM",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Bidirectional",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dense",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dropout",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "GlobalAveragePooling1D",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dense",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dropout",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "BatchNormalization",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "LeakyReLU",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Adam",
+        "importPath": "tensorflow.keras.optimizers",
+        "description": "tensorflow.keras.optimizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.optimizers",
+        "documentation": {}
+    },
+    {
+        "label": "Adam",
+        "importPath": "tensorflow.keras.optimizers",
+        "description": "tensorflow.keras.optimizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.optimizers",
+        "documentation": {}
+    },
+    {
+        "label": "Adam",
+        "importPath": "tensorflow.keras.optimizers",
+        "description": "tensorflow.keras.optimizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.optimizers",
+        "documentation": {}
+    },
+    {
+        "label": "ReduceLROnPlateau",
+        "importPath": "tensorflow.keras.callbacks",
+        "description": "tensorflow.keras.callbacks",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "EarlyStopping",
+        "importPath": "tensorflow.keras.callbacks",
+        "description": "tensorflow.keras.callbacks",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "l2",
+        "importPath": "tensorflow.keras.regularizers",
+        "description": "tensorflow.keras.regularizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.regularizers",
+        "documentation": {}
+    },
+    {
+        "label": "l2",
+        "importPath": "tensorflow.keras.regularizers",
+        "description": "tensorflow.keras.regularizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.regularizers",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "AdaBoostClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "GradientBoostingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "StackingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "AdaBoostClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "StackingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "GradientBoostingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "GradientBoostingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "BaggingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "AdaBoostClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "AdaBoostClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "BaggingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "AdaBoostClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "GradientBoostingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "ExtraTreesClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "MLPClassifier",
+        "importPath": "sklearn.neural_network",
+        "description": "sklearn.neural_network",
+        "isExtraImport": true,
+        "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "MLPClassifier",
+        "importPath": "sklearn.neural_network",
+        "description": "sklearn.neural_network",
+        "isExtraImport": true,
+        "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "xgboost",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "xgboost",
+        "description": "xgboost",
+        "detail": "xgboost",
+        "documentation": {}
+    },
+    {
+        "label": "XGBClassifier",
+        "importPath": "xgboost",
+        "description": "xgboost",
+        "isExtraImport": true,
+        "detail": "xgboost",
+        "documentation": {}
+    },
+    {
+        "label": "XGBClassifier",
+        "importPath": "xgboost",
+        "description": "xgboost",
+        "isExtraImport": true,
+        "detail": "xgboost",
+        "documentation": {}
+    },
+    {
+        "label": "XGBClassifier",
+        "importPath": "xgboost",
+        "description": "xgboost",
+        "isExtraImport": true,
+        "detail": "xgboost",
+        "documentation": {}
+    },
+    {
+        "label": "SelectKBest",
+        "importPath": "sklearn.feature_selection",
+        "description": "sklearn.feature_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_selection",
+        "documentation": {}
+    },
+    {
+        "label": "chi2",
+        "importPath": "sklearn.feature_selection",
+        "description": "sklearn.feature_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_selection",
+        "documentation": {}
+    },
+    {
+        "label": "MinMaxScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "CatBoostClassifier",
+        "importPath": "catboost",
+        "description": "catboost",
+        "isExtraImport": true,
+        "detail": "catboost",
+        "documentation": {}
+    },
+    {
+        "label": "CatBoostClassifier",
+        "importPath": "catboost",
+        "description": "catboost",
+        "isExtraImport": true,
+        "detail": "catboost",
+        "documentation": {}
+    },
+    {
+        "label": "SMOTETomek",
+        "importPath": "imblearn.combine",
+        "description": "imblearn.combine",
+        "isExtraImport": true,
+        "detail": "imblearn.combine",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_predict",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_score",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_auc_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "f1_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_auc_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "matthews_corrcoef",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "log_loss",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "cohen_kappa_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "precision_recall_curve",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "precision_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "recall_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "SnowballStemmer",
+        "importPath": "nltk.stem",
+        "description": "nltk.stem",
+        "isExtraImport": true,
+        "detail": "nltk.stem",
+        "documentation": {}
+    },
+    {
+        "label": "SnowballStemmer",
+        "importPath": "nltk.stem",
+        "description": "nltk.stem",
+        "isExtraImport": true,
+        "detail": "nltk.stem",
+        "documentation": {}
+    },
+    {
+        "label": "Tokenizer",
+        "importPath": "tensorflow.keras.preprocessing.text",
+        "description": "tensorflow.keras.preprocessing.text",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.preprocessing.text",
+        "documentation": {}
+    },
+    {
+        "label": "pad_sequences",
+        "importPath": "tensorflow.keras.preprocessing.sequence",
+        "description": "tensorflow.keras.preprocessing.sequence",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.preprocessing.sequence",
+        "documentation": {}
+    },
+    {
+        "label": "SVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "SVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "SVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "MultinomialNB",
+        "importPath": "sklearn.naive_bayes",
+        "description": "sklearn.naive_bayes",
+        "isExtraImport": true,
+        "detail": "sklearn.naive_bayes",
+        "documentation": {}
+    },
+    {
+        "label": "DecisionTreeClassifier",
+        "importPath": "sklearn.tree",
+        "description": "sklearn.tree",
+        "isExtraImport": true,
+        "detail": "sklearn.tree",
+        "documentation": {}
+    },
+    {
+        "label": "Model",
+        "importPath": "keras.models",
+        "description": "keras.models",
+        "isExtraImport": true,
+        "detail": "keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "Input",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "LSTM",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Bidirectional",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Conv1D",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "MaxPooling1D",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Flatten",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dense",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "concatenate",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Softmax",
+        "importPath": "keras.layers",
+        "description": "keras.layers",
+        "isExtraImport": true,
+        "detail": "keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Adadelta",
+        "importPath": "keras.optimizers",
+        "description": "keras.optimizers",
+        "isExtraImport": true,
+        "detail": "keras.optimizers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TFBertModel",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TFBertForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TFBertForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "RobertaTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TFRobertaForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "RobertaTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TFRobertaForSequenceClassification",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "BertTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "RobertaTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
+        "label": "load_and_preprocess_data",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_model",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_model",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_model15",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_bert_embeddings",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_roberta_embeddings",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "load_and_preprocess_data",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data_few_shot",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data_one_shot",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_transformer_embeddings",
+        "importPath": "common",
+        "description": "common",
+        "isExtraImport": true,
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "SentenceTransformer",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "train_run1",
+        "importPath": "run1",
+        "description": "run1",
+        "isExtraImport": true,
+        "detail": "run1",
+        "documentation": {}
+    },
+    {
+        "label": "train_run2",
+        "importPath": "run2",
+        "description": "run2",
+        "isExtraImport": true,
+        "detail": "run2",
+        "documentation": {}
+    },
+    {
+        "label": "train_run3",
+        "importPath": "run3",
+        "description": "run3",
+        "isExtraImport": true,
+        "detail": "run3",
+        "documentation": {}
+    },
+    {
+        "label": "train_run4",
+        "importPath": "run4",
+        "description": "run4",
+        "isExtraImport": true,
+        "detail": "run4",
+        "documentation": {}
+    },
+    {
+        "label": "train_run5",
+        "importPath": "run5",
+        "description": "run5",
+        "isExtraImport": true,
+        "detail": "run5",
+        "documentation": {}
+    },
+    {
+        "label": "train_run6",
+        "importPath": "run6",
+        "description": "run6",
+        "isExtraImport": true,
+        "detail": "run6",
+        "documentation": {}
+    },
+    {
+        "label": "train_run7",
+        "importPath": "run7",
+        "description": "run7",
+        "isExtraImport": true,
+        "detail": "run7",
+        "documentation": {}
+    },
+    {
+        "label": "train_run8",
+        "importPath": "run8",
+        "description": "run8",
+        "isExtraImport": true,
+        "detail": "run8",
+        "documentation": {}
+    },
+    {
+        "label": "train_run9",
+        "importPath": "run9",
+        "description": "run9",
+        "isExtraImport": true,
+        "detail": "run9",
+        "documentation": {}
+    },
+    {
+        "label": "train_run10",
+        "importPath": "run10",
+        "description": "run10",
+        "isExtraImport": true,
+        "detail": "run10",
+        "documentation": {}
+    },
+    {
+        "label": "train_run11",
+        "importPath": "run11",
+        "description": "run11",
+        "isExtraImport": true,
+        "detail": "run11",
+        "documentation": {}
+    },
+    {
+        "label": "train_run12",
+        "importPath": "run12",
+        "description": "run12",
+        "isExtraImport": true,
+        "detail": "run12",
+        "documentation": {}
+    },
+    {
+        "label": "train_run13",
+        "importPath": "run13",
+        "description": "run13",
+        "isExtraImport": true,
+        "detail": "run13",
+        "documentation": {}
+    },
+    {
+        "label": "train_run14",
+        "importPath": "run14",
+        "description": "run14",
+        "isExtraImport": true,
+        "detail": "run14",
+        "documentation": {}
+    },
+    {
+        "label": "train_run15",
+        "importPath": "run15",
+        "description": "run15",
+        "isExtraImport": true,
+        "detail": "run15",
+        "documentation": {}
+    },
+    {
+        "label": "train_run16",
+        "importPath": "run16",
+        "description": "run16",
+        "isExtraImport": true,
+        "detail": "run16",
+        "documentation": {}
+    },
+    {
+        "label": "train_run17",
+        "importPath": "my_run",
+        "description": "my_run",
+        "isExtraImport": true,
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "train_run18",
+        "importPath": "my_run",
+        "description": "my_run",
+        "isExtraImport": true,
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "train_run19",
+        "importPath": "my_run",
+        "description": "my_run",
+        "isExtraImport": true,
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "train_run20",
+        "importPath": "my_run",
+        "description": "my_run",
+        "isExtraImport": true,
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "stopwords",
+        "importPath": "nltk.corpus",
+        "description": "nltk.corpus",
+        "isExtraImport": true,
+        "detail": "nltk.corpus",
+        "documentation": {}
+    },
+    {
+        "label": "LGBMClassifier",
+        "importPath": "lightgbm",
+        "description": "lightgbm",
+        "isExtraImport": true,
+        "detail": "lightgbm",
+        "documentation": {}
+    },
+    {
+        "label": "create_model",
+        "kind": 2,
+        "importPath": "article1.run1",
+        "description": "article1.run1",
+        "peekOfCode": "def create_model(input_dim, units1=128, units2=64, units3=32, dropout_rate=0.2, learning_rate=0.001, l2_reg=0.01):\n    \"\"\"\n    Tworzy model sieci neuronowej z podanymi hiperparametrami.\n    \"\"\"\n    model = Sequential([\n        Dense(units1, input_dim=input_dim, activation=None, kernel_regularizer=l2(l2_reg)),\n        BatchNormalization(),\n        LeakyReLU(alpha=0.1),\n        Dropout(dropout_rate),\n        Dense(units2, activation=None, kernel_regularizer=l2(l2_reg)),",
+        "detail": "article1.run1",
+        "documentation": {}
+    },
+    {
+        "label": "train_run1",
+        "kind": 2,
+        "importPath": "article1.run1",
+        "description": "article1.run1",
+        "peekOfCode": "def train_run1(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje ensemble modeli neuronowych z różnymi hiperparametrami.\n    Parameters:\n        X_train (np.ndarray): Dane treningowe.\n        y_train (np.ndarray): Etykiety treningowe.\n        X_test (np.ndarray): Dane testowe.\n        y_test (np.ndarray): Etykiety testowe.\n        n_models (int): Liczba modeli w ensemble.\n    Returns:",
+        "detail": "article1.run1",
+        "documentation": {}
+    },
+    {
+        "label": "train_run10",
+        "kind": 2,
+        "importPath": "article10.run10",
+        "description": "article10.run10",
+        "peekOfCode": "def train_run10(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z miękkim głosowaniem (soft-voting) i ocenia jego wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf: Wytrenowany model VotingClassifier.",
+        "detail": "article10.run10",
+        "documentation": {}
+    },
+    {
+        "label": "train_run11",
+        "kind": 2,
+        "importPath": "article11.run11",
+        "description": "article11.run11",
+        "peekOfCode": "def train_run11(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z wykorzystaniem VotingClassifier (Random Forest, Logistic Regression i AdaBoost),\n    stosując selekcję cech, normalizację i miękkie głosowanie.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "detail": "article11.run11",
+        "documentation": {}
+    },
+    {
+        "label": "train_run12",
+        "kind": 2,
+        "importPath": "article12.run12",
+        "description": "article12.run12",
+        "peekOfCode": "def train_run12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.",
+        "detail": "article12.run12",
+        "documentation": {}
+    },
+    {
+        "label": "train_run13",
+        "kind": 2,
+        "importPath": "article13.run13",
+        "description": "article13.run13",
+        "peekOfCode": "def train_run13(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.\n    Parametry:\n        X_train (np.ndarray): Macierz cech dla danych treningowych.\n        y_train (np.ndarray): Wektor etykiet dla danych treningowych.\n        X_test (np.ndarray): Macierz cech dla danych testowych.\n        y_test (np.ndarray): Wektor etykiet dla danych testowych.\n    Zwraca:\n        StackingClassifier: Wytrenowany model zespołowy typu stacking.",
+        "detail": "article13.run13",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_text",
+        "kind": 2,
+        "importPath": "article14.run14",
+        "description": "article14.run14",
+        "peekOfCode": "def preprocess_text(text):\n    \"\"\"\n    Oczyszcza i przetwarza tekst poprzez usunięcie URL-i, znaków specjalnych, pojedynczych liter i liczb,\n    oraz stosuje stemming przy użyciu Snowball Stemmer.\n    \"\"\"\n    snowball_stemmer = SnowballStemmer('english')\n    text = re.sub(r'http\\S+', '', text)  # Usuwanie URL-i\n    text = re.sub(r'\\W', ' ', text)  # Usuwanie znaków specjalnych\n    text = re.sub(r'\\s+[a-zA-Z]\\s+', ' ', text)  # Usuwanie pojedynczych liter\n    text = re.sub(r'\\^[a-zA-Z]\\s+', ' ', text)  # Usuwanie pojedynczych liter na początku",
+        "detail": "article14.run14",
+        "documentation": {}
+    },
+    {
+        "label": "train_run14",
+        "kind": 2,
+        "importPath": "article14.run14",
+        "description": "article14.run14",
+        "peekOfCode": "def train_run14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "detail": "article14.run14",
+        "documentation": {}
+    },
+    {
+        "label": "train_run15",
+        "kind": 2,
+        "importPath": "article15.run15",
+        "description": "article15.run15",
+        "peekOfCode": "def train_run15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):\n    \"\"\"\n    Funkcja trenuje zespół modeli Bi-LSTM z tokenizowanymi i wyściełanymi sekwencjami wejściowymi.\n    Parametry:\n        X_train (list, np.ndarray lub pd.Series): Dane tekstowe do trenowania.\n        y_train (array-like): Etykiety docelowe dla danych treningowych.\n        X_test (list, np.ndarray lub pd.Series): Dane tekstowe do testowania.\n        y_test (array-like): Etykiety docelowe dla danych testowych.\n        embedding_dim (int): Wymiar osadzania (domyślnie: 200).\n        maxlen (int): Maksymalna długość sekwencji wejściowych (domyślnie: 256).",
+        "detail": "article15.run15",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_text",
+        "kind": 2,
+        "importPath": "article16.run16",
+        "description": "article16.run16",
+        "peekOfCode": "def preprocess_text(X):\n    \"\"\"\n    Niestandardowe przetwarzanie tekstu: konwersja do małych liter, usuwanie stop-słów i zastosowanie stemmingu.\n    \"\"\"\n    from nltk.corpus import stopwords\n    from nltk.stem import SnowballStemmer\n    import re\n    stop_words = set(stopwords.words(\"english\"))\n    stemmer = SnowballStemmer(\"english\")\n    def clean_text(text):",
+        "detail": "article16.run16",
+        "documentation": {}
+    },
+    {
+        "label": "train_run16",
+        "kind": 2,
+        "importPath": "article16.run16",
+        "description": "article16.run16",
+        "peekOfCode": "def train_run16(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        meta_model: Wytrenowany meta-klasyfikator (stacking).",
+        "detail": "article16.run16",
+        "documentation": {}
+    },
+    {
+        "label": "train_run2",
+        "kind": 2,
+        "importPath": "article2.run2",
+        "description": "article2.run2",
+        "peekOfCode": "def train_run2(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model wykorzystując GradientBoosting oraz MLP na oddzielnych podzbiorach cech \n    i łączy je za pomocą Regresji Logistycznej.\n    Parametry:\n        X_train (np.ndarray lub DataFrame): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub DataFrame): Zbiór cech do testowania.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "detail": "article2.run2",
+        "documentation": {}
+    },
+    {
+        "label": "train_run3",
+        "kind": 2,
+        "importPath": "article3.run3",
+        "description": "article3.run3",
+        "peekOfCode": "def train_run3(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje dwupoziomowy model zespołowy wykorzystujący klasyfikatory cechowe i meta-klasyfikatory.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf_2: Wytrenowany model zespołowy drugiego poziomu.",
+        "detail": "article3.run3",
+        "documentation": {}
+    },
+    {
+        "label": "train_run4",
+        "kind": 2,
+        "importPath": "article4.run4",
+        "description": "article4.run4",
+        "peekOfCode": "def train_run4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).\n    Zwraca:",
+        "detail": "article4.run4",
+        "documentation": {}
+    },
+    {
+        "label": "train_run5",
+        "kind": 2,
+        "importPath": "article5.run5",
+        "description": "article5.run5",
+        "peekOfCode": "def train_run5(X_train, y_train, X_test, y_test):\n    \"\"\"Trenuje model stacking z użyciem Random Forest i XGBoost jako bazowych oraz Logistic Regression jako meta-modelu.\"\"\"\n    # Trenuj modele bazowe: RandomForest i XGBoost\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)\n    xgb_clf = xgb.XGBClassifier(n_estimators=100, eval_metric='logloss', random_state=42)\n    rf_clf.fit(X_train, y_train)\n    xgb_clf.fit(X_train, y_train)\n    # Uzyskaj predykcje dla zbioru treningowego, aby stworzyć cechy dla meta-modelu\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]\n    xgb_preds_train = xgb_clf.predict_proba(X_train)[:, 1]",
+        "detail": "article5.run5",
+        "documentation": {}
+    },
+    {
+        "label": "train_run6",
+        "kind": 2,
+        "importPath": "article6.run6",
+        "description": "article6.run6",
+        "peekOfCode": "def train_run6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
+        "detail": "article6.run6",
+        "documentation": {}
+    },
+    {
+        "label": "monte_carlo_dropout_inference",
+        "kind": 2,
+        "importPath": "article7.run7",
+        "description": "article7.run7",
+        "peekOfCode": "def monte_carlo_dropout_inference(model, X_test, num_samples=50):\n    \"\"\"Symuluje Monte Carlo Dropout dla RandomForest poprzez wielokrotne predykcje.\"\"\"\n    predictions = np.array([model.predict_proba(X_test) for _ in range(num_samples)])\n    mean_preds = predictions.mean(axis=0)\n    uncertainty = predictions.var(axis=0)\n    return mean_preds, uncertainty\ndef compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():",
+        "detail": "article7.run7",
+        "documentation": {}
+    },
+    {
+        "label": "compute_meta_attribute_probabilities",
+        "kind": 2,
+        "importPath": "article7.run7",
+        "description": "article7.run7",
+        "peekOfCode": "def compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():\n        attr_value = row[attribute_col]\n        label = row[label_col]\n        if label == 1:  # Wiadomość \"prawdziwa\"\n            attribute_probs[attr_value]['real'] += 1\n        elif label == 0:  # Wiadomość \"fałszywa\"\n            attribute_probs[attr_value]['fake'] += 1",
+        "detail": "article7.run7",
+        "documentation": {}
+    },
+    {
+        "label": "heuristic_post_processing",
+        "kind": 2,
+        "importPath": "article7.run7",
+        "description": "article7.run7",
+        "peekOfCode": "def heuristic_post_processing(predictions, attribute_probs, attributes, threshold=0.9):\n    \"\"\"Stosuje heurystyczną obróbkę post-procesową na podstawie prawdopodobieństw atrybutów.\"\"\"\n    attributes = list(attributes)  # Upewnij się, że attributes jest listą\n    final_predictions = []\n    for i, pred in enumerate(predictions):\n        attr_value = attributes[i]  # Pobierz wartość atrybutu według indeksu\n        if attr_value in attribute_probs:\n            real_prob = attribute_probs[attr_value]['real']\n            fake_prob = attribute_probs[attr_value]['fake']\n            if real_prob > threshold and real_prob > fake_prob:",
+        "detail": "article7.run7",
+        "documentation": {}
+    },
+    {
+        "label": "train_run7",
+        "kind": 2,
+        "importPath": "article7.run7",
+        "description": "article7.run7",
+        "peekOfCode": "def train_run7(X_embeddings=None, X=None, y=None):\n    \"\"\"\n    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.\n    Parametry:\n        X_embeddings (np.ndarray lub None): Wstępnie obliczone osadzenia.\n        X (lista lub pd.Series): Surowe dane tekstowe (jeśli osadzenia nie są podane).\n        y (lista lub pd.Series): Etykiety docelowe.\n    Zwraca:\n        rf_classifier: Wytrenowany model RandomForest.\n        X_test: Oryginalne lub przetworzone cechy zbioru testowego.",
+        "detail": "article7.run7",
+        "documentation": {}
+    },
+    {
+        "label": "train_run8",
+        "kind": 2,
+        "importPath": "article8.run8",
+        "description": "article8.run8",
+        "peekOfCode": "def train_run8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
+        "detail": "article8.run8",
+        "documentation": {}
+    },
+    {
+        "label": "train_run9",
+        "kind": 2,
+        "importPath": "article9.run9",
+        "description": "article9.run9",
+        "peekOfCode": "def train_run9(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje różne modele zespołowe i ocenia ich wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting: Najlepszy model (VotingClassifier).",
+        "detail": "article9.run9",
+        "documentation": {}
+    },
+    {
+        "label": "remove_outliers",
+        "kind": 2,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Usuwa wartości, które są daleko poza zakresem międzykwartylowym (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # Pierwszy kwartyl (25. percentyl)\n    Q3 = data[column].quantile(0.75)  # Trzeci kwartyl (75. percentyl)\n    IQR = Q3 - Q1  # Zakres międzykwartylowy\n    lower_bound = Q1 - 1.5 * IQR  # Dolna granica\n    upper_bound = Q3 + 1.5 * IQR  # Górna granica\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "project_root",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "base_folder",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "plot_base_folder",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "folder_types",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "folders",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "runs",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "runs = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]\n    # Specjalne przetwarzanie dla run12\n    results_files.extend([",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "load_and_preprocess_data",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def load_and_preprocess_data():\n    # Wczytanie zbiorów danych\n    project_root = os.getcwd()\n    # Build paths to the dataset files\n    fake_news_path = os.path.join(project_root, \"datasets\", \"ISOT_dataset\", \"Fake.csv\")\n    true_news_path = os.path.join(project_root, \"datasets\", \"ISOT_dataset\", \"True.csv\")\n    # Load the datasets\n    fake_news = pd.read_csv(fake_news_path)\n    true_news = pd.read_csv(true_news_path)\n    # Dodanie etykiet",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_bert_embeddings",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):\n    # Tokenizacja tekstów dla modelu BERT\n    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\n    bert_model = TFBertForSequenceClassification.from_pretrained(\n        'bert-base-uncased',\n        num_labels=num_labels,\n    )\n    # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu\n    inputs = tokenizer(\n        texts, return_tensors=\"tf\", padding=True, truncation=True, max_length=max_length",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_roberta_embeddings",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):\n    # Tokenizacja tekstów dla modelu RoBERTa\n    tokenizer = RobertaTokenizer.from_pretrained('roberta-base')\n    roberta_model = TFRobertaForSequenceClassification.from_pretrained(\n        'roberta-base',\n        num_labels=num_labels,\n    )\n    # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu\n    inputs = tokenizer(\n        texts, return_tensors=\"tf\", padding=True, truncation=True, max_length=max_length",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_transformer_embeddings",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def get_transformer_embeddings(texts, model_name=\"all-MiniLM-L6-v2\"):\n    model = SentenceTransformer(model_name)\n    # Generowanie osadzeń\n    embeddings = model.encode(texts, show_progress_bar=True)\n    return np.array(embeddings)\ndef vectorize_data(X, max_features=5000):\n    # Wejściowe dane tekstowe są przekształcane za pomocą TF-IDF\n    tfidf = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1, 2))\n    return tfidf.fit_transform(X), tfidf\ndef split_data(X, y, test_size=0.2):",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "vectorize_data",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def vectorize_data(X, max_features=5000):\n    # Wejściowe dane tekstowe są przekształcane za pomocą TF-IDF\n    tfidf = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1, 2))\n    return tfidf.fit_transform(X), tfidf\ndef split_data(X, y, test_size=0.2):\n    # Podział danych na zbiory treningowe i testowe\n    return train_test_split(X, y, test_size=test_size, random_state=42)\ndef split_data_one_shot(X, y):\n    \"\"\"Podział danych na podstawie jednego przykładu na klasę.\"\"\"\n    # Konwersja do Pandas DataFrame/Series w razie potrzeby",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def split_data(X, y, test_size=0.2):\n    # Podział danych na zbiory treningowe i testowe\n    return train_test_split(X, y, test_size=test_size, random_state=42)\ndef split_data_one_shot(X, y):\n    \"\"\"Podział danych na podstawie jednego przykładu na klasę.\"\"\"\n    # Konwersja do Pandas DataFrame/Series w razie potrzeby\n    if isinstance(X, np.ndarray):\n        X = pd.DataFrame(X)\n    if isinstance(y, np.ndarray):\n        y = pd.Series(y)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data_one_shot",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def split_data_one_shot(X, y):\n    \"\"\"Podział danych na podstawie jednego przykładu na klasę.\"\"\"\n    # Konwersja do Pandas DataFrame/Series w razie potrzeby\n    if isinstance(X, np.ndarray):\n        X = pd.DataFrame(X)\n    if isinstance(y, np.ndarray):\n        y = pd.Series(y)\n    # Wybór jednego przykładu na klasę\n    X_test = X.groupby(y).apply(lambda group: group.iloc[0]).reset_index(drop=True)\n    y_test = y.groupby(y).first().reset_index(drop=True)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "split_data_few_shot",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def split_data_few_shot(X, y, few_shot_examples=5):\n    \"\"\"Podział danych na podstawie kilku przykładów na klasę.\"\"\"\n    # Konwersja do Pandas DataFrame/Series w razie potrzeby\n    if isinstance(X, np.ndarray):\n        X = pd.DataFrame(X)\n    if isinstance(y, np.ndarray):\n        y = pd.Series(y)\n    # Wybór kilku przykładów na klasę\n    sampled_data = y.groupby(y).apply(lambda group: group.sample(n=min(few_shot_examples, len(group))))\n    test_indices = sampled_data.index.get_level_values(1)",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_model",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, flatten=True):\n    # Metryki walidacji krzyżowej\n    cv_accuracy_mean = None\n    cv_accuracy_std = None\n    try:\n        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\n        cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring=\"accuracy\")\n        cv_accuracy_mean = cv_scores.mean()\n        cv_accuracy_std = cv_scores.std()\n        print(f\"Wyniki dokładności walidacji krzyżowej: {cv_scores}\")",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_model15",
+        "kind": 2,
+        "importPath": "common",
+        "description": "common",
+        "peekOfCode": "def evaluate_model15(model, X_test, y_test, run_type, output_path, start_time):\n    \"\"\"\n    Ewaluacja modelu z wykorzystaniem walidacji krzyżowej i obliczanie metryk.\n    \"\"\"\n    from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score, matthews_corrcoef, log_loss, cohen_kappa_score, precision_recall_curve\n    import pandas as pd\n    import os\n    import time\n    # Metryki walidacji krzyżowej\n    cv_accuracy_mean = None",
+        "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "get_embeddings",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_embeddings(option, X, y):\n    \"\"\"\n    Generuje reprezentację kontekstową na podstawie wybranej opcji.\n    \"\"\"\n    if option == \"1\":\n        return get_bert_embeddings(X.tolist())\n    elif option == \"2\":\n        return get_roberta_embeddings(X.tolist())\n    elif option == \"3\":\n        return get_transformer_embeddings(X.tolist())",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "run_method",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def run_method(method_number, X_train, y_train, X_test, y_test, output_path):\n    \"\"\"Uruchamia wybraną metodę na podstawie numeru.\"\"\"\n    start_time = time.time()\n    if method_number == 1:\n        models, X_test, y_test = train_run1(X_train, y_train, X_test, y_test)\n        for i, model in enumerate(models):\n            run_name = f\"run1-{i + 1}\"  # Unikalna nazwa dla każdego modelu\n            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)\n    elif method_number == 2:\n        model, X_test, y_test = train_run2(X_train, y_train, X_test, y_test)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "remove_outliers",
+        "kind": 2,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Usuwa wartości odstające, które są daleko poza zakresem międzykwartylowym (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # Pierwszy kwartyl (25. percentyl)\n    Q3 = data[column].quantile(0.75)  # Trzeci kwartyl (75. percentyl)\n    IQR = Q3 - Q1  # Zakres międzykwartylowy\n    lower_bound = Q1 - 1.5 * IQR  # Dolna granica\n    upper_bound = Q3 + 1.5 * IQR  # Górna granica\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "project_root",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root, \"results_3_few_shot\")\nplot_base_folder = os.path.join(project_root, \"plots\", \"results_3_few_shot_mine\")\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "base_folder",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "base_folder = os.path.join(project_root, \"results_3_few_shot\")\nplot_base_folder = os.path.join(project_root, \"plots\", \"results_3_few_shot_mine\")\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "plot_base_folder",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\", \"results_3_few_shot_mine\")\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "runs",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "runs = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "folder_path",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "folder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "plots_output_path",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "plots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "runs",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "runs = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]\npr_curve_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_pr_curve.csv\")",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "results_files",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "results_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]\npr_curve_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_pr_curve.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "pr_curve_files",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "pr_curve_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_pr_curve.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]\n# Łączenie wszystkich plików `run*_results.csv` w jeden DataFrame\nresults_data = []\nfor file in results_files:\n    if os.path.exists(file):  # Sprawdzenie, czy plik istnieje\n        data = pd.read_csv(file)",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "results_data",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "results_data = []\nfor file in results_files:\n    if os.path.exists(file):  # Sprawdzenie, czy plik istnieje\n        data = pd.read_csv(file)\n        run_name = os.path.basename(file).split('_')[0]  # Wyodrębnienie nazwy uruchomienia (np. run1, run12_catboost)\n        data['Run'] = run_name  # Dodanie kolumny z nazwą uruchomienia\n        results_data.append(data)\nif results_data:  # Sprawdzenie, czy lista nie jest pusta przed łączeniem\n    all_results = pd.concat(results_data, ignore_index=True)\nelse:",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "pr_curves",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "pr_curves = {}\nfor file in pr_curve_files:\n    if os.path.exists(file):  # Sprawdzenie, czy plik istnieje\n        run_name = os.path.basename(file).split('_')[0]  # Wyodrębnienie nazwy uruchomienia (np. run1, run12_catboost)\n        pr_curves[run_name] = pd.read_csv(file)\n# Tworzenie wykresów porównawczych dla każdej metryki w różnych uruchomieniach\nmetrics = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\",\n    \"MCC\", \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\"\n]",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "metrics",
+        "kind": 5,
+        "importPath": "my_plots",
+        "description": "my_plots",
+        "peekOfCode": "metrics = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\",\n    \"MCC\", \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\"\n]\nif not all_results.empty:\n    for metric in metrics:\n        if metric in all_results.columns:\n            data_to_plot = all_results\n            if metric == \"Execution Time (s)\":\n                # Usuwanie wartości odstających dla \"Execution Time (s)\"",
+        "detail": "my_plots",
+        "documentation": {}
+    },
+    {
+        "label": "train_run17",
+        "kind": 2,
+        "importPath": "my_run",
+        "description": "my_run",
+        "peekOfCode": "def train_run17(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.\n    \"\"\"\n    sample_weights = np.ones(len(y_train))  # Inicjalizacja wag próbek\n    for _ in range(n_models):\n        model = Sequential([\n            Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 1\n            BatchNormalization(),\n            LeakyReLU(alpha=0.1),",
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "train_run18",
+        "kind": 2,
+        "importPath": "my_run",
+        "description": "my_run",
+        "peekOfCode": "def train_run18(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory GradientBoosting i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    gb_clf = GradientBoostingClassifier(n_estimators=100, random_state=42)  # Gradient Boosting\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    gb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    gb_preds_train = gb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla GradientBoosting\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "train_run19",
+        "kind": 2,
+        "importPath": "my_run",
+        "description": "my_run",
+        "peekOfCode": "def train_run19(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees\n    rf_clf.fit(X_train, y_train)\n    et_clf.fit(X_train, y_train)\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest\n    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees",
+        "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "train_run20",
+        "kind": 2,
+        "importPath": "my_run",
+        "description": "my_run",
+        "peekOfCode": "def train_run20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    lgb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    lgb_preds_train = lgb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla LightGBM\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
+        "detail": "my_run",
+        "documentation": {}
+    }
+]

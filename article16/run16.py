@@ -4,15 +4,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.model_selection import cross_val_predict, StratifiedKFold
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
-from common import vectorize_data, split_data
 
 
 def preprocess_text(X):
     """
-    Custom text preprocessing: convert to lowercase, remove stopwords, and apply stemming.
+    Niestandardowe przetwarzanie tekstu: konwersja do małych liter, usuwanie stop-słów i zastosowanie stemmingu.
     """
     from nltk.corpus import stopwords
     from nltk.stem import SnowballStemmer
@@ -22,37 +18,38 @@ def preprocess_text(X):
     stemmer = SnowballStemmer("english")
 
     def clean_text(text):
-        text = re.sub(r"http\S+", "", text)  # Remove URLs
-        text = re.sub(r"[^\w\s]", "", text)  # Remove punctuation
-        text = re.sub(r"\d+", "", text)  # Remove numbers
+        text = re.sub(r"http\S+", "", text)  # Usuwanie URL-i
+        text = re.sub(r"[^\w\s]", "", text)  # Usuwanie znaków interpunkcyjnych
+        text = re.sub(r"\d+", "", text)  # Usuwanie liczb
         words = text.lower().split()
         words = [stemmer.stem(word) for word in words if word not in stop_words]
         return " ".join(words)
 
     return X.apply(clean_text)
 
+
 def train_run16(X_train, y_train, X_test, y_test):
     """
-    Trains a stacking ensemble model with meta-classifier using logistic regression.
+    Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.
 
-    Parameters:
-        X_train (np.ndarray): Training set features.
-        y_train (np.ndarray): Training set labels.
-        X_test (np.ndarray): Test set features.
-        y_test (np.ndarray): Test set labels.
+    Parametry:
+        X_train (np.ndarray): Cechy zbioru treningowego.
+        y_train (np.ndarray): Etykiety zbioru treningowego.
+        X_test (np.ndarray): Cechy zbioru testowego.
+        y_test (np.ndarray): Etykiety zbioru testowego.
 
-    Returns:
-        meta_model: Trained meta-classifier (stacking).
-        meta_features_test: Meta-features for the test set.
-        y_test: Labels for the test set.
+    Zwraca:
+        meta_model: Wytrenowany meta-klasyfikator (stacking).
+        meta_features_test: Meta-cechy dla zbioru testowego.
+        y_test: Etykiety zbioru testowego.
     """
-    # Initialize base models
+    # Inicjalizacja modeli bazowych
     rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
     gb_model = GradientBoostingClassifier(n_estimators=100, random_state=42)
     svc_model = SVC(probability=True, kernel="linear", random_state=42)
 
-    # Generate meta-features for training using cross-validation
-    print("Generating meta-features for training...")
+    # Generowanie meta-cech dla treningu przy użyciu walidacji krzyżowej
+    print("Generowanie meta-cech dla treningu...")
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     rf_preds_train = cross_val_predict(rf_model, X_train, y_train, method="predict_proba", cv=skf)[:, 1]
     gb_preds_train = cross_val_predict(gb_model, X_train, y_train, method="predict_proba", cv=skf)[:, 1]
@@ -60,28 +57,28 @@ def train_run16(X_train, y_train, X_test, y_test):
 
     meta_features_train = np.column_stack((rf_preds_train, gb_preds_train, svc_preds_train))
 
-    # Train meta-classifier using logistic regression
-    print("Training meta-classifier...")
+    # Trening meta-klasyfikatora używając regresji logistycznej
+    print("Trening meta-klasyfikatora...")
     meta_model = LogisticRegression(max_iter=1000, random_state=42)
     meta_model.fit(meta_features_train, y_train)
 
-    # Fit base models on the full training data
-    print("Training base models...")
+    # Trening modeli bazowych na pełnych danych treningowych
+    print("Trening modeli bazowych...")
     rf_model.fit(X_train, y_train)
     gb_model.fit(X_train, y_train)
     svc_model.fit(X_train, y_train)
 
-    # Generate meta-features for testing
-    print("Generating meta-features for testing...")
+    # Generowanie meta-cech dla testu
+    print("Generowanie meta-cech dla testu...")
     rf_preds_test = rf_model.predict_proba(X_test)[:, 1]
     gb_preds_test = gb_model.predict_proba(X_test)[:, 1]
     svc_preds_test = svc_model.predict_proba(X_test)[:, 1]
     meta_features_test = np.column_stack((rf_preds_test, gb_preds_test, svc_preds_test))
 
-    # Evaluate and print the performance
-    print("Evaluating model performance...")
+    # Ocena i wyświetlenie wyników modelu
+    print("Ocena wyników modelu...")
     y_pred = meta_model.predict(meta_features_test)
     print(classification_report(y_test, y_pred))
-    print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+    print(f"Dokładność: {accuracy_score(y_test, y_pred):.4f}")
 
     return meta_model, meta_features_test, y_test

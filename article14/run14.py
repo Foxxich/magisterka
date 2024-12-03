@@ -2,63 +2,61 @@ import re
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, StackingClassifier
 from sklearn.linear_model import LogisticRegression
 from nltk.stem import SnowballStemmer
-from sklearn.exceptions import NotFittedError
-from common import load_and_preprocess_data, vectorize_data, split_data
 
 
 def preprocess_text(text):
     """
-    Cleans and preprocesses text by removing URLs, special characters, single letters, and numbers,
-    and applies stemming using the Snowball Stemmer.
+    Oczyszcza i przetwarza tekst poprzez usunięcie URL-i, znaków specjalnych, pojedynczych liter i liczb,
+    oraz stosuje stemming przy użyciu Snowball Stemmer.
     """
     snowball_stemmer = SnowballStemmer('english')
-    text = re.sub(r'http\S+', '', text)  # Remove URLs
-    text = re.sub(r'\W', ' ', text)  # Remove special characters
-    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)  # Remove single letters
-    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)  # Remove single letters at the start
-    text = re.sub(r'\s+', ' ', text, flags=re.I)  # Replace multiple spaces with a single space
-    text = re.sub(r'^\s+|\s+?$', '', text.lower())  # Remove leading/trailing spaces and lowercase
-    return ' '.join([snowball_stemmer.stem(word) for word in text.split()])  # Apply stemming
+    text = re.sub(r'http\S+', '', text)  # Usuwanie URL-i
+    text = re.sub(r'\W', ' ', text)  # Usuwanie znaków specjalnych
+    text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text)  # Usuwanie pojedynczych liter
+    text = re.sub(r'\^[a-zA-Z]\s+', ' ', text)  # Usuwanie pojedynczych liter na początku
+    text = re.sub(r'\s+', ' ', text, flags=re.I)  # Zastąpienie wielu spacji jedną
+    text = re.sub(r'^\s+|\s+?$', '', text.lower())  # Usuwanie spacji na początku/końcu i konwersja do małych liter
+    return ' '.join([snowball_stemmer.stem(word) for word in text.split()])  # Zastosowanie stemmingu
 
 
 def train_run14(X_train, y_train, X_test, y_test):
     """
-    Trains a stacking ensemble model with Random Forest, AdaBoost, and Logistic Regression
-    as the final estimator.
+    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression
+    jako finalnego estymatora.
 
-    Parameters:
-        X_train (numpy.ndarray): Training set features.
-        y_train (numpy.ndarray): Training set labels.
-        X_test (numpy.ndarray): Test set features.
-        y_test (numpy.ndarray): Test set labels.
+    Parametry:
+        X_train (numpy.ndarray): Cechy zbioru treningowego.
+        y_train (numpy.ndarray): Etykiety zbioru treningowego.
+        X_test (numpy.ndarray): Cechy zbioru testowego.
+        y_test (numpy.ndarray): Etykiety zbioru testowego.
 
-    Returns:
-        StackingClassifier: Trained stacking model.
-        numpy.ndarray: Test features.
-        numpy.ndarray: Test labels.
+    Zwraca:
+        StackingClassifier: Wytrenowany model stacking.
+        numpy.ndarray: Cechy zbioru testowego.
+        numpy.ndarray: Etykiety zbioru testowego.
     """
-    # Ensure input data is 2D
+    # Upewnij się, że dane wejściowe są 2-wymiarowe
     if len(X_train.shape) != 2 or len(X_test.shape) != 2:
-        raise ValueError("Input features must be 2-dimensional arrays.")
+        raise ValueError("Cechy wejściowe muszą być 2-wymiarowymi tablicami.")
 
-    # Define base models and meta-model for stacking
-    print("Defining models...")
+    # Definicja modeli bazowych i meta-modelu do stacking
+    print("Definiowanie modeli...")
     rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
     ab_model = AdaBoostClassifier(n_estimators=100, random_state=42)
     lr_model = LogisticRegression(max_iter=200, random_state=42)
 
-    # Create stacking classifier
-    print("Building stacking model...")
+    # Tworzenie klasyfikatora stacking
+    print("Budowanie modelu stacking...")
     stack_model = StackingClassifier(
         estimators=[('rf', rf_model), ('ab', ab_model)],
         final_estimator=lr_model
     )
 
-    # Train the stacking model
-    print("Training stacking model...")
+    # Trening modelu stacking
+    print("Trening modelu stacking...")
     stack_model.fit(X_train, y_train)
 
-    print("Training completed.")
+    print("Trening zakończony.")
 
-    # Return trained model and test data
+    # Zwróć wytrenowany model oraz dane testowe
     return stack_model, X_test, y_test

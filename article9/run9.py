@@ -6,34 +6,34 @@ from sklearn.metrics import (
     accuracy_score,
     roc_auc_score,
 )
-import numpy as np
+
 
 def train_run9(X_train, y_train, X_test, y_test):
     """
-    Trains various ensemble models and evaluates them.
+    Trenuje różne modele zespołowe i ocenia ich wyniki.
     
-    Parameters:
-        X_train (np.ndarray): Training set features.
-        y_train (list or np.ndarray): Training set labels.
-        X_test (np.ndarray): Test set features.
-        y_test (list or np.ndarray): Test set labels.
+    Parametry:
+        X_train (np.ndarray): Cechy zbioru treningowego.
+        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.
+        X_test (np.ndarray): Cechy zbioru testowego.
+        y_test (lista lub np.ndarray): Etykiety zbioru testowego.
     
-    Returns:
-        voting: Best model (VotingClassifier).
-        X_test: Test set features.
-        y_test: Test set labels.
+    Zwraca:
+        voting: Najlepszy model (VotingClassifier).
+        X_test: Cechy zbioru testowego.
+        y_test: Etykiety zbioru testowego.
     """
-    # Define base classifiers
+    # Definicja klasyfikatorów bazowych
     log_reg = LogisticRegression(max_iter=1000, random_state=42)
     rf = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=42)
     svc = SVC(kernel='linear', probability=True, random_state=42)
 
-    # Define ensemble methods
+    # Definicja metod zespołowych
     bagging = BaggingClassifier(estimator=rf, n_estimators=50, random_state=42)
     boosting = AdaBoostClassifier(n_estimators=100, learning_rate=0.5, random_state=42)
     voting = VotingClassifier(estimators=[('lr', log_reg), ('rf', rf), ('svc', svc)], voting='soft')
 
-    # Train models and evaluate
+    # Trenuj modele i oceniaj
     models = {
         "Random Forest": rf,
         "Bagging": bagging,
@@ -49,14 +49,14 @@ def train_run9(X_train, y_train, X_test, y_test):
         accuracy = accuracy_score(y_test, y_pred)
         roc_auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1]) if hasattr(model, "predict_proba") else None
         results[model_name] = {
-            "Accuracy": accuracy,
+            "Dokładność": accuracy,
             "ROC-AUC": roc_auc,
-            "Classification Report": classification_report(y_test, y_pred, output_dict=True)
+            "Raport klasyfikacji": classification_report(y_test, y_pred, output_dict=True)
         }
         print(f"Dokładność dla {model_name}: {accuracy}")
         if roc_auc is not None:
             print(f"ROC-AUC dla {model_name}: {roc_auc}")
         print(classification_report(y_test, y_pred))
 
-    # Return the best model (voting classifier) and test data
+    # Zwróć najlepszy model (Voting Classifier) i dane testowe
     return voting, X_test, y_test
