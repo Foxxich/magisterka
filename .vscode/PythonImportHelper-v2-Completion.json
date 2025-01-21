@@ -1108,14 +1108,6 @@
         "documentation": {}
     },
     {
-        "label": "evaluate_model15",
-        "importPath": "common",
-        "description": "common",
-        "isExtraImport": true,
-        "detail": "common",
-        "documentation": {}
-    },
-    {
         "label": "get_bert_embeddings",
         "importPath": "common",
         "description": "common",
@@ -1408,6 +1400,15 @@
         "documentation": {}
     },
     {
+        "label": "scipy.stats",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "scipy.stats",
+        "description": "scipy.stats",
+        "detail": "scipy.stats",
+        "documentation": {}
+    },
+    {
         "label": "stopwords",
         "importPath": "nltk.corpus",
         "description": "nltk.corpus",
@@ -1685,6 +1686,87 @@
         "documentation": {}
     },
     {
+        "label": "folder_path",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot'\nfiles = os.listdir(folder_path)\n# Klasyfikacja plików\nresults_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "files",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "files = os.listdir(folder_path)\n# Klasyfikacja plików\nresults_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "results_files",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "results_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "sample_file",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "sample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "sample_data",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "sample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz\n        data['run'] = file  # Dodajemy nazwę pliku jako nową kolumnę",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "columns",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "columns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz\n        data['run'] = file  # Dodajemy nazwę pliku jako nową kolumnę\n        all_data.append(data)",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "all_data",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "all_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz\n        data['run'] = file  # Dodajemy nazwę pliku jako nową kolumnę\n        all_data.append(data)\n# **3. Łączenie danych**\ncombined_data = pd.concat(all_data, ignore_index=True)",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "combined_data",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "combined_data = pd.concat(all_data, ignore_index=True)\n# **4. Zapis danych do pliku CSV**\noutput_file = os.path.join(folder_path, 'combined_results.csv')\ncombined_data.to_csv(output_file, index=False)\nprint(f\"Zapisano dane do pliku: {output_file}\")",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "output_file",
+        "kind": 5,
+        "importPath": "analyzer",
+        "description": "analyzer",
+        "peekOfCode": "output_file = os.path.join(folder_path, 'combined_results.csv')\ncombined_data.to_csv(output_file, index=False)\nprint(f\"Zapisano dane do pliku: {output_file}\")",
+        "detail": "analyzer",
+        "documentation": {}
+    },
+    {
         "label": "load_and_preprocess_data",
         "kind": 2,
         "importPath": "common",
@@ -1766,15 +1848,6 @@
         "documentation": {}
     },
     {
-        "label": "evaluate_model15",
-        "kind": 2,
-        "importPath": "common",
-        "description": "common",
-        "peekOfCode": "def evaluate_model15(model, X_test, y_test, run_type, output_path, start_time):\n    \"\"\"\n    Ewaluacja modelu z wykorzystaniem walidacji krzyżowej i obliczanie metryk.\n    \"\"\"\n    from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score, matthews_corrcoef, log_loss, cohen_kappa_score, precision_recall_curve\n    import pandas as pd\n    import os\n    import time\n    # Metryki walidacji krzyżowej\n    cv_accuracy_mean = None",
-        "detail": "common",
-        "documentation": {}
-    },
-    {
         "label": "get_embeddings",
         "kind": 2,
         "importPath": "main",
@@ -1790,6 +1863,132 @@
         "description": "main",
         "peekOfCode": "def run_method(method_number, X_train, y_train, X_test, y_test, output_path):\n    \"\"\"Uruchamia wybraną metodę na podstawie numeru.\"\"\"\n    start_time = time.time()\n    if method_number == 1:\n        models, X_test, y_test = train_run1(X_train, y_train, X_test, y_test)\n        for i, model in enumerate(models):\n            run_name = f\"run1-{i + 1}\"  # Unikalna nazwa dla każdego modelu\n            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)\n    elif method_number == 2:\n        model, X_test, y_test = train_run2(X_train, y_train, X_test, y_test)",
         "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "output_dir",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "output_dir = r'C:\\Users\\Vadym\\Documents\\magisterka\\statistics_plots'\nos.makedirs(output_dir, exist_ok=True)\nshapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "shapiro_file",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "shapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "kruskal_file",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "kruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "correlation_file_pearson",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "correlation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "correlation_file_spearman",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "correlation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "file_path",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "file_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "data = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej\nshapiro_results = []",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "results",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "results = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej\nshapiro_results = []\nfor column in numeric_columns:\n    mean_value = data[column].mean()\n    std_value = data[column].std()\n    # Test normalności Shapiro-Wilka\n    shapiro_test = stats.shapiro(data[column].dropna())  # Pomijamy brakujące wartości",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "numeric_columns",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "numeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej\nshapiro_results = []\nfor column in numeric_columns:\n    mean_value = data[column].mean()\n    std_value = data[column].std()\n    # Test normalności Shapiro-Wilka\n    shapiro_test = stats.shapiro(data[column].dropna())  # Pomijamy brakujące wartości\n    shapiro_results.append({\n        \"metric\": column,",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "shapiro_results",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "shapiro_results = []\nfor column in numeric_columns:\n    mean_value = data[column].mean()\n    std_value = data[column].std()\n    # Test normalności Shapiro-Wilka\n    shapiro_test = stats.shapiro(data[column].dropna())  # Pomijamy brakujące wartości\n    shapiro_results.append({\n        \"metric\": column,\n        \"test\": \"Shapiro-Wilk\",\n        \"mean\": mean_value,",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "shapiro_df",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "shapiro_df = pd.DataFrame(shapiro_results)\nshapiro_df.to_csv(shapiro_file, index=False)\n# 2. Test Kruskal-Wallisa dla każdej metryki\nkruskal_results = []\nif 'run' in data.columns:\n    run_columns = data['run'].unique()\n    if len(run_columns) > 1:\n        for column in numeric_columns:\n            groups = [data[data['run'] == run][column].dropna() for run in run_columns]\n            if all(len(group) > 0 for group in groups):  # Upewnij się, że grupy nie są puste",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "kruskal_results",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "kruskal_results = []\nif 'run' in data.columns:\n    run_columns = data['run'].unique()\n    if len(run_columns) > 1:\n        for column in numeric_columns:\n            groups = [data[data['run'] == run][column].dropna() for run in run_columns]\n            if all(len(group) > 0 for group in groups):  # Upewnij się, że grupy nie są puste\n                stat, p_value = stats.kruskal(*groups)\n                kruskal_results.append({\n                    \"metric\": column,",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "correlation_matrix_pearson",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "correlation_matrix_pearson = data[numeric_columns].corr(method='pearson')\ncorrelation_matrix_pearson.to_csv(correlation_file_pearson)\n# 4. Test korelacji Spearmana dla wszystkich par kolumn numerycznych\ncorrelation_matrix_spearman = data[numeric_columns].corr(method='spearman')\ncorrelation_matrix_spearman.to_csv(correlation_file_spearman)\n# Histogramy dla każdej kolumny numerycznej\nfor column in numeric_columns:\n    plt.figure()\n    plt.hist(data[column].dropna(), bins=10, alpha=0.7)\n    plt.title(f\"Histogram {column}\")",
+        "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "correlation_matrix_spearman",
+        "kind": 5,
+        "importPath": "make_statistics",
+        "description": "make_statistics",
+        "peekOfCode": "correlation_matrix_spearman = data[numeric_columns].corr(method='spearman')\ncorrelation_matrix_spearman.to_csv(correlation_file_spearman)\n# Histogramy dla każdej kolumny numerycznej\nfor column in numeric_columns:\n    plt.figure()\n    plt.hist(data[column].dropna(), bins=10, alpha=0.7)\n    plt.title(f\"Histogram {column}\")\n    plt.xlabel(column)\n    plt.ylabel(\"Częstość\")\n    plt.savefig(os.path.join(output_dir, f\"{column}_histogram.png\"))",
+        "detail": "make_statistics",
         "documentation": {}
     },
     {

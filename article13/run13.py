@@ -31,7 +31,7 @@ def train_run13(X_train, y_train, X_test, y_test):
     base_learners = [
         ('rf', RandomForestClassifier(n_estimators=100, random_state=42)),  # Random Forest
         ('gb', GradientBoostingClassifier(n_estimators=100, random_state=42)),  # Gradient Boosting
-        ('xgb', XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42))  # XGBoost
+        ('xgb', XGBClassifier(use_label_encoder=False, eval_metric='logloss', random_state=42, reg_alpha=1.0, reg_lambda=1.0))
     ]
     
     # Definiowanie klasyfikatora meta (uczeń końcowy w stacking)

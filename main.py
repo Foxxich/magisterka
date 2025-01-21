@@ -1,7 +1,7 @@
 import os
 import sys
 import time
-from common import evaluate_model, evaluate_model15, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, split_data, split_data_few_shot, split_data_one_shot, get_transformer_embeddings
+from common import evaluate_model, get_bert_embeddings, get_roberta_embeddings, load_and_preprocess_data, split_data, split_data_few_shot, split_data_one_shot, get_transformer_embeddings
 
 # Ścieżki do katalogów z metodami
 for i in range(1, 17):

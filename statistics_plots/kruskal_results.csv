@@ -1,0 +1,10 @@
+metric,test,stat,p_value,significant
+Accuracy,Kruskal-Wallis,22.0,0.45988870269368676,False
+Precision,Kruskal-Wallis,21.999999999999982,0.45988870269368765,False
+Recall,Kruskal-Wallis,21.999999999999996,0.45988870269368665,False
+F1-Score,Kruskal-Wallis,21.999999999999993,0.459888702693687,False
+ROC-AUC,Kruskal-Wallis,21.999999999999996,0.45988870269368665,False
+MCC,Kruskal-Wallis,22.0,0.45988870269368676,False
+Log Loss,Kruskal-Wallis,22.0,0.45988870269368676,False
+Cohen's Kappa,Kruskal-Wallis,22.0,0.45988870269368676,False
+Execution Time (s),Kruskal-Wallis,22.0,0.45988870269368676,False
