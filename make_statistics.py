@@ -13,7 +13,7 @@ correlation_file_pearson = os.path.join(output_dir, "pearson_correlation_matrix.
 correlation_file_spearman = os.path.join(output_dir, "spearman_correlation_matrix.csv")
 
 # Wczytanie danych z poprawnym separatorem
-file_path = r'C:\Users\Vadym\Documents\magisterka\results_3_few_shot\combined_results.csv'
+file_path = r'C:\Users\Vadym\Documents\magisterka\best_results\combined_results.csv'
 data = pd.read_csv(file_path, sep=",")  # Separator zmieniony na przecinek
 
 # Wyświetlenie pierwszych wierszy danych

@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Folder z plikami
-folder_path = r'C:\Users\Vadym\Documents\magisterka\results_3_few_shot'
+folder_path = r'C:\Users\Vadym\Documents\magisterka\best_results'
 files = os.listdir(folder_path)
 
 # Klasyfikacja plików

@@ -1636,7 +1636,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder do porównania\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1645,7 +1645,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder do porównania\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1654,7 +1654,25 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Folder do porównania\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",\n    \"run18_results.csv\",",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "comparison_folder",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "comparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",\n    \"run18_results.csv\",\n    \"run17_pr_curve.csv\",\n    \"run17_results.csv\"",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "comparison_files",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "comparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",\n    \"run18_results.csv\",\n    \"run17_pr_curve.csv\",\n    \"run17_results.csv\"\n]",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1663,7 +1681,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\ncolumns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1672,7 +1690,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\ncolumns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1681,7 +1699,16 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs = list(range(1, 21))  # Uruchomienia od 1 do 20\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]\n    # Specjalne przetwarzanie dla run12\n    results_files.extend([",
+        "peekOfCode": "runs = list(range(1, 21))  # Uruchomienia od 1 do 20\ncolumns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]\n    # Dodanie plików z porównania",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "columns_to_load",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "columns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]\n    # Dodanie plików z porównania\n    results_files.extend([os.path.join(comparison_folder, f) for f in comparison_files if \"results\" in f])",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1690,7 +1717,7 @@
         "kind": 5,
         "importPath": "analyzer",
         "description": "analyzer",
-        "peekOfCode": "folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot'\nfiles = os.listdir(folder_path)\n# Klasyfikacja plików\nresults_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane",
+        "peekOfCode": "folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results'\nfiles = os.listdir(folder_path)\n# Klasyfikacja plików\nresults_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane",
         "detail": "analyzer",
         "documentation": {}
     },
@@ -1870,7 +1897,7 @@
         "kind": 5,
         "importPath": "make_statistics",
         "description": "make_statistics",
-        "peekOfCode": "output_dir = r'C:\\Users\\Vadym\\Documents\\magisterka\\statistics_plots'\nos.makedirs(output_dir, exist_ok=True)\nshapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych",
+        "peekOfCode": "output_dir = r'C:\\Users\\Vadym\\Documents\\magisterka\\statistics_plots'\nos.makedirs(output_dir, exist_ok=True)\nshapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych",
         "detail": "make_statistics",
         "documentation": {}
     },
@@ -1879,7 +1906,7 @@
         "kind": 5,
         "importPath": "make_statistics",
         "description": "make_statistics",
-        "peekOfCode": "shapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())",
+        "peekOfCode": "shapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())",
         "detail": "make_statistics",
         "documentation": {}
     },
@@ -1888,7 +1915,7 @@
         "kind": 5,
         "importPath": "make_statistics",
         "description": "make_statistics",
-        "peekOfCode": "kruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna",
+        "peekOfCode": "kruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna",
         "detail": "make_statistics",
         "documentation": {}
     },
@@ -1897,7 +1924,7 @@
         "kind": 5,
         "importPath": "make_statistics",
         "description": "make_statistics",
-        "peekOfCode": "correlation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}",
+        "peekOfCode": "correlation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}",
         "detail": "make_statistics",
         "documentation": {}
     },
@@ -1906,7 +1933,7 @@
         "kind": 5,
         "importPath": "make_statistics",
         "description": "make_statistics",
-        "peekOfCode": "correlation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi",
+        "peekOfCode": "correlation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi",
         "detail": "make_statistics",
         "documentation": {}
     },
@@ -1915,7 +1942,7 @@
         "kind": 5,
         "importPath": "make_statistics",
         "description": "make_statistics",
-        "peekOfCode": "file_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej",
+        "peekOfCode": "file_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej",
         "detail": "make_statistics",
         "documentation": {}
     },
@@ -1989,123 +2016,6 @@
         "description": "make_statistics",
         "peekOfCode": "correlation_matrix_spearman = data[numeric_columns].corr(method='spearman')\ncorrelation_matrix_spearman.to_csv(correlation_file_spearman)\n# Histogramy dla każdej kolumny numerycznej\nfor column in numeric_columns:\n    plt.figure()\n    plt.hist(data[column].dropna(), bins=10, alpha=0.7)\n    plt.title(f\"Histogram {column}\")\n    plt.xlabel(column)\n    plt.ylabel(\"Częstość\")\n    plt.savefig(os.path.join(output_dir, f\"{column}_histogram.png\"))",
         "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "remove_outliers",
-        "kind": 2,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Usuwa wartości odstające, które są daleko poza zakresem międzykwartylowym (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # Pierwszy kwartyl (25. percentyl)\n    Q3 = data[column].quantile(0.75)  # Trzeci kwartyl (75. percentyl)\n    IQR = Q3 - Q1  # Zakres międzykwartylowy\n    lower_bound = Q1 - 1.5 * IQR  # Dolna granica\n    upper_bound = Q3 + 1.5 * IQR  # Górna granica\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "project_root",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root, \"results_3_few_shot\")\nplot_base_folder = os.path.join(project_root, \"plots\", \"results_3_few_shot_mine\")\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "base_folder",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "base_folder = os.path.join(project_root, \"results_3_few_shot\")\nplot_base_folder = os.path.join(project_root, \"plots\", \"results_3_few_shot_mine\")\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "plot_base_folder",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\", \"results_3_few_shot_mine\")\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "runs",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "runs = list(range(17, 21))  # Uruchomienia od 17 do 20\n# Ścieżki do folderów z wynikami i wykresami\nfolder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "folder_path",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "folder_path = base_folder\nplots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "plots_output_path",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "plots_output_path = plot_base_folder\nos.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n# Tworzenie ścieżek do plików z wynikami i wykresami PR\n# Zakres uruchomień do przetworzenia\nruns = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "runs",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "runs = list(range(17, 21))  # Uruchomienia od 17 do 20, czyli tylko autorskie metody\n# Zmiana w tworzeniu listy plików wyników\nresults_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]\npr_curve_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_pr_curve.csv\")",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "results_files",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "results_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_results.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]\npr_curve_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_pr_curve.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "pr_curve_files",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "pr_curve_files = [\n    os.path.join(folder_path, file) for file in os.listdir(folder_path)\n    if file.startswith(\"run\") and any(f\"run{i}\" in file for i in runs) and file.endswith(\"_pr_curve.csv\")\n    and any(str(i) in file.split('_')[0] for i in range(17, 21))\n]\n# Łączenie wszystkich plików `run*_results.csv` w jeden DataFrame\nresults_data = []\nfor file in results_files:\n    if os.path.exists(file):  # Sprawdzenie, czy plik istnieje\n        data = pd.read_csv(file)",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "results_data",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "results_data = []\nfor file in results_files:\n    if os.path.exists(file):  # Sprawdzenie, czy plik istnieje\n        data = pd.read_csv(file)\n        run_name = os.path.basename(file).split('_')[0]  # Wyodrębnienie nazwy uruchomienia (np. run1, run12_catboost)\n        data['Run'] = run_name  # Dodanie kolumny z nazwą uruchomienia\n        results_data.append(data)\nif results_data:  # Sprawdzenie, czy lista nie jest pusta przed łączeniem\n    all_results = pd.concat(results_data, ignore_index=True)\nelse:",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "pr_curves",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "pr_curves = {}\nfor file in pr_curve_files:\n    if os.path.exists(file):  # Sprawdzenie, czy plik istnieje\n        run_name = os.path.basename(file).split('_')[0]  # Wyodrębnienie nazwy uruchomienia (np. run1, run12_catboost)\n        pr_curves[run_name] = pd.read_csv(file)\n# Tworzenie wykresów porównawczych dla każdej metryki w różnych uruchomieniach\nmetrics = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\",\n    \"MCC\", \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\"\n]",
-        "detail": "my_plots",
-        "documentation": {}
-    },
-    {
-        "label": "metrics",
-        "kind": 5,
-        "importPath": "my_plots",
-        "description": "my_plots",
-        "peekOfCode": "metrics = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\",\n    \"MCC\", \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\"\n]\nif not all_results.empty:\n    for metric in metrics:\n        if metric in all_results.columns:\n            data_to_plot = all_results\n            if metric == \"Execution Time (s)\":\n                # Usuwanie wartości odstających dla \"Execution Time (s)\"",
-        "detail": "my_plots",
         "documentation": {}
     },
     {

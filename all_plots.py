@@ -19,12 +19,27 @@ project_root = os.getcwd()
 base_folder = os.path.join(project_root)
 plot_base_folder = os.path.join(project_root, "plots")
 
+# Folder do porównania
+comparison_folder = r"C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot"
+comparison_files = [
+    "run20_pr_curve.csv",
+    "run20_results.csv",
+    "run19_pr_curve.csv",
+    "run19_results.csv",
+    "run18_pr_curve.csv",
+    "run18_results.csv",
+    "run17_pr_curve.csv",
+    "run17_results.csv"
+]
+
 # Typy folderów do przetworzenia
 folder_types = ['classic', 'few_shot', 'one_shot']
 folders = [f"results_{i}_{ft}" for ft in folder_types for i in range(1, 4)]
 
 # Zakres uruchomień do przetworzenia
 runs = list(range(1, 21))  # Uruchomienia od 1 do 20
+
+columns_to_load = ["Accuracy", "Execution Time (s)", "Log Loss"]
 
 for folder in folders:
     folder_path = os.path.join(base_folder, folder) + '\\'  # Upewnij się, że jest ukośnik na końcu
@@ -35,39 +50,19 @@ for folder in folders:
     results_files = [f"{folder_path}run{i}_results.csv" for i in runs]
     pr_curve_files = [f"{folder_path}run{i}_pr_curve.csv" for i in runs]
 
-    # Specjalne przetwarzanie dla run12
-    results_files.extend([
-        f"{folder_path}run1-1_results.csv",
-        f"{folder_path}run1-2_results.csv",
-        f"{folder_path}run1-3_results.csv",
-        f"{folder_path}run1-4_results.csv",
-        f"{folder_path}run1-5_results.csv",
-        f"{folder_path}run15-1_results.csv",
-        f"{folder_path}run15-2_results.csv",
-        f"{folder_path}run15-3_results.csv",
-        f"{folder_path}run12-catboost_results.csv",
-        f"{folder_path}run12-rf_results.csv",
-    ])
-    pr_curve_files.extend([
-        f"{folder_path}run1-1_pr_curve.csv",
-        f"{folder_path}run1-2_pr_curve.csv",
-        f"{folder_path}run1-3_pr_curve.csv",
-        f"{folder_path}run1-4_pr_curve.csv",
-        f"{folder_path}run1-5_pr_curve.csv",
-        f"{folder_path}run15-1_pr_curve.csv",
-        f"{folder_path}run15-2_pr_curve.csv",
-        f"{folder_path}run15-3_pr_curve.csv",
-        f"{folder_path}run12-catboost_pr_curve.csv",
-        f"{folder_path}run12-rf_pr_curve.csv",
-    ])
+    # Dodanie plików z porównania
+    results_files.extend([os.path.join(comparison_folder, f) for f in comparison_files if "results" in f])
+    pr_curve_files.extend([os.path.join(comparison_folder, f) for f in comparison_files if "pr_curve" in f])
 
     # Łączenie wszystkich plików `run*_results.csv` w jeden DataFrame
     results_data = []
     for file in results_files:
         if os.path.exists(file):  # Sprawdzanie, czy plik istnieje
-            data = pd.read_csv(file)
-            run_name = os.path.basename(file).split('_')[0]  # Wyodrębnienie nazwy uruchomienia (np. run1, run12-catboost)
-            data['Run'] = run_name  # Dodanie kolumny z nazwą uruchomienia
+            data = pd.read_csv(file, usecols=lambda col: col in columns_to_load + ['Metoda'])
+            # Wyodrębnienie nazwy metody wraz z numerem metody (bez prefiksu "run")
+            run_name = os.path.basename(file).replace("run", "metoda").split('_')[0]  # Usunięcie prefiksu "run"
+            data['Metoda'] = run_name  # Dodanie kolumny z nazwą uruchomienia
+            data['Source'] = 'Comparison' if file.startswith(comparison_folder) else 'Folder'
             results_data.append(data)
 
     if results_data:  # Sprawdzenie, czy lista nie jest pusta przed łączeniem
@@ -79,14 +74,12 @@ for folder in folders:
     pr_curves = {}
     for file in pr_curve_files:
         if os.path.exists(file):  # Sprawdzanie, czy plik istnieje
-            run_name = os.path.basename(file).split('_')[0]  # Wyodrębnienie nazwy uruchomienia (np. run1, run12-catboost)
-            pr_curves[run_name] = pd.read_csv(file)
+            run_name = os.path.basename(file).replace("run", "metoda").split('_')[0]  # Usunięcie prefiksu "run"
+            source = 'Comparison' if file.startswith(comparison_folder) else 'Folder'
+            pr_curves[run_name] = (pd.read_csv(file), source)
 
     # Tworzenie wykresów porównawczych dla każdej metryki w różnych uruchomieniach
-    metrics = [
-        "Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC",
-        "MCC", "Log Loss", "Cohen's Kappa", "Execution Time (s)"
-    ]
+    metrics = ["Accuracy", "Execution Time (s)", "Log Loss"]
     if not all_results.empty:
         for metric in metrics:
             if metric in all_results.columns:
@@ -94,32 +87,34 @@ for folder in folders:
                 if all_results[metric].notna().any() and all_results[metric].sum() != 0:
                     mask = (all_results[metric] != 0) & (all_results[metric] != 0.0) & (all_results[metric].notna())
                     data_to_plot = all_results[mask]
-                    
+
                     if metric == "Execution Time (s)":
                         # Usuwanie wartości odstających dla "Execution Time (s)"
                         data_to_plot = remove_outliers(data_to_plot, metric)
 
                     plt.figure(figsize=(10, 6))
-                    plt.bar(data_to_plot['Run'], data_to_plot[metric], color='skyblue')
+                    colors = ['red' if row['Source'] == 'Comparison' else 'skyblue' for _, row in data_to_plot.iterrows()]
+                    plt.bar(data_to_plot['Metoda'], data_to_plot[metric], color=colors)
                     plt.title(f"Porównanie {metric} dla różnych uruchomień", fontsize=14)
                     plt.xlabel("Uruchomienia", fontsize=12)
                     plt.ylabel(metric, fontsize=12)
                     plt.xticks(rotation=45)
                     plt.tight_layout()
-                    
+
                     # Zapis wykresu
                     plot_file = os.path.join(plots_output_path, f"{metric}_comparison.png")
                     plt.savefig(plot_file)
-                    plt.close() 
+                    plt.close()
     else:
         print(f"Brak danych wynikowych do tworzenia wykresów dla metryk w {folder}.")
 
     # Tworzenie wykresów Precision-Recall dla wszystkich uruchomień
     if pr_curves:
         plt.figure(figsize=(12, 8))
-        for run, pr_data in pr_curves.items():
+        for run, (pr_data, source) in pr_curves.items():
             if "Precision" in pr_data.columns and "Recall" in pr_data.columns:
-                plt.plot(pr_data["Recall"], pr_data["Precision"], label=run)
+                color = 'red' if source == 'Comparison' else 'blue'
+                plt.plot(pr_data["Recall"], pr_data["Precision"], label=run, color=color)
 
         plt.title("Wykresy Precision-Recall dla wszystkich uruchomień", fontsize=14)
         plt.xlabel("Recall", fontsize=12)
