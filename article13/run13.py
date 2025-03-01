@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report
 from sklearn.ensemble import StackingClassifier
 import numpy as np
 
-def train_run13(X_train, y_train, X_test, y_test):
+def metoda13(X_train, y_train, X_test, y_test):
     """
     Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.
 

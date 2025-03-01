@@ -8,7 +8,7 @@ from sklearn.metrics import (
 )
 
 
-def train_run9(X_train, y_train, X_test, y_test):
+def metoda9(X_train, y_train, X_test, y_test):
     """
     Trenuje różne modele zespołowe i ocenia ich wyniki.
     

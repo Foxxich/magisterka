@@ -52,7 +52,7 @@ def heuristic_post_processing(predictions, attribute_probs, attributes, threshol
             final_predictions.append(pred)
     return final_predictions
 
-def train_run7(X_embeddings=None, X=None, y=None):
+def metoda7(X_embeddings=None, X=None, y=None):
     """
     Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.
 

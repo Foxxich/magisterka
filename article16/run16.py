@@ -28,7 +28,7 @@ def preprocess_text(X):
     return X.apply(clean_text)
 
 
-def train_run16(X_train, y_train, X_test, y_test):
+def metoda16(X_train, y_train, X_test, y_test):
     """
     Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.
 

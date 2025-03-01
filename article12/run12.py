@@ -2,7 +2,7 @@ from sklearn.ensemble import RandomForestClassifier
 from catboost import CatBoostClassifier
 
 
-def train_run12(X_train, y_train, X_test, y_test):
+def metoda12(X_train, y_train, X_test, y_test):
     """
     Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.
 

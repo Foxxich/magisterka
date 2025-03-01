@@ -1232,7 +1232,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run1",
+        "label": "metoda1",
         "importPath": "run1",
         "description": "run1",
         "isExtraImport": true,
@@ -1240,7 +1240,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run2",
+        "label": "metoda2",
         "importPath": "run2",
         "description": "run2",
         "isExtraImport": true,
@@ -1248,7 +1248,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run3",
+        "label": "metoda3",
         "importPath": "run3",
         "description": "run3",
         "isExtraImport": true,
@@ -1256,7 +1256,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run4",
+        "label": "metoda4",
         "importPath": "run4",
         "description": "run4",
         "isExtraImport": true,
@@ -1264,7 +1264,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run5",
+        "label": "metoda5",
         "importPath": "run5",
         "description": "run5",
         "isExtraImport": true,
@@ -1272,7 +1272,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run6",
+        "label": "metoda6",
         "importPath": "run6",
         "description": "run6",
         "isExtraImport": true,
@@ -1280,7 +1280,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run7",
+        "label": "metoda7",
         "importPath": "run7",
         "description": "run7",
         "isExtraImport": true,
@@ -1288,7 +1288,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run8",
+        "label": "metoda8",
         "importPath": "run8",
         "description": "run8",
         "isExtraImport": true,
@@ -1296,7 +1296,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run9",
+        "label": "metoda9",
         "importPath": "run9",
         "description": "run9",
         "isExtraImport": true,
@@ -1304,7 +1304,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run10",
+        "label": "metoda10",
         "importPath": "run10",
         "description": "run10",
         "isExtraImport": true,
@@ -1312,7 +1312,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run11",
+        "label": "metoda11",
         "importPath": "run11",
         "description": "run11",
         "isExtraImport": true,
@@ -1320,7 +1320,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run12",
+        "label": "metoda12",
         "importPath": "run12",
         "description": "run12",
         "isExtraImport": true,
@@ -1328,7 +1328,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run13",
+        "label": "metoda13",
         "importPath": "run13",
         "description": "run13",
         "isExtraImport": true,
@@ -1336,7 +1336,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run14",
+        "label": "metoda14",
         "importPath": "run14",
         "description": "run14",
         "isExtraImport": true,
@@ -1344,7 +1344,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run15",
+        "label": "metoda15",
         "importPath": "run15",
         "description": "run15",
         "isExtraImport": true,
@@ -1352,7 +1352,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run16",
+        "label": "metoda16",
         "importPath": "run16",
         "description": "run16",
         "isExtraImport": true,
@@ -1360,7 +1360,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run17",
+        "label": "metoda17",
         "importPath": "my_run",
         "description": "my_run",
         "isExtraImport": true,
@@ -1368,7 +1368,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run18",
+        "label": "metoda18",
         "importPath": "my_run",
         "description": "my_run",
         "isExtraImport": true,
@@ -1376,7 +1376,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run19",
+        "label": "metoda19",
         "importPath": "my_run",
         "description": "my_run",
         "isExtraImport": true,
@@ -1384,7 +1384,7 @@
         "documentation": {}
     },
     {
-        "label": "train_run20",
+        "label": "metoda20",
         "importPath": "my_run",
         "description": "my_run",
         "isExtraImport": true,
@@ -1434,47 +1434,47 @@
         "documentation": {}
     },
     {
-        "label": "train_run1",
+        "label": "metoda1",
         "kind": 2,
         "importPath": "article1.run1",
         "description": "article1.run1",
-        "peekOfCode": "def train_run1(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje ensemble modeli neuronowych z różnymi hiperparametrami.\n    Parameters:\n        X_train (np.ndarray): Dane treningowe.\n        y_train (np.ndarray): Etykiety treningowe.\n        X_test (np.ndarray): Dane testowe.\n        y_test (np.ndarray): Etykiety testowe.\n        n_models (int): Liczba modeli w ensemble.\n    Returns:",
+        "peekOfCode": "def metoda1(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje ensemble modeli neuronowych z różnymi hiperparametrami.\n    Parameters:\n        X_train (np.ndarray): Dane treningowe.\n        y_train (np.ndarray): Etykiety treningowe.\n        X_test (np.ndarray): Dane testowe.\n        y_test (np.ndarray): Etykiety testowe.\n        n_models (int): Liczba modeli w ensemble.\n    Returns:",
         "detail": "article1.run1",
         "documentation": {}
     },
     {
-        "label": "train_run10",
+        "label": "metoda10",
         "kind": 2,
         "importPath": "article10.run10",
         "description": "article10.run10",
-        "peekOfCode": "def train_run10(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z miękkim głosowaniem (soft-voting) i ocenia jego wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf: Wytrenowany model VotingClassifier.",
+        "peekOfCode": "def metoda10(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z miękkim głosowaniem (soft-voting) i ocenia jego wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf: Wytrenowany model VotingClassifier.",
         "detail": "article10.run10",
         "documentation": {}
     },
     {
-        "label": "train_run11",
+        "label": "metoda11",
         "kind": 2,
         "importPath": "article11.run11",
         "description": "article11.run11",
-        "peekOfCode": "def train_run11(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z wykorzystaniem VotingClassifier (Random Forest, Logistic Regression i AdaBoost),\n    stosując selekcję cech, normalizację i miękkie głosowanie.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "peekOfCode": "def metoda11(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z wykorzystaniem VotingClassifier (Random Forest, Logistic Regression i AdaBoost),\n    stosując selekcję cech, normalizację i miękkie głosowanie.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
         "detail": "article11.run11",
         "documentation": {}
     },
     {
-        "label": "train_run12",
+        "label": "metoda12",
         "kind": 2,
         "importPath": "article12.run12",
         "description": "article12.run12",
-        "peekOfCode": "def train_run12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.",
+        "peekOfCode": "def metoda12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.",
         "detail": "article12.run12",
         "documentation": {}
     },
     {
-        "label": "train_run13",
+        "label": "metoda13",
         "kind": 2,
         "importPath": "article13.run13",
         "description": "article13.run13",
-        "peekOfCode": "def train_run13(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.\n    Parametry:\n        X_train (np.ndarray): Macierz cech dla danych treningowych.\n        y_train (np.ndarray): Wektor etykiet dla danych treningowych.\n        X_test (np.ndarray): Macierz cech dla danych testowych.\n        y_test (np.ndarray): Wektor etykiet dla danych testowych.\n    Zwraca:\n        StackingClassifier: Wytrenowany model zespołowy typu stacking.",
+        "peekOfCode": "def metoda13(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.\n    Parametry:\n        X_train (np.ndarray): Macierz cech dla danych treningowych.\n        y_train (np.ndarray): Wektor etykiet dla danych treningowych.\n        X_test (np.ndarray): Macierz cech dla danych testowych.\n        y_test (np.ndarray): Wektor etykiet dla danych testowych.\n    Zwraca:\n        StackingClassifier: Wytrenowany model zespołowy typu stacking.",
         "detail": "article13.run13",
         "documentation": {}
     },
@@ -1488,20 +1488,20 @@
         "documentation": {}
     },
     {
-        "label": "train_run14",
+        "label": "metoda14",
         "kind": 2,
         "importPath": "article14.run14",
         "description": "article14.run14",
-        "peekOfCode": "def train_run14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "peekOfCode": "def metoda14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
         "detail": "article14.run14",
         "documentation": {}
     },
     {
-        "label": "train_run15",
+        "label": "metoda15",
         "kind": 2,
         "importPath": "article15.run15",
         "description": "article15.run15",
-        "peekOfCode": "def train_run15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):\n    \"\"\"\n    Funkcja trenuje zespół modeli Bi-LSTM z tokenizowanymi i wyściełanymi sekwencjami wejściowymi.\n    Parametry:\n        X_train (list, np.ndarray lub pd.Series): Dane tekstowe do trenowania.\n        y_train (array-like): Etykiety docelowe dla danych treningowych.\n        X_test (list, np.ndarray lub pd.Series): Dane tekstowe do testowania.\n        y_test (array-like): Etykiety docelowe dla danych testowych.\n        embedding_dim (int): Wymiar osadzania (domyślnie: 200).\n        maxlen (int): Maksymalna długość sekwencji wejściowych (domyślnie: 256).",
+        "peekOfCode": "def metoda15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):\n    \"\"\"\n    Funkcja trenuje zespół modeli Bi-LSTM z tokenizowanymi i wyściełanymi sekwencjami wejściowymi.\n    Parametry:\n        X_train (list, np.ndarray lub pd.Series): Dane tekstowe do trenowania.\n        y_train (array-like): Etykiety docelowe dla danych treningowych.\n        X_test (list, np.ndarray lub pd.Series): Dane tekstowe do testowania.\n        y_test (array-like): Etykiety docelowe dla danych testowych.\n        embedding_dim (int): Wymiar osadzania (domyślnie: 200).\n        maxlen (int): Maksymalna długość sekwencji wejściowych (domyślnie: 256).",
         "detail": "article15.run15",
         "documentation": {}
     },
@@ -1515,56 +1515,56 @@
         "documentation": {}
     },
     {
-        "label": "train_run16",
+        "label": "metoda16",
         "kind": 2,
         "importPath": "article16.run16",
         "description": "article16.run16",
-        "peekOfCode": "def train_run16(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        meta_model: Wytrenowany meta-klasyfikator (stacking).",
+        "peekOfCode": "def metoda16(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        meta_model: Wytrenowany meta-klasyfikator (stacking).",
         "detail": "article16.run16",
         "documentation": {}
     },
     {
-        "label": "train_run2",
+        "label": "metoda2",
         "kind": 2,
         "importPath": "article2.run2",
         "description": "article2.run2",
-        "peekOfCode": "def train_run2(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model wykorzystując GradientBoosting oraz MLP na oddzielnych podzbiorach cech \n    i łączy je za pomocą Regresji Logistycznej.\n    Parametry:\n        X_train (np.ndarray lub DataFrame): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub DataFrame): Zbiór cech do testowania.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "peekOfCode": "def metoda2(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model wykorzystując GradientBoosting oraz MLP na oddzielnych podzbiorach cech \n    i łączy je za pomocą Regresji Logistycznej.\n    Parametry:\n        X_train (np.ndarray lub DataFrame): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub DataFrame): Zbiór cech do testowania.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
         "detail": "article2.run2",
         "documentation": {}
     },
     {
-        "label": "train_run3",
+        "label": "metoda3",
         "kind": 2,
         "importPath": "article3.run3",
         "description": "article3.run3",
-        "peekOfCode": "def train_run3(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje dwupoziomowy model zespołowy wykorzystujący klasyfikatory cechowe i meta-klasyfikatory.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf_2: Wytrenowany model zespołowy drugiego poziomu.",
+        "peekOfCode": "def metoda3(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje dwupoziomowy model zespołowy wykorzystujący klasyfikatory cechowe i meta-klasyfikatory.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf_2: Wytrenowany model zespołowy drugiego poziomu.",
         "detail": "article3.run3",
         "documentation": {}
     },
     {
-        "label": "train_run4",
+        "label": "metoda4",
         "kind": 2,
         "importPath": "article4.run4",
         "description": "article4.run4",
-        "peekOfCode": "def train_run4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).\n    Zwraca:",
+        "peekOfCode": "def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).\n    Zwraca:",
         "detail": "article4.run4",
         "documentation": {}
     },
     {
-        "label": "train_run5",
+        "label": "metoda5",
         "kind": 2,
         "importPath": "article5.run5",
         "description": "article5.run5",
-        "peekOfCode": "def train_run5(X_train, y_train, X_test, y_test):\n    \"\"\"Trenuje model stacking z użyciem Random Forest i XGBoost jako bazowych oraz Logistic Regression jako meta-modelu.\"\"\"\n    # Trenuj modele bazowe: RandomForest i XGBoost\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)\n    xgb_clf = xgb.XGBClassifier(n_estimators=100, eval_metric='logloss', random_state=42)\n    rf_clf.fit(X_train, y_train)\n    xgb_clf.fit(X_train, y_train)\n    # Uzyskaj predykcje dla zbioru treningowego, aby stworzyć cechy dla meta-modelu\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]\n    xgb_preds_train = xgb_clf.predict_proba(X_train)[:, 1]",
+        "peekOfCode": "def metoda5(X_train, y_train, X_test, y_test):\n    \"\"\"Trenuje model stacking z użyciem Random Forest i XGBoost jako bazowych oraz Logistic Regression jako meta-modelu.\"\"\"\n    # Trenuj modele bazowe: RandomForest i XGBoost\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)\n    xgb_clf = xgb.XGBClassifier(n_estimators=100, eval_metric='logloss', random_state=42)\n    rf_clf.fit(X_train, y_train)\n    xgb_clf.fit(X_train, y_train)\n    # Uzyskaj predykcje dla zbioru treningowego, aby stworzyć cechy dla meta-modelu\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]\n    xgb_preds_train = xgb_clf.predict_proba(X_train)[:, 1]",
         "detail": "article5.run5",
         "documentation": {}
     },
     {
-        "label": "train_run6",
+        "label": "metoda6",
         "kind": 2,
         "importPath": "article6.run6",
         "description": "article6.run6",
-        "peekOfCode": "def train_run6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
+        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
         "detail": "article6.run6",
         "documentation": {}
     },
@@ -1596,29 +1596,29 @@
         "documentation": {}
     },
     {
-        "label": "train_run7",
+        "label": "metoda7",
         "kind": 2,
         "importPath": "article7.run7",
         "description": "article7.run7",
-        "peekOfCode": "def train_run7(X_embeddings=None, X=None, y=None):\n    \"\"\"\n    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.\n    Parametry:\n        X_embeddings (np.ndarray lub None): Wstępnie obliczone osadzenia.\n        X (lista lub pd.Series): Surowe dane tekstowe (jeśli osadzenia nie są podane).\n        y (lista lub pd.Series): Etykiety docelowe.\n    Zwraca:\n        rf_classifier: Wytrenowany model RandomForest.\n        X_test: Oryginalne lub przetworzone cechy zbioru testowego.",
+        "peekOfCode": "def metoda7(X_embeddings=None, X=None, y=None):\n    \"\"\"\n    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.\n    Parametry:\n        X_embeddings (np.ndarray lub None): Wstępnie obliczone osadzenia.\n        X (lista lub pd.Series): Surowe dane tekstowe (jeśli osadzenia nie są podane).\n        y (lista lub pd.Series): Etykiety docelowe.\n    Zwraca:\n        rf_classifier: Wytrenowany model RandomForest.\n        X_test: Oryginalne lub przetworzone cechy zbioru testowego.",
         "detail": "article7.run7",
         "documentation": {}
     },
     {
-        "label": "train_run8",
+        "label": "metoda8",
         "kind": 2,
         "importPath": "article8.run8",
         "description": "article8.run8",
-        "peekOfCode": "def train_run8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
+        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
         "detail": "article8.run8",
         "documentation": {}
     },
     {
-        "label": "train_run9",
+        "label": "metoda9",
         "kind": 2,
         "importPath": "article9.run9",
         "description": "article9.run9",
-        "peekOfCode": "def train_run9(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje różne modele zespołowe i ocenia ich wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting: Najlepszy model (VotingClassifier).",
+        "peekOfCode": "def metoda9(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje różne modele zespołowe i ocenia ich wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting: Najlepszy model (VotingClassifier).",
         "detail": "article9.run9",
         "documentation": {}
     },
@@ -1888,7 +1888,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def run_method(method_number, X_train, y_train, X_test, y_test, output_path):\n    \"\"\"Uruchamia wybraną metodę na podstawie numeru.\"\"\"\n    start_time = time.time()\n    if method_number == 1:\n        models, X_test, y_test = train_run1(X_train, y_train, X_test, y_test)\n        for i, model in enumerate(models):\n            run_name = f\"run1-{i + 1}\"  # Unikalna nazwa dla każdego modelu\n            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)\n    elif method_number == 2:\n        model, X_test, y_test = train_run2(X_train, y_train, X_test, y_test)",
+        "peekOfCode": "def run_method(method_number, X_train, y_train, X_test, y_test, output_path):\n    \"\"\"Uruchamia wybraną metodę na podstawie numeru.\"\"\"\n    start_time = time.time()\n    if method_number == 1:\n        models, X_test, y_test = metoda1(X_train, y_train, X_test, y_test)\n        for i, model in enumerate(models):\n            run_name = f\"run1-{i + 1}\"  # Unikalna nazwa dla każdego modelu\n            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)\n    elif method_number == 2:\n        model, X_test, y_test = metoda2(X_train, y_train, X_test, y_test)",
         "detail": "main",
         "documentation": {}
     },
@@ -2019,38 +2019,38 @@
         "documentation": {}
     },
     {
-        "label": "train_run17",
+        "label": "metoda17",
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def train_run17(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.\n    \"\"\"\n    sample_weights = np.ones(len(y_train))  # Inicjalizacja wag próbek\n    for _ in range(n_models):\n        model = Sequential([\n            Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 1\n            BatchNormalization(),\n            LeakyReLU(alpha=0.1),",
+        "peekOfCode": "def metoda17(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.\n    \"\"\"\n    sample_weights = np.ones(len(y_train))  # Inicjalizacja wag próbek\n    for _ in range(n_models):\n        model = Sequential([\n            Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 1\n            BatchNormalization(),\n            LeakyReLU(alpha=0.1),",
         "detail": "my_run",
         "documentation": {}
     },
     {
-        "label": "train_run18",
+        "label": "metoda18",
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def train_run18(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory GradientBoosting i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    gb_clf = GradientBoostingClassifier(n_estimators=100, random_state=42)  # Gradient Boosting\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    gb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    gb_preds_train = gb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla GradientBoosting\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
+        "peekOfCode": "def metoda18(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory GradientBoosting i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    gb_clf = GradientBoostingClassifier(n_estimators=100, random_state=42)  # Gradient Boosting\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    gb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    gb_preds_train = gb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla GradientBoosting\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
         "detail": "my_run",
         "documentation": {}
     },
     {
-        "label": "train_run19",
+        "label": "metoda19",
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def train_run19(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees\n    rf_clf.fit(X_train, y_train)\n    et_clf.fit(X_train, y_train)\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest\n    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees",
+        "peekOfCode": "def metoda19(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees\n    rf_clf.fit(X_train, y_train)\n    et_clf.fit(X_train, y_train)\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest\n    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees",
         "detail": "my_run",
         "documentation": {}
     },
     {
-        "label": "train_run20",
+        "label": "metoda20",
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def train_run20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    lgb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    lgb_preds_train = lgb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla LightGBM\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
+        "peekOfCode": "def metoda20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    lgb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    lgb_preds_train = lgb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla LightGBM\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
         "detail": "my_run",
         "documentation": {}
     }

@@ -3,7 +3,7 @@ import xgboost as xgb
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 
-def train_run5(X_train, y_train, X_test, y_test):
+def metoda5(X_train, y_train, X_test, y_test):
     """Trenuje model stacking z użyciem Random Forest i XGBoost jako bazowych oraz Logistic Regression jako meta-modelu."""
     
     # Trenuj modele bazowe: RandomForest i XGBoost

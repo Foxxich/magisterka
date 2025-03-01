@@ -3,7 +3,7 @@ from sklearn.ensemble import AdaBoostClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
 import numpy as np
 
-def train_run6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):
+def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):
     """
     Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.
     

@@ -8,7 +8,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-def train_run15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):
+def metoda15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):
     """
     Funkcja trenuje zespół modeli Bi-LSTM z tokenizowanymi i wyściełanymi sekwencjami wejściowymi.
 

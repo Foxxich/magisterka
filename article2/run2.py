@@ -3,7 +3,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 
-def train_run2(X_train, y_train, X_test, y_test):
+def metoda2(X_train, y_train, X_test, y_test):
     """
     Trenuje model wykorzystując GradientBoosting oraz MLP na oddzielnych podzbiorach cech 
     i łączy je za pomocą Regresji Logistycznej.

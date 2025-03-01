@@ -19,7 +19,7 @@ def preprocess_text(text):
     return ' '.join([snowball_stemmer.stem(word) for word in text.split()])  # Zastosowanie stemmingu
 
 
-def train_run14(X_train, y_train, X_test, y_test):
+def metoda14(X_train, y_train, X_test, y_test):
     """
     Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression
     jako finalnego estymatora.

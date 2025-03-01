@@ -4,7 +4,7 @@ from keras.optimizers import Adadelta
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 
-def train_run4(X_train, y_train, X_test, y_test, embedding_dim=100):
+def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):
     """
     Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.
     

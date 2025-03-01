@@ -26,7 +26,7 @@ def create_model(input_dim, units1=128, units2=64, units3=32, dropout_rate=0.2, 
     model.compile(optimizer=Adam(learning_rate=learning_rate), loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
-def train_run1(X_train, y_train, X_test, y_test, n_models=5):
+def metoda1(X_train, y_train, X_test, y_test, n_models=5):
     """
     Trenuje ensemble modeli neuronowych z różnymi hiperparametrami.
     

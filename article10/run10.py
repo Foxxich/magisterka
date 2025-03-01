@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 from xgboost import XGBClassifier
 
 
-def train_run10(X_train, y_train, X_test, y_test):
+def metoda10(X_train, y_train, X_test, y_test):
     """
     Trenuje model zespołowy z miękkim głosowaniem (soft-voting) i ocenia jego wyniki.
 

@@ -4,7 +4,7 @@ from sklearn.feature_selection import SelectKBest, chi2
 from sklearn.preprocessing import MinMaxScaler
 
 
-def train_run11(X_train, y_train, X_test, y_test):
+def metoda11(X_train, y_train, X_test, y_test):
     """
     Trenuje model zespołowy z wykorzystaniem VotingClassifier (Random Forest, Logistic Regression i AdaBoost),
     stosując selekcję cech, normalizację i miękkie głosowanie.

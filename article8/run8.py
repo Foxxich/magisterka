@@ -2,7 +2,7 @@ from sklearn.ensemble import RandomForestClassifier, VotingClassifier
 from xgboost import XGBClassifier
 
 
-def train_run8(X_train, y_train, X_test, y_test):
+def metoda8(X_train, y_train, X_test, y_test):
     """
     Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.
 

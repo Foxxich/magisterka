@@ -12,7 +12,7 @@ from nltk.stem import SnowballStemmer
 from lightgbm import LGBMClassifier
 from catboost import CatBoostClassifier
 
-def train_run17(X_train, y_train, X_test, y_test, n_models=5):
+def metoda17(X_train, y_train, X_test, y_test, n_models=5):
     """
     Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.
     """
@@ -35,7 +35,7 @@ def train_run17(X_train, y_train, X_test, y_test, n_models=5):
         sample_weights += np.abs(y_train - y_pred.squeeze())  # Aktualizacja wag próbek
     return model, X_test, y_test
 
-def train_run18(X_train, y_train, X_test, y_test):
+def metoda18(X_train, y_train, X_test, y_test):
     """
     Trenuje klasyfikatory GradientBoosting i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.
     """
@@ -59,7 +59,7 @@ def train_run18(X_train, y_train, X_test, y_test):
     })
     return meta_model, meta_features_test, y_test
 
-def train_run19(X_train, y_train, X_test, y_test):
+def metoda19(X_train, y_train, X_test, y_test):
     """
     Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.
     """
@@ -83,7 +83,7 @@ def train_run19(X_train, y_train, X_test, y_test):
     })
     return meta_model, meta_features_test, y_test
 
-def train_run20(X_train, y_train, X_test, y_test):
+def metoda20(X_train, y_train, X_test, y_test):
     """
     Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.
     """

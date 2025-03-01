@@ -4,7 +4,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import BaggingClassifier, AdaBoostClassifier, VotingClassifier
 import numpy as np
 
-def train_run3(X_train, y_train, X_test, y_test):
+def metoda3(X_train, y_train, X_test, y_test):
     """
     Trenuje dwupoziomowy model zespołowy wykorzystujący klasyfikatory cechowe i meta-klasyfikatory.
     
