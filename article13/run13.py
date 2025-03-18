@@ -23,7 +23,7 @@ def metoda13(X_train, y_train, X_test, y_test):
         np.ndarray: Dane testowe (etykiety).
     """
     # Obsługa niezrównoważonych klas za pomocą SMOTETomek
-    # (Kombinacja nadpróbkowania SMOTE i podpróbkowania Tomek Links)
+    # Kombinacja nadpróbkowania SMOTE
     smotetomek = SMOTETomek(random_state=42)
     X_train_resampled, y_train_resampled = smotetomek.fit_resample(X_train, y_train)
     

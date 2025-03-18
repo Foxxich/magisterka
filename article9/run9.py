@@ -59,4 +59,4 @@ def metoda9(X_train, y_train, X_test, y_test):
         print(classification_report(y_test, y_pred))
 
     # Zwróć najlepszy model (Voting Classifier) i dane testowe
-    return voting, X_test, y_test
+    return model, X_test, y_test

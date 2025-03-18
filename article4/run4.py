@@ -1,12 +1,12 @@
 from keras.models import Model
-from keras.layers import Input, LSTM, Bidirectional, Conv1D, MaxPooling1D, Flatten, Dense, concatenate, Softmax
+from keras.layers import Input, LSTM, Bidirectional, Conv1D, MaxPooling1D, Flatten, Dense, concatenate
 from keras.optimizers import Adadelta
 from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):
     """
-    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.
+    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP.
     
     Argumenty:
         X_train (np.ndarray): Zbiór cech do trenowania.

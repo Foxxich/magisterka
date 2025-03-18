@@ -52,36 +52,14 @@ def heuristic_post_processing(predictions, attribute_probs, attributes, threshol
             final_predictions.append(pred)
     return final_predictions
 
-def metoda7(X_embeddings=None, X=None, y=None):
+def metoda7(X_train, y_train, X_test, y_test):
     """
     Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.
-
-    Parametry:
-        X_embeddings (np.ndarray lub None): Wstępnie obliczone osadzenia.
-        X (lista lub pd.Series): Surowe dane tekstowe (jeśli osadzenia nie są podane).
-        y (lista lub pd.Series): Etykiety docelowe.
-
     Zwraca:
         rf_classifier: Wytrenowany model RandomForest.
         X_test: Oryginalne lub przetworzone cechy zbioru testowego.
         y_test: Etykiety zbioru testowego.
     """
-    # Jeśli osadzenia są podane, użyj ich; w przeciwnym razie przetwórz dane tekstowe
-    if X_embeddings is None:
-        # Wczytaj i przetwórz dane
-        X, y = load_and_preprocess_data()
-
-        # Podziel dane na zbiory treningowy i testowy
-        X_train, X_test, y_train, y_test = split_data(X, y, test_size=0.2)
-
-        # Wektoryzacja danych tekstowych za pomocą TF-IDF
-        print("Debug: Stosowanie wektoryzacji TF-IDF...")
-        tfidf_vectorizer = TfidfVectorizer(max_features=5000, max_df=0.7, stop_words="english")
-        X_train = tfidf_vectorizer.fit_transform(X_train)
-        X_test = tfidf_vectorizer.transform(X_test)
-    else:
-        # Użyj wstępnie obliczonych osadzeń
-        X_train, X_test, y_train, y_test = split_data(X_embeddings, y, test_size=0.2)
 
     # Trenuj model RandomForest
     print("Debug: Trening modelu RandomForest...")
@@ -97,7 +75,7 @@ def metoda7(X_embeddings=None, X=None, y=None):
 
     # Obsługa meta-atrybutów dla heurystycznej obróbki post-procesowej
     print("Debug: Tworzenie DataFrame do analizy meta-atrybutów...")
-    df = pd.DataFrame({"text": X if X_embeddings is None else [""] * len(X_test), "label": y_test})
+    df = pd.DataFrame({"text": X_test if X_train is None else [""] * len(X_test), "label": y_test})
     df["source"] = ["unknown" for _ in range(len(df))]  # Zastąp rzeczywistą kolumną meta-atrybutów
 
     # Obliczanie prawdopodobieństw atrybutów

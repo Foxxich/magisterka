@@ -1,14 +1,11 @@
 import numpy as np
 import pandas as pd
-import re
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, ExtraTreesClassifier
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, BatchNormalization, LeakyReLU
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
-from nltk.corpus import stopwords
-from nltk.stem import SnowballStemmer
 from lightgbm import LGBMClassifier
 from catboost import CatBoostClassifier
 
@@ -17,6 +14,9 @@ def metoda17(X_train, y_train, X_test, y_test, n_models=5):
     Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.
     """
     sample_weights = np.ones(len(y_train))  # Inicjalizacja wag próbek
+    models = []  # Lista do przechowywania modeli
+    accuracies = []  # Lista do przechowywania dokładności
+    
     for _ in range(n_models):
         model = Sequential([
             Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 1
@@ -30,10 +30,19 @@ def metoda17(X_train, y_train, X_test, y_test, n_models=5):
             Dense(1, activation='sigmoid')  # Warstwa wyjściowa
         ])
         model.compile(optimizer=Adam(learning_rate=0.001), loss='binary_crossentropy', metrics=['accuracy'])
-        model.fit(X_train, y_train, epochs=10, batch_size=64, sample_weight=sample_weights, verbose=0)
+        history = model.fit(X_train, y_train, epochs=10, batch_size=64, sample_weight=sample_weights, verbose=0)
         y_pred = model.predict(X_train)
         sample_weights += np.abs(y_train - y_pred.squeeze())  # Aktualizacja wag próbek
-    return model, X_test, y_test
+        
+        # Zapisanie modelu i dokładności z ostatniej epoki
+        models.append(model)
+        accuracies.append(history.history['accuracy'][-1])
+    
+    # Wybór najlepszego modelu
+    best_idx = np.argmax(accuracies)  # Indeks modelu z najlepszą dokładnością
+    best_model = models[best_idx]
+    
+    return best_model, X_test, y_test
 
 def metoda18(X_train, y_train, X_test, y_test):
     """
