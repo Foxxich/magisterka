@@ -24,23 +24,7 @@
         "documentation": {}
     },
     {
-        "label": "Model",
-        "importPath": "tensorflow.keras.models",
-        "description": "tensorflow.keras.models",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.models",
-        "documentation": {}
-    },
-    {
         "label": "Sequential",
-        "importPath": "tensorflow.keras.models",
-        "description": "tensorflow.keras.models",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.models",
-        "documentation": {}
-    },
-    {
-        "label": "Model",
         "importPath": "tensorflow.keras.models",
         "description": "tensorflow.keras.models",
         "isExtraImport": true,
@@ -144,6 +128,22 @@
         "documentation": {}
     },
     {
+        "label": "Conv1D",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "MaxPooling1D",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
         "label": "Dense",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
@@ -160,15 +160,7 @@
         "documentation": {}
     },
     {
-        "label": "BatchNormalization",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LeakyReLU",
+        "label": "Flatten",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
         "isExtraImport": true,
@@ -184,23 +176,7 @@
         "documentation": {}
     },
     {
-        "label": "Embedding",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LSTM",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Bidirectional",
+        "label": "Reshape",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
         "isExtraImport": true,
@@ -217,102 +193,6 @@
     },
     {
         "label": "Dropout",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "GlobalAveragePooling1D",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dropout",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "BatchNormalization",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LeakyReLU",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Input",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Embedding",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LSTM",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Bidirectional",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dropout",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "GlobalAveragePooling1D",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
         "isExtraImport": true,
@@ -376,38 +256,6 @@
         "documentation": {}
     },
     {
-        "label": "Adam",
-        "importPath": "tensorflow.keras.optimizers",
-        "description": "tensorflow.keras.optimizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "Adam",
-        "importPath": "tensorflow.keras.optimizers",
-        "description": "tensorflow.keras.optimizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "Adam",
-        "importPath": "tensorflow.keras.optimizers",
-        "description": "tensorflow.keras.optimizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "Adam",
-        "importPath": "tensorflow.keras.optimizers",
-        "description": "tensorflow.keras.optimizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.optimizers",
-        "documentation": {}
-    },
-    {
         "label": "ReduceLROnPlateau",
         "importPath": "tensorflow.keras.callbacks",
         "description": "tensorflow.keras.callbacks",
@@ -421,54 +269,6 @@
         "description": "tensorflow.keras.callbacks",
         "isExtraImport": true,
         "detail": "tensorflow.keras.callbacks",
-        "documentation": {}
-    },
-    {
-        "label": "ReduceLROnPlateau",
-        "importPath": "tensorflow.keras.callbacks",
-        "description": "tensorflow.keras.callbacks",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.callbacks",
-        "documentation": {}
-    },
-    {
-        "label": "EarlyStopping",
-        "importPath": "tensorflow.keras.callbacks",
-        "description": "tensorflow.keras.callbacks",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.callbacks",
-        "documentation": {}
-    },
-    {
-        "label": "ReduceLROnPlateau",
-        "importPath": "tensorflow.keras.callbacks",
-        "description": "tensorflow.keras.callbacks",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.callbacks",
-        "documentation": {}
-    },
-    {
-        "label": "EarlyStopping",
-        "importPath": "tensorflow.keras.callbacks",
-        "description": "tensorflow.keras.callbacks",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.callbacks",
-        "documentation": {}
-    },
-    {
-        "label": "l2",
-        "importPath": "tensorflow.keras.regularizers",
-        "description": "tensorflow.keras.regularizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.regularizers",
-        "documentation": {}
-    },
-    {
-        "label": "l2",
-        "importPath": "tensorflow.keras.regularizers",
-        "description": "tensorflow.keras.regularizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.regularizers",
         "documentation": {}
     },
     {
@@ -649,446 +449,6 @@
         "documentation": {}
     },
     {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "BaggingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "StackingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "StackingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "BaggingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "BaggingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "StackingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "StackingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "BaggingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "AdaBoostClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "VotingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
         "label": "RandomForestClassifier",
         "importPath": "sklearn.ensemble",
         "description": "sklearn.ensemble",
@@ -1182,190 +542,6 @@
         "description": "sklearn.neural_network",
         "isExtraImport": true,
         "detail": "sklearn.neural_network",
-        "documentation": {}
-    },
-    {
-        "label": "MLPClassifier",
-        "importPath": "sklearn.neural_network",
-        "description": "sklearn.neural_network",
-        "isExtraImport": true,
-        "detail": "sklearn.neural_network",
-        "documentation": {}
-    },
-    {
-        "label": "MLPClassifier",
-        "importPath": "sklearn.neural_network",
-        "description": "sklearn.neural_network",
-        "isExtraImport": true,
-        "detail": "sklearn.neural_network",
-        "documentation": {}
-    },
-    {
-        "label": "MLPClassifier",
-        "importPath": "sklearn.neural_network",
-        "description": "sklearn.neural_network",
-        "isExtraImport": true,
-        "detail": "sklearn.neural_network",
-        "documentation": {}
-    },
-    {
-        "label": "MLPClassifier",
-        "importPath": "sklearn.neural_network",
-        "description": "sklearn.neural_network",
-        "isExtraImport": true,
-        "detail": "sklearn.neural_network",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
         "documentation": {}
     },
     {
@@ -1474,86 +650,6 @@
         "documentation": {}
     },
     {
-        "label": "XGBClassifier",
-        "importPath": "xgboost",
-        "description": "xgboost",
-        "isExtraImport": true,
-        "detail": "xgboost",
-        "documentation": {}
-    },
-    {
-        "label": "XGBClassifier",
-        "importPath": "xgboost",
-        "description": "xgboost",
-        "isExtraImport": true,
-        "detail": "xgboost",
-        "documentation": {}
-    },
-    {
-        "label": "XGBClassifier",
-        "importPath": "xgboost",
-        "description": "xgboost",
-        "isExtraImport": true,
-        "detail": "xgboost",
-        "documentation": {}
-    },
-    {
-        "label": "XGBClassifier",
-        "importPath": "xgboost",
-        "description": "xgboost",
-        "isExtraImport": true,
-        "detail": "xgboost",
-        "documentation": {}
-    },
-    {
-        "label": "XGBClassifier",
-        "importPath": "xgboost",
-        "description": "xgboost",
-        "isExtraImport": true,
-        "detail": "xgboost",
-        "documentation": {}
-    },
-    {
-        "label": "XGBClassifier",
-        "importPath": "xgboost",
-        "description": "xgboost",
-        "isExtraImport": true,
-        "detail": "xgboost",
-        "documentation": {}
-    },
-    {
-        "label": "SelectKBest",
-        "importPath": "sklearn.feature_selection",
-        "description": "sklearn.feature_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_selection",
-        "documentation": {}
-    },
-    {
-        "label": "chi2",
-        "importPath": "sklearn.feature_selection",
-        "description": "sklearn.feature_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_selection",
-        "documentation": {}
-    },
-    {
-        "label": "SelectKBest",
-        "importPath": "sklearn.feature_selection",
-        "description": "sklearn.feature_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_selection",
-        "documentation": {}
-    },
-    {
-        "label": "chi2",
-        "importPath": "sklearn.feature_selection",
-        "description": "sklearn.feature_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_selection",
-        "documentation": {}
-    },
-    {
         "label": "SelectKBest",
         "importPath": "sklearn.feature_selection",
         "description": "sklearn.feature_selection",
@@ -1586,23 +682,7 @@
         "documentation": {}
     },
     {
-        "label": "MinMaxScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
         "label": "StandardScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "MinMaxScaler",
         "importPath": "sklearn.preprocessing",
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
@@ -1631,158 +711,6 @@
         "description": "catboost",
         "isExtraImport": true,
         "detail": "catboost",
-        "documentation": {}
-    },
-    {
-        "label": "CatBoostClassifier",
-        "importPath": "catboost",
-        "description": "catboost",
-        "isExtraImport": true,
-        "detail": "catboost",
-        "documentation": {}
-    },
-    {
-        "label": "CatBoostClassifier",
-        "importPath": "catboost",
-        "description": "catboost",
-        "isExtraImport": true,
-        "detail": "catboost",
-        "documentation": {}
-    },
-    {
-        "label": "SMOTETomek",
-        "importPath": "imblearn.combine",
-        "description": "imblearn.combine",
-        "isExtraImport": true,
-        "detail": "imblearn.combine",
-        "documentation": {}
-    },
-    {
-        "label": "SMOTETomek",
-        "importPath": "imblearn.combine",
-        "description": "imblearn.combine",
-        "isExtraImport": true,
-        "detail": "imblearn.combine",
-        "documentation": {}
-    },
-    {
-        "label": "SMOTETomek",
-        "importPath": "imblearn.combine",
-        "description": "imblearn.combine",
-        "isExtraImport": true,
-        "detail": "imblearn.combine",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "cross_val_predict",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "StratifiedKFold",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "cross_val_predict",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "StratifiedKFold",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "cross_val_predict",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "StratifiedKFold",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "cross_val_score",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "StratifiedKFold",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "classification_report",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "classification_report",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
         "documentation": {}
     },
     {
@@ -1794,7 +722,7 @@
         "documentation": {}
     },
     {
-        "label": "classification_report",
+        "label": "precision_score",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -1802,7 +730,7 @@
         "documentation": {}
     },
     {
-        "label": "accuracy_score",
+        "label": "recall_score",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -1818,47 +746,7 @@
         "documentation": {}
     },
     {
-        "label": "classification_report",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "classification_report",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "accuracy_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "classification_report",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "accuracy_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "roc_auc_score",
+        "label": "f1_score",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -1883,6 +771,14 @@
     },
     {
         "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -1986,6 +882,14 @@
         "documentation": {}
     },
     {
+        "label": "SMOTETomek",
+        "importPath": "imblearn.combine",
+        "description": "imblearn.combine",
+        "isExtraImport": true,
+        "detail": "imblearn.combine",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -1995,19 +899,27 @@
         "documentation": {}
     },
     {
-        "label": "SnowballStemmer",
-        "importPath": "nltk.stem",
-        "description": "nltk.stem",
+        "label": "SVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
         "isExtraImport": true,
-        "detail": "nltk.stem",
+        "detail": "sklearn.svm",
         "documentation": {}
     },
     {
-        "label": "SnowballStemmer",
-        "importPath": "nltk.stem",
-        "description": "nltk.stem",
+        "label": "SVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
         "isExtraImport": true,
-        "detail": "nltk.stem",
+        "detail": "sklearn.svm",
+        "documentation": {}
+    },
+    {
+        "label": "SVC",
+        "importPath": "sklearn.svm",
+        "description": "sklearn.svm",
+        "isExtraImport": true,
+        "detail": "sklearn.svm",
         "documentation": {}
     },
     {
@@ -2027,22 +939,6 @@
         "documentation": {}
     },
     {
-        "label": "Tokenizer",
-        "importPath": "tensorflow.keras.preprocessing.text",
-        "description": "tensorflow.keras.preprocessing.text",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.preprocessing.text",
-        "documentation": {}
-    },
-    {
-        "label": "Tokenizer",
-        "importPath": "tensorflow.keras.preprocessing.text",
-        "description": "tensorflow.keras.preprocessing.text",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.preprocessing.text",
-        "documentation": {}
-    },
-    {
         "label": "pad_sequences",
         "importPath": "tensorflow.keras.preprocessing.sequence",
         "description": "tensorflow.keras.preprocessing.sequence",
@@ -2051,91 +947,43 @@
         "documentation": {}
     },
     {
-        "label": "pad_sequences",
-        "importPath": "tensorflow.keras.preprocessing.sequence",
-        "description": "tensorflow.keras.preprocessing.sequence",
+        "label": "cross_val_predict",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
         "isExtraImport": true,
-        "detail": "tensorflow.keras.preprocessing.sequence",
+        "detail": "sklearn.model_selection",
         "documentation": {}
     },
     {
-        "label": "pad_sequences",
-        "importPath": "tensorflow.keras.preprocessing.sequence",
-        "description": "tensorflow.keras.preprocessing.sequence",
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
         "isExtraImport": true,
-        "detail": "tensorflow.keras.preprocessing.sequence",
+        "detail": "sklearn.model_selection",
         "documentation": {}
     },
     {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
         "isExtraImport": true,
-        "detail": "sklearn.svm",
+        "detail": "sklearn.model_selection",
         "documentation": {}
     },
     {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
+        "label": "cross_val_score",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
         "isExtraImport": true,
-        "detail": "sklearn.svm",
+        "detail": "sklearn.model_selection",
         "documentation": {}
     },
     {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
         "isExtraImport": true,
-        "detail": "sklearn.svm",
-        "documentation": {}
-    },
-    {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
-        "isExtraImport": true,
-        "detail": "sklearn.svm",
-        "documentation": {}
-    },
-    {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
-        "isExtraImport": true,
-        "detail": "sklearn.svm",
-        "documentation": {}
-    },
-    {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
-        "isExtraImport": true,
-        "detail": "sklearn.svm",
-        "documentation": {}
-    },
-    {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
-        "isExtraImport": true,
-        "detail": "sklearn.svm",
-        "documentation": {}
-    },
-    {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
-        "isExtraImport": true,
-        "detail": "sklearn.svm",
-        "documentation": {}
-    },
-    {
-        "label": "SVC",
-        "importPath": "sklearn.svm",
-        "description": "sklearn.svm",
-        "isExtraImport": true,
-        "detail": "sklearn.svm",
+        "detail": "sklearn.model_selection",
         "documentation": {}
     },
     {
@@ -2156,59 +1004,11 @@
         "documentation": {}
     },
     {
-        "label": "MultinomialNB",
-        "importPath": "sklearn.naive_bayes",
-        "description": "sklearn.naive_bayes",
-        "isExtraImport": true,
-        "detail": "sklearn.naive_bayes",
-        "documentation": {}
-    },
-    {
-        "label": "MultinomialNB",
-        "importPath": "sklearn.naive_bayes",
-        "description": "sklearn.naive_bayes",
-        "isExtraImport": true,
-        "detail": "sklearn.naive_bayes",
-        "documentation": {}
-    },
-    {
         "label": "DecisionTreeClassifier",
         "importPath": "sklearn.tree",
         "description": "sklearn.tree",
         "isExtraImport": true,
         "detail": "sklearn.tree",
-        "documentation": {}
-    },
-    {
-        "label": "DecisionTreeClassifier",
-        "importPath": "sklearn.tree",
-        "description": "sklearn.tree",
-        "isExtraImport": true,
-        "detail": "sklearn.tree",
-        "documentation": {}
-    },
-    {
-        "label": "DecisionTreeClassifier",
-        "importPath": "sklearn.tree",
-        "description": "sklearn.tree",
-        "isExtraImport": true,
-        "detail": "sklearn.tree",
-        "documentation": {}
-    },
-    {
-        "label": "Model",
-        "importPath": "keras.models",
-        "description": "keras.models",
-        "isExtraImport": true,
-        "detail": "keras.models",
-        "documentation": {}
-    },
-    {
-        "label": "Model",
-        "importPath": "keras.models",
-        "description": "keras.models",
-        "isExtraImport": true,
-        "detail": "keras.models",
         "documentation": {}
     },
     {
@@ -2284,7 +1084,7 @@
         "documentation": {}
     },
     {
-        "label": "Input",
+        "label": "Embedding",
         "importPath": "keras.layers",
         "description": "keras.layers",
         "isExtraImport": true,
@@ -2292,7 +1092,7 @@
         "documentation": {}
     },
     {
-        "label": "LSTM",
+        "label": "Reshape",
         "importPath": "keras.layers",
         "description": "keras.layers",
         "isExtraImport": true,
@@ -2300,127 +1100,7 @@
         "documentation": {}
     },
     {
-        "label": "Bidirectional",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Conv1D",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "MaxPooling1D",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Flatten",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "concatenate",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Softmax",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Input",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LSTM",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Bidirectional",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Conv1D",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "MaxPooling1D",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Flatten",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "concatenate",
-        "importPath": "keras.layers",
-        "description": "keras.layers",
-        "isExtraImport": true,
-        "detail": "keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Softmax",
+        "label": "ZeroPadding1D",
         "importPath": "keras.layers",
         "description": "keras.layers",
         "isExtraImport": true,
@@ -2436,51 +1116,11 @@
         "documentation": {}
     },
     {
-        "label": "Adadelta",
-        "importPath": "keras.optimizers",
-        "description": "keras.optimizers",
+        "label": "pad_sequences",
+        "importPath": "keras.utils",
+        "description": "keras.utils",
         "isExtraImport": true,
-        "detail": "keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "Adadelta",
-        "importPath": "keras.optimizers",
-        "description": "keras.optimizers",
-        "isExtraImport": true,
-        "detail": "keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "BertTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "TFBertModel",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "BertTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "TFBertModel",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
+        "detail": "keras.utils",
         "documentation": {}
     },
     {
@@ -2580,75 +1220,96 @@
         "documentation": {}
     },
     {
-        "label": "load_and_preprocess_data",
-        "importPath": "common",
-        "description": "common",
+        "label": "KerasClassifier",
+        "importPath": "scikeras.wrappers",
+        "description": "scikeras.wrappers",
         "isExtraImport": true,
-        "detail": "common",
+        "detail": "scikeras.wrappers",
         "documentation": {}
     },
     {
-        "label": "split_data",
-        "importPath": "common",
-        "description": "common",
+        "label": "KerasClassifier",
+        "importPath": "scikeras.wrappers",
+        "description": "scikeras.wrappers",
         "isExtraImport": true,
-        "detail": "common",
+        "detail": "scikeras.wrappers",
         "documentation": {}
     },
     {
-        "label": "evaluate_model",
-        "importPath": "common",
-        "description": "common",
+        "label": "tensorflow",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "common",
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
         "documentation": {}
     },
     {
-        "label": "load_and_preprocess_data",
-        "importPath": "common",
-        "description": "common",
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "common",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "split_data",
-        "importPath": "common",
-        "description": "common",
+        "label": "KNeighborsClassifier",
+        "importPath": "sklearn.neighbors",
+        "description": "sklearn.neighbors",
         "isExtraImport": true,
-        "detail": "common",
+        "detail": "sklearn.neighbors",
         "documentation": {}
     },
     {
-        "label": "evaluate_model",
-        "importPath": "common",
-        "description": "common",
+        "label": "matplotlib.pyplot",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "common",
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
         "documentation": {}
     },
     {
-        "label": "load_and_preprocess_data",
-        "importPath": "common",
-        "description": "common",
+        "label": "os",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "common",
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
         "documentation": {}
     },
     {
-        "label": "split_data",
-        "importPath": "common",
-        "description": "common",
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
         "isExtraImport": true,
-        "detail": "common",
+        "detail": "sklearn.feature_extraction.text",
         "documentation": {}
     },
     {
-        "label": "evaluate_model",
-        "importPath": "common",
-        "description": "common",
+        "label": "time",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "common",
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "SentenceTransformer",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -2713,106 +1374,6 @@
         "description": "common",
         "isExtraImport": true,
         "detail": "common",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
-        "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
-        "documentation": {}
-    },
-    {
-        "label": "defaultdict",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "defaultdict",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "defaultdict",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "matplotlib.pyplot",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "matplotlib.pyplot",
-        "description": "matplotlib.pyplot",
-        "detail": "matplotlib.pyplot",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
-        "documentation": {}
-    },
-    {
-        "label": "SentenceTransformer",
-        "importPath": "sentence_transformers",
-        "description": "sentence_transformers",
-        "isExtraImport": true,
-        "detail": "sentence_transformers",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
         "documentation": {}
     },
     {
@@ -3041,7 +1602,7 @@
         "kind": 2,
         "importPath": "article12.run12",
         "description": "article12.run12",
-        "peekOfCode": "def metoda12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.",
+        "peekOfCode": "def metoda12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające ",
         "detail": "article12.run12",
         "documentation": {}
     },
@@ -3068,7 +1629,7 @@
         "kind": 2,
         "importPath": "article14.run14",
         "description": "article14.run14",
-        "peekOfCode": "def metoda14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
+        "peekOfCode": "def metoda14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost, SVC i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
         "detail": "article14.run14",
         "documentation": {}
     },
@@ -3122,7 +1683,7 @@
         "kind": 2,
         "importPath": "article4.run4",
         "description": "article4.run4",
-        "peekOfCode": "def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).\n    Zwraca:",
+        "peekOfCode": "def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP.\n    Zachowuje oryginalną sygnaturę metody, ale modyfikuje wnętrze.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).",
         "detail": "article4.run4",
         "documentation": {}
     },
@@ -3136,11 +1697,20 @@
         "documentation": {}
     },
     {
+        "label": "create_cnn_model",
+        "kind": 2,
+        "importPath": "article6.run6",
+        "description": "article6.run6",
+        "peekOfCode": "def create_cnn_model(input_shape, num_classes):\n    \"\"\"\n    Tworzy model CNN zgodny z konfiguracją z artykułu (Tabela 3 dla MVSA).\n    \"\"\"\n    print(\n        \"Entering create_cnn_model with input_shape:\",\n        input_shape,\n        \"and num_classes:\",\n        num_classes,\n    )",
+        "detail": "article6.run6",
+        "documentation": {}
+    },
+    {
         "label": "metoda6",
         "kind": 2,
         "importPath": "article6.run6",
         "description": "article6.run6",
-        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
+        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy WCNNE z AdaBoost na osadzeniach BERT, zgodnie z artykułem.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
         "detail": "article6.run6",
         "documentation": {}
     },
@@ -3149,7 +1719,7 @@
         "kind": 2,
         "importPath": "article7.run7",
         "description": "article7.run7",
-        "peekOfCode": "def monte_carlo_dropout_inference(model, X_test, num_samples=50):\n    \"\"\"Symuluje Monte Carlo Dropout dla RandomForest poprzez wielokrotne predykcje.\"\"\"\n    predictions = np.array([model.predict_proba(X_test) for _ in range(num_samples)])\n    mean_preds = predictions.mean(axis=0)\n    uncertainty = predictions.var(axis=0)\n    return mean_preds, uncertainty\ndef compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():",
+        "peekOfCode": "def monte_carlo_dropout_inference(model, data, num_samples=50):\n    \"\"\"\n    Symuluje MC-Dropout poprzez wielokrotne próbkowanie predykcji z różnych podzbiorów drzew.\n    \"\"\"\n    predictions = []\n    n_trees = len(model.estimators_)  # Liczba drzew w lesie\n    for _ in range(num_samples):\n        # Wybierz losowy podzbiór drzew\n        sampled_trees = np.random.choice(model.estimators_, size=int(n_trees * 0.8), replace=False)\n        # Oblicz predykcje z wybranego podzbioru drzew",
         "detail": "article7.run7",
         "documentation": {}
     },
@@ -3158,7 +1728,7 @@
         "kind": 2,
         "importPath": "article7.run7",
         "description": "article7.run7",
-        "peekOfCode": "def compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():\n        attr_value = row[attribute_col]\n        label = row[label_col]\n        if label == 1:  # Wiadomość \"prawdziwa\"\n            attribute_probs[attr_value]['real'] += 1\n        elif label == 0:  # Wiadomość \"fałszywa\"\n            attribute_probs[attr_value]['fake'] += 1",
+        "peekOfCode": "def compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():\n        attr_value = row[attribute_col]\n        label = row[label_col]\n        if label == 1:  # Wiadomość \"prawdziwa\"\n            attribute_probs[attr_value]['real'] += 1\n        elif label == 0:  # Wiadomość \"fałszywa\"\n            attribute_probs[attr_value]['fake'] += 1\n    for attr_value, counts in attribute_probs.items():",
         "detail": "article7.run7",
         "documentation": {}
     },
@@ -3167,7 +1737,7 @@
         "kind": 2,
         "importPath": "article7.run7",
         "description": "article7.run7",
-        "peekOfCode": "def heuristic_post_processing(predictions, attribute_probs, attributes, threshold=0.9):\n    \"\"\"Stosuje heurystyczną obróbkę post-procesową na podstawie prawdopodobieństw atrybutów.\"\"\"\n    attributes = list(attributes)  # Upewnij się, że attributes jest listą\n    final_predictions = []\n    for i, pred in enumerate(predictions):\n        attr_value = attributes[i]  # Pobierz wartość atrybutu według indeksu\n        if attr_value in attribute_probs:\n            real_prob = attribute_probs[attr_value]['real']\n            fake_prob = attribute_probs[attr_value]['fake']\n            if real_prob > threshold and real_prob > fake_prob:",
+        "peekOfCode": "def heuristic_post_processing(predictions, attribute_probs, attributes, threshold=0.9):\n    final_predictions = []\n    for i, pred in enumerate(predictions):\n        attr_value = attributes[i]\n        if attr_value in attribute_probs:\n            real_prob = attribute_probs[attr_value]['real']\n            fake_prob = attribute_probs[attr_value]['fake']\n            if real_prob > threshold and real_prob > fake_prob:\n                final_predictions.append(1)\n            elif fake_prob > threshold and fake_prob > real_prob:",
         "detail": "article7.run7",
         "documentation": {}
     },
@@ -3176,8 +1746,17 @@
         "kind": 2,
         "importPath": "article7.run7",
         "description": "article7.run7",
-        "peekOfCode": "def metoda7(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.\n    Zwraca:\n        rf_classifier: Wytrenowany model RandomForest.\n        X_test: Oryginalne lub przetworzone cechy zbioru testowego.\n        y_test: Etykiety zbioru testowego.\n    \"\"\"\n    # Trenuj model RandomForest\n    print(\"Debug: Trening modelu RandomForest...\")",
+        "peekOfCode": "def metoda7(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje Random Forest z symulowanym MC-Dropout i heurystyczną obróbką post-procesową.\n    Zwraca:\n        model: Wytrenowany RandomForestClassifier.\n        X_test: Oryginalne cechy zbioru testowego.\n        y_test: Etykiety zbioru testowego.\n    \"\"\"\n    # Konwersja danych wejściowych do tablic NumPy\n    train_embeddings = X_train.to_numpy() if isinstance(X_train, pd.DataFrame) else np.array(X_train)",
         "detail": "article7.run7",
+        "documentation": {}
+    },
+    {
+        "label": "create_dbn_model",
+        "kind": 2,
+        "importPath": "article8.run8",
+        "description": "article8.run8",
+        "peekOfCode": "def create_dbn_model(input_dim, num_classes):\n    \"\"\"\n    Tworzy model DBN jako prostą głęboką sieć neuronową z Keras.\n    \"\"\"\n    model = Sequential()\n    model.add(Dense(256, input_dim=input_dim, activation='relu'))\n    model.add(Dropout(0.3))\n    model.add(Dense(128, activation='relu'))\n    model.add(Dropout(0.3))\n    model.add(Dense(64, activation='relu'))",
+        "detail": "article8.run8",
         "documentation": {}
     },
     {
@@ -3185,7 +1764,7 @@
         "kind": 2,
         "importPath": "article8.run8",
         "description": "article8.run8",
-        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
+        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest, XGBoost i DBN.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
         "detail": "article8.run8",
         "documentation": {}
     },
@@ -3196,402 +1775,6 @@
         "description": "article9.run9",
         "peekOfCode": "def metoda9(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje różne modele zespołowe i ocenia ich wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting: Najlepszy model (VotingClassifier).",
         "detail": "article9.run9",
-        "documentation": {}
-    },
-    {
-        "label": "create_model",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def create_model(input_dim, units1=128, units2=64, units3=32, dropout_rate=0.2, learning_rate=0.001, l2_reg=0.01):\n    \"\"\"\n    Tworzy model sieci neuronowej z podanymi hiperparametrami.\n    \"\"\"\n    model = Sequential([\n        Dense(units1, input_dim=input_dim, activation=None, kernel_regularizer=l2(l2_reg)),\n        BatchNormalization(),\n        LeakyReLU(alpha=0.1),\n        Dropout(dropout_rate),\n        Dense(units2, activation=None, kernel_regularizer=l2(l2_reg)),",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda1",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda1(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje ensemble modeli neuronowych z różnymi hiperparametrami.\n    Parameters:\n        X_train (np.ndarray): Dane treningowe.\n        y_train (np.ndarray): Etykiety treningowe.\n        X_test (np.ndarray): Dane testowe.\n        y_test (np.ndarray): Etykiety testowe.\n        n_models (int): Liczba modeli w ensemble.\n    Returns:",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda10",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda10(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z miękkim głosowaniem (soft-voting) i ocenia jego wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf: Wytrenowany model VotingClassifier.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda11",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda11(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z wykorzystaniem VotingClassifier (Random Forest, Logistic Regression i AdaBoost),\n    stosując selekcję cech, normalizację i miękkie głosowanie.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda12",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda13",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda13(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.\n    Parametry:\n        X_train (np.ndarray): Macierz cech dla danych treningowych.\n        y_train (np.ndarray): Wektor etykiet dla danych treningowych.\n        X_test (np.ndarray): Macierz cech dla danych testowych.\n        y_test (np.ndarray): Wektor etykiet dla danych testowych.\n    Zwraca:\n        StackingClassifier: Wytrenowany model zespołowy typu stacking.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "preprocess_text",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def preprocess_text(text):\n    \"\"\"\n    Oczyszcza i przetwarza tekst poprzez usunięcie URL-i, znaków specjalnych, pojedynczych liter i liczb,\n    oraz stosuje stemming przy użyciu Snowball Stemmer.\n    \"\"\"\n    snowball_stemmer = SnowballStemmer('english')\n    text = re.sub(r'http\\S+', '', text)  # Usuwanie URL-i\n    text = re.sub(r'\\W', ' ', text)  # Usuwanie znaków specjalnych\n    text = re.sub(r'\\s+[a-zA-Z]\\s+', ' ', text)  # Usuwanie pojedynczych liter\n    text = re.sub(r'\\^[a-zA-Z]\\s+', ' ', text)  # Usuwanie pojedynczych liter na początku",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda14",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda15",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):\n    \"\"\"\n    Funkcja trenuje zespół modeli Bi-LSTM z tokenizowanymi i wyściełanymi sekwencjami wejściowymi.\n    Parametry:\n        X_train (list, np.ndarray lub pd.Series): Dane tekstowe do trenowania.\n        y_train (array-like): Etykiety docelowe dla danych treningowych.\n        X_test (list, np.ndarray lub pd.Series): Dane tekstowe do testowania.\n        y_test (array-like): Etykiety docelowe dla danych testowych.\n        embedding_dim (int): Wymiar osadzania (domyślnie: 200).\n        maxlen (int): Maksymalna długość sekwencji wejściowych (domyślnie: 256).",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "preprocess_text",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def preprocess_text(X):\n    \"\"\"\n    Niestandardowe przetwarzanie tekstu: konwersja do małych liter, usuwanie stop-słów i zastosowanie stemmingu.\n    \"\"\"\n    from nltk.corpus import stopwords\n    from nltk.stem import SnowballStemmer\n    import re\n    stop_words = set(stopwords.words(\"english\"))\n    stemmer = SnowballStemmer(\"english\")\n    def clean_text(text):",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda16",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda16(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        meta_model: Wytrenowany meta-klasyfikator (stacking).",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda2",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda2(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model wykorzystując GradientBoosting oraz MLP na oddzielnych podzbiorach cech \n    i łączy je za pomocą Regresji Logistycznej.\n    Parametry:\n        X_train (np.ndarray lub DataFrame): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub DataFrame): Zbiór cech do testowania.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda3",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda3(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje dwupoziomowy model zespołowy wykorzystujący klasyfikatory cechowe i meta-klasyfikatory.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf_2: Wytrenowany model zespołowy drugiego poziomu.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda4",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).\n    Zwraca:",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda5",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda5(X_train, y_train, X_test, y_test):\n    \"\"\"Trenuje model stacking z użyciem Random Forest i XGBoost jako bazowych oraz Logistic Regression jako meta-modelu.\"\"\"\n    # Trenuj modele bazowe: RandomForest i XGBoost\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)\n    xgb_clf = xgb.XGBClassifier(n_estimators=100, eval_metric='logloss', random_state=42)\n    rf_clf.fit(X_train, y_train)\n    xgb_clf.fit(X_train, y_train)\n    # Uzyskaj predykcje dla zbioru treningowego, aby stworzyć cechy dla meta-modelu\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]\n    xgb_preds_train = xgb_clf.predict_proba(X_train)[:, 1]",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda6",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "monte_carlo_dropout_inference",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def monte_carlo_dropout_inference(model, X_test, num_samples=50):\n    \"\"\"Symuluje Monte Carlo Dropout dla RandomForest poprzez wielokrotne predykcje.\"\"\"\n    predictions = np.array([model.predict_proba(X_test) for _ in range(num_samples)])\n    mean_preds = predictions.mean(axis=0)\n    uncertainty = predictions.var(axis=0)\n    return mean_preds, uncertainty\ndef compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "compute_meta_attribute_probabilities",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():\n        attr_value = row[attribute_col]\n        label = row[label_col]\n        if label == 1:  # Wiadomość \"prawdziwa\"\n            attribute_probs[attr_value]['real'] += 1\n        elif label == 0:  # Wiadomość \"fałszywa\"\n            attribute_probs[attr_value]['fake'] += 1",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "heuristic_post_processing",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def heuristic_post_processing(predictions, attribute_probs, attributes, threshold=0.9):\n    \"\"\"Stosuje heurystyczną obróbkę post-procesową na podstawie prawdopodobieństw atrybutów.\"\"\"\n    attributes = list(attributes)  # Upewnij się, że attributes jest listą\n    final_predictions = []\n    for i, pred in enumerate(predictions):\n        attr_value = attributes[i]  # Pobierz wartość atrybutu według indeksu\n        if attr_value in attribute_probs:\n            real_prob = attribute_probs[attr_value]['real']\n            fake_prob = attribute_probs[attr_value]['fake']\n            if real_prob > threshold and real_prob > fake_prob:",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda7",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda7(X_embeddings=None, X=None, y=None):\n    \"\"\"\n    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.\n    Parametry:\n        X_embeddings (np.ndarray lub None): Wstępnie obliczone osadzenia.\n        X (lista lub pd.Series): Surowe dane tekstowe (jeśli osadzenia nie są podane).\n        y (lista lub pd.Series): Etykiety docelowe.\n    Zwraca:\n        rf_classifier: Wytrenowany model RandomForest.\n        X_test: Oryginalne lub przetworzone cechy zbioru testowego.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda8",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "metoda9",
-        "kind": 2,
-        "importPath": "code.merged",
-        "description": "code.merged",
-        "peekOfCode": "def metoda9(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje różne modele zespołowe i ocenia ich wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting: Najlepszy model (VotingClassifier).",
-        "detail": "code.merged",
-        "documentation": {}
-    },
-    {
-        "label": "create_model",
-        "kind": 2,
-        "importPath": "code.run1",
-        "description": "code.run1",
-        "peekOfCode": "def create_model(input_dim, units1=128, units2=64, units3=32, dropout_rate=0.2, learning_rate=0.001, l2_reg=0.01):\n    \"\"\"\n    Tworzy model sieci neuronowej z podanymi hiperparametrami.\n    \"\"\"\n    model = Sequential([\n        Dense(units1, input_dim=input_dim, activation=None, kernel_regularizer=l2(l2_reg)),\n        BatchNormalization(),\n        LeakyReLU(alpha=0.1),\n        Dropout(dropout_rate),\n        Dense(units2, activation=None, kernel_regularizer=l2(l2_reg)),",
-        "detail": "code.run1",
-        "documentation": {}
-    },
-    {
-        "label": "metoda1",
-        "kind": 2,
-        "importPath": "code.run1",
-        "description": "code.run1",
-        "peekOfCode": "def metoda1(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje ensemble modeli neuronowych z różnymi hiperparametrami.\n    Parameters:\n        X_train (np.ndarray): Dane treningowe.\n        y_train (np.ndarray): Etykiety treningowe.\n        X_test (np.ndarray): Dane testowe.\n        y_test (np.ndarray): Etykiety testowe.\n        n_models (int): Liczba modeli w ensemble.\n    Returns:",
-        "detail": "code.run1",
-        "documentation": {}
-    },
-    {
-        "label": "metoda10",
-        "kind": 2,
-        "importPath": "code.run10",
-        "description": "code.run10",
-        "peekOfCode": "def metoda10(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z miękkim głosowaniem (soft-voting) i ocenia jego wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf: Wytrenowany model VotingClassifier.",
-        "detail": "code.run10",
-        "documentation": {}
-    },
-    {
-        "label": "metoda11",
-        "kind": 2,
-        "importPath": "code.run11",
-        "description": "code.run11",
-        "peekOfCode": "def metoda11(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy z wykorzystaniem VotingClassifier (Random Forest, Logistic Regression i AdaBoost),\n    stosując selekcję cech, normalizację i miękkie głosowanie.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
-        "detail": "code.run11",
-        "documentation": {}
-    },
-    {
-        "label": "metoda12",
-        "kind": 2,
-        "importPath": "code.run12",
-        "description": "code.run12",
-        "peekOfCode": "def metoda12(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje i ocenia klasyfikatory Random Forest oraz CatBoost.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        dict: Słownik zawierający wytrenowane modele oraz odpowiadające im dane testowe.",
-        "detail": "code.run12",
-        "documentation": {}
-    },
-    {
-        "label": "metoda13",
-        "kind": 2,
-        "importPath": "code.run13",
-        "description": "code.run13",
-        "peekOfCode": "def metoda13(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy (stacking) do obsługi problemu niezrównoważonych klas.\n    Parametry:\n        X_train (np.ndarray): Macierz cech dla danych treningowych.\n        y_train (np.ndarray): Wektor etykiet dla danych treningowych.\n        X_test (np.ndarray): Macierz cech dla danych testowych.\n        y_test (np.ndarray): Wektor etykiet dla danych testowych.\n    Zwraca:\n        StackingClassifier: Wytrenowany model zespołowy typu stacking.",
-        "detail": "code.run13",
-        "documentation": {}
-    },
-    {
-        "label": "preprocess_text",
-        "kind": 2,
-        "importPath": "code.run14",
-        "description": "code.run14",
-        "peekOfCode": "def preprocess_text(text):\n    \"\"\"\n    Oczyszcza i przetwarza tekst poprzez usunięcie URL-i, znaków specjalnych, pojedynczych liter i liczb,\n    oraz stosuje stemming przy użyciu Snowball Stemmer.\n    \"\"\"\n    snowball_stemmer = SnowballStemmer('english')\n    text = re.sub(r'http\\S+', '', text)  # Usuwanie URL-i\n    text = re.sub(r'\\W', ' ', text)  # Usuwanie znaków specjalnych\n    text = re.sub(r'\\s+[a-zA-Z]\\s+', ' ', text)  # Usuwanie pojedynczych liter\n    text = re.sub(r'\\^[a-zA-Z]\\s+', ' ', text)  # Usuwanie pojedynczych liter na początku",
-        "detail": "code.run14",
-        "documentation": {}
-    },
-    {
-        "label": "metoda14",
-        "kind": 2,
-        "importPath": "code.run14",
-        "description": "code.run14",
-        "peekOfCode": "def metoda14(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z użyciem Random Forest, AdaBoost i Logistic Regression\n    jako finalnego estymatora.\n    Parametry:\n        X_train (numpy.ndarray): Cechy zbioru treningowego.\n        y_train (numpy.ndarray): Etykiety zbioru treningowego.\n        X_test (numpy.ndarray): Cechy zbioru testowego.\n        y_test (numpy.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
-        "detail": "code.run14",
-        "documentation": {}
-    },
-    {
-        "label": "metoda15",
-        "kind": 2,
-        "importPath": "code.run15",
-        "description": "code.run15",
-        "peekOfCode": "def metoda15(X_train, y_train, X_test, y_test, embedding_dim=200, maxlen=256, epochs=5, batch_size=32):\n    \"\"\"\n    Funkcja trenuje zespół modeli Bi-LSTM z tokenizowanymi i wyściełanymi sekwencjami wejściowymi.\n    Parametry:\n        X_train (list, np.ndarray lub pd.Series): Dane tekstowe do trenowania.\n        y_train (array-like): Etykiety docelowe dla danych treningowych.\n        X_test (list, np.ndarray lub pd.Series): Dane tekstowe do testowania.\n        y_test (array-like): Etykiety docelowe dla danych testowych.\n        embedding_dim (int): Wymiar osadzania (domyślnie: 200).\n        maxlen (int): Maksymalna długość sekwencji wejściowych (domyślnie: 256).",
-        "detail": "code.run15",
-        "documentation": {}
-    },
-    {
-        "label": "preprocess_text",
-        "kind": 2,
-        "importPath": "code.run16",
-        "description": "code.run16",
-        "peekOfCode": "def preprocess_text(X):\n    \"\"\"\n    Niestandardowe przetwarzanie tekstu: konwersja do małych liter, usuwanie stop-słów i zastosowanie stemmingu.\n    \"\"\"\n    from nltk.corpus import stopwords\n    from nltk.stem import SnowballStemmer\n    import re\n    stop_words = set(stopwords.words(\"english\"))\n    stemmer = SnowballStemmer(\"english\")\n    def clean_text(text):",
-        "detail": "code.run16",
-        "documentation": {}
-    },
-    {
-        "label": "metoda16",
-        "kind": 2,
-        "importPath": "code.run16",
-        "description": "code.run16",
-        "peekOfCode": "def metoda16(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model zespołowy stacking z meta-klasyfikatorem używającym regresji logistycznej.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        meta_model: Wytrenowany meta-klasyfikator (stacking).",
-        "detail": "code.run16",
-        "documentation": {}
-    },
-    {
-        "label": "metoda2",
-        "kind": 2,
-        "importPath": "code.run2",
-        "description": "code.run2",
-        "peekOfCode": "def metoda2(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje model wykorzystując GradientBoosting oraz MLP na oddzielnych podzbiorach cech \n    i łączy je za pomocą Regresji Logistycznej.\n    Parametry:\n        X_train (np.ndarray lub DataFrame): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub DataFrame): Zbiór cech do testowania.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
-        "detail": "code.run2",
-        "documentation": {}
-    },
-    {
-        "label": "metoda3",
-        "kind": 2,
-        "importPath": "code.run3",
-        "description": "code.run3",
-        "peekOfCode": "def metoda3(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje dwupoziomowy model zespołowy wykorzystujący klasyfikatory cechowe i meta-klasyfikatory.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting_clf_2: Wytrenowany model zespołowy drugiego poziomu.",
-        "detail": "code.run3",
-        "documentation": {}
-    },
-    {
-        "label": "metoda4",
-        "kind": 2,
-        "importPath": "code.run4",
-        "description": "code.run4",
-        "peekOfCode": "def metoda4(X_train, y_train, X_test, y_test, embedding_dim=100):\n    \"\"\"\n    Trenuje architekturę opartą na zespole sieci Bi-LSTM, CNN i MLP z klasyfikatorem Softmax.\n    Argumenty:\n        X_train (np.ndarray): Zbiór cech do trenowania.\n        y_train (list lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Zbiór cech testowych.\n        y_test (list lub np.ndarray): Etykiety zbioru testowego.\n        embedding_dim (int): Rozmiar wymiaru osadzeń (domyślnie: 100).\n    Zwraca:",
-        "detail": "code.run4",
-        "documentation": {}
-    },
-    {
-        "label": "metoda5",
-        "kind": 2,
-        "importPath": "code.run5",
-        "description": "code.run5",
-        "peekOfCode": "def metoda5(X_train, y_train, X_test, y_test):\n    \"\"\"Trenuje model stacking z użyciem Random Forest i XGBoost jako bazowych oraz Logistic Regression jako meta-modelu.\"\"\"\n    # Trenuj modele bazowe: RandomForest i XGBoost\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)\n    xgb_clf = xgb.XGBClassifier(n_estimators=100, eval_metric='logloss', random_state=42)\n    rf_clf.fit(X_train, y_train)\n    xgb_clf.fit(X_train, y_train)\n    # Uzyskaj predykcje dla zbioru treningowego, aby stworzyć cechy dla meta-modelu\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]\n    xgb_preds_train = xgb_clf.predict_proba(X_train)[:, 1]",
-        "detail": "code.run5",
-        "documentation": {}
-    },
-    {
-        "label": "metoda6",
-        "kind": 2,
-        "importPath": "code.run6",
-        "description": "code.run6",
-        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
-        "detail": "code.run6",
-        "documentation": {}
-    },
-    {
-        "label": "monte_carlo_dropout_inference",
-        "kind": 2,
-        "importPath": "code.run7",
-        "description": "code.run7",
-        "peekOfCode": "def monte_carlo_dropout_inference(model, X_test, num_samples=50):\n    \"\"\"Symuluje Monte Carlo Dropout dla RandomForest poprzez wielokrotne predykcje.\"\"\"\n    predictions = np.array([model.predict_proba(X_test) for _ in range(num_samples)])\n    mean_preds = predictions.mean(axis=0)\n    uncertainty = predictions.var(axis=0)\n    return mean_preds, uncertainty\ndef compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():",
-        "detail": "code.run7",
-        "documentation": {}
-    },
-    {
-        "label": "compute_meta_attribute_probabilities",
-        "kind": 2,
-        "importPath": "code.run7",
-        "description": "code.run7",
-        "peekOfCode": "def compute_meta_attribute_probabilities(df, attribute_col, label_col):\n    \"\"\"Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości.\"\"\"\n    attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})\n    for _, row in df.iterrows():\n        attr_value = row[attribute_col]\n        label = row[label_col]\n        if label == 1:  # Wiadomość \"prawdziwa\"\n            attribute_probs[attr_value]['real'] += 1\n        elif label == 0:  # Wiadomość \"fałszywa\"\n            attribute_probs[attr_value]['fake'] += 1",
-        "detail": "code.run7",
-        "documentation": {}
-    },
-    {
-        "label": "heuristic_post_processing",
-        "kind": 2,
-        "importPath": "code.run7",
-        "description": "code.run7",
-        "peekOfCode": "def heuristic_post_processing(predictions, attribute_probs, attributes, threshold=0.9):\n    \"\"\"Stosuje heurystyczną obróbkę post-procesową na podstawie prawdopodobieństw atrybutów.\"\"\"\n    attributes = list(attributes)  # Upewnij się, że attributes jest listą\n    final_predictions = []\n    for i, pred in enumerate(predictions):\n        attr_value = attributes[i]  # Pobierz wartość atrybutu według indeksu\n        if attr_value in attribute_probs:\n            real_prob = attribute_probs[attr_value]['real']\n            fake_prob = attribute_probs[attr_value]['fake']\n            if real_prob > threshold and real_prob > fake_prob:",
-        "detail": "code.run7",
-        "documentation": {}
-    },
-    {
-        "label": "metoda7",
-        "kind": 2,
-        "importPath": "code.run7",
-        "description": "code.run7",
-        "peekOfCode": "def metoda7(X_embeddings=None, X=None, y=None):\n    \"\"\"\n    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.\n    Parametry:\n        X_embeddings (np.ndarray lub None): Wstępnie obliczone osadzenia.\n        X (lista lub pd.Series): Surowe dane tekstowe (jeśli osadzenia nie są podane).\n        y (lista lub pd.Series): Etykiety docelowe.\n    Zwraca:\n        rf_classifier: Wytrenowany model RandomForest.\n        X_test: Oryginalne lub przetworzone cechy zbioru testowego.",
-        "detail": "code.run7",
-        "documentation": {}
-    },
-    {
-        "label": "metoda8",
-        "kind": 2,
-        "importPath": "code.run8",
-        "description": "code.run8",
-        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest i XGBoost.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
-        "detail": "code.run8",
-        "documentation": {}
-    },
-    {
-        "label": "metoda9",
-        "kind": 2,
-        "importPath": "code.run9",
-        "description": "code.run9",
-        "peekOfCode": "def metoda9(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje różne modele zespołowe i ocenia ich wyniki.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        voting: Najlepszy model (VotingClassifier).",
-        "detail": "code.run9",
         "documentation": {}
     },
     {

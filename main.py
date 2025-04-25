@@ -87,8 +87,8 @@ def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
         evaluate_model(model, X_test, y_test, "run11", output_path, start_time)
     elif method_number == 12:
         models = metoda12(X_train, y_train, X_test, y_test)
-        evaluate_model(models["RandomForest"][0], models["RandomForest"][1], models["RandomForest"][2], "run12-rf", output_path, start_time)
-        evaluate_model(models["CatBoost"][0], models["CatBoost"][1], models["CatBoost"][2], "run12-catboost", output_path, start_time)
+        evaluate_model(models["RandomForest"]["model"], X_test, y_test, "run12-rf", output_path, start_time)
+        evaluate_model(models["CatBoost"]["model"], X_test, y_test, "run12-catboost", output_path, start_time)
     elif method_number == 13:
         model, X_test, y_test = metoda13(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run13", output_path, start_time)
@@ -96,10 +96,8 @@ def run_method(method_number, X_train, y_train, X_test, y_test, output_path):
         model, X_test, y_test = metoda14(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run14", output_path, start_time)
     elif method_number == 15:
-        models, X_test, y_test = metoda15(X_train, y_train, X_test, y_test)
-        for i, model in enumerate(models):
-            run_name = f"run15-{i + 1}"  # Unikalna nazwa dla każdego modelu
-            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)
+        model, X_test, y_test = metoda15(X_train, y_train, X_test, y_test)
+        evaluate_model(model, X_test, y_test, "run15", output_path, start_time)
     elif method_number == 16:
         model, X_test, y_test = metoda16(X_train, y_train, X_test, y_test)
         evaluate_model(model, X_test, y_test, "run16", output_path, start_time)

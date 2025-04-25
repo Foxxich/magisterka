@@ -1,6 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier, BaggingClassifier, AdaBoostClassifier, VotingClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier  # Zastąpiono SVC na KNN
 from sklearn.metrics import (
     classification_report,
     accuracy_score,
@@ -26,12 +26,12 @@ def metoda9(X_train, y_train, X_test, y_test):
     # Definicja klasyfikatorów bazowych
     log_reg = LogisticRegression(max_iter=1000, random_state=42)
     rf = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=42)
-    svc = SVC(kernel='linear', probability=True, random_state=42)
+    knn = KNeighborsClassifier(n_neighbors=5)  # Zastąpiono SVC na KNN z domyślnym n_neighbors=5
 
     # Definicja metod zespołowych
     bagging = BaggingClassifier(estimator=rf, n_estimators=50, random_state=42)
     boosting = AdaBoostClassifier(n_estimators=100, learning_rate=0.5, random_state=42)
-    voting = VotingClassifier(estimators=[('lr', log_reg), ('rf', rf), ('svc', svc)], voting='soft')
+    voting = VotingClassifier(estimators=[('lr', log_reg), ('rf', rf), ('knn', knn)], voting='soft')
 
     # Trenuj modele i oceniaj
     models = {

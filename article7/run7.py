@@ -1,19 +1,33 @@
-from common import load_and_preprocess_data, split_data, evaluate_model
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 import pandas as pd
 from collections import defaultdict
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
 
-def monte_carlo_dropout_inference(model, X_test, num_samples=50):
-    """Symuluje Monte Carlo Dropout dla RandomForest poprzez wielokrotne predykcje."""
-    predictions = np.array([model.predict_proba(X_test) for _ in range(num_samples)])
+# Funkcja do symulacji MC-Dropout na Random Forest
+def monte_carlo_dropout_inference(model, data, num_samples=50):
+    """
+    Symuluje MC-Dropout poprzez wielokrotne próbkowanie predykcji z różnych podzbiorów drzew.
+    """
+    predictions = []
+    n_trees = len(model.estimators_)  # Liczba drzew w lesie
+
+    for _ in range(num_samples):
+        # Wybierz losowy podzbiór drzew
+        sampled_trees = np.random.choice(model.estimators_, size=int(n_trees * 0.8), replace=False)
+        # Oblicz predykcje z wybranego podzbioru drzew
+        tree_preds = np.array([tree.predict_proba(data) for tree in sampled_trees])
+        # Uśrednij predykcje
+        mean_tree_preds = tree_preds.mean(axis=0)
+        predictions.append(mean_tree_preds)
+
+    predictions = np.array(predictions)
     mean_preds = predictions.mean(axis=0)
     uncertainty = predictions.var(axis=0)
     return mean_preds, uncertainty
 
+# Funkcja do obliczania prawdopodobieństw meta-atrybutów
 def compute_meta_attribute_probabilities(df, attribute_col, label_col):
-    """Oblicza prawdopodobieństwo, że atrybut wskazuje na prawdziwe lub fałszywe wiadomości."""
     attribute_probs = defaultdict(lambda: {'real': 0, 'fake': 0})
 
     for _, row in df.iterrows():
@@ -25,7 +39,6 @@ def compute_meta_attribute_probabilities(df, attribute_col, label_col):
         elif label == 0:  # Wiadomość "fałszywa"
             attribute_probs[attr_value]['fake'] += 1
 
-    # Normalizacja prawdopodobieństw
     for attr_value, counts in attribute_probs.items():
         total = counts['real'] + counts['fake']
         attribute_probs[attr_value]['real'] /= total
@@ -33,12 +46,11 @@ def compute_meta_attribute_probabilities(df, attribute_col, label_col):
 
     return attribute_probs
 
+# Heurystyczna obróbka post-procesowa
 def heuristic_post_processing(predictions, attribute_probs, attributes, threshold=0.9):
-    """Stosuje heurystyczną obróbkę post-procesową na podstawie prawdopodobieństw atrybutów."""
-    attributes = list(attributes)  # Upewnij się, że attributes jest listą
     final_predictions = []
     for i, pred in enumerate(predictions):
-        attr_value = attributes[i]  # Pobierz wartość atrybutu według indeksu
+        attr_value = attributes[i]
         if attr_value in attribute_probs:
             real_prob = attribute_probs[attr_value]['real']
             fake_prob = attribute_probs[attr_value]['fake']
@@ -54,44 +66,41 @@ def heuristic_post_processing(predictions, attribute_probs, attributes, threshol
 
 def metoda7(X_train, y_train, X_test, y_test):
     """
-    Trenuje model RandomForest i stosuje heurystyczną obróbkę post-procesową.
+    Trenuje Random Forest z symulowanym MC-Dropout i heurystyczną obróbką post-procesową.
+
     Zwraca:
-        rf_classifier: Wytrenowany model RandomForest.
-        X_test: Oryginalne lub przetworzone cechy zbioru testowego.
+        model: Wytrenowany RandomForestClassifier.
+        X_test: Oryginalne cechy zbioru testowego.
         y_test: Etykiety zbioru testowego.
     """
 
-    # Trenuj model RandomForest
-    print("Debug: Trening modelu RandomForest...")
-    rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
-    rf_classifier.fit(X_train, y_train)
+    # Konwersja danych wejściowych do tablic NumPy
+    train_embeddings = X_train.to_numpy() if isinstance(X_train, pd.DataFrame) else np.array(X_train)
+    test_embeddings = X_test.to_numpy() if isinstance(X_test, pd.DataFrame) else np.array(X_test)
+    train_labels = y_train.to_numpy() if isinstance(y_train, pd.Series) else np.array(y_train)
+
+    # Inicjalizacja i trening modelu Random Forest
+    model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42, n_jobs=-1)
+    print("Debug: Trening modelu Random Forest...")
+    model.fit(train_embeddings, train_labels)
 
     # Monte Carlo Dropout
-    print("Debug: Stosowanie wnioskowania Monte Carlo Dropout...")
-    mean_preds, uncertainty = monte_carlo_dropout_inference(rf_classifier, X_test, num_samples=50)
+    mean_preds, uncertainty = monte_carlo_dropout_inference(model, test_embeddings, num_samples=50)
 
     # Predykcja etykiet
     pred_labels = np.argmax(mean_preds, axis=1)
 
-    # Obsługa meta-atrybutów dla heurystycznej obróbki post-procesowej
-    print("Debug: Tworzenie DataFrame do analizy meta-atrybutów...")
-    df = pd.DataFrame({"text": X_test if X_train is None else [""] * len(X_test), "label": y_test})
-    df["source"] = ["unknown" for _ in range(len(df))]  # Zastąp rzeczywistą kolumną meta-atrybutów
+    # Przygotowanie danych dla heurystyk (uproszczone, używając 'unknown' dla źródła)
+    df = pd.DataFrame({"label": y_test, "source": ["unknown"] * len(y_test) })
 
     # Obliczanie prawdopodobieństw atrybutów
-    print("Debug: Obliczanie prawdopodobieństw meta-atrybutów...")
     attribute_probs = compute_meta_attribute_probabilities(df, "source", "label")
 
-    # Stosowanie heurystycznej obróbki post-procesowej
-    print("Debug: Stosowanie heurystycznej obróbki post-procesowej...")
-    final_predictions = heuristic_post_processing(
-        pred_labels,
-        attribute_probs,
-        df["source"].reset_index(drop=True),  # Upewnij się, że indeksy pasują
-        threshold=0.9
-    )
+    # Heurystyczna obróbka post-procesowa
+    final_predictions = heuristic_post_processing(pred_labels, attribute_probs, df["source"].to_list(), threshold=0.9)
 
-    # Debug finalnych predykcji
-    print(f"Debug: Kształt finalnych predykcji: {len(final_predictions)}")
+    # Ocena modelu (opcjonalnie - dodane dla kompletności)
+    print("\nClassification Report:")
+    print(classification_report(y_test, final_predictions))
 
-    return rf_classifier, X_test, y_test
+    return model, X_test, y_test
