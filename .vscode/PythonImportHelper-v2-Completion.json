@@ -810,31 +810,7 @@
         "documentation": {}
     },
     {
-        "label": "f1_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "roc_auc_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "matthews_corrcoef",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
-        "label": "log_loss",
+        "label": "accuracy_score",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -850,7 +826,7 @@
         "documentation": {}
     },
     {
-        "label": "precision_recall_curve",
+        "label": "f1_score",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -858,7 +834,23 @@
         "documentation": {}
     },
     {
-        "label": "accuracy_score",
+        "label": "log_loss",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "matthews_corrcoef",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "precision_recall_curve",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -875,6 +867,14 @@
     },
     {
         "label": "recall_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "roc_auc_score",
         "importPath": "sklearn.metrics",
         "description": "sklearn.metrics",
         "isExtraImport": true,
@@ -963,7 +963,7 @@
         "documentation": {}
     },
     {
-        "label": "train_test_split",
+        "label": "StratifiedKFold",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
         "isExtraImport": true,
@@ -979,7 +979,7 @@
         "documentation": {}
     },
     {
-        "label": "StratifiedKFold",
+        "label": "train_test_split",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
         "isExtraImport": true,
@@ -1148,6 +1148,14 @@
         "documentation": {}
     },
     {
+        "label": "RobertaTokenizer",
+        "importPath": "transformers",
+        "description": "transformers",
+        "isExtraImport": true,
+        "detail": "transformers",
+        "documentation": {}
+    },
+    {
         "label": "TFBertForSequenceClassification",
         "importPath": "transformers",
         "description": "transformers",
@@ -1156,63 +1164,7 @@
         "documentation": {}
     },
     {
-        "label": "BertTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "TFBertForSequenceClassification",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "RobertaTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
         "label": "TFRobertaForSequenceClassification",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "RobertaTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "TFRobertaForSequenceClassification",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "BertTokenizer",
-        "importPath": "transformers",
-        "description": "transformers",
-        "isExtraImport": true,
-        "detail": "transformers",
-        "documentation": {}
-    },
-    {
-        "label": "RobertaTokenizer",
         "importPath": "transformers",
         "description": "transformers",
         "isExtraImport": true,
@@ -1261,15 +1213,6 @@
         "documentation": {}
     },
     {
-        "label": "matplotlib.pyplot",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "matplotlib.pyplot",
-        "description": "matplotlib.pyplot",
-        "detail": "matplotlib.pyplot",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -1279,11 +1222,46 @@
         "documentation": {}
     },
     {
-        "label": "TfidfVectorizer",
-        "importPath": "sklearn.feature_extraction.text",
-        "description": "sklearn.feature_extraction.text",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "sklearn.feature_extraction.text",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
         "documentation": {}
     },
     {
@@ -1301,6 +1279,14 @@
         "description": "sentence_transformers",
         "isExtraImport": true,
         "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
         "documentation": {}
     },
     {
@@ -1778,6 +1764,60 @@
         "documentation": {}
     },
     {
+        "label": "df",
+        "kind": 5,
+        "importPath": "datasets.BuzzFeed_dataset.archive.formatter",
+        "description": "datasets.BuzzFeed_dataset.archive.formatter",
+        "peekOfCode": "df = pd.read_csv(\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\datasets\\\\BuzzFeed_dataset\\\\BuzzFeed_real_news.csv\", on_bad_lines='skip')\n# Remove empty lines\ndf = df.dropna(how='all')\n# Create new DataFrame with transformed columns\nnew_df = pd.DataFrame({\n    'title': df['title'],\n    'text': df['text'],\n    'subject': df['meta_data'],\n    'date': df['publish_date']\n})",
+        "detail": "datasets.BuzzFeed_dataset.archive.formatter",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "datasets.BuzzFeed_dataset.archive.formatter",
+        "description": "datasets.BuzzFeed_dataset.archive.formatter",
+        "peekOfCode": "df = df.dropna(how='all')\n# Create new DataFrame with transformed columns\nnew_df = pd.DataFrame({\n    'title': df['title'],\n    'text': df['text'],\n    'subject': df['meta_data'],\n    'date': df['publish_date']\n})\n# Save to new CSV\nnew_df.to_csv(\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\datasets\\\\BuzzFeed_dataset\\\\True.csv\", index=False)",
+        "detail": "datasets.BuzzFeed_dataset.archive.formatter",
+        "documentation": {}
+    },
+    {
+        "label": "new_df",
+        "kind": 5,
+        "importPath": "datasets.BuzzFeed_dataset.archive.formatter",
+        "description": "datasets.BuzzFeed_dataset.archive.formatter",
+        "peekOfCode": "new_df = pd.DataFrame({\n    'title': df['title'],\n    'text': df['text'],\n    'subject': df['meta_data'],\n    'date': df['publish_date']\n})\n# Save to new CSV\nnew_df.to_csv(\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\datasets\\\\BuzzFeed_dataset\\\\True.csv\", index=False)",
+        "detail": "datasets.BuzzFeed_dataset.archive.formatter",
+        "documentation": {}
+    },
+    {
+        "label": "generate_random_date",
+        "kind": 2,
+        "importPath": "datasets.WELFake_dataset.archive.optimizer",
+        "description": "datasets.WELFake_dataset.archive.optimizer",
+        "peekOfCode": "def generate_random_date(start_date, end_date):\n    time_delta = end_date - start_date\n    random_days = random.randrange(time_delta.days)\n    return start_date + timedelta(days=random_days)\ndef process_csv(input_file, output_folder):\n    # Define date range for random dates (last 2 years from today)\n    end_date = datetime(2025, 4, 25)\n    start_date = end_date - timedelta(days=730)  # 2 years back\n    # Read CSV, skip empty lines\n    df = pd.read_csv(input_file, delimiter=',', skip_blank_lines=True)",
+        "detail": "datasets.WELFake_dataset.archive.optimizer",
+        "documentation": {}
+    },
+    {
+        "label": "process_csv",
+        "kind": 2,
+        "importPath": "datasets.WELFake_dataset.archive.optimizer",
+        "description": "datasets.WELFake_dataset.archive.optimizer",
+        "peekOfCode": "def process_csv(input_file, output_folder):\n    # Define date range for random dates (last 2 years from today)\n    end_date = datetime(2025, 4, 25)\n    start_date = end_date - timedelta(days=730)  # 2 years back\n    # Read CSV, skip empty lines\n    df = pd.read_csv(input_file, delimiter=',', skip_blank_lines=True)\n    # Create output folder if it doesn't exist\n    os.makedirs(output_folder, exist_ok=True)\n    # Initialize lists to collect rows for True and Fake\n    true_rows = []",
+        "detail": "datasets.WELFake_dataset.archive.optimizer",
+        "documentation": {}
+    },
+    {
+        "label": "remove_empty_and_comma_start_lines_csv",
+        "kind": 2,
+        "importPath": "datasets.WELFake_dataset.archive.remove_empty",
+        "description": "datasets.WELFake_dataset.archive.remove_empty",
+        "peekOfCode": "def remove_empty_and_comma_start_lines_csv(input_file, output_file):\n    # Expected number of fields (id, title, text, label)\n    expected_fields = 4\n    # Read the raw CSV file content\n    with open(input_file, 'r', encoding='utf-8') as file:\n        lines = file.readlines()\n    # Filter lines:\n    # - Not empty\n    # - Don't start with a comma\n    # - Have exactly the expected number of fields",
+        "detail": "datasets.WELFake_dataset.archive.remove_empty",
+        "documentation": {}
+    },
+    {
         "label": "remove_outliers",
         "kind": 2,
         "importPath": "all_plots",
@@ -1953,7 +1993,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def load_and_preprocess_data():\n    # Wczytanie zbiorów danych\n    project_root = os.getcwd()\n    # Build paths to the dataset files\n    fake_news_path = os.path.join(project_root, \"datasets\", \"ISOT_dataset\", \"Fake.csv\")\n    true_news_path = os.path.join(project_root, \"datasets\", \"ISOT_dataset\", \"True.csv\")\n    # Load the datasets\n    fake_news = pd.read_csv(fake_news_path)\n    true_news = pd.read_csv(true_news_path)\n    # Dodanie etykiet",
+        "peekOfCode": "def load_and_preprocess_data(dataset_input):\n    # Wczytanie zbiorów danych\n    project_root = os.getcwd()\n    # Build paths to the dataset files\n    if dataset_input == \"ISOT\":\n        fake_news_path = os.path.join(project_root, \"datasets\", \"ISOT_dataset\", \"Fake.csv\")\n        true_news_path = os.path.join(project_root, \"datasets\", \"ISOT_dataset\", \"True.csv\")\n    elif dataset_input == \"BuzzFeed\":\n        fake_news_path = os.path.join(project_root, \"datasets\", \"BuzzFeed_dataset\", \"Fake.csv\")\n        true_news_path = os.path.join(project_root, \"datasets\", \"BuzzFeed_dataset\", \"True.csv\")",
         "detail": "common",
         "documentation": {}
     },
@@ -1962,7 +2002,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):\n    # Tokenizacja tekstów dla modelu BERT\n    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')\n    bert_model = TFBertForSequenceClassification.from_pretrained(\n        'bert-base-uncased',\n        num_labels=num_labels,\n    )\n    # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu\n    inputs = tokenizer(\n        texts, return_tensors=\"tf\", padding=True, truncation=True, max_length=max_length",
+        "peekOfCode": "def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):\n    # Preprocess texts: convert to strings, handle NaN/None/float values\n    cleaned_texts = []\n    for text in texts:\n        if isinstance(text, (str, bytes)):\n            cleaned_texts.append(text)\n        elif pd.isna(text) or text is None or isinstance(text, (float, int)):\n            cleaned_texts.append(\"\")  # Replace NaN/None/float with empty string\n        else:\n            cleaned_texts.append(str(text))  # Convert other types to string",
         "detail": "common",
         "documentation": {}
     },
@@ -1971,7 +2011,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):\n    # Tokenizacja tekstów dla modelu RoBERTa\n    tokenizer = RobertaTokenizer.from_pretrained('roberta-base')\n    roberta_model = TFRobertaForSequenceClassification.from_pretrained(\n        'roberta-base',\n        num_labels=num_labels,\n    )\n    # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu\n    inputs = tokenizer(\n        texts, return_tensors=\"tf\", padding=True, truncation=True, max_length=max_length",
+        "peekOfCode": "def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):\n    # Preprocess texts: convert to strings, handle NaN/None/float values\n    cleaned_texts = []\n    for text in texts:\n        if isinstance(text, (str, bytes)):\n            cleaned_texts.append(text)\n        elif pd.isna(text) or text is None or isinstance(text, (float, int)):\n            cleaned_texts.append(\"\")  # Replace NaN/None/float with empty string\n        else:\n            cleaned_texts.append(str(text))  # Convert other types to string",
         "detail": "common",
         "documentation": {}
     },
@@ -1980,7 +2020,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def get_transformer_embeddings(texts, model_name=\"all-MiniLM-L6-v2\"):\n    model = SentenceTransformer(model_name)\n    # Generowanie osadzeń\n    embeddings = model.encode(texts, show_progress_bar=True)\n    return np.array(embeddings)\ndef vectorize_data(X, max_features=5000):\n    # Wejściowe dane tekstowe są przekształcane za pomocą TF-IDF\n    tfidf = TfidfVectorizer(max_features=max_features, stop_words='english', ngram_range=(1, 2))\n    return tfidf.fit_transform(X), tfidf\ndef split_data(X, y, test_size=0.2):",
+        "peekOfCode": "def get_transformer_embeddings(texts, model_name=\"all-MiniLM-L6-v2\"):\n    model = SentenceTransformer(model_name)\n    # Preprocess texts: convert to strings, handle NaN/None/float values\n    cleaned_texts = []\n    for text in texts:\n        # Skip or convert invalid values to empty string\n        if isinstance(text, (str, bytes)):\n            cleaned_texts.append(text)\n        elif pd.isna(text) or text is None or isinstance(text, (float, int)):\n            cleaned_texts.append(\"\")  # Replace NaN/None/float with empty string",
         "detail": "common",
         "documentation": {}
     },
@@ -2025,7 +2065,7 @@
         "kind": 2,
         "importPath": "common",
         "description": "common",
-        "peekOfCode": "def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, flatten=True):\n    # Metryki walidacji krzyżowej\n    cv_accuracy_mean = None\n    cv_accuracy_std = None\n    try:\n        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\n        cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring=\"accuracy\")\n        cv_accuracy_mean = cv_scores.mean()\n        cv_accuracy_std = cv_scores.std()\n        print(f\"Wyniki dokładności walidacji krzyżowej: {cv_scores}\")",
+        "peekOfCode": "def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, dataset_input, flatten=True):\n    # Metryki walidacji krzyżowej\n    cv_accuracy_mean = None\n    cv_accuracy_std = None\n    try:\n        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\n        cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring=\"accuracy\")\n        cv_accuracy_mean = cv_scores.mean()\n        cv_accuracy_std = cv_scores.std()\n        print(f\"Wyniki dokładności walidacji krzyżowej: {cv_scores}\")",
         "detail": "common",
         "documentation": {}
     },
@@ -2043,7 +2083,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def run_method(method_number, X_train, y_train, X_test, y_test, output_path):\n    \"\"\"Uruchamia wybraną metodę na podstawie numeru.\"\"\"\n    start_time = time.time()\n    if method_number == 1:\n        models, X_test, y_test = metoda1(X_train, y_train, X_test, y_test)\n        for i, model in enumerate(models):\n            run_name = f\"run1-{i + 1}\"  # Unikalna nazwa dla każdego modelu\n            evaluate_model(model, X_test, y_test, run_name, output_path, start_time)\n    elif method_number == 2:\n        model, X_test, y_test = metoda2(X_train, y_train, X_test, y_test)",
+        "peekOfCode": "def run_method(method_number, X_train, y_train, X_test, y_test, output_path):\n    \"\"\"Uruchamia wybraną metodę na podstawie numeru.\"\"\"\n    start_time = time.time()\n    if method_number == 1:\n        models, X_test, y_test = metoda1(X_train, y_train, X_test, y_test)\n        for i, model in enumerate(models):\n            run_name = f\"run1-{i + 1}\"  # Unikalna nazwa dla każdego modelu\n            evaluate_model(model, X_test, y_test, run_name, output_path, start_time, dataset_input)\n    elif method_number == 2:\n        model, X_test, y_test = metoda2(X_train, y_train, X_test, y_test)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "dataset_input",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "dataset_input = \"\"\ndef get_embeddings(option, X, y):\n    \"\"\"\n    Generuje reprezentację kontekstową na podstawie wybranej opcji.\n    \"\"\"\n    if option == \"1\":\n        return get_bert_embeddings(X.tolist())\n    elif option == \"2\":\n        return get_roberta_embeddings(X.tolist())\n    elif option == \"3\":",
         "detail": "main",
         "documentation": {}
     },

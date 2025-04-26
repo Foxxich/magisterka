@@ -1,36 +1,35 @@
 import os
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
 import time
-import numpy as np
-from transformers import BertTokenizer, TFBertForSequenceClassification
-from transformers import BertTokenizer, TFBertForSequenceClassification
-from sentence_transformers import SentenceTransformer
-from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
-from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
-from transformers import BertTokenizer
-from sklearn.model_selection import train_test_split
-from transformers import RobertaTokenizer
-from sklearn.metrics import (
-    f1_score,
-    roc_auc_score,
-    matthews_corrcoef,
-    log_loss,
-    cohen_kappa_score,
-    precision_recall_curve,
-    accuracy_score,
-    precision_score,
-    recall_score,
-)
-from sklearn.model_selection import cross_val_score, StratifiedKFold
 
-def load_and_preprocess_data():
+import numpy as np
+import pandas as pd
+from sentence_transformers import SentenceTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import (accuracy_score, cohen_kappa_score, f1_score,
+                             log_loss, matthews_corrcoef,
+                             precision_recall_curve, precision_score,
+                             recall_score, roc_auc_score)
+from sklearn.model_selection import (StratifiedKFold, cross_val_score,
+                                     train_test_split)
+from transformers import (BertTokenizer, RobertaTokenizer,
+                          TFBertForSequenceClassification,
+                          TFRobertaForSequenceClassification)
+
+
+def load_and_preprocess_data(dataset_input):
     # Wczytanie zbiorów danych
     project_root = os.getcwd()
 
     # Build paths to the dataset files
-    fake_news_path = os.path.join(project_root, "datasets", "ISOT_dataset", "Fake.csv")
-    true_news_path = os.path.join(project_root, "datasets", "ISOT_dataset", "True.csv")
+    if dataset_input == "ISOT":
+        fake_news_path = os.path.join(project_root, "datasets", "ISOT_dataset", "Fake.csv")
+        true_news_path = os.path.join(project_root, "datasets", "ISOT_dataset", "True.csv")
+    elif dataset_input == "BuzzFeed":
+        fake_news_path = os.path.join(project_root, "datasets", "BuzzFeed_dataset", "Fake.csv")
+        true_news_path = os.path.join(project_root, "datasets", "BuzzFeed_dataset", "True.csv")
+    else:
+        fake_news_path = os.path.join(project_root, "datasets", "WELFake_dataset", "Fake.csv")
+        true_news_path = os.path.join(project_root, "datasets", "WELFake_dataset", "True.csv")
 
     # Load the datasets
     fake_news = pd.read_csv(fake_news_path)
@@ -50,6 +49,16 @@ def load_and_preprocess_data():
     return X, y
 
 def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
+    # Preprocess texts: convert to strings, handle NaN/None/float values
+    cleaned_texts = []
+    for text in texts:
+        if isinstance(text, (str, bytes)):
+            cleaned_texts.append(text)
+        elif pd.isna(text) or text is None or isinstance(text, (float, int)):
+            cleaned_texts.append("")  # Replace NaN/None/float with empty string
+        else:
+            cleaned_texts.append(str(text))  # Convert other types to string
+
     # Tokenizacja tekstów dla modelu BERT
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     bert_model = TFBertForSequenceClassification.from_pretrained(
@@ -59,12 +68,12 @@ def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
 
     # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu
     inputs = tokenizer(
-        texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
+        cleaned_texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
     )
 
     # Przetwarzanie w partiach
     embeddings = []
-    for i in range(0, len(texts), batch_size):
+    for i in range(0, len(cleaned_texts), batch_size):
         batch_inputs = {
             k: v[i:i + batch_size] for k, v in inputs.items()
         }
@@ -74,6 +83,16 @@ def get_bert_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
     return np.vstack(embeddings)
 
 def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
+    # Preprocess texts: convert to strings, handle NaN/None/float values
+    cleaned_texts = []
+    for text in texts:
+        if isinstance(text, (str, bytes)):
+            cleaned_texts.append(text)
+        elif pd.isna(text) or text is None or isinstance(text, (float, int)):
+            cleaned_texts.append("")  # Replace NaN/None/float with empty string
+        else:
+            cleaned_texts.append(str(text))  # Convert other types to string
+
     # Tokenizacja tekstów dla modelu RoBERTa
     tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
     roberta_model = TFRobertaForSequenceClassification.from_pretrained(
@@ -83,12 +102,12 @@ def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
 
     # Tokenizacja wszystkich tekstów w jednej operacji dla oszczędności czasu
     inputs = tokenizer(
-        texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
+        cleaned_texts, return_tensors="tf", padding=True, truncation=True, max_length=max_length
     )
 
     # Przetwarzanie w partiach
     embeddings = []
-    for i in range(0, len(texts), batch_size):
+    for i in range(0, len(cleaned_texts), batch_size):
         batch_inputs = {
             k: v[i:i + batch_size] for k, v in inputs.items()
         }
@@ -99,9 +118,21 @@ def get_roberta_embeddings(texts, batch_size=32, max_length=128, num_labels=2):
 
 def get_transformer_embeddings(texts, model_name="all-MiniLM-L6-v2"):
     model = SentenceTransformer(model_name)
-    # Generowanie osadzeń
-    embeddings = model.encode(texts, show_progress_bar=True)
-
+    
+    # Preprocess texts: convert to strings, handle NaN/None/float values
+    cleaned_texts = []
+    for text in texts:
+        # Skip or convert invalid values to empty string
+        if isinstance(text, (str, bytes)):
+            cleaned_texts.append(text)
+        elif pd.isna(text) or text is None or isinstance(text, (float, int)):
+            cleaned_texts.append("")  # Replace NaN/None/float with empty string
+        else:
+            cleaned_texts.append(str(text))  # Convert other types to string
+    
+    # Generate embeddings
+    embeddings = model.encode(cleaned_texts, show_progress_bar=True)
+    
     return np.array(embeddings)
 
 def vectorize_data(X, max_features=5000):
@@ -157,7 +188,7 @@ def split_data_few_shot(X, y, few_shot_examples=5):
 
     return X_train, X_test, y_train, y_test
 
-def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, flatten=True):
+def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, dataset_input, flatten=True):
     # Metryki walidacji krzyżowej
     cv_accuracy_mean = None
     cv_accuracy_std = None
@@ -215,14 +246,14 @@ def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, fla
     metrics["CV Accuracy (Std Dev)"] = cv_accuracy_std
 
     # Zapis metryk
-    results_file = os.path.join(output_path, f"{run_type}_results.csv")
+    results_file = os.path.join(output_path, f"{run_type}_{dataset_input}_results.csv")
     pd.DataFrame([metrics]).to_csv(results_file, index=False)
     print(f"Zapisano wyniki dla {run_type}")
 
     # Krzywa Precision-Recall
     try:
         precision, recall, _ = precision_recall_curve(y_test, y_pred_proba)
-        pr_curve_file = os.path.join(output_path, f"{run_type}_pr_curve.csv")
+        pr_curve_file = os.path.join(output_path, f"{run_type}_{dataset_input}_pr_curve.csv")
         pd.DataFrame({"Precision": precision, "Recall": recall}).to_csv(pr_curve_file, index=False)
         print(f"Zapisano krzywą Precision-Recall dla {run_type}")
     except ValueError:
