@@ -1217,6 +1217,15 @@
         "documentation": {}
     },
     {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -1985,6 +1994,42 @@
         "description": "common",
         "peekOfCode": "def evaluate_model(model, X_test, y_test, run_type, output_path, start_time, dataset_input, flatten=True):\n    # Metryki walidacji krzyżowej\n    cv_accuracy_mean = None\n    cv_accuracy_std = None\n    try:\n        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\n        cv_scores = cross_val_score(model, X_test, y_test, cv=skf, scoring=\"accuracy\")\n        cv_accuracy_mean = cv_scores.mean()\n        cv_accuracy_std = cv_scores.std()\n        print(f\"Wyniki dokładności walidacji krzyżowej: {cv_scores}\")",
         "detail": "common",
+        "documentation": {}
+    },
+    {
+        "label": "copy_content",
+        "kind": 2,
+        "importPath": "fixer",
+        "description": "fixer",
+        "peekOfCode": "def copy_content(source_path, dest_path):\n    with open(source_path, 'r') as source_file:\n        content = source_file.read()\n    with open(dest_path, 'w') as dest_file:\n        dest_file.write(content)\n# Check and create missing files for each pattern pair\nfor pattern1, pattern2 in file_patterns:\n    for run_num in run_numbers:\n        file1 = pattern1.format(run_num)\n        file2 = pattern2.format(run_num)",
+        "detail": "fixer",
+        "documentation": {}
+    },
+    {
+        "label": "folder_path",
+        "kind": 5,
+        "importPath": "fixer",
+        "description": "fixer",
+        "peekOfCode": "folder_path = input(\"Please enter the folder path: \")\n# Define file patterns and run numbers\nrun_numbers = [i for i in range(2, 21) if i != 12]\nfile_patterns = [\n    (\"run{}_BuzzFeed_pr_curve.csv\", \"run{}_BuzzFeed_results.csv\"),\n    (\"run{}_ISOT_pr_curve.csv\", \"run{}_ISOT_results.csv\"),\n    (\"run{}_WELFake_pr_curve.csv\", \"run{}_WELFake_results.csv\")\n]\n# Function to copy content from an existing file\ndef copy_content(source_path, dest_path):",
+        "detail": "fixer",
+        "documentation": {}
+    },
+    {
+        "label": "run_numbers",
+        "kind": 5,
+        "importPath": "fixer",
+        "description": "fixer",
+        "peekOfCode": "run_numbers = [i for i in range(2, 21) if i != 12]\nfile_patterns = [\n    (\"run{}_BuzzFeed_pr_curve.csv\", \"run{}_BuzzFeed_results.csv\"),\n    (\"run{}_ISOT_pr_curve.csv\", \"run{}_ISOT_results.csv\"),\n    (\"run{}_WELFake_pr_curve.csv\", \"run{}_WELFake_results.csv\")\n]\n# Function to copy content from an existing file\ndef copy_content(source_path, dest_path):\n    with open(source_path, 'r') as source_file:\n        content = source_file.read()",
+        "detail": "fixer",
+        "documentation": {}
+    },
+    {
+        "label": "file_patterns",
+        "kind": 5,
+        "importPath": "fixer",
+        "description": "fixer",
+        "peekOfCode": "file_patterns = [\n    (\"run{}_BuzzFeed_pr_curve.csv\", \"run{}_BuzzFeed_results.csv\"),\n    (\"run{}_ISOT_pr_curve.csv\", \"run{}_ISOT_results.csv\"),\n    (\"run{}_WELFake_pr_curve.csv\", \"run{}_WELFake_results.csv\")\n]\n# Function to copy content from an existing file\ndef copy_content(source_path, dest_path):\n    with open(source_path, 'r') as source_file:\n        content = source_file.read()\n    with open(dest_path, 'w') as dest_file:",
+        "detail": "fixer",
         "documentation": {}
     },
     {
