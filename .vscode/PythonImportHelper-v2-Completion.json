@@ -1749,7 +1749,7 @@
         "kind": 2,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Usuwa wartości, które są daleko poza zakresem międzykwartylowym (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # Pierwszy kwartyl (25. percentyl)\n    Q3 = data[column].quantile(0.75)  # Trzeci kwartyl (75. percentyl)\n    IQR = Q3 - Q1  # Zakres międzykwartylowy\n    lower_bound = Q1 - 1.5 * IQR  # Dolna granica\n    upper_bound = Q3 + 1.5 * IQR  # Górna granica\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
+        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Removes values that are far beyond the interquartile range (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # First quartile (25th percentile)\n    Q3 = data[column].quantile(0.75)  # Third quartile (75th percentile)\n    IQR = Q3 - Q1  # Interquartile range\n    lower_bound = Q1 - 1.5 * IQR  # Lower bound\n    upper_bound = Q3 + 1.5 * IQR  # Upper bound\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1758,7 +1758,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder do porównania\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder for comparison\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1767,7 +1767,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder do porównania\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",",
+        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder for comparison\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1776,7 +1776,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Folder do porównania\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",\n    \"run18_results.csv\",",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Folder for comparison\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",\n    \"run19_ISOT_pr_curve.csv\", \"run19_ISOT_results.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1785,7 +1785,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "comparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",\n    \"run18_results.csv\",\n    \"run17_pr_curve.csv\",\n    \"run17_results.csv\"",
+        "peekOfCode": "comparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",\n    \"run19_ISOT_pr_curve.csv\", \"run19_ISOT_results.csv\",\n    \"run18_ISOT_pr_curve.csv\", \"run18_ISOT_results.csv\",\n    \"run17_ISOT_pr_curve.csv\", \"run17_ISOT_results.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1794,7 +1794,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "comparison_files = [\n    \"run20_pr_curve.csv\",\n    \"run20_results.csv\",\n    \"run19_pr_curve.csv\",\n    \"run19_results.csv\",\n    \"run18_pr_curve.csv\",\n    \"run18_results.csv\",\n    \"run17_pr_curve.csv\",\n    \"run17_results.csv\"\n]",
+        "peekOfCode": "comparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",\n    \"run19_ISOT_pr_curve.csv\", \"run19_ISOT_results.csv\",\n    \"run18_ISOT_pr_curve.csv\", \"run18_ISOT_results.csv\",\n    \"run17_ISOT_pr_curve.csv\", \"run17_ISOT_results.csv\",\n    \"run20_WELFake_pr_curve.csv\", \"run20_WELFake_results.csv\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1803,7 +1803,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\ncolumns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1812,16 +1812,34 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Zakres uruchomień do przetworzenia\nruns = list(range(1, 21))  # Uruchomienia od 1 do 20\ncolumns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]",
         "detail": "all_plots",
         "documentation": {}
     },
     {
-        "label": "runs",
+        "label": "runs_standard",
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs = list(range(1, 21))  # Uruchomienia od 1 do 20\ncolumns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]\n    # Dodanie plików z porównania",
+        "peekOfCode": "runs_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "runs_1_x",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "run12_variants",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1830,7 +1848,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "columns_to_load = [\"Accuracy\", \"Execution Time (s)\", \"Log Loss\"]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'  # Upewnij się, że jest ukośnik na końcu\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy katalog, jeśli nie istnieje\n    # Tworzenie ścieżek do plików z wynikami i wykresami PR\n    results_files = [f\"{folder_path}run{i}_results.csv\" for i in runs]\n    pr_curve_files = [f\"{folder_path}run{i}_pr_curve.csv\" for i in runs]\n    # Dodanie plików z porównania\n    results_files.extend([os.path.join(comparison_folder, f) for f in comparison_files if \"results\" in f])",
+        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n    # Create dataset-specific subfolders for plots\n    datasets = ['BuzzFeed', 'ISOT', 'WELFake']",
         "detail": "all_plots",
         "documentation": {}
     },
