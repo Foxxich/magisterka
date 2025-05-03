@@ -1,0 +1,2 @@
+Accuracy,Precision,Recall,F1-Score,ROC-AUC,MCC,Log Loss,Cohen's Kappa,Execution Time (s),CV Accuracy (Mean),CV Accuracy (Std Dev)
+1.0,1.0,1.0,1.0,1.0,1.0,0.3459368920274633,1.0,608.950902223587,0.7,0.4

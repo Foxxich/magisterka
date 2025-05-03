@@ -32,14 +32,6 @@
         "documentation": {}
     },
     {
-        "label": "Sequential",
-        "importPath": "tensorflow.keras.models",
-        "description": "tensorflow.keras.models",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.models",
-        "documentation": {}
-    },
-    {
         "label": "Dense",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
@@ -121,62 +113,6 @@
     },
     {
         "label": "GlobalAveragePooling1D",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Conv1D",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "MaxPooling1D",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dropout",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Flatten",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Input",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Reshape",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
         "isExtraImport": true,
@@ -449,6 +385,14 @@
         "documentation": {}
     },
     {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
         "label": "RandomForestClassifier",
         "importPath": "sklearn.ensemble",
         "description": "sklearn.ensemble",
@@ -617,6 +561,14 @@
         "documentation": {}
     },
     {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
         "label": "xgboost",
         "kind": 6,
         "isExtraImport": true,
@@ -667,14 +619,6 @@
     },
     {
         "label": "MinMaxScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "StandardScaler",
         "importPath": "sklearn.preprocessing",
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
@@ -1172,36 +1116,19 @@
         "documentation": {}
     },
     {
-        "label": "KerasClassifier",
-        "importPath": "scikeras.wrappers",
-        "description": "scikeras.wrappers",
-        "isExtraImport": true,
-        "detail": "scikeras.wrappers",
-        "documentation": {}
-    },
-    {
-        "label": "KerasClassifier",
-        "importPath": "scikeras.wrappers",
-        "description": "scikeras.wrappers",
-        "isExtraImport": true,
-        "detail": "scikeras.wrappers",
-        "documentation": {}
-    },
-    {
-        "label": "tensorflow",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "tensorflow",
-        "description": "tensorflow",
-        "detail": "tensorflow",
-        "documentation": {}
-    },
-    {
         "label": "defaultdict",
         "importPath": "collections",
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "KerasClassifier",
+        "importPath": "scikeras.wrappers",
+        "description": "scikeras.wrappers",
+        "isExtraImport": true,
+        "detail": "scikeras.wrappers",
         "documentation": {}
     },
     {
@@ -1683,20 +1610,11 @@
         "documentation": {}
     },
     {
-        "label": "create_cnn_model",
-        "kind": 2,
-        "importPath": "article6.run6",
-        "description": "article6.run6",
-        "peekOfCode": "def create_cnn_model(input_shape, num_classes):\n    \"\"\"\n    Tworzy model CNN zgodny z konfiguracją z artykułu (Tabela 3 dla MVSA).\n    \"\"\"\n    print(\n        \"Entering create_cnn_model with input_shape:\",\n        input_shape,\n        \"and num_classes:\",\n        num_classes,\n    )",
-        "detail": "article6.run6",
-        "documentation": {}
-    },
-    {
         "label": "metoda6",
         "kind": 2,
         "importPath": "article6.run6",
         "description": "article6.run6",
-        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy WCNNE z AdaBoost na osadzeniach BERT, zgodnie z artykułem.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
+        "peekOfCode": "def metoda6(X_train, y_train, X_test, y_test, batch_size=32, use_bert_embeddings=False):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z wykorzystaniem AdaBoost i Logistic Regression oraz osadzeń BERT.\n    Parametry:\n        X_train (np.ndarray lub lista): Cechy zbioru treningowego lub oryginalne dane tekstowe.\n        y_train (lista): Etykiety zbioru treningowego.\n        X_test (np.ndarray lub lista): Cechy zbioru testowego lub oryginalne dane tekstowe.\n        y_test (lista): Etykiety zbioru testowego.\n        batch_size (int): Rozmiar batcha do generowania osadzeń (domyślnie: 32).\n        use_bert_embeddings (bool): Czy generować osadzenia BERT z surowych danych tekstowych.",
         "detail": "article6.run6",
         "documentation": {}
     },
@@ -1750,7 +1668,7 @@
         "kind": 2,
         "importPath": "article8.run8",
         "description": "article8.run8",
-        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest, XGBoost i DBN.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
+        "peekOfCode": "def metoda8(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest, XGBoost\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:\n        ensemble_model: Wytrenowany klasyfikator zespołowy.",
         "detail": "article8.run8",
         "documentation": {}
     },

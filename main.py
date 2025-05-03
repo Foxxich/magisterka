@@ -134,7 +134,7 @@ if __name__ == "__main__":
             method_input_last = input().strip().lower()
             method_number_last = int(method_input_last) + 1
 
-        for rep in ["1", "2", "3"]:
+        for rep in ["3"]:
             print(f"Rozpoczynanie metod dla reprezentacji {rep}...")
             for split_type in ["classic", "one_shot", "few_shot"]:
                 for dataset_input in ["ISOT", "BuzzFeed", "WELFake"]:

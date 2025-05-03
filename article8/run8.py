@@ -29,7 +29,7 @@ def create_dbn_model(input_dim, num_classes):
 
 def metoda8(X_train, y_train, X_test, y_test):
     """
-    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest, XGBoost i DBN.
+    Trenuje klasyfikator zespołowy Voting Classifier z użyciem RandomForest, XGBoost
 
     Parametry:
         X_train (np.ndarray): Cechy zbioru treningowego.
@@ -62,12 +62,8 @@ def metoda8(X_train, y_train, X_test, y_test):
     dbn = KerasClassifier(model=lambda: create_dbn_model(input_dim, num_classes), epochs=50, batch_size=32, verbose=0)
 
     # Definicja modelu zespołowego
-    ensemble_model = VotingClassifier(
-        estimators=[('rf', rf), ('xgb', xgb), ('dbn', dbn)],
-        voting='soft'
-    )
+    ensemble_model = VotingClassifier(estimators=[('rf', rf), ('xgb', xgb)], voting='soft')
 
     # Trening modelu zespołowego
-    ensemble_model.fit(X_train_scaled, y_train)
-
+    ensemble_model = VotingClassifier(estimators=[('rf', rf), ('xgb', xgb)], voting='soft')
     return ensemble_model, X_test, y_test
