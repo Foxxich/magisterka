@@ -1484,6 +1484,15 @@
         "documentation": {}
     },
     {
+        "label": "matplotlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
         "label": "create_model",
         "kind": 2,
         "importPath": "article1.run1",
@@ -1803,7 +1812,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1812,7 +1821,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1821,7 +1830,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
+        "peekOfCode": "runs_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1830,7 +1839,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1839,7 +1848,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist",
+        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1848,7 +1857,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n    # Create dataset-specific subfolders for plots\n    datasets = ['BuzzFeed', 'ISOT', 'WELFake']",
+        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n    # Create dataset-specific subfolders for plots\n    datasets = ['BuzzFeed', 'ISOT', 'WELFake']",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -2237,6 +2246,168 @@
         "description": "my_run",
         "peekOfCode": "def metoda20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    lgb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    lgb_preds_train = lgb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla LightGBM\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
         "detail": "my_run",
+        "documentation": {}
+    },
+    {
+        "label": "remove_outliers",
+        "kind": 2,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Removes values that are far beyond the interquartile range (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # First quartile (25th percentile)\n    Q3 = data[column].quantile(0.75)  # Third quartile (75th percentile)\n    IQR = Q3 - Q1  # Interquartile range\n    lower_bound = Q1 - 1.5 * IQR  # Lower bound\n    upper_bound = Q3 + 1.5 * IQR  # Upper bound\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "project_root",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Define folder to process\nfolder = \"results_3_few_shot\"\nfolder_path = os.path.join(base_folder, folder) + '\\\\'\nplots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\nos.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n# Create ISOT-specific subfolder for plots\ndataset = 'ISOT'",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "base_folder",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Define folder to process\nfolder = \"results_3_few_shot\"\nfolder_path = os.path.join(base_folder, folder) + '\\\\'\nplots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\nos.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n# Create ISOT-specific subfolder for plots\ndataset = 'ISOT'\ndataset_plot_path = os.path.join(plots_output_path, dataset)",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "plot_base_folder",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Define folder to process\nfolder = \"results_3_few_shot\"\nfolder_path = os.path.join(base_folder, folder) + '\\\\'\nplots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\nos.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n# Create ISOT-specific subfolder for plots\ndataset = 'ISOT'\ndataset_plot_path = os.path.join(plots_output_path, dataset)\nos.makedirs(dataset_plot_path, exist_ok=True)",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "folder",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "folder = \"results_3_few_shot\"\nfolder_path = os.path.join(base_folder, folder) + '\\\\'\nplots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\nos.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n# Create ISOT-specific subfolder for plots\ndataset = 'ISOT'\ndataset_plot_path = os.path.join(plots_output_path, dataset)\nos.makedirs(dataset_plot_path, exist_ok=True)\n# Define run patterns\nruns = [i for i in range(1, 17)]  # Runs 1 to 16",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "folder_path",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "folder_path = os.path.join(base_folder, folder) + '\\\\'\nplots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\nos.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n# Create ISOT-specific subfolder for plots\ndataset = 'ISOT'\ndataset_plot_path = os.path.join(plots_output_path, dataset)\nos.makedirs(dataset_plot_path, exist_ok=True)\n# Define run patterns\nruns = [i for i in range(1, 17)]  # Runs 1 to 16\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "plots_output_path",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\nos.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n# Create ISOT-specific subfolder for plots\ndataset = 'ISOT'\ndataset_plot_path = os.path.join(plots_output_path, dataset)\nos.makedirs(dataset_plot_path, exist_ok=True)\n# Define run patterns\nruns = [i for i in range(1, 17)]  # Runs 1 to 16\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "dataset",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "dataset = 'ISOT'\ndataset_plot_path = os.path.join(plots_output_path, dataset)\nos.makedirs(dataset_plot_path, exist_ok=True)\n# Define run patterns\nruns = [i for i in range(1, 17)]  # Runs 1 to 16\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "dataset_plot_path",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "dataset_plot_path = os.path.join(plots_output_path, dataset)\nos.makedirs(dataset_plot_path, exist_ok=True)\n# Define run patterns\nruns = [i for i in range(1, 17)]  # Runs 1 to 16\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "runs",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "runs = [i for i in range(1, 17)]  # Runs 1 to 16\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\n# Create file paths for ISOT dataset and run patterns\nresults_files = []",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "runs_1_x",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\n# Create file paths for ISOT dataset and run patterns\nresults_files = []\npr_curve_files = []",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "run12_variants",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\n# Create file paths for ISOT dataset and run patterns\nresults_files = []\npr_curve_files = []\nfor run in runs:",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "columns_to_load",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\n# Create file paths for ISOT dataset and run patterns\nresults_files = []\npr_curve_files = []\nfor run in runs:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")\n    pr_curve_files.append(f\"{folder_path}run{run}_{dataset}_pr_curve.csv\")",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "results_files",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "results_files = []\npr_curve_files = []\nfor run in runs:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")\n    pr_curve_files.append(f\"{folder_path}run{run}_{dataset}_pr_curve.csv\")\nfor run in runs_1_x:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")\n    pr_curve_files.append(f\"{folder_path}run{run}_{dataset}_pr_curve.csv\")\nfor run in run12_variants:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "pr_curve_files",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "pr_curve_files = []\nfor run in runs:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")\n    pr_curve_files.append(f\"{folder_path}run{run}_{dataset}_pr_curve.csv\")\nfor run in runs_1_x:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")\n    pr_curve_files.append(f\"{folder_path}run{run}_{dataset}_pr_curve.csv\")\nfor run in run12_variants:\n    results_files.append(f\"{folder_path}run{run}_{dataset}_results.csv\")\n    pr_curve_files.append(f\"{folder_path}run{run}_{dataset}_pr_curve.csv\")",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "results_data",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "results_data = []\nfor file in results_files:\n    if os.path.exists(file):  # Check if file exists\n        try:\n            data = pd.read_csv(file, usecols=lambda col: col in columns_to_load + ['Metoda'])\n            # Extract method name with run number\n            run_name = os.path.basename(file).replace(\"run\", \"metoda\").split('_')[0]  # Remove \"run\" prefix\n            dataset_name = os.path.basename(file).split('_')[1]  # Extract dataset name\n            data['Metoda'] = f\"{run_name}_{dataset_name}\"  # Add column with method and dataset\n            results_data.append(data)",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "pr_curves",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "pr_curves = {}\nfor file in pr_curve_files:\n    if os.path.exists(file):  # Check if file exists\n        try:\n            run_name = os.path.basename(file).replace(\"run\", \"metoda\").split('_')[0]  # Remove \"run\" prefix\n            dataset_name = os.path.basename(file).split('_')[1]  # Extract dataset name\n            pr_curves[f\"{run_name}_{dataset_name}\"] = pd.read_csv(file)\n        except Exception as e:\n            print(f\"Error reading {file}: {e}\")\n# Create comparative plots for each metric for ISOT",
+        "detail": "plots_best",
+        "documentation": {}
+    },
+    {
+        "label": "metrics",
+        "kind": 5,
+        "importPath": "plots_best",
+        "description": "plots_best",
+        "peekOfCode": "metrics = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\", \"CV Accuracy (Std Dev)\"\n]\nif not all_results.empty:\n    for metric in metrics:\n        if metric in all_results.columns:\n            # Check if column is not empty and not all values are None or 0\n            if all_results[metric].notna().any() and all_results[metric].sum() != 0:\n                mask = (all_results[metric] != 0) & (all_results[metric] != 0.0) & (all_results[metric].notna())",
+        "detail": "plots_best",
         "documentation": {}
     },
     {

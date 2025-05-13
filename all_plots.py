@@ -48,7 +48,7 @@ run12_variants = ["12-catboost", "12-rf"]  # Run 12 variants
 # Updated columns to load
 columns_to_load = [
     "Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC", "MCC",
-    "Log Loss", "Cohen's Kappa", "Execution Time (s)", "CV Accuracy (Mean)", "CV Accuracy (Std Dev)"
+    "Log Loss", "Cohen's Kappa", "Execution Time (s)", "CV Accuracy (Mean)"
 ]
 
 for folder in folders:
