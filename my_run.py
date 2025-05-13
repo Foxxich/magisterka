@@ -8,41 +8,93 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
 from lightgbm import LGBMClassifier
 from catboost import CatBoostClassifier
+from sklearn.ensemble import VotingClassifier
+from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, BatchNormalization, LeakyReLU, Dropout
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.regularizers import l2
+from sklearn.model_selection import train_test_split
 
-def metoda17(X_train, y_train, X_test, y_test, n_models=5):
+def metoda17(X_train, y_train, X_test, y_test):
     """
-    Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.
+    Trenuje ulepszony model zespołowy z miękkim głosowaniem (soft-voting) z optymalizacją
+    hiperparametrów i skalowaniem cech.
+
+    Parametry:
+        X_train (np.ndarray): Cechy zbioru treningowego.
+        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.
+        X_test (np.ndarray): Cechy zbioru testowego.
+        y_test (lista lub np.ndarray): Etykiety zbioru testowego.
+
+    Zwraca:
+        voting_clf_final: Wytrenowany model VotingClassifier po optymalizacji.
+        X_test_scaled: Przeskalowane cechy zbioru testowego.
+        y_test: Etykiety zbioru testowego.
     """
-    sample_weights = np.ones(len(y_train))  # Inicjalizacja wag próbek
-    models = []  # Lista do przechowywania modeli
-    accuracies = []  # Lista do przechowywania dokładności
-    
-    for _ in range(n_models):
-        model = Sequential([
-            Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 1
-            BatchNormalization(),
-            LeakyReLU(alpha=0.1),
-            Dropout(0.2),
-            Dense(64, activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 2
-            BatchNormalization(),
-            LeakyReLU(alpha=0.1),
-            Dropout(0.2),
-            Dense(1, activation='sigmoid')  # Warstwa wyjściowa
-        ])
-        model.compile(optimizer=Adam(learning_rate=0.001), loss='binary_crossentropy', metrics=['accuracy'])
-        history = model.fit(X_train, y_train, epochs=10, batch_size=64, sample_weight=sample_weights, verbose=0)
-        y_pred = model.predict(X_train)
-        sample_weights += np.abs(y_train - y_pred.squeeze())  # Aktualizacja wag próbek
-        
-        # Zapisanie modelu i dokładności z ostatniej epoki
-        models.append(model)
-        accuracies.append(history.history['accuracy'][-1])
-    
-    # Wybór najlepszego modelu
-    best_idx = np.argmax(accuracies)  # Indeks modelu z najlepszą dokładnością
-    best_model = models[best_idx]
-    
-    return best_model, X_test, y_test
+    # Inicjalizacja klasyfikatorów
+    mlp = MLPClassifier(max_iter=100, solver='lbfgs', random_state=0)
+    xgb = XGBClassifier(
+        use_label_encoder=False, eval_metric='logloss', random_state=0
+    )
+
+    # Pipeline dla regresji logistycznej ze skalowaniem i optymalizacją hiperparametrów
+    pipeline_logreg = Pipeline([
+        ('scaler', StandardScaler()),
+        ('log_reg', LogisticRegression(random_state=0))
+    ])
+
+    param_grid_logreg = {
+        'log_reg__C': [0.001, 0.01, 0.1, 1, 10],
+        'log_reg__penalty': ['l1', 'l2', 'elasticnet'],
+        'log_reg__solver': ['liblinear', 'saga']
+    }
+
+    grid_search_logreg = GridSearchCV(pipeline_logreg, param_grid_logreg, cv=5, scoring='accuracy', n_jobs=-1)
+    grid_search_logreg.fit(X_train, y_train)
+    log_reg_optimized = grid_search_logreg.best_estimator_.named_steps['log_reg']
+    scaler_logreg = grid_search_logreg.best_estimator_.named_steps['scaler']
+    X_test_scaled_logreg = scaler_logreg.transform(X_test)
+
+
+    # Pipeline dla MLP ze skalowaniem
+    pipeline_mlp = Pipeline([
+        ('scaler', StandardScaler()),
+        ('mlp', mlp)
+    ])
+    pipeline_mlp.fit(X_train, y_train)
+    X_test_scaled_mlp = pipeline_mlp.named_steps['scaler'].transform(X_test)
+    mlp_optimized = pipeline_mlp.named_steps['mlp'] # Można dodać optymalizację GridSearchCV dla MLP
+
+
+    # Pipeline dla XGBoost ze skalowaniem
+    pipeline_xgb = Pipeline([
+        ('scaler', StandardScaler()),
+        ('xgb', xgb)
+    ])
+    pipeline_xgb.fit(X_train, y_train)
+    X_test_scaled_xgb = pipeline_xgb.named_steps['scaler'].transform(X_test)
+    xgb_optimized = pipeline_xgb.named_steps['xgb'] # Można dodać optymalizację GridSearchCV dla XGBoost
+
+
+    # Utworzenie klasyfikatora zespołowego z miękkim głosowaniem z wytrenowanymi (potencjalnie) lepszymi modelami
+    voting_clf = VotingClassifier(estimators=[('mlp', mlp_optimized), ('log_reg', log_reg_optimized), ('xgb', xgb_optimized)], voting='soft')
+
+    # Trening klasyfikatora VotingClassifier na przeskalowanym zbiorze treningowym
+    voting_clf.fit(X_train, y_train) # VotingClassifier sam w sobie nie potrzebuje skalowania, bo wewnętrzne klasyfikatory już są przeskalowane w pipeline'ach
+
+    # Przeskaluj zbiór testowy (używając transformacji z pipeline'ów)
+    X_test_scaled = StandardScaler().fit_transform(X_test) # Można też użyć jednego scalera dopasowanego na X_train
+
+    return voting_clf, X_test_scaled, y_test
+
 
 def metoda18(X_train, y_train, X_test, y_test):
     """

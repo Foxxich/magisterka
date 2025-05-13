@@ -32,6 +32,14 @@
         "documentation": {}
     },
     {
+        "label": "Sequential",
+        "importPath": "tensorflow.keras.models",
+        "description": "tensorflow.keras.models",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.models",
+        "documentation": {}
+    },
+    {
         "label": "Dense",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
@@ -168,6 +176,46 @@
         "documentation": {}
     },
     {
+        "label": "Dense",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "BatchNormalization",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "LeakyReLU",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Dropout",
+        "importPath": "tensorflow.keras.layers",
+        "description": "tensorflow.keras.layers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.layers",
+        "documentation": {}
+    },
+    {
+        "label": "Adam",
+        "importPath": "tensorflow.keras.optimizers",
+        "description": "tensorflow.keras.optimizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.optimizers",
+        "documentation": {}
+    },
+    {
         "label": "Adam",
         "importPath": "tensorflow.keras.optimizers",
         "description": "tensorflow.keras.optimizers",
@@ -205,6 +253,14 @@
         "description": "tensorflow.keras.callbacks",
         "isExtraImport": true,
         "detail": "tensorflow.keras.callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "l2",
+        "importPath": "tensorflow.keras.regularizers",
+        "description": "tensorflow.keras.regularizers",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.regularizers",
         "documentation": {}
     },
     {
@@ -473,6 +529,14 @@
         "documentation": {}
     },
     {
+        "label": "VotingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
         "label": "MLPClassifier",
         "importPath": "sklearn.neural_network",
         "description": "sklearn.neural_network",
@@ -486,6 +550,22 @@
         "description": "sklearn.neural_network",
         "isExtraImport": true,
         "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "MLPClassifier",
+        "importPath": "sklearn.neural_network",
+        "description": "sklearn.neural_network",
+        "isExtraImport": true,
+        "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
         "documentation": {}
     },
     {
@@ -602,6 +682,14 @@
         "documentation": {}
     },
     {
+        "label": "XGBClassifier",
+        "importPath": "xgboost",
+        "description": "xgboost",
+        "isExtraImport": true,
+        "detail": "xgboost",
+        "documentation": {}
+    },
+    {
         "label": "SelectKBest",
         "importPath": "sklearn.feature_selection",
         "description": "sklearn.feature_selection",
@@ -619,6 +707,14 @@
     },
     {
         "label": "MinMaxScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
         "importPath": "sklearn.preprocessing",
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
@@ -826,6 +922,14 @@
         "documentation": {}
     },
     {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
         "label": "SMOTETomek",
         "importPath": "imblearn.combine",
         "description": "imblearn.combine",
@@ -916,6 +1020,22 @@
     },
     {
         "label": "cross_val_score",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "GridSearchCV",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
         "isExtraImport": true,
@@ -1481,6 +1601,23 @@
         "description": "lightgbm",
         "isExtraImport": true,
         "detail": "lightgbm",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "sklearn.pipeline",
+        "description": "sklearn.pipeline",
+        "isExtraImport": true,
+        "detail": "sklearn.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
         "documentation": {}
     },
     {
@@ -2217,7 +2354,7 @@
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def metoda17(X_train, y_train, X_test, y_test, n_models=5):\n    \"\"\"\n    Trenuje sieć neuronową Sequential przy użyciu ważenia próbek i zwraca model oraz dane testowe.\n    \"\"\"\n    sample_weights = np.ones(len(y_train))  # Inicjalizacja wag próbek\n    models = []  # Lista do przechowywania modeli\n    accuracies = []  # Lista do przechowywania dokładności\n    for _ in range(n_models):\n        model = Sequential([\n            Dense(128, input_dim=X_train.shape[1], activation=None, kernel_regularizer=l2(0.01)),  # Warstwa ukryta 1",
+        "peekOfCode": "def metoda17(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje ulepszony model zespołowy z miękkim głosowaniem (soft-voting) z optymalizacją\n    hiperparametrów i skalowaniem cech.\n    Parametry:\n        X_train (np.ndarray): Cechy zbioru treningowego.\n        y_train (lista lub np.ndarray): Etykiety zbioru treningowego.\n        X_test (np.ndarray): Cechy zbioru testowego.\n        y_test (lista lub np.ndarray): Etykiety zbioru testowego.\n    Zwraca:",
         "detail": "my_run",
         "documentation": {}
     },
