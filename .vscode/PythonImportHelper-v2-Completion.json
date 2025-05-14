@@ -537,11 +537,19 @@
         "documentation": {}
     },
     {
-        "label": "MLPClassifier",
-        "importPath": "sklearn.neural_network",
-        "description": "sklearn.neural_network",
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
         "isExtraImport": true,
-        "detail": "sklearn.neural_network",
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "GradientBoostingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
         "documentation": {}
     },
     {
@@ -558,6 +566,22 @@
         "description": "sklearn.neural_network",
         "isExtraImport": true,
         "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "MLPClassifier",
+        "importPath": "sklearn.neural_network",
+        "description": "sklearn.neural_network",
+        "isExtraImport": true,
+        "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
         "documentation": {}
     },
     {
@@ -707,6 +731,14 @@
     },
     {
         "label": "MinMaxScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
         "importPath": "sklearn.preprocessing",
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
@@ -1044,6 +1076,22 @@
     },
     {
         "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_predict",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
         "isExtraImport": true,
@@ -2372,7 +2420,7 @@
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def metoda19(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees\n    rf_clf.fit(X_train, y_train)\n    et_clf.fit(X_train, y_train)\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest\n    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees",
+        "peekOfCode": "def metoda19(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Ulepszony model stacking z Random Forest, XGBoost i GradientBoosting jako bazowymi oraz Logistic Regression jako meta-modelem.\n    Parametry:\n        X_train (array-like): Cechy zbioru treningowego.\n        y_train (array-like): Etykiety zbioru treningowego.\n        X_test (array-like): Cechy zbioru testowego.\n        y_test (array-like): Etykiety zbioru testowego.\n    Zwraca:\n        meta_model: Wytrenowany model meta (Logistic Regression).",
         "detail": "my_run",
         "documentation": {}
     },

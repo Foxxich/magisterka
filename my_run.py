@@ -120,28 +120,73 @@ def metoda18(X_train, y_train, X_test, y_test):
     })
     return meta_model, meta_features_test, y_test
 
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+import xgboost as xgb
+from sklearn.linear_model import LogisticRegression
+import pandas as pd
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.preprocessing import StandardScaler
+
+
 def metoda19(X_train, y_train, X_test, y_test):
     """
-    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.
+    Ulepszony model stacking z Random Forest, XGBoost i GradientBoosting jako bazowymi oraz Logistic Regression jako meta-modelem.
+
+    Parametry:
+        X_train (array-like): Cechy zbioru treningowego.
+        y_train (array-like): Etykiety zbioru treningowego.
+        X_test (array-like): Cechy zbioru testowego.
+        y_test (array-like): Etykiety zbioru testowego.
+
+    Zwraca:
+        meta_model: Wytrenowany model meta (Logistic Regression).
+        meta_features_test: Meta-cechy dla zbioru testowego.
+        y_test: Etykiety zbioru testowego.
     """
-    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest
-    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees
-    rf_clf.fit(X_train, y_train)
-    et_clf.fit(X_train, y_train)
-    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest
-    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees
-    meta_features_train = pd.DataFrame({  # Tworzenie meta-cech
+
+    # 1. Skalowanie danych
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+
+    # 2. Inicjalizacja i optymalizacja modeli bazowych
+    rf_clf = RandomForestClassifier(n_estimators=200, max_depth=10, random_state=42)  # Zwiększone n_estimators, ograniczona głębokość
+    xgb_clf = xgb.XGBClassifier(n_estimators=200, use_label_encoder=False, eval_metric='logloss',
+                              learning_rate=0.05, max_depth=5, random_state=42)  # Zmniejszone learning_rate i max_depth
+    gb_clf = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42) # Dodany GradientBoosting
+
+    # 3. Walidacja krzyżowa do generowania meta-cech
+    skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+    rf_preds_train = cross_val_predict(rf_clf, X_train_scaled, y_train, cv=skf, method='predict_proba')[:, 1]
+    xgb_preds_train = cross_val_predict(xgb_clf, X_train_scaled, y_train, cv=skf, method='predict_proba')[:, 1]
+    gb_preds_train = cross_val_predict(gb_clf, X_train_scaled, y_train, cv=skf, method='predict_proba')[:, 1] # Predykcje z GradientBoosting
+
+    meta_features_train = pd.DataFrame({
         'rf_preds': rf_preds_train,
-        'et_preds': et_preds_train
+        'xgb_preds': xgb_preds_train,
+        'gb_preds': gb_preds_train # Dodane cechy
     })
-    meta_model = LogisticRegression()  # Meta-model: regresja logistyczna
+
+    # 4. Trening meta-modelu
+    meta_model = LogisticRegression(solver='liblinear', random_state=42) # Określony solver
     meta_model.fit(meta_features_train, y_train)
-    rf_preds_test = rf_clf.predict_proba(X_test)[:, 1]  # Predykcje testowe dla Random Forest
-    et_preds_test = et_clf.predict_proba(X_test)[:, 1]  # Predykcje testowe dla Extra Trees
-    meta_features_test = pd.DataFrame({  # Meta-cechy dla testu
+
+    # 5. Predykcje na zbiorze testowym
+    rf_clf.fit(X_train_scaled, y_train)
+    xgb_clf.fit(X_train_scaled, y_train)
+    gb_clf.fit(X_train_scaled, y_train) # Trenowanie GradientBoosting
+
+    rf_preds_test = rf_clf.predict_proba(X_test_scaled)[:, 1]
+    xgb_preds_test = xgb_clf.predict_proba(X_test_scaled)[:, 1]
+    gb_preds_test = gb_clf.predict_proba(X_test_scaled)[:, 1]
+
+    meta_features_test = pd.DataFrame({
         'rf_preds': rf_preds_test,
-        'et_preds': et_preds_test
+        'xgb_preds': xgb_preds_test,
+        'gb_preds': gb_preds_test
     })
+
     return meta_model, meta_features_test, y_test
 
 def metoda20(X_train, y_train, X_test, y_test):
