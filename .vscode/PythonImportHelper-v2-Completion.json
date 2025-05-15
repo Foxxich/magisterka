@@ -24,22 +24,6 @@
         "documentation": {}
     },
     {
-        "label": "Sequential",
-        "importPath": "tensorflow.keras.models",
-        "description": "tensorflow.keras.models",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.models",
-        "documentation": {}
-    },
-    {
-        "label": "Sequential",
-        "importPath": "tensorflow.keras.models",
-        "description": "tensorflow.keras.models",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.models",
-        "documentation": {}
-    },
-    {
         "label": "Dense",
         "importPath": "tensorflow.keras.layers",
         "description": "tensorflow.keras.layers",
@@ -144,86 +128,6 @@
         "documentation": {}
     },
     {
-        "label": "Dense",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dropout",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "BatchNormalization",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LeakyReLU",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dense",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "BatchNormalization",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "LeakyReLU",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Dropout",
-        "importPath": "tensorflow.keras.layers",
-        "description": "tensorflow.keras.layers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.layers",
-        "documentation": {}
-    },
-    {
-        "label": "Adam",
-        "importPath": "tensorflow.keras.optimizers",
-        "description": "tensorflow.keras.optimizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.optimizers",
-        "documentation": {}
-    },
-    {
-        "label": "Adam",
-        "importPath": "tensorflow.keras.optimizers",
-        "description": "tensorflow.keras.optimizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.optimizers",
-        "documentation": {}
-    },
-    {
         "label": "Adam",
         "importPath": "tensorflow.keras.optimizers",
         "description": "tensorflow.keras.optimizers",
@@ -253,22 +157,6 @@
         "description": "tensorflow.keras.callbacks",
         "isExtraImport": true,
         "detail": "tensorflow.keras.callbacks",
-        "documentation": {}
-    },
-    {
-        "label": "l2",
-        "importPath": "tensorflow.keras.regularizers",
-        "description": "tensorflow.keras.regularizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.regularizers",
-        "documentation": {}
-    },
-    {
-        "label": "l2",
-        "importPath": "tensorflow.keras.regularizers",
-        "description": "tensorflow.keras.regularizers",
-        "isExtraImport": true,
-        "detail": "tensorflow.keras.regularizers",
         "documentation": {}
     },
     {
@@ -521,14 +409,6 @@
         "documentation": {}
     },
     {
-        "label": "ExtraTreesClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
         "label": "VotingClassifier",
         "importPath": "sklearn.ensemble",
         "description": "sklearn.ensemble",
@@ -537,38 +417,6 @@
         "documentation": {}
     },
     {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "RandomForestClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
-        "label": "GradientBoostingClassifier",
-        "importPath": "sklearn.ensemble",
-        "description": "sklearn.ensemble",
-        "isExtraImport": true,
-        "detail": "sklearn.ensemble",
-        "documentation": {}
-    },
-    {
         "label": "MLPClassifier",
         "importPath": "sklearn.neural_network",
         "description": "sklearn.neural_network",
@@ -590,30 +438,6 @@
         "description": "sklearn.neural_network",
         "isExtraImport": true,
         "detail": "sklearn.neural_network",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
-        "documentation": {}
-    },
-    {
-        "label": "LogisticRegression",
-        "importPath": "sklearn.linear_model",
-        "description": "sklearn.linear_model",
-        "isExtraImport": true,
-        "detail": "sklearn.linear_model",
         "documentation": {}
     },
     {
@@ -783,30 +607,6 @@
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
         "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "StandardScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "StandardScaler",
-        "importPath": "sklearn.preprocessing",
-        "description": "sklearn.preprocessing",
-        "isExtraImport": true,
-        "detail": "sklearn.preprocessing",
-        "documentation": {}
-    },
-    {
-        "label": "CatBoostClassifier",
-        "importPath": "catboost",
-        "description": "catboost",
-        "isExtraImport": true,
-        "detail": "catboost",
         "documentation": {}
     },
     {
@@ -994,14 +794,6 @@
         "documentation": {}
     },
     {
-        "label": "accuracy_score",
-        "importPath": "sklearn.metrics",
-        "description": "sklearn.metrics",
-        "isExtraImport": true,
-        "detail": "sklearn.metrics",
-        "documentation": {}
-    },
-    {
         "label": "SMOTETomek",
         "importPath": "imblearn.combine",
         "description": "imblearn.combine",
@@ -1107,47 +899,23 @@
         "documentation": {}
     },
     {
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_predict",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
         "label": "GridSearchCV",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "train_test_split",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "StratifiedKFold",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "cross_val_predict",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "StratifiedKFold",
-        "importPath": "sklearn.model_selection",
-        "description": "sklearn.model_selection",
-        "isExtraImport": true,
-        "detail": "sklearn.model_selection",
-        "documentation": {}
-    },
-    {
-        "label": "cross_val_predict",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
         "isExtraImport": true,
@@ -1700,22 +1468,6 @@
         "documentation": {}
     },
     {
-        "label": "LGBMClassifier",
-        "importPath": "lightgbm",
-        "description": "lightgbm",
-        "isExtraImport": true,
-        "detail": "lightgbm",
-        "documentation": {}
-    },
-    {
-        "label": "LGBMClassifier",
-        "importPath": "lightgbm",
-        "description": "lightgbm",
-        "isExtraImport": true,
-        "detail": "lightgbm",
-        "documentation": {}
-    },
-    {
         "label": "Pipeline",
         "importPath": "sklearn.pipeline",
         "description": "sklearn.pipeline",
@@ -1724,20 +1476,11 @@
         "documentation": {}
     },
     {
-        "label": "tensorflow",
-        "kind": 6,
+        "label": "LGBMClassifier",
+        "importPath": "lightgbm",
+        "description": "lightgbm",
         "isExtraImport": true,
-        "importPath": "tensorflow",
-        "description": "tensorflow",
-        "detail": "tensorflow",
-        "documentation": {}
-    },
-    {
-        "label": "SimpleImputer",
-        "importPath": "sklearn.impute",
-        "description": "sklearn.impute",
-        "isExtraImport": true,
-        "detail": "sklearn.impute",
+        "detail": "lightgbm",
         "documentation": {}
     },
     {
@@ -2501,7 +2244,7 @@
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def metoda20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees\n    rf_clf.fit(X_train, y_train)\n    et_clf.fit(X_train, y_train)\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest\n    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees",
+        "peekOfCode": "def metoda20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory LightGBM, CatBoost, Random Forest i Gradient Boosting\n    oraz łączy ich predykcje przy użyciu meta-modelu (regresji logistycznej).\n    \"\"\"\n    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    gb_clf = GradientBoostingClassifier(n_estimators=100, random_state=42)  # Gradient Boosting\n    lgb_clf.fit(X_train, y_train)",
         "detail": "my_run",
         "documentation": {}
     },
