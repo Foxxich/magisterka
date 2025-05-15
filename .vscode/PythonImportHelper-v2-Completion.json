@@ -553,11 +553,19 @@
         "documentation": {}
     },
     {
-        "label": "MLPClassifier",
-        "importPath": "sklearn.neural_network",
-        "description": "sklearn.neural_network",
+        "label": "RandomForestClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
         "isExtraImport": true,
-        "detail": "sklearn.neural_network",
+        "detail": "sklearn.ensemble",
+        "documentation": {}
+    },
+    {
+        "label": "GradientBoostingClassifier",
+        "importPath": "sklearn.ensemble",
+        "description": "sklearn.ensemble",
+        "isExtraImport": true,
+        "detail": "sklearn.ensemble",
         "documentation": {}
     },
     {
@@ -574,6 +582,22 @@
         "description": "sklearn.neural_network",
         "isExtraImport": true,
         "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "MLPClassifier",
+        "importPath": "sklearn.neural_network",
+        "description": "sklearn.neural_network",
+        "isExtraImport": true,
+        "detail": "sklearn.neural_network",
+        "documentation": {}
+    },
+    {
+        "label": "LogisticRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
         "documentation": {}
     },
     {
@@ -767,6 +791,22 @@
         "description": "sklearn.preprocessing",
         "isExtraImport": true,
         "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "StandardScaler",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "CatBoostClassifier",
+        "importPath": "catboost",
+        "description": "catboost",
+        "isExtraImport": true,
+        "detail": "catboost",
         "documentation": {}
     },
     {
@@ -1076,6 +1116,22 @@
     },
     {
         "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "StratifiedKFold",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "cross_val_predict",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
         "isExtraImport": true,
@@ -1652,6 +1708,14 @@
         "documentation": {}
     },
     {
+        "label": "LGBMClassifier",
+        "importPath": "lightgbm",
+        "description": "lightgbm",
+        "isExtraImport": true,
+        "detail": "lightgbm",
+        "documentation": {}
+    },
+    {
         "label": "Pipeline",
         "importPath": "sklearn.pipeline",
         "description": "sklearn.pipeline",
@@ -1666,6 +1730,14 @@
         "importPath": "tensorflow",
         "description": "tensorflow",
         "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "SimpleImputer",
+        "importPath": "sklearn.impute",
+        "description": "sklearn.impute",
+        "isExtraImport": true,
+        "detail": "sklearn.impute",
         "documentation": {}
     },
     {
@@ -1997,7 +2069,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -2006,7 +2078,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -2015,7 +2087,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
+        "peekOfCode": "runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -2429,7 +2501,7 @@
         "kind": 2,
         "importPath": "my_run",
         "description": "my_run",
-        "peekOfCode": "def metoda20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM\n    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost\n    lgb_clf.fit(X_train, y_train)\n    cat_clf.fit(X_train, y_train)\n    lgb_preds_train = lgb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla LightGBM\n    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost",
+        "peekOfCode": "def metoda20(X_train, y_train, X_test, y_test):\n    \"\"\"\n    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.\n    \"\"\"\n    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest\n    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees\n    rf_clf.fit(X_train, y_train)\n    et_clf.fit(X_train, y_train)\n    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest\n    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees",
         "detail": "my_run",
         "documentation": {}
     },

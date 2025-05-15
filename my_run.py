@@ -189,26 +189,40 @@ def metoda19(X_train, y_train, X_test, y_test):
 
     return meta_model, meta_features_test, y_test
 
+
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from lightgbm import LGBMClassifier
+from catboost import CatBoostClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+import pandas as pd
+import numpy as np
+
+
 def metoda20(X_train, y_train, X_test, y_test):
     """
-    Trenuje klasyfikatory LightGBM i CatBoost oraz łączy ich predykcje przy użyciu meta-modelu.
+    Trenuje klasyfikatory RandomForest i ExtraTrees oraz łączy ich predykcje przy użyciu meta-modelu.
     """
-    lgb_clf = LGBMClassifier(n_estimators=100, random_state=42)  # LightGBM
-    cat_clf = CatBoostClassifier(iterations=100, verbose=0, random_state=42)  # CatBoost
-    lgb_clf.fit(X_train, y_train)
-    cat_clf.fit(X_train, y_train)
-    lgb_preds_train = lgb_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla LightGBM
-    cat_preds_train = cat_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla CatBoost
+    rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)  # Random Forest
+    et_clf = ExtraTreesClassifier(n_estimators=100, random_state=42)  # Extra Trees
+    rf_clf.fit(X_train, y_train)
+    et_clf.fit(X_train, y_train)
+    rf_preds_train = rf_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Random Forest
+    et_preds_train = et_clf.predict_proba(X_train)[:, 1]  # Predykcje treningowe dla Extra Trees
     meta_features_train = pd.DataFrame({  # Tworzenie meta-cech
-        'lgb_preds': lgb_preds_train,
-        'cat_preds': cat_preds_train
+        'rf_preds': rf_preds_train,
+        'et_preds': et_preds_train
     })
     meta_model = LogisticRegression()  # Meta-model: regresja logistyczna
     meta_model.fit(meta_features_train, y_train)
-    lgb_preds_test = lgb_clf.predict_proba(X_test)[:, 1]  # Predykcje testowe dla LightGBM
-    cat_preds_test = cat_clf.predict_proba(X_test)[:, 1]  # Predykcje testowe dla CatBoost
+    rf_preds_test = rf_clf.predict_proba(X_test)[:, 1]  # Predykcje testowe dla Random Forest
+    et_preds_test = et_clf.predict_proba(X_test)[:, 1]  # Predykcje testowe dla Extra Trees
     meta_features_test = pd.DataFrame({  # Meta-cechy dla testu
-        'lgb_preds': lgb_preds_test,
-        'cat_preds': cat_preds_test
+        'rf_preds': rf_preds_test,
+        'et_preds': et_preds_test
+
     })
+
     return meta_model, meta_features_test, y_test

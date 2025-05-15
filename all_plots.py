@@ -41,7 +41,7 @@ folder_types = ['classic', 'few_shot', 'one_shot']
 folders = [f"results_{i}_{ft}" for ft in folder_types for i in range(1, 4)]
 
 # Define run patterns
-runs_standard = [i for i in range(2, 21) if i != 12]  # Standard runs (2 to 20, excluding 12)
+runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)
 runs_1_x = [f"1-{i}" for i in range(1, 6)]  # Runs 1-1 to 1-5
 run12_variants = ["12-catboost", "12-rf"]  # Run 12 variants
 
