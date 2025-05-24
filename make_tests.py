@@ -246,12 +246,12 @@ for folder in folders:
                     # Dynamiczne dostosowanie rozmiaru wykresu w zależności od liczby metod
                     max_methods_per_bin = max(np.histogram(column_data, bins=10)[0])  # Maksymalna liczba metod w przedziale
                     figsize_width = max(8, 8 + max_methods_per_bin * 0.5)  # Zmniejszony bazowy rozmiar do 8
-                    plt.figure(figsize=(figsize_width, 6)) # Zmniejszony rozmiar obrazka do (8, 6)
+                    plt.figure(figsize=(figsize_width, 4))  # Zmniejszona wysokość wykresu z 6 na 4
                     # Generowanie histogramu
                     counts, bins, _ = plt.hist(column_data, bins=10, alpha=0.7, label='Histogram')
-                    plt.title(f"Histogram {column} ({dataset}, {folder})")  # Zmiana: dodanie folderu do tytułu
-                    plt.xlabel(column)
-                    plt.ylabel("Częstość")
+                    plt.title(f"Histogram {column} ({dataset}, {folder})", fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
+                    plt.xlabel(column, fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+                    plt.ylabel("Częstość", fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
 
                     # Oznaczanie wszystkich metod wewnątrz słupków w kolumnie (każda w nowej linii)
                     bin_methods = {i: [] for i in range(len(bins) - 1)}  # Słownik przechowujący metody dla każdego przedziału
@@ -272,11 +272,11 @@ for folder in folders:
                             y_pos = counts[bin_idx] / 2  # Środek słupka w osi Y (połowa wysokości słupka)
                             # Połączenie nazw metod w jedną etykietę z nową linią
                             label_text = '\n'.join(bin_methods[bin_idx])
-                            plt.text(x_pos, y_pos, label_text, ha='center', va='center', fontsize=8, color='white', wrap=True)
+                            plt.text(x_pos, y_pos, label_text, ha='center', va='center', fontsize=12, color='red', wrap=True)
 
                     plt.legend()
                     plt.tight_layout()  # Dostosowanie układu, aby zmieścić etykiety
-                    plt.savefig(os.path.join(dataset_output_dir, f"{column}_histogram.png"))
+                    plt.savefig(os.path.join(dataset_output_dir, f"{column}_histogram.png"), bbox_inches='tight', pad_inches=0)
                     plt.close()
                 else:
                     print(f"Za mało danych do histogramu dla {column} w {dataset} (folder {folder}). Pomijam.")
@@ -285,18 +285,19 @@ for folder in folders:
 
         # Boxploty dla każdej metryki (tylko jeśli więcej niż 2 obserwacje)
         if len(dataset_data) > 2:
-            plt.figure(figsize=(10, 6))
+            plt.figure(figsize=(10, 4))  # Zmniejszona wysokość wykresu z 6 na 4
             dataset_data.boxplot(column=numeric_columns)
-            plt.title(f"Boxplot dla {dataset} ({folder})")
-            plt.xticks(rotation=45)
-            plt.savefig(os.path.join(dataset_output_dir, f"{dataset}_boxplot.png"))
+            plt.title(f"Boxplot dla {dataset} ({folder})", fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.xticks(rotation=45, fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.yticks(fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.savefig(os.path.join(dataset_output_dir, f"{dataset}_boxplot.png"), bbox_inches='tight', pad_inches=0)
             plt.close()
         else:
             print(f"Za mało danych do boxplotu dla {dataset} w folderze {folder}. Pomijam.")
 
     # 3. Wykres porównawczy AUC-PR dla datasetów w ramach folderu
     if auc_pr_by_dataset['BuzzFeed'] and auc_pr_by_dataset['ISOT'] and auc_pr_by_dataset['WELFake']:
-        plt.figure(figsize=(12, 6))
+        plt.figure(figsize=(12, 4))  # Zmniejszona wysokość wykresu z 6 na 4
         bar_width = 0.25
         index = range(len(methods))
 
@@ -304,13 +305,14 @@ for folder in folders:
         plt.bar([i + bar_width for i in index], auc_pr_by_dataset['ISOT'], bar_width, label='ISOT', color='#4ECDC4')
         plt.bar([i + 2 * bar_width for i in index], auc_pr_by_dataset['WELFake'], bar_width, label='WELFake', color='#45B7D1')
 
-        plt.xlabel('Metody')
-        plt.ylabel('AUC-PR')
-        plt.title(f'Porównanie AUC-PR między datasetami w folderze {folder}')
-        plt.xticks([i + bar_width for i in index], methods, rotation=45)
+        plt.xlabel('Metody', fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+        plt.ylabel('AUC-PR', fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+        plt.title(f'Porównanie AUC-PR między datasetami w folderze {folder}', fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
+        plt.xticks([i + bar_width for i in index], methods, rotation=45, fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+        plt.yticks(fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
         plt.legend()
         plt.tight_layout()
-        plt.savefig(os.path.join(folder_output_dir, f'{folder}_auc_pr_comparison.png'))
+        plt.savefig(os.path.join(folder_output_dir, f'{folder}_auc_pr_comparison.png'), bbox_inches='tight', pad_inches=0)
         plt.close()
 
 # 4. Zapis rankingu AUC-PR dla wszystkich folderów

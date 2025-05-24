@@ -1509,6 +1509,14 @@
         "documentation": {}
     },
     {
+        "label": "GridSpec",
+        "importPath": "matplotlib.gridspec",
+        "description": "matplotlib.gridspec",
+        "isExtraImport": true,
+        "detail": "matplotlib.gridspec",
+        "documentation": {}
+    },
+    {
         "label": "create_model",
         "kind": 2,
         "importPath": "article1.run1",
@@ -2485,7 +2493,7 @@
         "kind": 5,
         "importPath": "unite",
         "description": "unite",
-        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Create output directory if it doesn't exist\nif not os.path.exists(output_base):\n    os.makedirs(output_base)\n# Datasets and methods\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(",
         "detail": "unite",
         "documentation": {}
     },
@@ -2494,7 +2502,7 @@
         "kind": 5,
         "importPath": "unite",
         "description": "unite",
-        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Create output directory if it doesn't exist\nif not os.path.exists(output_base):\n    os.makedirs(output_base)\n# Datasets and methods\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość",
         "detail": "unite",
         "documentation": {}
     },
@@ -2503,7 +2511,7 @@
         "kind": 5,
         "importPath": "unite",
         "description": "unite",
-        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(3, 1, figsize=(6, 9))  # Reduced height to 9\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)\n        # Load and plot each image\n        for i, result_folder in enumerate(results_folders):",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )",
         "detail": "unite",
         "documentation": {}
     },
@@ -2512,7 +2520,7 @@
         "kind": 5,
         "importPath": "unite",
         "description": "unite",
-        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(3, 1, figsize=(6, 9))  # Reduced height to 9\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)\n        # Load and plot each image\n        for i, result_folder in enumerate(results_folders):\n            # Construct the path to the image",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)",
         "detail": "unite",
         "documentation": {}
     },
@@ -2521,7 +2529,7 @@
         "kind": 5,
         "importPath": "unite",
         "description": "unite",
-        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(3, 1, figsize=(6, 9))  # Reduced height to 9\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)\n        # Load and plot each image\n        for i, result_folder in enumerate(results_folders):\n            # Construct the path to the image\n            image_path = os.path.join(",
+        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)",
         "detail": "unite",
         "documentation": {}
     }
