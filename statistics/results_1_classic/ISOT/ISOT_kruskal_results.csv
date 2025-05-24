@@ -1,0 +1,10 @@
+metric,test,stat,p_value,significant
+Accuracy,Kruskal-Wallis,,,
+Precision,Kruskal-Wallis,,,
+Recall,Kruskal-Wallis,,,
+F1-Score,Kruskal-Wallis,,,
+ROC-AUC,Kruskal-Wallis,,,
+MCC,Kruskal-Wallis,,,
+Log Loss,Kruskal-Wallis,,,
+Cohen's Kappa,Kruskal-Wallis,,,
+Execution Time (s),Kruskal-Wallis,,,

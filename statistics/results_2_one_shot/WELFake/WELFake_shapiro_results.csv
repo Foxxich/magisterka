@@ -1,0 +1,12 @@
+metric,test,mean,std,p_value,normal_distribution
+Accuracy,Shapiro-Wilk,0.5,0.0,1.0,True
+Precision,Shapiro-Wilk,0.42105263157894735,0.1873171623163388,1.6808503620156211e-07,False
+Recall,Shapiro-Wilk,0.8421052631578947,0.3746343246326776,1.6808503620156211e-07,False
+F1-Score,Shapiro-Wilk,0.5614035087719297,0.24975621642178508,1.6808503620156211e-07,False
+ROC-AUC,Shapiro-Wilk,0.42105263157894735,0.5072572735017881,9.683533205690393e-06,False
+MCC,Shapiro-Wilk,0.0,0.0,1.0,True
+Log Loss,Shapiro-Wilk,0.7175684275256163,0.05316966073441272,0.22339154540688932,True
+Cohen's Kappa,Shapiro-Wilk,0.0,0.0,1.0,True
+Execution Time (s),Shapiro-Wilk,272.6798933807172,451.2331003388073,5.880369527897702e-06,False
+CV Accuracy (Mean),Shapiro-Wilk,,,,
+CV Accuracy (Std Dev),Shapiro-Wilk,,,,

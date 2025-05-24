@@ -794,6 +794,14 @@
         "documentation": {}
     },
     {
+        "label": "auc",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
         "label": "SMOTETomek",
         "importPath": "imblearn.combine",
         "description": "imblearn.combine",
@@ -1468,6 +1476,15 @@
         "documentation": {}
     },
     {
+        "label": "matplotlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
         "label": "Pipeline",
         "importPath": "sklearn.pipeline",
         "description": "sklearn.pipeline",
@@ -1481,15 +1498,6 @@
         "description": "lightgbm",
         "isExtraImport": true,
         "detail": "lightgbm",
-        "documentation": {}
-    },
-    {
-        "label": "matplotlib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "matplotlib",
-        "description": "matplotlib",
-        "detail": "matplotlib",
         "documentation": {}
     },
     {
@@ -2210,6 +2218,60 @@
         "description": "make_statistics",
         "peekOfCode": "correlation_matrix_spearman = data[numeric_columns].corr(method='spearman')\ncorrelation_matrix_spearman.to_csv(correlation_file_spearman)\n# Histogramy dla każdej kolumny numerycznej\nfor column in numeric_columns:\n    plt.figure()\n    plt.hist(data[column].dropna(), bins=10, alpha=0.7)\n    plt.title(f\"Histogram {column}\")\n    plt.xlabel(column)\n    plt.ylabel(\"Częstość\")\n    plt.savefig(os.path.join(output_dir, f\"{column}_histogram.png\"))",
         "detail": "make_statistics",
+        "documentation": {}
+    },
+    {
+        "label": "base_folder_path",
+        "kind": 5,
+        "importPath": "make_tests",
+        "description": "make_tests",
+        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]",
+        "detail": "make_tests",
+        "documentation": {}
+    },
+    {
+        "label": "output_base_dir",
+        "kind": 5,
+        "importPath": "make_tests",
+        "description": "make_tests",
+        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []",
+        "detail": "make_tests",
+        "documentation": {}
+    },
+    {
+        "label": "ranking_file",
+        "kind": 5,
+        "importPath": "make_tests",
+        "description": "make_tests",
+        "peekOfCode": "ranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue",
+        "detail": "make_tests",
+        "documentation": {}
+    },
+    {
+        "label": "methods",
+        "kind": 5,
+        "importPath": "make_tests",
+        "description": "make_tests",
+        "peekOfCode": "methods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue\n    # Utworzenie odpowiadającego subfolderu w katalogu statistics\n    folder_output_dir = os.path.join(output_base_dir, folder)",
+        "detail": "make_tests",
+        "documentation": {}
+    },
+    {
+        "label": "folders",
+        "kind": 5,
+        "importPath": "make_tests",
+        "description": "make_tests",
+        "peekOfCode": "folders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue\n    # Utworzenie odpowiadającego subfolderu w katalogu statistics\n    folder_output_dir = os.path.join(output_base_dir, folder)\n    os.makedirs(folder_output_dir, exist_ok=True)\n    # Pliki wyjściowe dla danego folderu",
+        "detail": "make_tests",
+        "documentation": {}
+    },
+    {
+        "label": "all_ranking_data",
+        "kind": 5,
+        "importPath": "make_tests",
+        "description": "make_tests",
+        "peekOfCode": "all_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue\n    # Utworzenie odpowiadającego subfolderu w katalogu statistics\n    folder_output_dir = os.path.join(output_base_dir, folder)\n    os.makedirs(folder_output_dir, exist_ok=True)\n    # Pliki wyjściowe dla danego folderu\n    combined_results_file = os.path.join(folder_path, \"combined_results.csv\")",
+        "detail": "make_tests",
         "documentation": {}
     },
     {
