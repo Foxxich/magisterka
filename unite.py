@@ -43,12 +43,12 @@ for dataset in datasets:
                              ha="center", va="center", fontsize=8)
                 axes[i].axis("off")
                 axes[i].set_title(f"{result_folder}", fontsize=8)
-
+        filename = f"{dataset}_{method}_Combined_Accuracy_Histogram.png"
         output_path = os.path.join(
             output_base,
             dataset,
             method,
-            "Combined_Accuracy_Histogram.png"
+            filename
         )
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         plt.savefig(output_path, bbox_inches="tight", pad_inches=0.01, dpi=300)
