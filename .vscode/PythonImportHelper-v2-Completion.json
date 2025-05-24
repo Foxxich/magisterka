@@ -1509,6 +1509,22 @@
         "documentation": {}
     },
     {
+        "label": "imread",
+        "importPath": "matplotlib.image",
+        "description": "matplotlib.image",
+        "isExtraImport": true,
+        "detail": "matplotlib.image",
+        "documentation": {}
+    },
+    {
+        "label": "GridSpec",
+        "importPath": "matplotlib.gridspec",
+        "description": "matplotlib.gridspec",
+        "isExtraImport": true,
+        "detail": "matplotlib.gridspec",
+        "documentation": {}
+    },
+    {
         "label": "GridSpec",
         "importPath": "matplotlib.gridspec",
         "description": "matplotlib.gridspec",
@@ -1886,87 +1902,6 @@
         "documentation": {}
     },
     {
-        "label": "folder_path",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results'\nfiles = os.listdir(folder_path)\n# Klasyfikacja plików\nresults_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "files",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "files = os.listdir(folder_path)\n# Klasyfikacja plików\nresults_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "results_files",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "results_files = [f for f in files if 'results' in f]\n# **1. Przygotowanie pliku wyjściowego**\n# Wczytujemy pierwszy plik, aby pobrać nazwy kolumn\nsample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "sample_file",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "sample_file = os.path.join(folder_path, results_files[0])\nsample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "sample_data",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "sample_data = pd.read_csv(sample_file)\ncolumns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz\n        data['run'] = file  # Dodajemy nazwę pliku jako nową kolumnę",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "columns",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "columns = list(sample_data.columns) + ['run']  # Dodajemy kolumnę 'run' dla nazw plików\n# Tworzymy pustą listę na dane\nall_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz\n        data['run'] = file  # Dodajemy nazwę pliku jako nową kolumnę\n        all_data.append(data)",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "all_data",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "all_data = []\n# **2. Wczytywanie danych z każdego pliku**\nfor file in results_files:\n    file_path = os.path.join(folder_path, file)\n    data = pd.read_csv(file_path)\n    if len(data) == 1:  # Sprawdzamy, czy plik ma jeden wiersz\n        data['run'] = file  # Dodajemy nazwę pliku jako nową kolumnę\n        all_data.append(data)\n# **3. Łączenie danych**\ncombined_data = pd.concat(all_data, ignore_index=True)",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "combined_data",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "combined_data = pd.concat(all_data, ignore_index=True)\n# **4. Zapis danych do pliku CSV**\noutput_file = os.path.join(folder_path, 'combined_results.csv')\ncombined_data.to_csv(output_file, index=False)\nprint(f\"Zapisano dane do pliku: {output_file}\")",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
-        "label": "output_file",
-        "kind": 5,
-        "importPath": "analyzer",
-        "description": "analyzer",
-        "peekOfCode": "output_file = os.path.join(folder_path, 'combined_results.csv')\ncombined_data.to_csv(output_file, index=False)\nprint(f\"Zapisano dane do pliku: {output_file}\")",
-        "detail": "analyzer",
-        "documentation": {}
-    },
-    {
         "label": "load_and_preprocess_data",
         "kind": 2,
         "importPath": "common",
@@ -2108,132 +2043,6 @@
         "description": "main",
         "peekOfCode": "dataset_input = \"\"\ndef get_embeddings(option, X, y):\n    \"\"\"\n    Generuje reprezentację kontekstową na podstawie wybranej opcji.\n    \"\"\"\n    if option == \"1\":\n        return get_bert_embeddings(X.tolist())\n    elif option == \"2\":\n        return get_roberta_embeddings(X.tolist())\n    elif option == \"3\":",
         "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "output_dir",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "output_dir = r'C:\\Users\\Vadym\\Documents\\magisterka\\statistics_plots'\nos.makedirs(output_dir, exist_ok=True)\nshapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "shapiro_file",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "shapiro_file = os.path.join(output_dir, \"shapiro_results.csv\")\nkruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "kruskal_file",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "kruskal_file = os.path.join(output_dir, \"kruskal_results.csv\")\ncorrelation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "correlation_file_pearson",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "correlation_file_pearson = os.path.join(output_dir, \"pearson_correlation_matrix.csv\")\ncorrelation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "correlation_file_spearman",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "correlation_file_spearman = os.path.join(output_dir, \"spearman_correlation_matrix.csv\")\n# Wczytanie danych z poprawnym separatorem\nfile_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "file_path",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "file_path = r'C:\\Users\\Vadym\\Documents\\magisterka\\best_results\\combined_results.csv'\ndata = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "data",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "data = pd.read_csv(file_path, sep=\",\")  # Separator zmieniony na przecinek\n# Wyświetlenie pierwszych wierszy danych\nprint(\"Dane wczytane:\")\nprint(data.head())\n# Analiza statystyczna\nresults = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej\nshapiro_results = []",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "results",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "results = {}\n# Automatyczne wykrywanie kolumn z wartościami liczbowymi\nnumeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej\nshapiro_results = []\nfor column in numeric_columns:\n    mean_value = data[column].mean()\n    std_value = data[column].std()\n    # Test normalności Shapiro-Wilka\n    shapiro_test = stats.shapiro(data[column].dropna())  # Pomijamy brakujące wartości",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "numeric_columns",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "numeric_columns = data.select_dtypes(include=[np.number]).columns.tolist()\n# 1. Test normalności Shapiro-Wilka dla każdej kolumny numerycznej\nshapiro_results = []\nfor column in numeric_columns:\n    mean_value = data[column].mean()\n    std_value = data[column].std()\n    # Test normalności Shapiro-Wilka\n    shapiro_test = stats.shapiro(data[column].dropna())  # Pomijamy brakujące wartości\n    shapiro_results.append({\n        \"metric\": column,",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "shapiro_results",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "shapiro_results = []\nfor column in numeric_columns:\n    mean_value = data[column].mean()\n    std_value = data[column].std()\n    # Test normalności Shapiro-Wilka\n    shapiro_test = stats.shapiro(data[column].dropna())  # Pomijamy brakujące wartości\n    shapiro_results.append({\n        \"metric\": column,\n        \"test\": \"Shapiro-Wilk\",\n        \"mean\": mean_value,",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "shapiro_df",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "shapiro_df = pd.DataFrame(shapiro_results)\nshapiro_df.to_csv(shapiro_file, index=False)\n# 2. Test Kruskal-Wallisa dla każdej metryki\nkruskal_results = []\nif 'run' in data.columns:\n    run_columns = data['run'].unique()\n    if len(run_columns) > 1:\n        for column in numeric_columns:\n            groups = [data[data['run'] == run][column].dropna() for run in run_columns]\n            if all(len(group) > 0 for group in groups):  # Upewnij się, że grupy nie są puste",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "kruskal_results",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "kruskal_results = []\nif 'run' in data.columns:\n    run_columns = data['run'].unique()\n    if len(run_columns) > 1:\n        for column in numeric_columns:\n            groups = [data[data['run'] == run][column].dropna() for run in run_columns]\n            if all(len(group) > 0 for group in groups):  # Upewnij się, że grupy nie są puste\n                stat, p_value = stats.kruskal(*groups)\n                kruskal_results.append({\n                    \"metric\": column,",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "correlation_matrix_pearson",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "correlation_matrix_pearson = data[numeric_columns].corr(method='pearson')\ncorrelation_matrix_pearson.to_csv(correlation_file_pearson)\n# 4. Test korelacji Spearmana dla wszystkich par kolumn numerycznych\ncorrelation_matrix_spearman = data[numeric_columns].corr(method='spearman')\ncorrelation_matrix_spearman.to_csv(correlation_file_spearman)\n# Histogramy dla każdej kolumny numerycznej\nfor column in numeric_columns:\n    plt.figure()\n    plt.hist(data[column].dropna(), bins=10, alpha=0.7)\n    plt.title(f\"Histogram {column}\")",
-        "detail": "make_statistics",
-        "documentation": {}
-    },
-    {
-        "label": "correlation_matrix_spearman",
-        "kind": 5,
-        "importPath": "make_statistics",
-        "description": "make_statistics",
-        "peekOfCode": "correlation_matrix_spearman = data[numeric_columns].corr(method='spearman')\ncorrelation_matrix_spearman.to_csv(correlation_file_spearman)\n# Histogramy dla każdej kolumny numerycznej\nfor column in numeric_columns:\n    plt.figure()\n    plt.hist(data[column].dropna(), bins=10, alpha=0.7)\n    plt.title(f\"Histogram {column}\")\n    plt.xlabel(column)\n    plt.ylabel(\"Częstość\")\n    plt.savefig(os.path.join(output_dir, f\"{column}_histogram.png\"))",
-        "detail": "make_statistics",
         "documentation": {}
     },
     {
@@ -2491,46 +2300,100 @@
     {
         "label": "source_base",
         "kind": 5,
-        "importPath": "unite",
-        "description": "unite",
-        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(",
-        "detail": "unite",
+        "importPath": "unite_plots",
+        "description": "unite_plots",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\plots\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output2\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",",
+        "detail": "unite_plots",
         "documentation": {}
     },
     {
         "label": "output_base",
         "kind": 5,
-        "importPath": "unite",
-        "description": "unite",
-        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość",
-        "detail": "unite",
+        "importPath": "unite_plots",
+        "description": "unite_plots",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output2\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",",
+        "detail": "unite_plots",
         "documentation": {}
     },
     {
         "label": "datasets",
         "kind": 5,
-        "importPath": "unite",
-        "description": "unite",
-        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )",
-        "detail": "unite",
+        "importPath": "unite_plots",
+        "description": "unite_plots",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",",
+        "detail": "unite_plots",
         "documentation": {}
     },
     {
         "label": "methods",
         "kind": 5,
-        "importPath": "unite",
-        "description": "unite",
-        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)",
-        "detail": "unite",
+        "importPath": "unite_plots",
+        "description": "unite_plots",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",\n    \"F1-Score_comparison.png\",",
+        "detail": "unite_plots",
         "documentation": {}
     },
     {
         "label": "results_folders",
         "kind": 5,
-        "importPath": "unite",
-        "description": "unite",
+        "importPath": "unite_plots",
+        "description": "unite_plots",
+        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"Log_Loss_comparison.png\",",
+        "detail": "unite_plots",
+        "documentation": {}
+    },
+    {
+        "label": "image_types",
+        "kind": 5,
+        "importPath": "unite_plots",
+        "description": "unite_plots",
+        "peekOfCode": "image_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"Log_Loss_comparison.png\",\n    \"MCC_comparison.png\",\n    \"Precision_comparison.png\",",
+        "detail": "unite_plots",
+        "documentation": {}
+    },
+    {
+        "label": "source_base",
+        "kind": 5,
+        "importPath": "unite_tests",
+        "description": "unite_tests",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(",
+        "detail": "unite_tests",
+        "documentation": {}
+    },
+    {
+        "label": "output_base",
+        "kind": 5,
+        "importPath": "unite_tests",
+        "description": "unite_tests",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość",
+        "detail": "unite_tests",
+        "documentation": {}
+    },
+    {
+        "label": "datasets",
+        "kind": 5,
+        "importPath": "unite_tests",
+        "description": "unite_tests",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )",
+        "detail": "unite_tests",
+        "documentation": {}
+    },
+    {
+        "label": "methods",
+        "kind": 5,
+        "importPath": "unite_tests",
+        "description": "unite_tests",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)",
+        "detail": "unite_tests",
+        "documentation": {}
+    },
+    {
+        "label": "results_folders",
+        "kind": 5,
+        "importPath": "unite_tests",
+        "description": "unite_tests",
         "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)",
-        "detail": "unite",
+        "detail": "unite_tests",
         "documentation": {}
     }
 ]
