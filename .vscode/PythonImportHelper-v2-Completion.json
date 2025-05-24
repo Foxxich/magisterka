@@ -1501,6 +1501,14 @@
         "documentation": {}
     },
     {
+        "label": "imread",
+        "importPath": "matplotlib.image",
+        "description": "matplotlib.image",
+        "isExtraImport": true,
+        "detail": "matplotlib.image",
+        "documentation": {}
+    },
+    {
         "label": "create_model",
         "kind": 2,
         "importPath": "article1.run1",
@@ -2473,11 +2481,47 @@
         "documentation": {}
     },
     {
-        "label": "directory",
+        "label": "source_base",
         "kind": 5,
         "importPath": "unite",
         "description": "unite",
-        "peekOfCode": "directory = input(\"Enter the directory path: \")\n# Ensure the path exists\nif not os.path.isdir(directory):\n    print(\"Invalid directory path.\")\nelse:\n    output_file = os.path.join(directory, \"merged.py\")\n    with open(output_file, \"w\", encoding=\"utf-8\") as outfile:\n        for filename in sorted(os.listdir(directory)):  # Sort files alphabetically\n            if filename.endswith(\".py\") and filename != \"merged.py\":\n                file_path = os.path.join(directory, filename)",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Create output directory if it doesn't exist\nif not os.path.exists(output_base):\n    os.makedirs(output_base)\n# Datasets and methods\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset",
+        "detail": "unite",
+        "documentation": {}
+    },
+    {
+        "label": "output_base",
+        "kind": 5,
+        "importPath": "unite",
+        "description": "unite",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Create output directory if it doesn't exist\nif not os.path.exists(output_base):\n    os.makedirs(output_base)\n# Datasets and methods\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:",
+        "detail": "unite",
+        "documentation": {}
+    },
+    {
+        "label": "datasets",
+        "kind": 5,
+        "importPath": "unite",
+        "description": "unite",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(3, 1, figsize=(6, 9))  # Reduced height to 9\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)\n        # Load and plot each image\n        for i, result_folder in enumerate(results_folders):",
+        "detail": "unite",
+        "documentation": {}
+    },
+    {
+        "label": "methods",
+        "kind": 5,
+        "importPath": "unite",
+        "description": "unite",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(3, 1, figsize=(6, 9))  # Reduced height to 9\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)\n        # Load and plot each image\n        for i, result_folder in enumerate(results_folders):\n            # Construct the path to the image",
+        "detail": "unite",
+        "documentation": {}
+    },
+    {
+        "label": "results_folders",
+        "kind": 5,
+        "importPath": "unite",
+        "description": "unite",
+        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Process each dataset\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(3, 1, figsize=(6, 9))  # Reduced height to 9\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)\n        # Load and plot each image\n        for i, result_folder in enumerate(results_folders):\n            # Construct the path to the image\n            image_path = os.path.join(",
         "detail": "unite",
         "documentation": {}
     }
