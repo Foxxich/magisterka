@@ -246,10 +246,10 @@ for folder in folders:
                     # Dynamiczne dostosowanie rozmiaru wykresu w zależności od liczby metod
                     max_methods_per_bin = max(np.histogram(column_data, bins=10)[0])  # Maksymalna liczba metod w przedziale
                     figsize_width = max(8, 8 + max_methods_per_bin * 0.5)  # Zmniejszony bazowy rozmiar do 8
-                    plt.figure(figsize=(figsize_width, 6))  # Zmniejszony rozmiar obrazka do (8, 6)
+                    plt.figure(figsize=(figsize_width, 6)) # Zmniejszony rozmiar obrazka do (8, 6)
                     # Generowanie histogramu
                     counts, bins, _ = plt.hist(column_data, bins=10, alpha=0.7, label='Histogram')
-                    plt.title(f"Histogram {column} ({dataset})")
+                    plt.title(f"Histogram {column} ({dataset}, {folder})")  # Zmiana: dodanie folderu do tytułu
                     plt.xlabel(column)
                     plt.ylabel("Częstość")
 

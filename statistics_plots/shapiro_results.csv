@@ -1,4 +1,0 @@
-metric,test,mean,std,p_value,normal_distribution
-Accuracy,Shapiro-Wilk,0.89,0.15951314818673865,0.002738425514177873,False
-Log Loss,Shapiro-Wilk,0.2853211228,0.29620362745130985,0.05711930876900079,True
-Execution Time (s),Shapiro-Wilk,631.3866647783,1632.2428850747306,6.269397856137555e-07,False
