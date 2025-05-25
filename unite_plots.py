@@ -18,15 +18,10 @@ results_folders = ["results_1", "results_2", "results_3"]
 # Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików
 image_types = [
     "Accuracy_comparison.png",
-    "Cohen's_Kappa_comparison.png",
-    "CV_Accuracy_Mean_comparison.png",
-    "CV_Accuracy_Std_Dev_comparison.png",
-    "Execution_Time_s_comparison.png",
+    "Execution Time (s)_comparison.png",
     "F1-Score_comparison.png",
-    "Log_Loss_comparison.png",
     "MCC_comparison.png",
     "Precision_comparison.png",
-    "Precision_Recall_Curves.png",
     "Recall_comparison.png",
     "ROC-AUC_comparison.png"
 ]
@@ -65,12 +60,10 @@ for dataset in datasets:
                     img = imread(image_path)
                     axes[i].imshow(img)
                     axes[i].axis("off")
-                    axes[i].set_title(f"{result_folder}", fontsize=8)
                 else:
                     axes[i].text(0.5, 0.5, "Image not found", 
                                  ha="center", va="center", fontsize=8)
                     axes[i].axis("off")
-                    axes[i].set_title(f"{result_folder}", fontsize=8)
             
             # Dostosowanie nazwy pliku wyjściowego: tylko dataset, method i nazwa obrazu
             output_filename = f"{dataset}_{method}_{image_full_name}"

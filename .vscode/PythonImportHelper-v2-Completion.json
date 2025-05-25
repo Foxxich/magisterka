@@ -2302,7 +2302,7 @@
         "kind": 5,
         "importPath": "unite_plots",
         "description": "unite_plots",
-        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\plots\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output2\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\plots\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output2\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Execution Time (s)_comparison.png\",",
         "detail": "unite_plots",
         "documentation": {}
     },
@@ -2311,7 +2311,7 @@
         "kind": 5,
         "importPath": "unite_plots",
         "description": "unite_plots",
-        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output2\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output2\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Execution Time (s)_comparison.png\",\n    \"F1-Score_comparison.png\",",
         "detail": "unite_plots",
         "documentation": {}
     },
@@ -2320,7 +2320,7 @@
         "kind": 5,
         "importPath": "unite_plots",
         "description": "unite_plots",
-        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Execution Time (s)_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"MCC_comparison.png\",\n    \"Precision_comparison.png\",",
         "detail": "unite_plots",
         "documentation": {}
     },
@@ -2329,7 +2329,7 @@
         "kind": 5,
         "importPath": "unite_plots",
         "description": "unite_plots",
-        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",\n    \"F1-Score_comparison.png\",",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Execution Time (s)_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"MCC_comparison.png\",\n    \"Precision_comparison.png\",\n    \"Recall_comparison.png\",",
         "detail": "unite_plots",
         "documentation": {}
     },
@@ -2338,7 +2338,7 @@
         "kind": 5,
         "importPath": "unite_plots",
         "description": "unite_plots",
-        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"Log_Loss_comparison.png\",",
+        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista wszystkich typów obrazów do przetworzenia, z pełnymi nazwami plików\nimage_types = [\n    \"Accuracy_comparison.png\",\n    \"Execution Time (s)_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"MCC_comparison.png\",\n    \"Precision_comparison.png\",\n    \"Recall_comparison.png\",\n    \"ROC-AUC_comparison.png\"",
         "detail": "unite_plots",
         "documentation": {}
     },
@@ -2347,7 +2347,7 @@
         "kind": 5,
         "importPath": "unite_plots",
         "description": "unite_plots",
-        "peekOfCode": "image_types = [\n    \"Accuracy_comparison.png\",\n    \"Cohen's_Kappa_comparison.png\",\n    \"CV_Accuracy_Mean_comparison.png\",\n    \"CV_Accuracy_Std_Dev_comparison.png\",\n    \"Execution_Time_s_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"Log_Loss_comparison.png\",\n    \"MCC_comparison.png\",\n    \"Precision_comparison.png\",",
+        "peekOfCode": "image_types = [\n    \"Accuracy_comparison.png\",\n    \"Execution Time (s)_comparison.png\",\n    \"F1-Score_comparison.png\",\n    \"MCC_comparison.png\",\n    \"Precision_comparison.png\",\n    \"Recall_comparison.png\",\n    \"ROC-AUC_comparison.png\"\n]\n# Przetwarzanie",
         "detail": "unite_plots",
         "documentation": {}
     },
@@ -2356,7 +2356,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2365,7 +2365,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2374,7 +2374,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2383,7 +2383,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",\n    \"ROC-AUC_histogram.png\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2392,7 +2392,16 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Przetwarzanie\nfor dataset in datasets:\n    for method in methods:\n        fig, axes = plt.subplots(\n            3, 1, figsize=(6, 7),  # mniejsza wysokość\n            gridspec_kw={'hspace': 0.01}  # mniejszy odstęp pionowy\n        )\n        fig.subplots_adjust(top=0.95, bottom=0.02, left=0.01, right=0.99)\n        fig.suptitle(f\"Combined Accuracy Histograms ({dataset}, {method})\", fontsize=10)",
+        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",\n    \"ROC-AUC_histogram.png\",\n    \"Cohen's Kappa_histogram.png\" # Assuming this is also a histogram or similar plot you want to combine",
+        "detail": "unite_tests",
+        "documentation": {}
+    },
+    {
+        "label": "histogram_types",
+        "kind": 5,
+        "importPath": "unite_tests",
+        "description": "unite_tests",
+        "peekOfCode": "histogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",\n    \"ROC-AUC_histogram.png\",\n    \"Cohen's Kappa_histogram.png\" # Assuming this is also a histogram or similar plot you want to combine\n]\n# Przetwarzanie",
         "detail": "unite_tests",
         "documentation": {}
     }
