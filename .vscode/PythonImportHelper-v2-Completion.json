@@ -1807,7 +1807,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder for comparison\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Types of folders to process\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1816,7 +1816,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Folder for comparison\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",",
+        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Types of folders to process\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1825,25 +1825,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Folder for comparison\ncomparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",\n    \"run19_ISOT_pr_curve.csv\", \"run19_ISOT_results.csv\",",
-        "detail": "all_plots",
-        "documentation": {}
-    },
-    {
-        "label": "comparison_folder",
-        "kind": 5,
-        "importPath": "all_plots",
-        "description": "all_plots",
-        "peekOfCode": "comparison_folder = r\"C:\\\\Users\\\\Vadym\\\\Documents\\\\magisterka\\\\results_3_few_shot\"\ncomparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",\n    \"run19_ISOT_pr_curve.csv\", \"run19_ISOT_results.csv\",\n    \"run18_ISOT_pr_curve.csv\", \"run18_ISOT_results.csv\",\n    \"run17_ISOT_pr_curve.csv\", \"run17_ISOT_results.csv\",",
-        "detail": "all_plots",
-        "documentation": {}
-    },
-    {
-        "label": "comparison_files",
-        "kind": 5,
-        "importPath": "all_plots",
-        "description": "all_plots",
-        "peekOfCode": "comparison_files = [\n    \"run20_BuzzFeed_pr_curve.csv\", \"run20_BuzzFeed_results.csv\",\n    \"run19_BuzzFeed_pr_curve.csv\", \"run19_BuzzFeed_results.csv\",\n    \"run18_BuzzFeed_pr_curve.csv\", \"run18_BuzzFeed_results.csv\",\n    \"run17_BuzzFeed_pr_curve.csv\", \"run17_BuzzFeed_results.csv\",\n    \"run20_ISOT_pr_curve.csv\", \"run20_ISOT_results.csv\",\n    \"run19_ISOT_pr_curve.csv\", \"run19_ISOT_results.csv\",\n    \"run18_ISOT_pr_curve.csv\", \"run18_ISOT_results.csv\",\n    \"run17_ISOT_pr_curve.csv\", \"run17_ISOT_results.csv\",\n    \"run20_WELFake_pr_curve.csv\", \"run20_WELFake_results.csv\",",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Types of folders to process\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1852,7 +1834,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1861,7 +1843,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1870,7 +1852,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
+        "peekOfCode": "runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1879,7 +1861,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1888,7 +1870,16 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist",
+        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "detail": "all_plots",
+        "documentation": {}
+    },
+    {
+        "label": "runs_highlight",
+        "kind": 5,
+        "importPath": "all_plots",
+        "description": "all_plots",
+        "peekOfCode": "runs_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist",
         "detail": "all_plots",
         "documentation": {}
     },

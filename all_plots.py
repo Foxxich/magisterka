@@ -19,31 +19,15 @@ project_root = os.getcwd()
 base_folder = os.path.join(project_root)
 plot_base_folder = os.path.join(project_root, "plots")
 
-# Folder for comparison
-comparison_folder = r"C:\\Users\\Vadym\\Documents\\magisterka\\results_3_few_shot"
-comparison_files = [
-    "run20_BuzzFeed_pr_curve.csv", "run20_BuzzFeed_results.csv",
-    "run19_BuzzFeed_pr_curve.csv", "run19_BuzzFeed_results.csv",
-    "run18_BuzzFeed_pr_curve.csv", "run18_BuzzFeed_results.csv",
-    "run17_BuzzFeed_pr_curve.csv", "run17_BuzzFeed_results.csv",
-    "run20_ISOT_pr_curve.csv", "run20_ISOT_results.csv",
-    "run19_ISOT_pr_curve.csv", "run19_ISOT_results.csv",
-    "run18_ISOT_pr_curve.csv", "run18_ISOT_results.csv",
-    "run17_ISOT_pr_curve.csv", "run17_ISOT_results.csv",
-    "run20_WELFake_pr_curve.csv", "run20_WELFake_results.csv",
-    "run19_WELFake_pr_curve.csv", "run19_WELFake_results.csv",
-    "run18_WELFake_pr_curve.csv", "run18_WELFake_results.csv",
-    "run17_WELFake_pr_curve.csv", "run17_WELFake_results.csv"
-]
-
 # Types of folders to process
 folder_types = ['classic', 'few_shot', 'one_shot']
 folders = [f"results_{i}_{ft}" for ft in folder_types for i in range(1, 4)]
 
 # Define run patterns
-runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 20, excluding 12)
+runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)
 runs_1_x = [f"1-{i}" for i in range(1, 6)]  # Runs 1-1 to 1-5
 run12_variants = ["12-catboost", "12-rf"]  # Run 12 variants
+runs_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red
 
 # Updated columns to load
 columns_to_load = [
@@ -66,7 +50,7 @@ for folder in folders:
     results_files = []
     pr_curve_files = []
     for dataset in datasets:
-        # Standard runs (2 to 20, excluding 12)
+        # Standard runs (2 to 16, excluding 12)
         for run in runs_standard:
             results_files.append(f"{folder_path}run{run}_{dataset}_results.csv")
             pr_curve_files.append(f"{folder_path}run{run}_{dataset}_pr_curve.csv")
@@ -78,21 +62,28 @@ for folder in folders:
         for run in run12_variants:
             results_files.append(f"{folder_path}run{run}_{dataset}_results.csv")
             pr_curve_files.append(f"{folder_path}run{run}_{dataset}_pr_curve.csv")
-
-    # Add comparison files
-    results_files.extend([os.path.join(comparison_folder, f) for f in comparison_files if "results" in f])
-    pr_curve_files.extend([os.path.join(comparison_folder, f) for f in comparison_files if "pr_curve" in f])
+        # Highlighted runs (17 to 21)
+        for run in runs_highlight:
+            results_files.append(f"{folder_path}run{run}_{dataset}_results.csv")
+            pr_curve_files.append(f"{folder_path}run{run}_{dataset}_pr_curve.csv")
 
     # Combine all `run*_results.csv` into one DataFrame
     results_data = []
     for file in results_files:
         if os.path.exists(file):  # Check if file exists
             data = pd.read_csv(file, usecols=lambda col: col in columns_to_load + ['Metoda'])
+            # Extract run number from filename
+            run_number_str = os.path.basename(file).replace("run", "").split('_')[0]
+            try:
+                run_number = int(run_number_str)
+            except ValueError:
+                run_number = None # Handle cases like '1-1' or '12-catboost'
+
             # Extract method name with run number
             run_name = os.path.basename(file).replace("run", "metoda").split('_')[0]  # Remove "run" prefix
             dataset_name = os.path.basename(file).split('_')[1]  # Extract dataset name
             data['Metoda'] = f"{run_name}_{dataset_name}"  # Add column with method and dataset
-            data['Source'] = 'Comparison' if file.startswith(comparison_folder) else 'Folder'
+            data['Source'] = 'Highlighted' if (run_number is not None and run_number in runs_highlight) else 'Standard'
             results_data.append(data)
 
     if results_data:  # Check if list is not empty before concatenating
@@ -104,15 +95,21 @@ for folder in folders:
     pr_curves = {}
     for file in pr_curve_files:
         if os.path.exists(file):  # Check if file exists
-            run_name = os.path.basename(file).replace("run", "metoda").split('_')[0]  # Remove "run" prefix
+            run_name_full = os.path.basename(file).replace("run", "").split('_')[0]
+            run_number_str = run_name_full.split('-')[0] # Get the initial part for numerical check
+            try:
+                run_number = int(run_number_str)
+            except ValueError:
+                run_number = None
+
             dataset_name = os.path.basename(file).split('_')[1]  # Extract dataset name
-            source = 'Comparison' if file.startswith(comparison_folder) else 'Folder'
-            pr_curves[f"{run_name}_{dataset_name}"] = (pd.read_csv(file), source)
+            source = 'Highlighted' if (run_number is not None and run_number in runs_highlight) else 'Standard'
+            pr_curves[f"metoda{run_name_full}_{dataset_name}"] = (pd.read_csv(file), source)
 
     # Create comparative plots for each metric across different runs
     metrics = [
         "Accuracy", "Precision", "Recall", "F1-Score", "ROC-AUC", "MCC",
-        "Log Loss", "Cohen's Kappa", "Execution Time (s)", "CV Accuracy (Mean)", "CV Accuracy (Std Dev)"
+        "Log Loss", "Cohen's Kappa", "Execution Time (s)", "CV Accuracy (Mean)"
     ]
     if not all_results.empty:
         for metric in metrics:
@@ -131,7 +128,7 @@ for folder in folders:
                         if not dataset_data.empty:
                             plt.figure(figsize=(10, 6))
                             x_positions = range(len(dataset_data))
-                            colors = ['red' if row['Source'] == 'Comparison' else 'skyblue' for _, row in dataset_data.iterrows()]
+                            colors = ['red' if row['Source'] == 'Highlighted' else 'skyblue' for _, row in dataset_data.iterrows()]
                             plt.bar(x_positions, dataset_data[metric], color=colors)
                             plt.title(f"Porównanie {metric} dla {dataset}", fontsize=12)  # Reduced font size
                             plt.xlabel("Uruchomienia", fontsize=10)  # Reduced font size
@@ -153,7 +150,7 @@ for folder in folders:
             plt.figure(figsize=(12, 8))
             for run_dataset, (pr_data, source) in pr_curves.items():
                 if dataset in run_dataset and "Precision" in pr_data.columns and "Recall" in pr_data.columns:
-                    color = 'red' if source == 'Comparison' else 'blue'
+                    color = 'red' if source == 'Highlighted' else 'blue'
                     plt.plot(pr_data["Recall"], pr_data["Precision"], label=run_dataset, color=color)
 
             plt.title(f"Wykresy Precision-Recall dla {dataset}", fontsize=12)  # Reduced font size
