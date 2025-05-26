@@ -1,0 +1,2 @@
+test,metric,stat,p_value,significant
+Kruskal-Wallis (na surowych AUC-PR),AUC-PR,20.08588781509892,0.6918815237904747,False

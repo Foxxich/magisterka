@@ -802,6 +802,14 @@
         "documentation": {}
     },
     {
+        "label": "auc",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
         "label": "SMOTETomek",
         "importPath": "imblearn.combine",
         "description": "imblearn.combine",
@@ -2088,6 +2096,69 @@
         "description": "make_tests",
         "peekOfCode": "all_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue\n    # Utworzenie odpowiadającego subfolderu w katalogu statistics\n    folder_output_dir = os.path.join(output_base_dir, folder)\n    os.makedirs(folder_output_dir, exist_ok=True)\n    # Pliki wyjściowe dla danego folderu\n    combined_results_file = os.path.join(folder_path, \"combined_results.csv\")",
         "detail": "make_tests",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_confidence_interval",
+        "kind": 2,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "def calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:\n        return np.nan, np.nan\n    mean = np.mean(data)\n    sem = stats.sem(data)\n    ci = sem * stats.t.ppf((1 + confidence) / 2., n - 1)\n    return mean - ci, mean + ci\n# Iteracja po kategoriach\nfor category_name, folders_in_category in folder_categories.items():",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "base_folder_path",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "output_base_dir",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "ranking_file_global",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "ranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],\n    'one_shot': [f for f in os.listdir(base_folder_path) if 'one_shot' in f and f.startswith('results_')]\n}\nall_global_ranking_data = []",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "methods",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "methods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],\n    'one_shot': [f for f in os.listdir(base_folder_path) if 'one_shot' in f and f.startswith('results_')]\n}\nall_global_ranking_data = []\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "folder_categories",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "folder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],\n    'one_shot': [f for f in os.listdir(base_folder_path) if 'one_shot' in f and f.startswith('results_')]\n}\nall_global_ranking_data = []\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "all_global_ranking_data",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "all_global_ranking_data = []\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:\n        return np.nan, np.nan\n    mean = np.mean(data)\n    sem = stats.sem(data)\n    ci = sem * stats.t.ppf((1 + confidence) / 2., n - 1)\n    return mean - ci, mean + ci",
+        "detail": "make_tests_average",
         "documentation": {}
     },
     {
