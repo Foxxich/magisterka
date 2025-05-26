@@ -2103,7 +2103,7 @@
         "kind": 2,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "def calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:\n        return np.nan, np.nan\n    mean = np.mean(data)\n    sem = stats.sem(data)\n    ci = sem * stats.t.ppf((1 + confidence) / 2., n - 1)\n    return mean - ci, mean + ci\n# Iteracja po kategoriach\nfor category_name, folders_in_category in folder_categories.items():",
+        "peekOfCode": "def calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:\n        return np.nan, np.nan\n    mean = np.mean(data)\n    sem = stats.sem(data)\n    ci = sem * stats.t.ppf((1 + confidence) / 2., n - 1)\n    return mean - ci, mean + ci\n# --- Agregacja Danych Globalnych ---\nprint(\"Rozpoczynanie agregacji danych z wszystkich folderów...\")",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2112,7 +2112,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',",
+        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka' # Zmień na swoją ścieżkę\noutput_base_dir = os.path.join(base_folder_path, 'statistics_global_by_dataset')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_overall.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2121,7 +2121,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',",
+        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics_global_by_dataset')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_overall.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2130,7 +2130,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "ranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',\n    'metoda2', 'metoda3', 'metoda4', 'metoda5',\n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]",
+        "peekOfCode": "ranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_overall.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',\n    'metoda2', 'metoda3', 'metoda4', 'metoda5',\n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2139,16 +2139,61 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "methods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',\n    'metoda2', 'metoda3', 'metoda4', 'metoda5',\n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]\n# Definicja kategorii folderów\nfolder_categories = {",
+        "peekOfCode": "methods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',\n    'metoda2', 'metoda3', 'metoda4', 'metoda5',\n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):",
         "detail": "make_tests_average",
         "documentation": {}
     },
     {
-        "label": "folder_categories",
+        "label": "all_raw_data_global",
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "folder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],\n    'one_shot': [f for f in os.listdir(base_folder_path) if 'one_shot' in f and f.startswith('results_')]\n}\nall_global_ranking_data = []\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:",
+        "peekOfCode": "all_raw_data_global = []\nall_pr_raw_data_global = []\n# Słownik do przechowywania informacji o pochodzeniu plików (dla debugowania)\nfile_origin = {}\n# Iteracja po wszystkich podfolderach w base_folder_path\nfor root, dirs, files in os.walk(base_folder_path):\n    # Pominięcie folderu wyjściowego\n    if root.startswith(output_base_dir):\n        continue\n    for file in files:",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "all_pr_raw_data_global",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "all_pr_raw_data_global = []\n# Słownik do przechowywania informacji o pochodzeniu plików (dla debugowania)\nfile_origin = {}\n# Iteracja po wszystkich podfolderach w base_folder_path\nfor root, dirs, files in os.walk(base_folder_path):\n    # Pominięcie folderu wyjściowego\n    if root.startswith(output_base_dir):\n        continue\n    for file in files:\n        file_path = os.path.join(root, file)",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "file_origin",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "file_origin = {}\n# Iteracja po wszystkich podfolderach w base_folder_path\nfor root, dirs, files in os.walk(base_folder_path):\n    # Pominięcie folderu wyjściowego\n    if root.startswith(output_base_dir):\n        continue\n    for file in files:\n        file_path = os.path.join(root, file)\n        dataset = None\n        if 'BuzzFeed' in file: dataset = 'BuzzFeed'",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "combined_raw_data",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "combined_raw_data = pd.concat(all_raw_data_global, ignore_index=True) if all_raw_data_global else pd.DataFrame()\npr_raw_data = pd.DataFrame(all_pr_raw_data_global) if all_pr_raw_data_global else pd.DataFrame()\n# Uśrednienie wyników dla każdej metryki (oprócz AUC-PR, które jest oddzielnie)\n# Połączenie 'combined_raw_data' i 'pr_raw_data' na podstawie 'method', 'dataset', 'source_folder'\n# Najpierw upewniamy się, że kolumny do połączenia są obecne\nif 'method' in combined_raw_data.columns and 'dataset' in combined_raw_data.columns and 'source_folder' in combined_raw_data.columns and \\\n   'method' in pr_raw_data.columns and 'dataset' in pr_raw_data.columns and 'source_folder' in pr_raw_data.columns:\n    # Wybieramy numeryczne kolumny z combined_raw_data, usuwając kolumny pomocnicze\n    numeric_cols_results = combined_raw_data.select_dtypes(include=[np.number]).columns.tolist()\n    # Usuwamy kolumny, które nie są metrykami, ale mogą być numeryczne (np. 'unnamed: 0')",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "pr_raw_data",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "pr_raw_data = pd.DataFrame(all_pr_raw_data_global) if all_pr_raw_data_global else pd.DataFrame()\n# Uśrednienie wyników dla każdej metryki (oprócz AUC-PR, które jest oddzielnie)\n# Połączenie 'combined_raw_data' i 'pr_raw_data' na podstawie 'method', 'dataset', 'source_folder'\n# Najpierw upewniamy się, że kolumny do połączenia są obecne\nif 'method' in combined_raw_data.columns and 'dataset' in combined_raw_data.columns and 'source_folder' in combined_raw_data.columns and \\\n   'method' in pr_raw_data.columns and 'dataset' in pr_raw_data.columns and 'source_folder' in pr_raw_data.columns:\n    # Wybieramy numeryczne kolumny z combined_raw_data, usuwając kolumny pomocnicze\n    numeric_cols_results = combined_raw_data.select_dtypes(include=[np.number]).columns.tolist()\n    # Usuwamy kolumny, które nie są metrykami, ale mogą być numeryczne (np. 'unnamed: 0')\n    metrics_to_consider_results = ['Accuracy', 'Precision', 'Recall', 'F1-Score', 'ROC-AUC', 'MCC', \"Cohen's Kappa\"]",
+        "detail": "make_tests_average",
+        "documentation": {}
+    },
+    {
+        "label": "datasets",
+        "kind": 5,
+        "importPath": "make_tests_average",
+        "description": "make_tests_average",
+        "peekOfCode": "datasets = full_aggregated_data['dataset'].unique()\nall_global_ranking_data = [] # Do globalnego rankingu AUC-PR\nfor dataset in datasets:\n    print(f\"\\nRozpoczynanie analizy dla datasetu: {dataset}\")\n    dataset_output_dir = os.path.join(output_base_dir, dataset)\n    os.makedirs(dataset_output_dir, exist_ok=True)\n    # Dane dla bieżącego datasetu (używamy pełnych zagregowanych danych, które zawierają wyniki z różnych source_folder)\n    current_dataset_aggregated_data = full_aggregated_data[full_aggregated_data['dataset'] == dataset].copy()\n    # Pełne surowe dane dla boxplotów i histogramów (jeśli potrzebne, z oryginalnych ram danych)\n    # Filter raw data for the current dataset",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2157,7 +2202,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "all_global_ranking_data = []\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):\n    n = len(data)\n    if n < 2:\n        return np.nan, np.nan\n    mean = np.mean(data)\n    sem = stats.sem(data)\n    ci = sem * stats.t.ppf((1 + confidence) / 2., n - 1)\n    return mean - ci, mean + ci",
+        "peekOfCode": "all_global_ranking_data = [] # Do globalnego rankingu AUC-PR\nfor dataset in datasets:\n    print(f\"\\nRozpoczynanie analizy dla datasetu: {dataset}\")\n    dataset_output_dir = os.path.join(output_base_dir, dataset)\n    os.makedirs(dataset_output_dir, exist_ok=True)\n    # Dane dla bieżącego datasetu (używamy pełnych zagregowanych danych, które zawierają wyniki z różnych source_folder)\n    current_dataset_aggregated_data = full_aggregated_data[full_aggregated_data['dataset'] == dataset].copy()\n    # Pełne surowe dane dla boxplotów i histogramów (jeśli potrzebne, z oryginalnych ram danych)\n    # Filter raw data for the current dataset\n    raw_data_for_boxplot = combined_raw_data[combined_raw_data['dataset'] == dataset].copy()",
         "detail": "make_tests_average",
         "documentation": {}
     },
