@@ -1806,7 +1806,7 @@
         "kind": 2,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Removes values that are far beyond the interquartile range (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # First quartile (25th percentile)\n    Q3 = data[column].quantile(0.75)  # Third quartile (75th percentile)\n    IQR = Q3 - Q1  # Interquartile range\n    lower_bound = Q1 - 1.5 * IQR  # Lower bound\n    upper_bound = Q3 + 1.5 * IQR  # Upper bound\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
+        "peekOfCode": "def remove_outliers(data, column):\n    \"\"\"\n    Usuwa wartości znacznie odbiegające od zakresu międzykwartylowego (IQR).\n    \"\"\"\n    Q1 = data[column].quantile(0.25)  # Pierwszy kwartyl (25 percentyl)\n    Q3 = data[column].quantile(0.75)  # Trzeci kwartyl (75 percentyl)\n    IQR = Q3 - Q1  # Rozstęp międzykwartylowy\n    lower_bound = Q1 - 1.5 * IQR  # Dolna granica\n    upper_bound = Q3 + 1.5 * IQR  # Górna granica\n    return data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1815,7 +1815,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Types of folders to process\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1824,7 +1824,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Types of folders to process\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red",
+        "peekOfCode": "base_folder = os.path.join(project_root)\nplot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1833,7 +1833,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Types of folders to process\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load",
+        "peekOfCode": "plot_base_folder = os.path.join(project_root, \"plots\")\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1842,7 +1842,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1851,7 +1851,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Define run patterns\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1860,7 +1860,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_standard = [i for i in range(2, 17) if i != 12]  # Standard runs (2 to 16, excluding 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:",
+        "peekOfCode": "runs_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1869,7 +1869,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Runs 1-1 to 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
+        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1878,7 +1878,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Run 12 variants\nruns_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
+        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1887,7 +1887,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "runs_highlight = [17, 18, 19, 20, 21] # Runs to highlight in red\n# Updated columns to load\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist",
+        "peekOfCode": "runs_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia na czerwono\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy główny folder, jeśli nie istnieje",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -1896,7 +1896,7 @@
         "kind": 5,
         "importPath": "all_plots",
         "description": "all_plots",
-        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Creates main folder if it doesn't exist\n    # Create dataset-specific subfolders for plots\n    datasets = ['BuzzFeed', 'ISOT', 'WELFake']",
+        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    plots_output_path = os.path.join(plot_base_folder, folder) + '\\\\'\n    os.makedirs(plots_output_path, exist_ok=True)  # Tworzy główny folder, jeśli nie istnieje\n    # Tworzenie podfolderów dla zestawów danych\n    datasets = ['BuzzFeed', 'ISOT', 'WELFake']",
         "detail": "all_plots",
         "documentation": {}
     },
@@ -2049,7 +2049,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]",
+        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', ",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2058,7 +2058,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []",
+        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', ",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2067,7 +2067,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "ranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue",
+        "peekOfCode": "ranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', \n    'metoda17', 'metoda18', 'metoda19', 'metoda20', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2076,7 +2076,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "methods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]\nall_ranking_data = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder_path, folder)\n    if not os.path.isdir(folder_path):\n        continue\n    # Utworzenie odpowiadającego subfolderu w katalogu statistics\n    folder_output_dir = os.path.join(output_base_dir, folder)",
+        "peekOfCode": "methods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', \n    'metoda17', 'metoda18', 'metoda19', 'metoda20', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2112,7 +2112,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],",
+        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2121,7 +2121,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],",
+        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics_aggregated_by_category')\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2130,7 +2130,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "ranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod\nmethods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],\n    'one_shot': [f for f in os.listdir(base_folder_path) if 'one_shot' in f and f.startswith('results_')]\n}\nall_global_ranking_data = []",
+        "peekOfCode": "ranking_file_global = os.path.join(output_base_dir, \"auc_pr_ranking_global_aggregated.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',\n    'metoda2', 'metoda3', 'metoda4', 'metoda5',\n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]",
         "detail": "make_tests_average",
         "documentation": {}
     },
@@ -2139,7 +2139,7 @@
         "kind": 5,
         "importPath": "make_tests_average",
         "description": "make_tests_average",
-        "peekOfCode": "methods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']\n# Definicja kategorii folderów\nfolder_categories = {\n    'classic': [f for f in os.listdir(base_folder_path) if 'classic' in f and f.startswith('results_')],\n    'few_shot': [f for f in os.listdir(base_folder_path) if 'few_shot' in f and f.startswith('results_')],\n    'one_shot': [f for f in os.listdir(base_folder_path) if 'one_shot' in f and f.startswith('results_')]\n}\nall_global_ranking_data = []\n# Funkcja do obliczania przedziału ufności\ndef calculate_confidence_interval(data, confidence=0.95):",
+        "peekOfCode": "methods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',\n    'metoda13', 'metoda14', 'metoda15', 'metoda16',\n    'metoda17', 'metoda18', 'metoda19', 'metoda20',\n    'metoda2', 'metoda3', 'metoda4', 'metoda5',\n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]\n# Definicja kategorii folderów\nfolder_categories = {",
         "detail": "make_tests_average",
         "documentation": {}
     },

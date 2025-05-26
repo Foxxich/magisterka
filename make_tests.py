@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import auc
 import sys
 
-# Set encoding to utf-8 for stdout to handle Polish characters
+# Ustawienie kodowania utf-8 dla stdout, aby obsługiwać polskie znaki
 sys.stdout.reconfigure(encoding='utf-8')
 
 # Ścieżka do folderu głównego z danymi
@@ -21,8 +21,15 @@ os.makedirs(output_base_dir, exist_ok=True)
 # Pliki wyjściowe globalne
 ranking_file = os.path.join(output_base_dir, "auc_pr_ranking.csv")
 
-# Etykiety metod
-methods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']
+# Etykiety metod z zamianą 'run' na 'metoda'
+methods = [
+    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', 
+    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', 
+    'metoda13', 'metoda14', 'metoda15', 'metoda16', 
+    'metoda17', 'metoda18', 'metoda19', 'metoda20', 
+    'metoda2', 'metoda3', 'metoda4', 'metoda5', 
+    'metoda6', 'metoda7', 'metoda8', 'metoda9'
+]
 
 # Iteracja po folderach z danymi
 folders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]
@@ -51,7 +58,7 @@ for folder in folders:
     # Wczytanie pierwszego pliku, aby pobrać nazwy kolumn
     sample_file = os.path.join(folder_path, results_files[0])
     sample_data = pd.read_csv(sample_file)
-    columns = list(sample_data.columns) + ['run', 'dataset', 'method']
+    columns = list(sample_data.columns) + ['metoda', 'dataset', 'method']
 
     # Tworzenie pustej listy na dane
     all_data = []
@@ -68,8 +75,8 @@ for folder in folders:
                 dataset = 'WELFake'
             else:
                 continue
-            method = file.split('_')[0]  # np. run1-1, run1-2
-            data['run'] = file
+            method = file.split('_')[0].replace('run', 'metoda')  # Zamiana 'run' na 'metoda', np. run1-1 -> metoda1-1
+            data['metoda'] = file  # Kolumna z pełną nazwą pliku
             data['dataset'] = dataset
             data['method'] = method
             all_data.append(data)
@@ -171,10 +178,10 @@ for folder in folders:
             precision = pr_data["Precision"]
             recall = pr_data["Recall"]
             auc_pr = auc(recall, precision)
-            method = file.split('_')[0]
+            method = file.split('_')[0].replace('run', 'metoda')  # Zamiana 'run' na 'metoda'
             auc_pr_results.append({
                 "method": method,
-                "run": file,
+                "metoda": file,  # Zmiana z 'run' na 'metoda'
                 "AUC-PR": auc_pr
             })
 
@@ -305,10 +312,10 @@ for folder in folders:
         plt.bar([i + bar_width for i in index], auc_pr_by_dataset['ISOT'], bar_width, label='ISOT', color='#4ECDC4')
         plt.bar([i + 2 * bar_width for i in index], auc_pr_by_dataset['WELFake'], bar_width, label='WELFake', color='#45B7D1')
 
-        plt.xlabel('Metody', fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+        plt.xlabel('Metody', fontsize=12, color='red')  # Zmieniono na 'Metody' i kolor czerwony
         plt.ylabel('AUC-PR', fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
         plt.title(f'Porównanie AUC-PR między datasetami w folderze {folder}', fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
-        plt.xticks([i + bar_width for i in index], methods, rotation=45, fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+        plt.xticks([i + bar_width for i in index], methods, rotation=45, fontsize=12, color='red')  # Użycie listy 'methods' z 'metoda'
         plt.yticks(fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
         plt.legend()
         plt.tight_layout()

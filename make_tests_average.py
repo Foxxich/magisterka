@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import auc
 import sys
 
-# Set encoding to utf-8 for stdout to handle Polish characters
+# Ustawienie kodowania utf-8 dla stdout, aby obsługiwać polskie znaki
 sys.stdout.reconfigure(encoding='utf-8')
 
 # Ścieżka do folderu głównego z danymi
@@ -19,8 +19,15 @@ os.makedirs(output_base_dir, exist_ok=True)
 # Pliki wyjściowe globalne
 ranking_file_global = os.path.join(output_base_dir, "auc_pr_ranking_global_aggregated.csv")
 
-# Etykiety metod
-methods = ['run1-1', 'run1-2', 'run1-3', 'run1-4', 'run1-5', 'run10', 'run11', 'run12-catboost', 'run12-rf', 'run13', 'run14', 'run15', 'run16', 'run17', 'run18', 'run19', 'run20', 'run2', 'run3', 'run4', 'run5', 'run6', 'run7', 'run8', 'run9']
+# Etykiety metod z zamianą 'run' na 'metoda'
+methods = [
+    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5',
+    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf',
+    'metoda13', 'metoda14', 'metoda15', 'metoda16',
+    'metoda17', 'metoda18', 'metoda19', 'metoda20',
+    'metoda2', 'metoda3', 'metoda4', 'metoda5',
+    'metoda6', 'metoda7', 'metoda8', 'metoda9'
+]
 
 # Definicja kategorii folderów
 folder_categories = {
@@ -71,8 +78,8 @@ for category_name, folders_in_category in folder_categories.items():
                 elif 'WELFake' in file: dataset = 'WELFake'
                 
                 if dataset:
-                    method = file.split('_')[0]
-                    data['run_identifier'] = os.path.basename(folder_path) + "_" + file
+                    method = file.split('_')[0].replace('run', 'metoda')  # Zamiana 'run' na 'metoda'
+                    data['metoda_identifier'] = os.path.basename(folder_path) + "_" + file  # Zmiana z 'run_identifier'
                     data['dataset'] = dataset
                     data['method'] = method
                     all_raw_data_for_category.append(data)
@@ -94,11 +101,11 @@ for category_name, folders_in_category in folder_categories.items():
                 recall = pr_data["Recall"]
                 if len(recall) > 1 and len(precision) > 1:
                     auc_pr = auc(recall, precision)
-                    method = file.split('_')[0]
+                    method = file.split('_')[0].replace('run', 'metoda')  # Zamiana 'run' na 'metoda'
                     all_pr_raw_data_for_category.append({
                         "method": method,
                         "dataset": dataset,
-                        "run_identifier": os.path.basename(folder_path) + "_" + file,
+                        "metoda_identifier": os.path.basename(folder_path) + "_" + file,  # Zmiana z 'run_identifier'
                         "AUC-PR": auc_pr
                     })
                 else:
@@ -290,7 +297,7 @@ for category_name, folders_in_category in folder_categories.items():
                                 ci_highs.append(0)
                         plt.bar(methods_to_plot, means, yerr=[ci_lows, ci_highs], capsize=5, color='skyblue', ecolor='black')
                         plt.title(f"Wartości {column} dla Metod ({dataset}, {category_name}) - Uśrednione Dane z CI", fontsize=14, color='red')
-                        plt.xlabel('Metoda', fontsize=12, color='red')
+                        plt.xlabel('Metody', fontsize=12, color='red')  # Zmiana na 'Metody'
                         plt.ylabel(column, fontsize=12, color='red')
                         plt.xticks(rotation=45, ha='right', fontsize=12, color='red')
                         plt.yticks(fontsize=12, color='red')
@@ -318,7 +325,7 @@ for category_name, folders_in_category in folder_categories.items():
                             plt.figure(figsize=(12, 6))
                             raw_dataset_data_for_boxplot[raw_dataset_data_for_boxplot['method'].isin(methods_to_plot)].boxplot(column=column, by='method', rot=45)
                             plt.title(f"Boxplot {column} dla Metod ({dataset}, {category_name}) - Surowe Dane", fontsize=14, color='red')
-                            plt.xlabel('Metoda', fontsize=12, color='red')
+                            plt.xlabel('Metody', fontsize=12, color='red')  # Zmiana na 'Metody'
                             plt.ylabel(column, fontsize=12, color='red')
                             plt.suptitle('')
                             plt.xticks(ha='right', fontsize=12, color='red')
@@ -361,7 +368,7 @@ for category_name, folders_in_category in folder_categories.items():
             index = np.arange(len(methods))
             for i, ds_name in enumerate(datasets_present):
                 plt.bar(index + i * bar_width, auc_pr_by_dataset_avg_category[ds_name], bar_width, label=ds_name, color=plt.cm.Set2(i))
-            plt.xlabel('Metody', fontsize=12, color='red')
+            plt.xlabel('Metody', fontsize=12, color='red')  # Zmiana na 'Metody'
             plt.ylabel('Uśrednione AUC-PR', fontsize=12, color='red')
             plt.title(f'Porównanie Uśrednionych AUC-PR między datasetami w kategorii {category_name}', fontsize=14, color='red')
             plt.xticks(index + (len(datasets_present) - 1) * bar_width / 2, methods, rotation=45, ha='right', fontsize=12, color='red')
