@@ -1533,14 +1533,6 @@
         "documentation": {}
     },
     {
-        "label": "GridSpec",
-        "importPath": "matplotlib.gridspec",
-        "description": "matplotlib.gridspec",
-        "isExtraImport": true,
-        "detail": "matplotlib.gridspec",
-        "documentation": {}
-    },
-    {
         "label": "create_model",
         "kind": 2,
         "importPath": "article1.run1",
@@ -2463,7 +2455,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",",
+        "peekOfCode": "source_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\statistics\"\noutput_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Settings\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# List of *base names* for the plots you want to combine\n# These should be the parts that are common across results_1, results_2, results_3\nplot_base_names = [\n    \"Accuracy_bar_chart\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2472,7 +2464,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Ustawienia\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",",
+        "peekOfCode": "output_base = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output\"\n# Settings\ndatasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# List of *base names* for the plots you want to combine\n# These should be the parts that are common across results_1, results_2, results_3\nplot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2481,7 +2473,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",",
+        "peekOfCode": "datasets = [\"BuzzFeed\", \"ISOT\", \"WELFake\"]\nmethods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# List of *base names* for the plots you want to combine\n# These should be the parts that are common across results_1, results_2, results_3\nplot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",\n    \"F1-Score_bar\",\n    \"MCC_bar_chart\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2490,7 +2482,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",\n    \"ROC-AUC_histogram.png\",",
+        "peekOfCode": "methods = [\"classic\", \"few_shot\", \"one_shot\"]\nresults_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# List of *base names* for the plots you want to combine\n# These should be the parts that are common across results_1, results_2, results_3\nplot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",\n    \"F1-Score_bar\",\n    \"MCC_bar_chart\",\n    \"Precision_bar_chart\",",
         "detail": "unite_tests",
         "documentation": {}
     },
@@ -2499,16 +2491,16 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# Lista typów histogramów do przetworzenia\nhistogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",\n    \"ROC-AUC_histogram.png\",\n    \"Cohen's Kappa_histogram.png\" # Assuming this is also a histogram or similar plot you want to combine",
+        "peekOfCode": "results_folders = [\"results_1\", \"results_2\", \"results_3\"]\n# List of *base names* for the plots you want to combine\n# These should be the parts that are common across results_1, results_2, results_3\nplot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",\n    \"F1-Score_bar\",\n    \"MCC_bar_chart\",\n    \"Precision_bar_chart\",\n    \"ROC-AUC_bar\",",
         "detail": "unite_tests",
         "documentation": {}
     },
     {
-        "label": "histogram_types",
+        "label": "plot_base_names",
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "histogram_types = [\n    \"Accuracy_histogram.png\",\n    \"F1-Score_histogram.png\",\n    \"MCC_histogram.png\",\n    \"Precision_histogram.png\",\n    \"Recall_histogram.png\",\n    \"ROC-AUC_histogram.png\",\n    \"Cohen's Kappa_histogram.png\" # Assuming this is also a histogram or similar plot you want to combine\n]\n# Przetwarzanie",
+        "peekOfCode": "plot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",\n    \"F1-Score_bar\",\n    \"MCC_bar_chart\",\n    \"Precision_bar_chart\",\n    \"ROC-AUC_bar\",\n    \"Recall_bar\",\n]\n# Processing",
         "detail": "unite_tests",
         "documentation": {}
     }
