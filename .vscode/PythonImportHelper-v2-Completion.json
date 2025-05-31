@@ -2049,7 +2049,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', ",
+        "peekOfCode": "base_folder_path = r'C:\\Users\\Vadym\\Documents\\magisterka'\noutput_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', ",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2058,7 +2058,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', ",
+        "peekOfCode": "output_base_dir = os.path.join(base_folder_path, 'statistics')\n# Utworzenie katalogu głównego wyjściowego, jeśli nie istnieje\nos.makedirs(output_base_dir, exist_ok=True)\n# Pliki wyjściowe globalne\nranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2067,7 +2067,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "ranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', \n    'metoda17', 'metoda18', 'metoda19', 'metoda20', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]",
+        "peekOfCode": "ranking_file = os.path.join(output_base_dir, \"auc_pr_ranking.csv\")\n# Etykiety metod z zamianą 'run' na 'metoda'\nmethods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', \n    'metoda17', 'metoda18', 'metoda19', 'metoda20', \n]",
         "detail": "make_tests",
         "documentation": {}
     },
@@ -2076,7 +2076,7 @@
         "kind": 5,
         "importPath": "make_tests",
         "description": "make_tests",
-        "peekOfCode": "methods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', \n    'metoda17', 'metoda18', 'metoda19', 'metoda20', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n]\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]",
+        "peekOfCode": "methods = [\n    'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', \n    'metoda2', 'metoda3', 'metoda4', 'metoda5', \n    'metoda6', 'metoda7', 'metoda8', 'metoda9'\n    'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', \n    'metoda13', 'metoda14', 'metoda15', 'metoda16', \n    'metoda17', 'metoda18', 'metoda19', 'metoda20', \n]\n# Iteracja po folderach z danymi\nfolders = [f for f in os.listdir(base_folder_path) if f.startswith('results_')]",
         "detail": "make_tests",
         "documentation": {}
     },

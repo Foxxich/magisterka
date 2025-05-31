@@ -24,11 +24,11 @@ ranking_file = os.path.join(output_base_dir, "auc_pr_ranking.csv")
 # Etykiety metod z zamianą 'run' na 'metoda'
 methods = [
     'metoda1-1', 'metoda1-2', 'metoda1-3', 'metoda1-4', 'metoda1-5', 
+    'metoda2', 'metoda3', 'metoda4', 'metoda5', 
+    'metoda6', 'metoda7', 'metoda8', 'metoda9'
     'metoda10', 'metoda11', 'metoda12-catboost', 'metoda12-rf', 
     'metoda13', 'metoda14', 'metoda15', 'metoda16', 
     'metoda17', 'metoda18', 'metoda19', 'metoda20', 
-    'metoda2', 'metoda3', 'metoda4', 'metoda5', 
-    'metoda6', 'metoda7', 'metoda8', 'metoda9'
 ]
 
 # Iteracja po folderach z danymi
@@ -241,54 +241,86 @@ for folder in folders:
             print(f"Za mało danych do obliczania korelacji dla {dataset} w folderze {folder}. Pomijam.")
 
         # Wizualizacje
-        # Lista kolumn, dla których histogramy mają sens
         meaningful_columns = ['accuracy', 'precision', 'recall', 'f1-score', 'roc-auc', 'mcc', "cohen's kappa"]
 
-        # Histogramy tylko dla wybranych kolumn (tylko jeśli więcej niż 2 obserwacje)
         for column in numeric_columns:
-            # Sprawdzamy, czy kolumna jest na liście sensownych (ignorując wielkość liter)
             if column.lower() in meaningful_columns:
-                column_data = dataset_data[column].dropna()  # Usuwamy puste wartości
+                column_data = dataset_data[column].dropna()
                 if len(column_data) > 2:
-                    # Dynamiczne dostosowanie rozmiaru wykresu w zależności od liczby metod
-                    max_methods_per_bin = max(np.histogram(column_data, bins=10)[0])  # Maksymalna liczba metod w przedziale
-                    figsize_width = max(8, 8 + max_methods_per_bin * 0.5)  # Zmniejszony bazowy rozmiar do 8
-                    plt.figure(figsize=(figsize_width, 4))  # Zmniejszona wysokość wykresu z 6 na 4
-                    # Generowanie histogramu
-                    counts, bins, _ = plt.hist(column_data, bins=10, alpha=0.7, label='Histogram')
-                    plt.title(f"Histogram {column} ({dataset}, {folder})", fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
-                    plt.xlabel(column, fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
-                    plt.ylabel("Częstość", fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+                    # Grupowanie danych według metod
+                    method_groups = dataset_data.groupby('method')[column].mean().reset_index()  # Średnia dla każdej metody
+                    methods_list = method_groups['method'].tolist()
+                    values = method_groups[column].tolist()
 
-                    # Oznaczanie wszystkich metod wewnątrz słupków w kolumnie (każda w nowej linii)
-                    bin_methods = {i: [] for i in range(len(bins) - 1)}  # Słownik przechowujący metody dla każdego przedziału
-                    for idx, value in enumerate(column_data):
-                        method = dataset_data.iloc[idx]['method']
-                        # Znajdź przedział, w którym znajduje się wartość
-                        bin_idx = np.digitize(value, bins) - 1
-                        if bin_idx < 0:
-                            bin_idx = 0
-                        if bin_idx >= len(bins) - 1:
-                            bin_idx = len(bins) - 2
-                        bin_methods[bin_idx].append(method)
+                    # Tworzenie wykresu słupkowego
+                    plt.figure(figsize=(max(10, len(methods_list) * 0.8), 5))
+                    bars = []
+                    for i, method in enumerate(methods_list):
+                        # Ustawienie koloru: granatowy dla metoda17-20, inaczej #4ECDC4
+                        color = '#1E90FF' if method in ['metoda17', 'metoda18', 'metoda19', 'metoda20'] else '#4ECDC4'
+                        bar = plt.bar(method, values[i], color=color, alpha=0.7)
+                        bars.append(bar)
 
-                    # Dodawanie etykiet wewnątrz słupków
-                    for bin_idx in range(len(bins) - 1):
-                        if bin_methods[bin_idx]:  # Jeśli w przedziale są metody
-                            x_pos = (bins[bin_idx] + bins[bin_idx + 1]) / 2  # Środek przedziału w osi X
-                            y_pos = counts[bin_idx] / 2  # Środek słupka w osi Y (połowa wysokości słupka)
-                            # Połączenie nazw metod w jedną etykietę z nową linią
-                            label_text = '\n'.join(bin_methods[bin_idx])
-                            plt.text(x_pos, y_pos, label_text, ha='center', va='center', fontsize=12, color='red', wrap=True)
+                    plt.title(f"Wykres słupkowy {column.capitalize()} {dataset} {folder.replace('results_1', 'bert').replace('results_2', 'roberta').replace('results_3', 'sbert').replace('classic', 'klasyczny')}", fontsize=14, color='red')
+                    plt.xlabel("Metody", fontsize=12, color='red')
+                    plt.ylabel(column, fontsize=12, color='red')
+                    plt.xticks(rotation=45, fontsize=10, color='red')
+                    plt.yticks(fontsize=10, color='red')
 
-                    plt.legend()
-                    plt.tight_layout()  # Dostosowanie układu, aby zmieścić etykiety
-                    plt.savefig(os.path.join(dataset_output_dir, f"{column}_histogram.png"), bbox_inches='tight', pad_inches=0)
+                    # Dodanie wartości nad słupkami
+                    for bar in bars:
+                        height = bar[0].get_height()
+                        plt.text(bar[0].get_x() + bar[0].get_width()/2., height,
+                                f'{height:.3f}',
+                                ha='center', va='bottom', fontsize=9, color='red')
+
+                    plt.tight_layout()
+                    # Nazwa pliku z tym samym warunkiem
+                    filename = f"{column}_bar_chart_{folder}.png"
+                    plt.savefig(os.path.join(dataset_output_dir, filename), bbox_inches='tight', pad_inches=0)
                     plt.close()
+
+                    # Test normalności Shapiro-Wilka dla każdej metody
+                    shapiro_results = []
+                    for method in methods_list:
+                        method_data = dataset_data[dataset_data['method'] == method][column].dropna()
+                        if len(method_data) > 2:
+                            shapiro_test = stats.shapiro(method_data)
+                            shapiro_results.append({
+                                "method": method,
+                                "metric": column,
+                                "p_value": shapiro_test.pvalue,
+                                "normal_distribution": shapiro_test.pvalue > 0.05
+                            })
+                        else:
+                            shapiro_results.append({
+                                "method": method,
+                                "metric": column,
+                                "p_value": np.nan,
+                                "normal_distribution": np.nan
+                            })
+                    shapiro_df = pd.DataFrame(shapiro_results)
+                    shapiro_df.to_csv(os.path.join(dataset_output_dir, f"{column}_shapiro_results.csv"), index=False)
+
+                    # Test Kruskal-Wallisa między metodami
+                    groups = [dataset_data[dataset_data['method'] == method][column].dropna() for method in methods_list]
+                    if all(len(group) > 1 for group in groups):
+                        stat, p_value = stats.kruskal(*groups)
+                        kruskal_result = {
+                            "metric": column,
+                            "test": "Kruskal-Wallis",
+                            "stat": stat,
+                            "p_value": p_value,
+                            "significant": p_value < 0.05
+                        }
+                        kruskal_df = pd.DataFrame([kruskal_result])
+                        kruskal_df.to_csv(os.path.join(dataset_output_dir, f"{column}_kruskal_results.csv"), index=False)
+                    else:
+                        print(f"Za mało danych do testu Kruskal-Wallisa dla {column} w {dataset} (folder {folder}). Pomijam.")
                 else:
-                    print(f"Za mało danych do histogramu dla {column} w {dataset} (folder {folder}). Pomijam.")
+                    print(f"Za mało danych do wykresu słupkowego dla {column} w {dataset} (folder {folder}). Pomijam.")
             else:
-                print(f"Pominięto histogram dla {column} w {dataset}, ponieważ nie jest to sensowna metryka.")
+                print(f"Pominięto wykres dla {column} w {dataset}, ponieważ nie jest to sensowna metryka.")
 
         # Boxploty dla każdej metryki (tylko jeśli więcej niż 2 obserwacje)
         if len(dataset_data) > 2:
@@ -302,25 +334,33 @@ for folder in folders:
         else:
             print(f"Za mało danych do boxplotu dla {dataset} w folderze {folder}. Pomijam.")
 
-    # 3. Wykres porównawczy AUC-PR dla datasetów w ramach folderu
-    if auc_pr_by_dataset['BuzzFeed'] and auc_pr_by_dataset['ISOT'] and auc_pr_by_dataset['WELFake']:
-        plt.figure(figsize=(12, 4))  # Zmniejszona wysokość wykresu z 6 na 4
-        bar_width = 0.25
-        index = range(len(methods))
+        # 3. Wykres porównawczy AUC-PR dla datasetów w ramach folderu
+        if auc_pr_by_dataset['BuzzFeed'] and auc_pr_by_dataset['ISOT'] and auc_pr_by_dataset['WELFake']:
+            plt.figure(figsize=(12, 4))  # Zmniejszona wysokość wykresu z 6 na 4
+            bar_width = 0.25
+            index = range(len(methods))
 
-        plt.bar(index, auc_pr_by_dataset['BuzzFeed'], bar_width, label='BuzzFeed', color='#FF6B6B')
-        plt.bar([i + bar_width for i in index], auc_pr_by_dataset['ISOT'], bar_width, label='ISOT', color='#4ECDC4')
-        plt.bar([i + 2 * bar_width for i in index], auc_pr_by_dataset['WELFake'], bar_width, label='WELFake', color='#45B7D1')
+            plt.bar(index, auc_pr_by_dataset['BuzzFeed'], bar_width, label='BuzzFeed', color='#FF6B6B')
+            plt.bar([i + bar_width for i in index], auc_pr_by_dataset['ISOT'], bar_width, label='ISOT', color='#4ECDC4')
+            plt.bar([i + 2 * bar_width for i in index], auc_pr_by_dataset['WELFake'], bar_width, label='WELFake', color='#45B7D1')
 
-        plt.xlabel('Metody', fontsize=12, color='red')  # Zmieniono na 'Metody' i kolor czerwony
-        plt.ylabel('AUC-PR', fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
-        plt.title(f'Porównanie AUC-PR między datasetami w folderze {folder}', fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
-        plt.xticks([i + bar_width for i in index], methods, rotation=45, fontsize=12, color='red')  # Użycie listy 'methods' z 'metoda'
-        plt.yticks(fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
-        plt.legend()
-        plt.tight_layout()
-        plt.savefig(os.path.join(folder_output_dir, f'{folder}_auc_pr_comparison.png'), bbox_inches='tight', pad_inches=0)
-        plt.close()
+            plt.xlabel('Metody', fontsize=12, color='red')  # Zmieniono na 'Metody' i kolor czerwony
+            plt.ylabel('AUC-PR', fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.title(f'Porównanie AUC-PR między datasetami w folderze {folder}', fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.xticks([i + bar_width for i in index], methods, rotation=45, fontsize=12, color='red')  # Użycie listy 'methods' z 'metoda'
+            plt.yticks(fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.legend()
+            plt.tight_layout()
+            plt.savefig(os.path.join(folder_output_dir, f'{folder}_auc_pr_comparison.png'), bbox_inches='tight', pad_inches=0)
+            plt.close()
+
+        # 4. Zapis rankingu AUC-PR dla wszystkich folderów
+        if all_ranking_data:
+            ranking_df = pd.concat(all_ranking_data, ignore_index=True)
+            ranking_df.to_csv(ranking_file, index=False)
+            print(f"Zapisano ranking AUC-PR do: {ranking_file}")
+
+        print("Analiza zakończona. Wyniki zapisano w folderze:", output_base_dir)
 
 # 4. Zapis rankingu AUC-PR dla wszystkich folderów
 if all_ranking_data:
