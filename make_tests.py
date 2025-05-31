@@ -326,7 +326,7 @@ for folder in folders:
         if len(dataset_data) > 2:
             plt.figure(figsize=(10, 4))  # Zmniejszona wysokość wykresu z 6 na 4
             dataset_data.boxplot(column=numeric_columns)
-            plt.title(f"Boxplot dla {dataset} ({folder})", fontsize=14, color='red')  # Zwiększona czcionka i kolor czerwony
+            plt.title(f"Boxplot dla {dataset} {folder.replace('results_1', 'bert').replace('results_2', 'roberta').replace('results_3', 'sbert').replace('classic', 'klasyczny')}", fontsize=14, color='red')
             plt.xticks(rotation=45, fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
             plt.yticks(fontsize=12, color='red')  # Zwiększona czcionka i kolor czerwony
             plt.savefig(os.path.join(dataset_output_dir, f"{dataset}_boxplot.png"), bbox_inches='tight', pad_inches=0)
