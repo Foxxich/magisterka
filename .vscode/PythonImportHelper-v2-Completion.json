@@ -2500,7 +2500,7 @@
         "kind": 5,
         "importPath": "unite_tests",
         "description": "unite_tests",
-        "peekOfCode": "plot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",\n    \"F1-Score_bar\",\n    \"MCC_bar_chart\",\n    \"Precision_bar_chart\",\n    \"ROC-AUC_bar\",\n    \"Recall_bar\",\n]\n# Processing",
+        "peekOfCode": "plot_base_names = [\n    \"Accuracy_bar_chart\",\n    \"Cohen's Kappa_bar\",\n    \"F1-Score_bar\",\n    \"MCC_bar_chart\",\n    \"Precision_bar_chart\",\n    \"ROC-AUC_bar\",\n    \"Recall_bar\",\n    \"boxplot\"\n]",
         "detail": "unite_tests",
         "documentation": {}
     }

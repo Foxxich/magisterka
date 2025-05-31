@@ -24,6 +24,7 @@ plot_base_names = [
     "Precision_bar_chart",
     "ROC-AUC_bar",
     "Recall_bar",
+    "boxplot"
 ]
 
 # Processing
