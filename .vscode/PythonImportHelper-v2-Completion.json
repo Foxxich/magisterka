@@ -1893,6 +1893,114 @@
         "documentation": {}
     },
     {
+        "label": "project_root",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "project_root = os.getcwd()\nbase_folder = os.path.join(project_root)\noutput_base_folder = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output3\"\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "base_folder",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "base_folder = os.path.join(project_root)\noutput_base_folder = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output3\"\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "output_base_folder",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "output_base_folder = r\"C:\\Users\\Vadym\\Documents\\magisterka\\output3\"\n# Typy folderów do przetworzenia\nfolder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "folder_types",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "folder_types = ['classic', 'few_shot', 'one_shot']\nfolders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "folders",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "folders = [f\"results_{i}_{ft}\" for ft in folder_types for i in range(1, 4)]\n# Wzorce uruchamiania\nruns_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "runs_standard",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "runs_standard = [i for i in range(2, 17) if i != 12]  # Standardowe uruchomienia (2-16, bez 12)\nruns_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\n# Lista do przechowywania wyników",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "runs_1_x",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "runs_1_x = [f\"1-{i}\" for i in range(1, 6)]  # Uruchomienia 1-1 do 1-5\nrun12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\n# Lista do przechowywania wyników\nall_results = []",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "run12_variants",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "run12_variants = [\"12-catboost\", \"12-rf\"]  # Warianty uruchomienia 12\nruns_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\n# Lista do przechowywania wyników\nall_results = []\nfor folder in folders:",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "runs_highlight",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "runs_highlight = [17, 18, 19, 20, 21]  # Uruchomienia do wyróżnienia\n# Kolumny do wczytania\ncolumns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\n# Lista do przechowywania wyników\nall_results = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "columns_to_load",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "columns_to_load = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\n# Lista do przechowywania wyników\nall_results = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    # Określenie modelu na podstawie numeru w nazwie folderu\n    model_type = None",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "all_results",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "all_results = []\nfor folder in folders:\n    folder_path = os.path.join(base_folder, folder) + '\\\\'\n    # Określenie modelu na podstawie numeru w nazwie folderu\n    model_type = None\n    if folder.startswith(\"results_1\"):\n        model_type = \"BERT\"\n    elif folder.startswith(\"results_2\"):\n        model_type = \"RoBERTa\"\n    elif folder.startswith(\"results_3\"):",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
+        "label": "metrics",
+        "kind": 5,
+        "importPath": "all_stats",
+        "description": "all_stats",
+        "peekOfCode": "metrics = [\n    \"Accuracy\", \"Precision\", \"Recall\", \"F1-Score\", \"ROC-AUC\", \"MCC\",\n    \"Log Loss\", \"Cohen's Kappa\", \"Execution Time (s)\", \"CV Accuracy (Mean)\"\n]\nfor folder_type in folder_types:\n    for dataset in datasets:\n        # Tworzenie folderu dla datasetu i folder_type\n        output_folder = os.path.join(output_base_folder, dataset, folder_type)\n        os.makedirs(output_folder, exist_ok=True)\n        for metric in metrics:",
+        "detail": "all_stats",
+        "documentation": {}
+    },
+    {
         "label": "load_and_preprocess_data",
         "kind": 2,
         "importPath": "common",

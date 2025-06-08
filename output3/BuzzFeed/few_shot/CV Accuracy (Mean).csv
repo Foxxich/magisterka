@@ -1,0 +1,17 @@
+Metoda,BERT,RoBERTa,SBERT
+metoda10,0.6,0.5,0.8
+metoda11,0.7,,0.6
+metoda12-rf,0.7,0.7,0.3
+metoda15,0.3,0.3,0.6
+metoda16,0.6,0.2,0.7
+metoda18,0.4,0.8,0.7
+metoda19,0.6,0.2,0.8
+metoda2,0.3,0.3,0.6
+metoda20,0.3,0.3,0.6
+metoda3,0.3,0.3,0.5
+metoda4,0.3,0.3,
+metoda5,0.1,0.7,0.7
+metoda6,0.3,0.3,0.6
+metoda7,0.5,0.7,0.3
+metoda8,0.3,0.3,0.6
+metoda9,0.3,0.2,0.5
